@@ -12,7 +12,7 @@ entity full_adder is
 		
 		--Exemple de sorties
 		S 	: out std_logic;
-		Cout: out std_logic;
+		Cout: out std_logic
 	);
 
 end full_adder;
