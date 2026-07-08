@@ -80,9 +80,9 @@ architecture behavioral of tb_counter is
 			report "led error" severity failure;
 
 		wait for (threshold-3)*period;
+		
 --		end_counter est à 1 à threshold-1 pour anticiper threshold
 --		counter le remet à 0 u cycle après end_counter donc bien à Threshold
-		
 		assert end_counter = '1'
 			report "end_counter error" severity failure;
 		assert led = '0'
@@ -90,6 +90,7 @@ architecture behavioral of tb_counter is
 		
 		wait for period;
 		
+		--end_counter declenche le changement d'état de la led
 		assert end_counter = '0'
 			report "end_counter error" severity failure;
 		assert led = '1'
@@ -101,14 +102,43 @@ architecture behavioral of tb_counter is
 		-- verification du changement d'état de la led après 2s
 		assert led = '0'
 			report "led error" severity failure;
+			
+		wait for threshold*period;
+		
+		-- on attend que la led revienne à 1 pour ensuite tester le restart
+		assert led = '1'
+			report "led error" severity failure;
+			
+		wait for period;
+		
+		restart <= '1';
+		wait for period;
+		restart <= '0';
+		wait for period;
+		
+		--verification du signal restart
+		assert led = '0'
+			report "led error" severity failure;
+		 
 		
 		-- verification du reset asynchrone
 		-- on envoi une resetn très court entre 2 fronts montants de l'horloge
+		
+		wait for threshold*period;
+		
+		-- on attend que la led revienne à 1 pour ensuite tester le reset asynchrone
+		assert led = '1'
+			report "led error" severity failure;
+			
 		wait for 2ns;
 		resetn <= '1';
 		wait for 1ns;
 		resetn <= '0';
-		wait for 7ns;		
+		wait for 7ns;
+		
+		--verification du signal resetn
+		assert led = '0'
+			report "led error" severity failure;
 	
 	wait;
 		   
