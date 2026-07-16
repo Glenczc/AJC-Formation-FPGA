@@ -20,7 +20,8 @@ architecture behavioral of tb_led_pilot is
 	constant hp : time := 5 ns;      --demi periode de 5ns
 	constant period : time := 2*hp;  --periode de 10ns, soit une frequence de 100Hz
 	-- constante de delai de clignotement des led
-	constant threshold : positive := 20;
+	--constant threshold : positive := 20; --simulation
+	constant threshold : positive := 200000000; --synthese
 	
 	component led_pilot
 		port(

@@ -51,10 +51,7 @@ begin
             led_b => led0_b
         );
             
-            
-	
-
-
+          
 	process(clk,resetn) --mise à jour de l'état courrant
    	begin
        	if(resetn='1') then

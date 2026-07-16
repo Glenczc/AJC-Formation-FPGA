@@ -29,7 +29,8 @@ architecture behavioral of led_pilot is
 
 	component counter_unit
         generic(
-			threshold : positive := 20
+			--threshold : positive := 20 --simulation
+			threshold : positive := 200000000 --synthese
         );
         port ( 
             clk			    : in std_logic; 
@@ -42,7 +43,8 @@ begin
 	
 	counter_time: counter_unit
 	   generic map(
-	       threshold => 20
+	       --threshold => 20 --simulation
+	       threshold => 20 --synthese
 	   )
 	   port map(
 	       clk => clk,
