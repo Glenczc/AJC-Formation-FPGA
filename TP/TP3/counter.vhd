@@ -1,13 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
+--use ieee.std_logic_unsigned.all;
 use ieee.math_real."ceil"; -- importation de la fonction entier superieur
 use ieee.math_real."log2"; -- importation de la fonction log2
 
 
 entity counter_unit is
 	generic(
-		threshold : positive := 20
+		-- threshold : positive := 20 --simulation
+		threshold : positive := 200000000 --synthese
 	);
     port ( 
 		clk			    : in std_logic; 

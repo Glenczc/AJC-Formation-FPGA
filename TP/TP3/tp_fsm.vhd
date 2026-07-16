@@ -4,9 +4,6 @@ use ieee.std_logic_unsigned.all;
 
 
 entity tp_fsm is
---    generic (
---        --vous pouvez ajouter des parameres generics ici
---    );
     port ( 
 		clk			: in std_logic; 
         resetn		: in std_logic;
@@ -28,7 +25,8 @@ architecture behavioral of tp_fsm is
     
     component counter_unit
         generic(
-		threshold : positive := 20
+		--threshold : positive := 20 --simulation
+        threshold : positive := 200000000 --synthese
         );
         port ( 
             clk			    : in std_logic; 
@@ -44,7 +42,8 @@ architecture behavioral of tp_fsm is
 	
 	counter_time: counter_unit
 	   generic map(
-	       threshold => 20
+	       --threshold => 20 --simulation
+           threshold => 200000000 --synthese
 	   )
 	   port map(
 	       clk => clk,
@@ -65,7 +64,7 @@ architecture behavioral of tp_fsm is
 			        if(counter_led = "101") then  -- si on a déjà compté 5 changement de led
                         counter_led <= "000";
                     else
-                        counter_led <= counter_led + 1;-- on compte un clignotement de led
+                        counter_led <= counter_led + '1';-- on compte un clignotement de led
                     end if;
                 end if;
            end if;
@@ -80,36 +79,6 @@ architecture behavioral of tp_fsm is
            else current_state <= current_state;
            end if;
        end process; 
-                
-                
-
-	
---		process(clk,resetn)
---		begin
---            if(resetn='1') then
---                counter_led <= "000";
---                current_state <= idle;
---                led_reg <= '0';
-                 
---	        elsif(rising_edge(clk)) then
-	        
-	            
---			    if(end_counter = '1') then
---			         led_reg <= not led_reg; -- changement d'état de la led
---			         current_state <= next_state;
-			         
---			        if(counter_led = "101") then  -- si on a déjà compté 5 changement de led
---                        counter_led <= "000";
---                    else
---                        counter_led <= counter_led + 1;-- on compte un clignotement de led
---                    end if;
-                
---                --else current_state <= current_state;
-                    
---			    end if; -- sinon la led et le compteur de led restent inchangés
-
---            end if;
---		end process;
 		
 		
 		
