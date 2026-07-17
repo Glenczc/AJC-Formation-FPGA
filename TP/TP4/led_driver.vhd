@@ -40,7 +40,7 @@ begin
 	counter:counter_unit
 	   generic map(
 	       --threshold => 20 --simulation
-	       threshold => 20 --synthese
+	       threshold => 200000000 --synthese
 	   )
 	   port map(
 	       clk => clk,
