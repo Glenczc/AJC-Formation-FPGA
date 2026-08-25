@@ -70,7 +70,7 @@ begin
     
 -- FSM question 5
 
-    process(current_state, end_counter, bouton)
+    process(current_state, end_counter, bouton, led)
     begin
     	case current_state is
     		when rouge =>
