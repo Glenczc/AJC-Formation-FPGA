@@ -1,0 +1,12 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ipshared/ecff/src/AXI4_stream_Master_24b.vhd" \
+"../../../bd/design_1/ip/design_1_AXI4_stream_Master_2_0_1/sim/design_1_AXI4_stream_Master_2_0_1.vhd" \
+"../../../bd/design_1/ipshared/db4a/src/AXI4_stream_Slave.vhd" \
+"../../../bd/design_1/ip/design_1_AXI4_stream_Slave_0_1/sim/design_1_AXI4_stream_Slave_0_1.vhd" \
+"../../../bd/design_1/ipshared/b355/src/ControleurVGA_v2.vhd" \
+"../../../bd/design_1/ip/design_1_ControleurVGA_0_4/sim/design_1_ControleurVGA_0_4.vhd" \
+"../../../bd/design_1/ipshared/0409/src/TPG.vhd" \
+"../../../bd/design_1/ip/design_1_TPG_0_2/sim/design_1_TPG_0_2.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+nosort

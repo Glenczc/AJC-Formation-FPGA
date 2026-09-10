@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Sep  3 17:08:45 2026" VIVADOVERSION="2020.2">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z007s" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="O" LEFT="3" NAME="VGA_R" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_0_VGA_R">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ControleurVGA_0" PORT="VGA_R"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="VGA_B" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_0_VGA_B">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ControleurVGA_0" PORT="VGA_B"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="VGA_HS_O" SIGIS="undef" SIGNAME="ControleurVGA_0_VGA_HS_O">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ControleurVGA_0" PORT="VGA_HS_O"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="VGA_VS_O" SIGIS="undef" SIGNAME="ControleurVGA_0_VGA_VS_O">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ControleurVGA_0" PORT="VGA_VS_O"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="VGA_G" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_0_VGA_G">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ControleurVGA_0" PORT="VGA_G"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CLK_I" SIGIS="undef" SIGNAME="External_Ports_CLK_I">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_in1"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="2" FULLNAME="/ControleurVGA_0" HWVERSION="1.0" INSTANCE="ControleurVGA_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ControleurVGA" VLNV="user.org:user:ControleurVGA:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_ControleurVGA_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="CLK_I" SIGIS="undef" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="vga_red" RIGHT="0" SIGIS="undef" SIGNAME="TPG_0_vga_red">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TPG_0" PORT="vga_red"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="vga_green" RIGHT="0" SIGIS="undef" SIGNAME="TPG_0_vga_green">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TPG_0" PORT="vga_green"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="vga_blue" RIGHT="0" SIGIS="undef" SIGNAME="TPG_0_vga_blue">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TPG_0" PORT="vga_blue"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="h_sync_reg" SIGIS="undef" SIGNAME="TPG_0_h_sync_reg">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TPG_0" PORT="h_sync_reg"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="v_sync_reg" SIGIS="undef" SIGNAME="TPG_0_v_sync_reg">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TPG_0" PORT="v_sync_reg"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="VGA_HS_O" SIGIS="undef" SIGNAME="ControleurVGA_0_VGA_HS_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_HS_O"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="VGA_VS_O" SIGIS="undef" SIGNAME="ControleurVGA_0_VGA_VS_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_VS_O"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="VGA_R" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_0_VGA_R">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_R"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="VGA_B" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_0_VGA_B">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_B"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="VGA_G" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_0_VGA_G">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_G"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/TPG_0" HWVERSION="1.0" INSTANCE="TPG_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TPG" VLNV="user.org:user:TPG:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_TPG_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="CLK_I" SIGIS="undef" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="vga_red" RIGHT="0" SIGIS="undef" SIGNAME="TPG_0_vga_red">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_0" PORT="vga_red"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="vga_green" RIGHT="0" SIGIS="undef" SIGNAME="TPG_0_vga_green">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_0" PORT="vga_green"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="vga_blue" RIGHT="0" SIGIS="undef" SIGNAME="TPG_0_vga_blue">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_0" PORT="vga_blue"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="h_sync_reg" SIGIS="undef" SIGNAME="TPG_0_h_sync_reg">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_0" PORT="h_sync_reg"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="v_sync_reg" SIGIS="undef" SIGNAME="TPG_0_v_sync_reg">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_0" PORT="v_sync_reg"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/clk_wiz_0_clk_wiz_0" HWVERSION="1.0" INSTANCE="clk_wiz_0_clk_wiz_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz_0_clk_wiz" VLNV="user.org:user:clk_wiz_0_clk_wiz:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_clk_wiz_0_clk_wiz_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" NAME="clk_out1" SIGIS="undef" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TPG_0" PORT="CLK_I"/>
+            <CONNECTION INSTANCE="ControleurVGA_0" PORT="CLK_I"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_in1" SIGIS="undef" SIGNAME="External_Ports_CLK_I">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK_I"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Sep 10 12:18:53 2026
+# Process ID: 50399
+# Current directory: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2/ControleurVGA_v2.runs/synth_1
+# Command line: vivado -log ControleurVGA.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ControleurVGA.tcl
+# Log file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2/ControleurVGA_v2.runs/synth_1/ControleurVGA.vds
+# Journal file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2/ControleurVGA_v2.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source ControleurVGA.tcl -notrace

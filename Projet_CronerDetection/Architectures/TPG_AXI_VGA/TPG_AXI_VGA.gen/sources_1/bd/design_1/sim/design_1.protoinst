@@ -1,0 +1,33 @@
+{
+	"version": "1.0",
+	"modules": {
+		"design_1": {
+			"proto_instances": {
+				"/AXI4_stream_Master_2_0/interface_axis": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"ARESET": { "actual": "reset"},
+						"TDATA": { "actual": "tdata"},
+						"TLAST": { "actual": "tlast"},
+						"TREADY": { "actual": "tready"},
+						"TUSER": { "actual": "tuser"},
+						"TVALID": { "actual": "tvalid"}
+					}
+				},
+				"/AXI4_stream_Slave_0/interface_axis": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"ARESET": { "actual": "reset"},
+						"TDATA": { "actual": "tdata"},
+						"TLAST": { "actual": "tlast"},
+						"TREADY": { "actual": "tready"},
+						"TUSER": { "actual": "tuser"},
+						"TVALID": { "actual": "tvalid"}
+					}
+				}
+			}
+		}
+	}
+}

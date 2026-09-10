@@ -1,0 +1,46 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.835391",
+   "Default View_TopLeft":"-85,-181",
+   "Display-PortTypeOthers":"true",
+   "ExpandedHierarchyInLayout":"",
+   "Interfaces View_ScaleFactor":"1.0",
+   "Interfaces View_TopLeft":"-375,-198",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port VGA_HS_O -pg 1 -lvl 6 -x 1250 -y 70 -defaultsOSRD
+preplace port VGA_VS_O -pg 1 -lvl 6 -x 1250 -y 100 -defaultsOSRD
+preplace port reset -pg 1 -lvl 0 -x 0 -y 150 -defaultsOSRD
+preplace port CLK_I -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
+preplace portBus VGA_R -pg 1 -lvl 6 -x 1250 -y 130 -defaultsOSRD
+preplace portBus VGA_B -pg 1 -lvl 6 -x 1250 -y 160 -defaultsOSRD
+preplace portBus VGA_G -pg 1 -lvl 6 -x 1250 -y 190 -defaultsOSRD
+preplace inst clk_wiz_0_clk_wiz_0 -pg 1 -lvl 1 -x 120 -y 90 -defaultsOSRD
+preplace inst AXI4_stream_Master_2_0 -pg 1 -lvl 3 -x 550 -y 150 -defaultsOSRD
+preplace inst AXI4_stream_Slave_0 -pg 1 -lvl 4 -x 840 -y 180 -defaultsOSRD
+preplace inst TPG_0 -pg 1 -lvl 2 -x 320 -y 170 -defaultsOSRD
+preplace inst ControleurVGA_0 -pg 1 -lvl 5 -x 1110 -y 120 -defaultsOSRD
+preplace netloc CLK_I_1 1 0 1 NJ 90
+preplace netloc clk_wiz_0_clk_wiz_0_clk_out1 1 1 4 230 90 410 60 680 70 NJ
+preplace netloc reset_1 1 0 5 NJ 150 220 240 410 240 690 90 NJ
+preplace netloc TPG_0_pixel 1 2 1 N 160
+preplace netloc TPG_0_px_valid 1 2 1 N 180
+preplace netloc AXI4_stream_Slave_0_data_out 1 4 1 980 110n
+preplace netloc AXI4_stream_Slave_0_last 1 4 1 990 130n
+preplace netloc AXI4_stream_Slave_0_user 1 4 1 1000 150n
+preplace netloc AXI4_stream_Slave_0_valid 1 4 1 N 170
+preplace netloc ControleurVGA_0_ready 1 3 3 700 10 NJ 10 1220
+preplace netloc ControleurVGA_0_VGA_HS_O 1 5 1 1230J 70n
+preplace netloc ControleurVGA_0_VGA_VS_O 1 5 1 1220J 100n
+preplace netloc ControleurVGA_0_VGA_R 1 5 1 NJ 130
+preplace netloc ControleurVGA_0_VGA_G 1 5 1 1220J 170n
+preplace netloc ControleurVGA_0_VGA_B 1 5 1 1230J 150n
+preplace netloc AXI4_stream_Master_2_0_interface_axis 1 3 1 N 150
+levelinfo -pg 1 0 120 320 550 840 1110 1250
+pagesize -pg 1 -db -bbox -sgen -90 0 1380 270
+"
+}
+{
+   "da_board_cnt":"5",
+   "da_clkrst_cnt":"7"
+}

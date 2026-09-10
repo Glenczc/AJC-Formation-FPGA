@@ -1,0 +1,245 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Sep 10 14:36:55 2026
+# Process ID: 95738
+# Current directory: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1
+# Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/design_1_wrapper.vds
+# Journal file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'user.org:user:ControleurVGA:1.0'. The one found in IP location '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2' will take precedence over the same IP in location /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA
+Command: synth_design -top design_1_wrapper -part xc7z007sclg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Device 21-403] Loading part xc7z007sclg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 95853
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2380.918 ; gain = 0.000 ; free physical = 254 ; free virtual = 6995
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:26]
+INFO: [Synth 8-3491] module 'design_1' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:39]
+INFO: [Synth 8-638] synthesizing module 'design_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:30]
+INFO: [Synth 8-3491] module 'design_1_AXI4_stream_Master_2_0_1' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/.Xil/Vivado-95738-glen-HP-ZBook-15u-G3/realtime/design_1_AXI4_stream_Master_2_0_1_stub.vhdl:5' bound to instance 'AXI4_stream_Master_2_0' of component 'design_1_AXI4_stream_Master_2_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'design_1_AXI4_stream_Master_2_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/.Xil/Vivado-95738-glen-HP-ZBook-15u-G3/realtime/design_1_AXI4_stream_Master_2_0_1_stub.vhdl:20]
+INFO: [Synth 8-3491] module 'design_1_AXI4_stream_Slave_0_1' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/.Xil/Vivado-95738-glen-HP-ZBook-15u-G3/realtime/design_1_AXI4_stream_Slave_0_1_stub.vhdl:5' bound to instance 'AXI4_stream_Slave_0' of component 'design_1_AXI4_stream_Slave_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:136]
+INFO: [Synth 8-638] synthesizing module 'design_1_AXI4_stream_Slave_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/.Xil/Vivado-95738-glen-HP-ZBook-15u-G3/realtime/design_1_AXI4_stream_Slave_0_1_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'design_1_ControleurVGA_0_4' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/.Xil/Vivado-95738-glen-HP-ZBook-15u-G3/realtime/design_1_ControleurVGA_0_4_stub.vhdl:5' bound to instance 'ControleurVGA_0' of component 'design_1_ControleurVGA_0_4' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:151]
+INFO: [Synth 8-638] synthesizing module 'design_1_ControleurVGA_0_4' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/.Xil/Vivado-95738-glen-HP-ZBook-15u-G3/realtime/design_1_ControleurVGA_0_4_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'design_1_TPG_0_2' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/.Xil/Vivado-95738-glen-HP-ZBook-15u-G3/realtime/design_1_TPG_0_2_stub.vhdl:5' bound to instance 'TPG_0' of component 'design_1_TPG_0_2' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:166]
+INFO: [Synth 8-638] synthesizing module 'design_1_TPG_0_2' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/.Xil/Vivado-95738-glen-HP-ZBook-15u-G3/realtime/design_1_TPG_0_2_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_clk_wiz_0_1' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/.Xil/Vivado-95738-glen-HP-ZBook-15u-G3/realtime/design_1_clk_wiz_0_clk_wiz_0_1_stub.vhdl:5' bound to instance 'clk_wiz_0_clk_wiz_0' of component 'design_1_clk_wiz_0_clk_wiz_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:173]
+INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_clk_wiz_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/.Xil/Vivado-95738-glen-HP-ZBook-15u-G3/realtime/design_1_clk_wiz_0_clk_wiz_0_1_stub.vhdl:13]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (1#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (2#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:26]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2380.918 ; gain = 0.000 ; free physical = 650 ; free virtual = 7392
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2380.918 ; gain = 0.000 ; free physical = 650 ; free virtual = 7392
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2380.918 ; gain = 0.000 ; free physical = 650 ; free virtual = 7392
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2380.918 ; gain = 0.000 ; free physical = 650 ; free virtual = 7392
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_clk_wiz_0_1/design_1_clk_wiz_0_clk_wiz_0_1/design_1_clk_wiz_0_clk_wiz_0_0_in_context.xdc] for cell 'design_1_i/clk_wiz_0_clk_wiz_0'
+Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_clk_wiz_0_1/design_1_clk_wiz_0_clk_wiz_0_1/design_1_clk_wiz_0_clk_wiz_0_0_in_context.xdc] for cell 'design_1_i/clk_wiz_0_clk_wiz_0'
+Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_1/design_1_AXI4_stream_Master_2_0_1/design_1_AXI4_stream_Master_2_0_0_in_context.xdc] for cell 'design_1_i/AXI4_stream_Master_2_0'
+Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_1/design_1_AXI4_stream_Master_2_0_1/design_1_AXI4_stream_Master_2_0_0_in_context.xdc] for cell 'design_1_i/AXI4_stream_Master_2_0'
+Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Slave_0_1/design_1_AXI4_stream_Slave_0_1/design_1_AXI4_stream_Slave_0_0_in_context.xdc] for cell 'design_1_i/AXI4_stream_Slave_0'
+Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Slave_0_1/design_1_AXI4_stream_Slave_0_1/design_1_AXI4_stream_Slave_0_0_in_context.xdc] for cell 'design_1_i/AXI4_stream_Slave_0'
+Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/ip/design_1_TPG_0_2/design_1_TPG_0_2/design_1_TPG_0_2_in_context.xdc] for cell 'design_1_i/TPG_0'
+Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/ip/design_1_TPG_0_2/design_1_TPG_0_2/design_1_TPG_0_2_in_context.xdc] for cell 'design_1_i/TPG_0'
+Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/ip/design_1_ControleurVGA_0_4/design_1_ControleurVGA_0_4/design_1_ControleurVGA_0_4_in_context.xdc] for cell 'design_1_i/ControleurVGA_0'
+Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/ip/design_1_ControleurVGA_0_4/design_1_ControleurVGA_0_4/design_1_ControleurVGA_0_4_in_context.xdc] for cell 'design_1_i/ControleurVGA_0'
+Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/src/Cora-Z7-07S-Master.xdc]
+Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/src/Cora-Z7-07S-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/src/Cora-Z7-07S-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2410.961 ; gain = 0.000 ; free physical = 640 ; free virtual = 7382
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2410.961 ; gain = 0.000 ; free physical = 640 ; free virtual = 7382
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2410.961 ; gain = 30.043 ; free physical = 710 ; free virtual = 7452
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z007sclg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2410.961 ; gain = 30.043 ; free physical = 710 ; free virtual = 7452
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for CLK_I. (constraint file  /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_clk_wiz_0_1/design_1_clk_wiz_0_clk_wiz_0_1/design_1_clk_wiz_0_clk_wiz_0_0_in_context.xdc, line 1).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK_I. (constraint file  /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_clk_wiz_0_1/design_1_clk_wiz_0_clk_wiz_0_1/design_1_clk_wiz_0_clk_wiz_0_0_in_context.xdc, line 2).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/clk_wiz_0_clk_wiz_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/AXI4_stream_Master_2_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/AXI4_stream_Slave_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/TPG_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/ControleurVGA_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2410.961 ; gain = 30.043 ; free physical = 710 ; free virtual = 7452
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2410.961 ; gain = 30.043 ; free physical = 710 ; free virtual = 7453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 66 (col length:40)
+BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2410.961 ; gain = 30.043 ; free physical = 718 ; free virtual = 7464
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 2414.961 ; gain = 34.043 ; free physical = 741 ; free virtual = 7486
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 2414.961 ; gain = 34.043 ; free physical = 741 ; free virtual = 7486
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 2433.992 ; gain = 53.074 ; free physical = 710 ; free virtual = 7456
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2439.930 ; gain = 59.012 ; free physical = 767 ; free virtual = 7521
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2439.930 ; gain = 59.012 ; free physical = 767 ; free virtual = 7521
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2439.930 ; gain = 59.012 ; free physical = 767 ; free virtual = 7521
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2439.930 ; gain = 59.012 ; free physical = 767 ; free virtual = 7521
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2439.930 ; gain = 59.012 ; free physical = 767 ; free virtual = 7521
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2439.930 ; gain = 59.012 ; free physical = 767 ; free virtual = 7521
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------------------------+----------+
+|      |BlackBox name                     |Instances |
++------+----------------------------------+----------+
+|1     |design_1_AXI4_stream_Master_2_0_1 |         1|
+|2     |design_1_AXI4_stream_Slave_0_1    |         1|
+|3     |design_1_ControleurVGA_0_4        |         1|
+|4     |design_1_TPG_0_2                  |         1|
+|5     |design_1_clk_wiz_0_clk_wiz_0_1    |         1|
++------+----------------------------------+----------+
+
+Report Cell Usage: 
++------+---------------------------------------+------+
+|      |Cell                                   |Count |
++------+---------------------------------------+------+
+|1     |design_1_AXI4_stream_Master_2_0_1_bbox |     1|
+|2     |design_1_AXI4_stream_Slave_0_1_bbox    |     1|
+|3     |design_1_ControleurVGA_0_4_bbox        |     1|
+|4     |design_1_TPG_0_2_bbox                  |     1|
+|5     |design_1_clk_wiz_0_clk_wiz_0_1_bbox    |     1|
+|6     |IBUF                                   |     1|
+|7     |OBUF                                   |    14|
++------+---------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2439.930 ; gain = 59.012 ; free physical = 767 ; free virtual = 7521
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2439.930 ; gain = 28.969 ; free physical = 784 ; free virtual = 7537
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2439.938 ; gain = 59.012 ; free physical = 784 ; free virtual = 7537
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2439.938 ; gain = 0.000 ; free physical = 877 ; free virtual = 7631
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2445.867 ; gain = 0.000 ; free physical = 901 ; free virtual = 7647
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+31 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:35 . Memory (MB): peak = 2445.867 ; gain = 64.949 ; free physical = 982 ; free virtual = 7728
+INFO: [Common 17-1381] The checkpoint '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 10 14:37:45 2026...
