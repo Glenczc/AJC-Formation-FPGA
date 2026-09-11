@@ -1,9 +1,9 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'DMA24bUnit_mm2s'" level="0">
-<item name = "Date">Thu Sep  3 13:59:38 2026
+<item name = "Date">Fri Sep 11 11:21:28 2026
 </item>
-<item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)</item>
+<item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">DMA24b_mm2s_prj</item>
 <item name = "Solution">solution1 (Vivado IP Flow Target)</item>
 <item name = "Product family">zynq</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">6.66 ns, 4.862 ns, 1.80 ns</column>
+<column name="ap_clk">6.66 ns, 5.579 ns, 1.80 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">?, ?, ?, ?, ?, ?, none</column>
+<column name="">23, 16707623, 0.153 us, 0.111 sec, 24, 16707624, no</column>
 </table>
 </item>
 <item name = "Detail">

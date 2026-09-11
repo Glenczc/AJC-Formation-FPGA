@@ -1,831 +1,328 @@
-; ModuleID = '/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls/DMA24b_mm2s_prj/solution1/.autopilot/db/a.g.ld.5.gdce.bc'
+; ModuleID = '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls/DMA24b_mm2s_prj/solution1/.autopilot/db/a.g.ld.5.gdce.bc'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-i128:128-i256:256-i512:512-i1024:1024-i2048:2048-i4096:4096-n8:16:32:64-S128-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024"
 target triple = "fpga64-xilinx-none"
 
-%"class.hls::stream.1" = type { %"struct.hls::axis" }
-%"struct.hls::axis" = type { %struct.ap_uint.2, %struct.ap_uint.5, %struct.ap_uint.5, %struct.ap_uint.8, %struct.ap_uint.8, %struct.ap_uint.8, %struct.ap_uint.8 }
-%struct.ap_uint.2 = type { %struct.ap_int_base.3 }
-%struct.ap_int_base.3 = type { %struct.ssdm_int.4 }
-%struct.ssdm_int.4 = type { i24 }
-%struct.ap_uint.5 = type { %struct.ap_int_base.6 }
-%struct.ap_int_base.6 = type { %struct.ssdm_int.7 }
-%struct.ssdm_int.7 = type { i3 }
-%struct.ap_uint.8 = type { %struct.ap_int_base.9 }
-%struct.ap_int_base.9 = type { %struct.ssdm_int.10 }
-%struct.ssdm_int.10 = type { i1 }
-%struct.ap_uint.14 = type { %struct.ap_int_base.15 }
-%struct.ap_int_base.15 = type { %struct.ssdm_int.16 }
-%struct.ssdm_int.16 = type { i12 }
-%struct.ap_uint = type { %struct.ap_int_base }
-%struct.ap_int_base = type { %struct.ssdm_int }
-%struct.ssdm_int = type { i128 }
+%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>" = type { %"struct.hls::axis<ap_uint<24>, 1, 0, 0, '8', false>" }
+%"struct.hls::axis<ap_uint<24>, 1, 0, 0, '8', false>" = type { %"struct.ap_uint<24>", %"struct.ap_uint<3>", %"struct.ap_uint<3>", %"struct.ap_uint<1>", %"struct.ap_uint<1>", %"struct.hls::axis_disabled_signal", %"struct.hls::axis_disabled_signal" }
+%"struct.ap_uint<24>" = type { %"struct.ap_int_base<24, false>" }
+%"struct.ap_int_base<24, false>" = type { %"struct.ssdm_int<24, false>" }
+%"struct.ssdm_int<24, false>" = type { i24 }
+%"struct.ap_uint<3>" = type { %"struct.ap_int_base<3, false>" }
+%"struct.ap_int_base<3, false>" = type { %"struct.ssdm_int<3, false>" }
+%"struct.ssdm_int<3, false>" = type { i3 }
+%"struct.ap_uint<1>" = type { %"struct.ap_int_base<1, false>" }
+%"struct.ap_int_base<1, false>" = type { %"struct.ssdm_int<1, false>" }
+%"struct.ssdm_int<1, false>" = type { i1 }
+%"struct.hls::axis_disabled_signal" = type { i8 }
+%"struct.ap_uint<12>" = type { %"struct.ap_int_base<12, false>" }
+%"struct.ap_int_base<12, false>" = type { %"struct.ssdm_int<12, false>" }
+%"struct.ssdm_int<12, false>" = type { i12 }
+%"struct.ap_uint<128>" = type { %"struct.ap_int_base<128, false>" }
+%"struct.ap_int_base<128, false>" = type { %"struct.ssdm_int<128, false>" }
+%"struct.ssdm_int<128, false>" = type { i128 }
 
 ; Function Attrs: noinline
-define void @apatb_DMA24bUnit_mm2s_ir(%"class.hls::stream.1"* %STR_video_out, %struct.ap_uint.14* nocapture readonly %image_w, %struct.ap_uint.14* nocapture readonly %image_h, %struct.ap_uint* %image_in) local_unnamed_addr #0 {
+define void @apatb_DMA24bUnit_mm2s_ir(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* noalias nonnull dereferenceable(12) %STR_video_out, %"struct.ap_uint<12>"* nocapture readonly %image_w, %"struct.ap_uint<12>"* nocapture readonly %image_h, %"struct.ap_uint<128>"* noalias nocapture nonnull readonly "maxi" %image_in) local_unnamed_addr #0 {
 entry:
-  %STR_video_out_copy = alloca %"class.hls::stream.1", align 512
-  %malloccall = tail call i8* @malloc(i64 921600)
-  %image_in_copy = bitcast i8* %malloccall to [57600 x %struct.ap_uint]*
-  %0 = bitcast %struct.ap_uint* %image_in to [57600 x %struct.ap_uint]*
-  call fastcc void @copy_in(%"class.hls::stream.1"* %STR_video_out, %"class.hls::stream.1"* nonnull align 512 %STR_video_out_copy, [57600 x %struct.ap_uint]* %0, [57600 x %struct.ap_uint]* %image_in_copy)
-  %1 = getelementptr inbounds [57600 x %struct.ap_uint], [57600 x %struct.ap_uint]* %image_in_copy, i32 0, i32 0
-  call void @apatb_DMA24bUnit_mm2s_hw(%"class.hls::stream.1"* %STR_video_out_copy, %struct.ap_uint.14* %image_w, %struct.ap_uint.14* %image_h, %struct.ap_uint* %1)
-  call fastcc void @copy_out(%"class.hls::stream.1"* %STR_video_out, %"class.hls::stream.1"* nonnull align 512 %STR_video_out_copy, [57600 x %struct.ap_uint]* %0, [57600 x %struct.ap_uint]* %image_in_copy)
-  tail call void @free(i8* %malloccall)
+  %STR_video_out_copy.data = alloca i24, align 512
+  %STR_video_out_copy.keep = alloca i3, align 512
+  %STR_video_out_copy.strb = alloca i3, align 512
+  %STR_video_out_copy.user = alloca i1, align 512
+  %STR_video_out_copy.last = alloca i1, align 512
+  %0 = bitcast %"struct.ap_uint<128>"* %image_in to [57600 x %"struct.ap_uint<128>"]*
+  %1 = call i8* @malloc(i64 921600)
+  %image_in_copy = bitcast i8* %1 to [57600 x i128]*
+  call fastcc void @copy_in(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* nonnull %STR_video_out, i24* nonnull align 512 %STR_video_out_copy.data, i3* nonnull align 512 %STR_video_out_copy.keep, i3* nonnull align 512 %STR_video_out_copy.strb, i1* nonnull align 512 %STR_video_out_copy.user, i1* nonnull align 512 %STR_video_out_copy.last, [57600 x %"struct.ap_uint<128>"]* nonnull %0, [57600 x i128]* %image_in_copy)
+  call void @apatb_DMA24bUnit_mm2s_hw(i24* %STR_video_out_copy.data, i3* %STR_video_out_copy.keep, i3* %STR_video_out_copy.strb, i1* %STR_video_out_copy.user, i1* %STR_video_out_copy.last, %"struct.ap_uint<12>"* %image_w, %"struct.ap_uint<12>"* %image_h, [57600 x i128]* %image_in_copy)
+  call void @copy_back(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %STR_video_out, i24* %STR_video_out_copy.data, i3* %STR_video_out_copy.keep, i3* %STR_video_out_copy.strb, i1* %STR_video_out_copy.user, i1* %STR_video_out_copy.last, [57600 x %"struct.ap_uint<128>"]* %0, [57600 x i128]* %image_in_copy)
+  call void @free(i8* %1)
   ret void
 }
 
-declare noalias i8* @malloc(i64) local_unnamed_addr
-
-; Function Attrs: noinline
-define internal fastcc void @copy_in(%"class.hls::stream.1"*, %"class.hls::stream.1"* noalias align 512, [57600 x %struct.ap_uint]*, [57600 x %struct.ap_uint]* noalias) unnamed_addr #1 {
+; Function Attrs: argmemonly noinline willreturn
+define internal fastcc void @copy_in(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* "unpacked"="0", i24* align 512 "unpacked"="1.0" %_V_data_V, i3* align 512 "unpacked"="1.1" %_V_keep_V, i3* align 512 "unpacked"="1.2" %_V_strb_V, i1* align 512 "unpacked"="1.3" %_V_user_V, i1* align 512 "unpacked"="1.4" %_V_last_V, [57600 x %"struct.ap_uint<128>"]* readonly "unpacked"="2", [57600 x i128]* nocapture "unpacked"="3.0") unnamed_addr #1 {
 entry:
-  call fastcc void @"onebyonecpy_hls.p0class.hls::stream.1"(%"class.hls::stream.1"* align 512 %1, %"class.hls::stream.1"* %0)
-  call fastcc void @onebyonecpy_hls.p0a57600struct.ap_uint([57600 x %struct.ap_uint]* %3, [57600 x %struct.ap_uint]* %2)
+  call fastcc void @"onebyonecpy_hls.p0class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>.27"(i24* align 512 %_V_data_V, i3* align 512 %_V_keep_V, i3* align 512 %_V_strb_V, i1* align 512 %_V_user_V, i1* align 512 %_V_last_V, %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %0)
+  call fastcc void @"onebyonecpy_hls.p0a57600struct.ap_uint<128>"([57600 x i128]* %2, [57600 x %"struct.ap_uint<128>"]* %1)
   ret void
 }
 
-; Function Attrs: noinline
-define internal fastcc void @"onebyonecpy_hls.p0class.hls::stream.1"(%"class.hls::stream.1"* noalias align 512, %"class.hls::stream.1"* noalias) unnamed_addr #2 {
+; Function Attrs: argmemonly noinline willreturn
+define internal fastcc void @"onebyonecpy_hls.p0class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %dst, i24* align 512 "unpacked"="1.0" %src_V_data_V, i3* align 512 "unpacked"="1.1" %src_V_keep_V, i3* align 512 "unpacked"="1.2" %src_V_strb_V, i1* align 512 "unpacked"="1.3" %src_V_user_V, i1* align 512 "unpacked"="1.4" %src_V_last_V) unnamed_addr #2 {
 entry:
-  %2 = icmp eq %"class.hls::stream.1"* %0, null
-  %3 = icmp eq %"class.hls::stream.1"* %1, null
-  %4 = or i1 %2, %3
-  br i1 %4, label %ret, label %copy
+  %0 = icmp eq %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %dst, null
+  br i1 %0, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  %5 = bitcast %"class.hls::stream.1"* %1 to i8*
-  %6 = call i1 @fpga_fifo_exist_12(i8* %5)
-  br i1 %6, label %7, label %8
-
-; <label>:7:                                      ; preds = %copy
-  call fastcc void @"streamcpy_hls.p0class.hls::stream.1"(%"class.hls::stream.1"* nonnull align 512 %0, %"class.hls::stream.1"* nonnull %1)
+  call fastcc void @"streamcpy_hls.p0class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* nonnull %dst, i24* align 512 %src_V_data_V, i3* align 512 %src_V_keep_V, i3* align 512 %src_V_strb_V, i1* align 512 %src_V_user_V, i1* align 512 %src_V_last_V)
   br label %ret
 
-; <label>:8:                                      ; preds = %copy
-  %.0.02 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 0
-  %.01.03 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 0
-  %9 = call i1 @fpga_fifo_exist_4(i8* %5)
-  br i1 %9, label %10, label %11
-
-; <label>:10:                                     ; preds = %8
-  call fastcc void @streamcpy_hls.p0struct.ap_uint.2(%struct.ap_uint.2* align 512 %.01.03, %struct.ap_uint.2* %.0.02)
-  br label %19
-
-; <label>:11:                                     ; preds = %8
-  %.0.0.04 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 0, i32 0
-  %.01.0.05 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 0, i32 0
-  %12 = call i1 @fpga_fifo_exist_4(i8* %5)
-  br i1 %12, label %13, label %14
-
-; <label>:13:                                     ; preds = %11
-  call fastcc void @streamcpy_hls.p0struct.ap_int_base.3(%struct.ap_int_base.3* align 512 %.01.0.05, %struct.ap_int_base.3* %.0.0.04)
-  br label %19
-
-; <label>:14:                                     ; preds = %11
-  %.0.0.0.06 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 0, i32 0, i32 0
-  %.01.0.0.07 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 0, i32 0, i32 0
-  %15 = call i1 @fpga_fifo_exist_4(i8* %5)
-  br i1 %15, label %16, label %17
-
-; <label>:16:                                     ; preds = %14
-  call fastcc void @streamcpy_hls.p0struct.ssdm_int.4(%struct.ssdm_int.4* align 512 %.01.0.0.07, %struct.ssdm_int.4* %.0.0.0.06)
-  br label %19
-
-; <label>:17:                                     ; preds = %14
-  %18 = bitcast %"class.hls::stream.1"* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %18, i8* align 1 %5, i64 4, i1 false)
-  br label %19
-
-; <label>:19:                                     ; preds = %17, %16, %13, %10
-  %.0.110 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 1
-  %.01.111 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 1
-  %20 = bitcast %struct.ap_uint.5* %.0.110 to i8*
-  %21 = call i1 @fpga_fifo_exist_1(i8* %20)
-  br i1 %21, label %22, label %23
-
-; <label>:22:                                     ; preds = %19
-  call fastcc void @streamcpy_hls.p0struct.ap_uint.5(%struct.ap_uint.5* %.01.111, %struct.ap_uint.5* %.0.110)
-  br label %34
-
-; <label>:23:                                     ; preds = %19
-  %.0.1.012 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 1, i32 0
-  %.01.1.013 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 1, i32 0
-  %24 = bitcast %struct.ap_int_base.6* %.0.1.012 to i8*
-  %25 = call i1 @fpga_fifo_exist_1(i8* %24)
-  br i1 %25, label %26, label %27
-
-; <label>:26:                                     ; preds = %23
-  call fastcc void @streamcpy_hls.p0struct.ap_int_base.6(%struct.ap_int_base.6* %.01.1.013, %struct.ap_int_base.6* %.0.1.012)
-  br label %34
-
-; <label>:27:                                     ; preds = %23
-  %.0.1.0.014 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 1, i32 0, i32 0
-  %.01.1.0.015 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 1, i32 0, i32 0
-  %28 = bitcast %struct.ssdm_int.7* %.0.1.0.014 to i8*
-  %29 = call i1 @fpga_fifo_exist_1(i8* %28)
-  br i1 %29, label %30, label %31
-
-; <label>:30:                                     ; preds = %27
-  call fastcc void @streamcpy_hls.p0struct.ssdm_int.7(%struct.ssdm_int.7* %.01.1.0.015, %struct.ssdm_int.7* %.0.1.0.014)
-  br label %34
-
-; <label>:31:                                     ; preds = %27
-  %.01.1.0.0.017.gep59 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 1, i32 0, i32 0, i32 0
-  %32 = bitcast i3* %.01.1.0.0.017.gep59 to i8*
-  %.0.1.0.0.016.gep60 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 1, i32 0, i32 0, i32 0
-  %33 = bitcast i3* %.0.1.0.0.016.gep60 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %32, i8* align 1 %33, i64 1, i1 false)
-  br label %34
-
-; <label>:34:                                     ; preds = %31, %30, %26, %22
-  %.0.218 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 2
-  %.01.219 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 2
-  %35 = bitcast %struct.ap_uint.5* %.0.218 to i8*
-  %36 = call i1 @fpga_fifo_exist_1(i8* %35)
-  br i1 %36, label %37, label %38
-
-; <label>:37:                                     ; preds = %34
-  call fastcc void @streamcpy_hls.p0struct.ap_uint.5(%struct.ap_uint.5* %.01.219, %struct.ap_uint.5* %.0.218)
-  br label %49
-
-; <label>:38:                                     ; preds = %34
-  %.0.2.020 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 2, i32 0
-  %.01.2.021 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 2, i32 0
-  %39 = bitcast %struct.ap_int_base.6* %.0.2.020 to i8*
-  %40 = call i1 @fpga_fifo_exist_1(i8* %39)
-  br i1 %40, label %41, label %42
-
-; <label>:41:                                     ; preds = %38
-  call fastcc void @streamcpy_hls.p0struct.ap_int_base.6(%struct.ap_int_base.6* %.01.2.021, %struct.ap_int_base.6* %.0.2.020)
-  br label %49
-
-; <label>:42:                                     ; preds = %38
-  %.0.2.0.022 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 2, i32 0, i32 0
-  %.01.2.0.023 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 2, i32 0, i32 0
-  %43 = bitcast %struct.ssdm_int.7* %.0.2.0.022 to i8*
-  %44 = call i1 @fpga_fifo_exist_1(i8* %43)
-  br i1 %44, label %45, label %46
-
-; <label>:45:                                     ; preds = %42
-  call fastcc void @streamcpy_hls.p0struct.ssdm_int.7(%struct.ssdm_int.7* %.01.2.0.023, %struct.ssdm_int.7* %.0.2.0.022)
-  br label %49
-
-; <label>:46:                                     ; preds = %42
-  %.01.2.0.0.025.gep61 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 2, i32 0, i32 0, i32 0
-  %47 = bitcast i3* %.01.2.0.0.025.gep61 to i8*
-  %.0.2.0.0.024.gep62 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 2, i32 0, i32 0, i32 0
-  %48 = bitcast i3* %.0.2.0.0.024.gep62 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %47, i8* align 1 %48, i64 1, i1 false)
-  br label %49
-
-; <label>:49:                                     ; preds = %46, %45, %41, %37
-  %.0.326 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 3
-  %.01.327 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 3
-  %50 = bitcast %struct.ap_uint.8* %.0.326 to i8*
-  %51 = call i1 @fpga_fifo_exist_1(i8* %50)
-  br i1 %51, label %52, label %53
-
-; <label>:52:                                     ; preds = %49
-  call fastcc void @streamcpy_hls.p0struct.ap_uint.8(%struct.ap_uint.8* %.01.327, %struct.ap_uint.8* %.0.326)
-  br label %64
-
-; <label>:53:                                     ; preds = %49
-  %.0.3.028 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 3, i32 0
-  %.01.3.029 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 3, i32 0
-  %54 = bitcast %struct.ap_int_base.9* %.0.3.028 to i8*
-  %55 = call i1 @fpga_fifo_exist_1(i8* %54)
-  br i1 %55, label %56, label %57
-
-; <label>:56:                                     ; preds = %53
-  call fastcc void @streamcpy_hls.p0struct.ap_int_base.9(%struct.ap_int_base.9* %.01.3.029, %struct.ap_int_base.9* %.0.3.028)
-  br label %64
-
-; <label>:57:                                     ; preds = %53
-  %.0.3.0.030 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 3, i32 0, i32 0
-  %.01.3.0.031 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 3, i32 0, i32 0
-  %58 = bitcast %struct.ssdm_int.10* %.0.3.0.030 to i8*
-  %59 = call i1 @fpga_fifo_exist_1(i8* %58)
-  br i1 %59, label %60, label %61
-
-; <label>:60:                                     ; preds = %57
-  call fastcc void @streamcpy_hls.p0struct.ssdm_int.10(%struct.ssdm_int.10* %.01.3.0.031, %struct.ssdm_int.10* %.0.3.0.030)
-  br label %64
-
-; <label>:61:                                     ; preds = %57
-  %.01.3.0.0.033.gep63 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 3, i32 0, i32 0, i32 0
-  %62 = bitcast i1* %.01.3.0.0.033.gep63 to i8*
-  %.0.3.0.0.032.gep64 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 3, i32 0, i32 0, i32 0
-  %63 = bitcast i1* %.0.3.0.0.032.gep64 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %62, i8* align 1 %63, i64 1, i1 false)
-  br label %64
-
-; <label>:64:                                     ; preds = %61, %60, %56, %52
-  %.0.434 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 4
-  %.01.435 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 4
-  %65 = bitcast %struct.ap_uint.8* %.0.434 to i8*
-  %66 = call i1 @fpga_fifo_exist_1(i8* %65)
-  br i1 %66, label %67, label %68
-
-; <label>:67:                                     ; preds = %64
-  call fastcc void @streamcpy_hls.p0struct.ap_uint.8(%struct.ap_uint.8* %.01.435, %struct.ap_uint.8* %.0.434)
-  br label %79
-
-; <label>:68:                                     ; preds = %64
-  %.0.4.036 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 4, i32 0
-  %.01.4.037 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 4, i32 0
-  %69 = bitcast %struct.ap_int_base.9* %.0.4.036 to i8*
-  %70 = call i1 @fpga_fifo_exist_1(i8* %69)
-  br i1 %70, label %71, label %72
-
-; <label>:71:                                     ; preds = %68
-  call fastcc void @streamcpy_hls.p0struct.ap_int_base.9(%struct.ap_int_base.9* %.01.4.037, %struct.ap_int_base.9* %.0.4.036)
-  br label %79
-
-; <label>:72:                                     ; preds = %68
-  %.0.4.0.038 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 4, i32 0, i32 0
-  %.01.4.0.039 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 4, i32 0, i32 0
-  %73 = bitcast %struct.ssdm_int.10* %.0.4.0.038 to i8*
-  %74 = call i1 @fpga_fifo_exist_1(i8* %73)
-  br i1 %74, label %75, label %76
-
-; <label>:75:                                     ; preds = %72
-  call fastcc void @streamcpy_hls.p0struct.ssdm_int.10(%struct.ssdm_int.10* %.01.4.0.039, %struct.ssdm_int.10* %.0.4.0.038)
-  br label %79
-
-; <label>:76:                                     ; preds = %72
-  %.01.4.0.0.041.gep65 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 4, i32 0, i32 0, i32 0
-  %77 = bitcast i1* %.01.4.0.0.041.gep65 to i8*
-  %.0.4.0.0.040.gep66 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 4, i32 0, i32 0, i32 0
-  %78 = bitcast i1* %.0.4.0.0.040.gep66 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %77, i8* align 1 %78, i64 1, i1 false)
-  br label %79
-
-; <label>:79:                                     ; preds = %76, %75, %71, %67
-  %.0.542 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 5
-  %.01.543 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 5
-  %80 = bitcast %struct.ap_uint.8* %.0.542 to i8*
-  %81 = call i1 @fpga_fifo_exist_1(i8* %80)
-  br i1 %81, label %82, label %83
-
-; <label>:82:                                     ; preds = %79
-  call fastcc void @streamcpy_hls.p0struct.ap_uint.8(%struct.ap_uint.8* %.01.543, %struct.ap_uint.8* %.0.542)
-  br label %94
-
-; <label>:83:                                     ; preds = %79
-  %.0.5.044 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 5, i32 0
-  %.01.5.045 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 5, i32 0
-  %84 = bitcast %struct.ap_int_base.9* %.0.5.044 to i8*
-  %85 = call i1 @fpga_fifo_exist_1(i8* %84)
-  br i1 %85, label %86, label %87
-
-; <label>:86:                                     ; preds = %83
-  call fastcc void @streamcpy_hls.p0struct.ap_int_base.9(%struct.ap_int_base.9* %.01.5.045, %struct.ap_int_base.9* %.0.5.044)
-  br label %94
-
-; <label>:87:                                     ; preds = %83
-  %.0.5.0.046 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 5, i32 0, i32 0
-  %.01.5.0.047 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 5, i32 0, i32 0
-  %88 = bitcast %struct.ssdm_int.10* %.0.5.0.046 to i8*
-  %89 = call i1 @fpga_fifo_exist_1(i8* %88)
-  br i1 %89, label %90, label %91
-
-; <label>:90:                                     ; preds = %87
-  call fastcc void @streamcpy_hls.p0struct.ssdm_int.10(%struct.ssdm_int.10* %.01.5.0.047, %struct.ssdm_int.10* %.0.5.0.046)
-  br label %94
-
-; <label>:91:                                     ; preds = %87
-  %.01.5.0.0.049.gep67 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 5, i32 0, i32 0, i32 0
-  %92 = bitcast i1* %.01.5.0.0.049.gep67 to i8*
-  %.0.5.0.0.048.gep68 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 5, i32 0, i32 0, i32 0
-  %93 = bitcast i1* %.0.5.0.0.048.gep68 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %92, i8* align 1 %93, i64 1, i1 false)
-  br label %94
-
-; <label>:94:                                     ; preds = %91, %90, %86, %82
-  %.0.650 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 6
-  %.01.651 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 6
-  %95 = bitcast %struct.ap_uint.8* %.0.650 to i8*
-  %96 = call i1 @fpga_fifo_exist_1(i8* %95)
-  br i1 %96, label %97, label %98
-
-; <label>:97:                                     ; preds = %94
-  call fastcc void @streamcpy_hls.p0struct.ap_uint.8(%struct.ap_uint.8* %.01.651, %struct.ap_uint.8* %.0.650)
-  br label %ret
-
-; <label>:98:                                     ; preds = %94
-  %.0.6.052 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 6, i32 0
-  %.01.6.053 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 6, i32 0
-  %99 = bitcast %struct.ap_int_base.9* %.0.6.052 to i8*
-  %100 = call i1 @fpga_fifo_exist_1(i8* %99)
-  br i1 %100, label %101, label %102
-
-; <label>:101:                                    ; preds = %98
-  call fastcc void @streamcpy_hls.p0struct.ap_int_base.9(%struct.ap_int_base.9* %.01.6.053, %struct.ap_int_base.9* %.0.6.052)
-  br label %ret
-
-; <label>:102:                                    ; preds = %98
-  %.0.6.0.054 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 6, i32 0, i32 0
-  %.01.6.0.055 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 6, i32 0, i32 0
-  %103 = bitcast %struct.ssdm_int.10* %.0.6.0.054 to i8*
-  %104 = call i1 @fpga_fifo_exist_1(i8* %103)
-  br i1 %104, label %105, label %106
-
-; <label>:105:                                    ; preds = %102
-  call fastcc void @streamcpy_hls.p0struct.ssdm_int.10(%struct.ssdm_int.10* %.01.6.0.055, %struct.ssdm_int.10* %.0.6.0.054)
-  br label %ret
-
-; <label>:106:                                    ; preds = %102
-  %.01.6.0.0.057.gep69 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %0, i32 0, i32 0, i32 6, i32 0, i32 0, i32 0
-  %107 = bitcast i1* %.01.6.0.0.057.gep69 to i8*
-  %.0.6.0.0.056.gep70 = getelementptr %"class.hls::stream.1", %"class.hls::stream.1"* %1, i32 0, i32 0, i32 6, i32 0, i32 0, i32 0
-  %108 = bitcast i1* %.0.6.0.0.056.gep70 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %107, i8* align 1 %108, i64 1, i1 false)
-  br label %ret
-
-ret:                                              ; preds = %106, %105, %101, %97, %7, %entry
+ret:                                              ; preds = %copy, %entry
   ret void
 }
 
-declare i1 @fpga_fifo_exist_12(i8*) local_unnamed_addr
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @"streamcpy_hls.p0class.hls::stream.1"(%"class.hls::stream.1"* noalias nocapture align 512, %"class.hls::stream.1"* noalias nocapture) unnamed_addr #3 {
+; Function Attrs: argmemonly noinline willreturn
+define internal fastcc void @"streamcpy_hls.p0class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* nocapture, i24* nocapture align 512 "unpacked"="1.0" %_V_data_V, i3* nocapture align 512 "unpacked"="1.1" %_V_keep_V, i3* nocapture align 512 "unpacked"="1.2" %_V_strb_V, i1* nocapture align 512 "unpacked"="1.3" %_V_user_V, i1* nocapture align 512 "unpacked"="1.4" %_V_last_V) unnamed_addr #3 {
 entry:
-  %2 = alloca %"class.hls::stream.1"
+  %1 = alloca i24
+  %2 = alloca i3
+  %3 = alloca i3
+  %4 = alloca i1
+  %5 = alloca i1
+  %6 = alloca %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"
   br label %empty
 
 empty:                                            ; preds = %push, %entry
-  %3 = bitcast %"class.hls::stream.1"* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_12(i8* %3)
-  br i1 %4, label %push, label %ret
+  %7 = bitcast i24* %_V_data_V to i8*
+  %8 = call i1 @fpga_fifo_not_empty_4(i8* %7)
+  br i1 %8, label %push, label %ret
 
 push:                                             ; preds = %empty
-  %5 = bitcast %"class.hls::stream.1"* %2 to i8*
-  %6 = bitcast %"class.hls::stream.1"* %1 to i8*
-  call void @fpga_fifo_pop_12(i8* %5, i8* %6)
-  %7 = load volatile %"class.hls::stream.1", %"class.hls::stream.1"* %2
-  %8 = bitcast %"class.hls::stream.1"* %2 to i8*
-  %9 = bitcast %"class.hls::stream.1"* %0 to i8*
-  call void @fpga_fifo_push_12(i8* %8, i8* %9)
+  %9 = bitcast i24* %1 to i8*
+  %10 = bitcast i24* %_V_data_V to i8*
+  call void @fpga_fifo_pop_4(i8* %9, i8* %10)
+  %11 = load volatile i24, i24* %1
+  %12 = bitcast i3* %3 to i8*
+  %13 = bitcast i3* %_V_keep_V to i8*
+  call void @fpga_fifo_pop_1(i8* %12, i8* %13)
+  %14 = bitcast i3* %3 to i8*
+  %15 = load i8, i8* %14
+  %16 = trunc i8 %15 to i3
+  %17 = bitcast i3* %2 to i8*
+  %18 = bitcast i3* %_V_strb_V to i8*
+  call void @fpga_fifo_pop_1(i8* %17, i8* %18)
+  %19 = bitcast i3* %2 to i8*
+  %20 = load i8, i8* %19
+  %21 = trunc i8 %20 to i3
+  %22 = bitcast i1* %5 to i8*
+  %23 = bitcast i1* %_V_user_V to i8*
+  call void @fpga_fifo_pop_1(i8* %22, i8* %23)
+  %24 = bitcast i1* %5 to i8*
+  %25 = load i8, i8* %24
+  %26 = trunc i8 %25 to i1
+  %27 = bitcast i1* %4 to i8*
+  %28 = bitcast i1* %_V_last_V to i8*
+  call void @fpga_fifo_pop_1(i8* %27, i8* %28)
+  %29 = bitcast i1* %4 to i8*
+  %30 = load i8, i8* %29
+  %31 = trunc i8 %30 to i1
+  %.fca.0.0.0.0.0.insert = insertvalue %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>" undef, i24 %11, 0, 0, 0, 0, 0
+  %.fca.0.1.0.0.0.insert = insertvalue %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>" %.fca.0.0.0.0.0.insert, i3 %16, 0, 1, 0, 0, 0
+  %.fca.0.2.0.0.0.insert = insertvalue %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>" %.fca.0.1.0.0.0.insert, i3 %21, 0, 2, 0, 0, 0
+  %.fca.0.3.0.0.0.insert = insertvalue %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>" %.fca.0.2.0.0.0.insert, i1 %26, 0, 3, 0, 0, 0
+  %.fca.0.4.0.0.0.insert = insertvalue %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>" %.fca.0.3.0.0.0.insert, i1 %31, 0, 4, 0, 0, 0
+  store %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>" %.fca.0.4.0.0.0.insert, %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %6
+  %32 = bitcast %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %6 to i8*
+  %33 = bitcast %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %0 to i8*
+  call void @fpga_fifo_push_12(i8* %32, i8* %33)
   br label %empty, !llvm.loop !5
 
 ret:                                              ; preds = %empty
-  %10 = bitcast %"class.hls::stream.1"* %1 to i8*
-  %11 = bitcast %"class.hls::stream.1"* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %11, i8* align 1 %10, i64 12, i1 false)
   ret void
 }
 
-; Function Attrs: argmemonly nounwind
-declare void @llvm.memcpy.p0i8.p0i8.i64(i8* nocapture writeonly, i8* nocapture readonly, i64, i1) #4
-
-declare i1 @fpga_fifo_exist_4(i8*) local_unnamed_addr
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @streamcpy_hls.p0struct.ap_uint.2(%struct.ap_uint.2* noalias nocapture align 512, %struct.ap_uint.2* noalias nocapture) unnamed_addr #3 {
+; Function Attrs: argmemonly noinline norecurse willreturn
+define internal fastcc void @"onebyonecpy_hls.p0a57600struct.ap_uint<128>"([57600 x i128]* nocapture "unpacked"="0.0" %dst, [57600 x %"struct.ap_uint<128>"]* readonly "unpacked"="1" %src) unnamed_addr #4 {
 entry:
-  %2 = alloca %struct.ap_uint.2
-  br label %empty
-
-empty:                                            ; preds = %push, %entry
-  %3 = bitcast %struct.ap_uint.2* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_4(i8* %3)
-  br i1 %4, label %push, label %ret
-
-push:                                             ; preds = %empty
-  %5 = bitcast %struct.ap_uint.2* %2 to i8*
-  %6 = bitcast %struct.ap_uint.2* %1 to i8*
-  call void @fpga_fifo_pop_4(i8* %5, i8* %6)
-  %7 = load volatile %struct.ap_uint.2, %struct.ap_uint.2* %2
-  %8 = bitcast %struct.ap_uint.2* %2 to i8*
-  %9 = bitcast %struct.ap_uint.2* %0 to i8*
-  call void @fpga_fifo_push_4(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !7
-
-ret:                                              ; preds = %empty
-  %10 = bitcast %struct.ap_uint.2* %1 to i8*
-  %11 = bitcast %struct.ap_uint.2* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %11, i8* align 1 %10, i64 4, i1 false)
-  ret void
-}
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @streamcpy_hls.p0struct.ap_int_base.3(%struct.ap_int_base.3* noalias nocapture align 512, %struct.ap_int_base.3* noalias nocapture) unnamed_addr #3 {
-entry:
-  %2 = alloca %struct.ap_int_base.3
-  br label %empty
-
-empty:                                            ; preds = %push, %entry
-  %3 = bitcast %struct.ap_int_base.3* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_4(i8* %3)
-  br i1 %4, label %push, label %ret
-
-push:                                             ; preds = %empty
-  %5 = bitcast %struct.ap_int_base.3* %2 to i8*
-  %6 = bitcast %struct.ap_int_base.3* %1 to i8*
-  call void @fpga_fifo_pop_4(i8* %5, i8* %6)
-  %7 = load volatile %struct.ap_int_base.3, %struct.ap_int_base.3* %2
-  %8 = bitcast %struct.ap_int_base.3* %2 to i8*
-  %9 = bitcast %struct.ap_int_base.3* %0 to i8*
-  call void @fpga_fifo_push_4(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !8
-
-ret:                                              ; preds = %empty
-  %10 = bitcast %struct.ap_int_base.3* %1 to i8*
-  %11 = bitcast %struct.ap_int_base.3* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %11, i8* align 1 %10, i64 4, i1 false)
-  ret void
-}
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @streamcpy_hls.p0struct.ssdm_int.4(%struct.ssdm_int.4* noalias nocapture align 512, %struct.ssdm_int.4* noalias nocapture) unnamed_addr #3 {
-entry:
-  %2 = alloca %struct.ssdm_int.4
-  br label %empty
-
-empty:                                            ; preds = %push, %entry
-  %3 = bitcast %struct.ssdm_int.4* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_4(i8* %3)
-  br i1 %4, label %push, label %ret
-
-push:                                             ; preds = %empty
-  %5 = bitcast %struct.ssdm_int.4* %2 to i8*
-  %6 = bitcast %struct.ssdm_int.4* %1 to i8*
-  call void @fpga_fifo_pop_4(i8* %5, i8* %6)
-  %7 = load volatile %struct.ssdm_int.4, %struct.ssdm_int.4* %2
-  %8 = bitcast %struct.ssdm_int.4* %2 to i8*
-  %9 = bitcast %struct.ssdm_int.4* %0 to i8*
-  call void @fpga_fifo_push_4(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !9
-
-ret:                                              ; preds = %empty
-  %10 = bitcast %struct.ssdm_int.4* %1 to i8*
-  %11 = bitcast %struct.ssdm_int.4* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %11, i8* align 1 %10, i64 4, i1 false)
-  ret void
-}
-
-declare i1 @fpga_fifo_exist_1(i8*) local_unnamed_addr
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @streamcpy_hls.p0struct.ap_uint.5(%struct.ap_uint.5* noalias nocapture, %struct.ap_uint.5* noalias nocapture) unnamed_addr #3 {
-entry:
-  %2 = alloca %struct.ap_uint.5
-  br label %empty
-
-empty:                                            ; preds = %push, %entry
-  %3 = bitcast %struct.ap_uint.5* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_1(i8* %3)
-  br i1 %4, label %push, label %ret
-
-push:                                             ; preds = %empty
-  %5 = bitcast %struct.ap_uint.5* %2 to i8*
-  %6 = bitcast %struct.ap_uint.5* %1 to i8*
-  call void @fpga_fifo_pop_1(i8* %5, i8* %6)
-  %7 = load volatile %struct.ap_uint.5, %struct.ap_uint.5* %2
-  %8 = bitcast %struct.ap_uint.5* %2 to i8*
-  %9 = bitcast %struct.ap_uint.5* %0 to i8*
-  call void @fpga_fifo_push_1(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !10
-
-ret:                                              ; preds = %empty
-  %10 = bitcast %struct.ap_uint.5* %1 to i8*
-  %11 = bitcast %struct.ap_uint.5* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %11, i8* align 1 %10, i64 1, i1 false)
-  ret void
-}
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @streamcpy_hls.p0struct.ap_int_base.6(%struct.ap_int_base.6* noalias nocapture, %struct.ap_int_base.6* noalias nocapture) unnamed_addr #3 {
-entry:
-  %2 = alloca %struct.ap_int_base.6
-  br label %empty
-
-empty:                                            ; preds = %push, %entry
-  %3 = bitcast %struct.ap_int_base.6* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_1(i8* %3)
-  br i1 %4, label %push, label %ret
-
-push:                                             ; preds = %empty
-  %5 = bitcast %struct.ap_int_base.6* %2 to i8*
-  %6 = bitcast %struct.ap_int_base.6* %1 to i8*
-  call void @fpga_fifo_pop_1(i8* %5, i8* %6)
-  %7 = load volatile %struct.ap_int_base.6, %struct.ap_int_base.6* %2
-  %8 = bitcast %struct.ap_int_base.6* %2 to i8*
-  %9 = bitcast %struct.ap_int_base.6* %0 to i8*
-  call void @fpga_fifo_push_1(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !11
-
-ret:                                              ; preds = %empty
-  %10 = bitcast %struct.ap_int_base.6* %1 to i8*
-  %11 = bitcast %struct.ap_int_base.6* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %11, i8* align 1 %10, i64 1, i1 false)
-  ret void
-}
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @streamcpy_hls.p0struct.ssdm_int.7(%struct.ssdm_int.7* noalias nocapture, %struct.ssdm_int.7* noalias nocapture) unnamed_addr #3 {
-entry:
-  %2 = alloca %struct.ssdm_int.7
-  br label %empty
-
-empty:                                            ; preds = %push, %entry
-  %3 = bitcast %struct.ssdm_int.7* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_1(i8* %3)
-  br i1 %4, label %push, label %ret
-
-push:                                             ; preds = %empty
-  %5 = bitcast %struct.ssdm_int.7* %2 to i8*
-  %6 = bitcast %struct.ssdm_int.7* %1 to i8*
-  call void @fpga_fifo_pop_1(i8* %5, i8* %6)
-  %7 = load volatile %struct.ssdm_int.7, %struct.ssdm_int.7* %2
-  %8 = bitcast %struct.ssdm_int.7* %2 to i8*
-  %9 = bitcast %struct.ssdm_int.7* %0 to i8*
-  call void @fpga_fifo_push_1(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !12
-
-ret:                                              ; preds = %empty
-  %10 = bitcast %struct.ssdm_int.7* %1 to i8*
-  %11 = bitcast %struct.ssdm_int.7* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %11, i8* align 1 %10, i64 1, i1 false)
-  ret void
-}
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @streamcpy_hls.p0struct.ap_uint.8(%struct.ap_uint.8* noalias nocapture, %struct.ap_uint.8* noalias nocapture) unnamed_addr #3 {
-entry:
-  %2 = alloca %struct.ap_uint.8
-  br label %empty
-
-empty:                                            ; preds = %push, %entry
-  %3 = bitcast %struct.ap_uint.8* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_1(i8* %3)
-  br i1 %4, label %push, label %ret
-
-push:                                             ; preds = %empty
-  %5 = bitcast %struct.ap_uint.8* %2 to i8*
-  %6 = bitcast %struct.ap_uint.8* %1 to i8*
-  call void @fpga_fifo_pop_1(i8* %5, i8* %6)
-  %7 = load volatile %struct.ap_uint.8, %struct.ap_uint.8* %2
-  %8 = bitcast %struct.ap_uint.8* %2 to i8*
-  %9 = bitcast %struct.ap_uint.8* %0 to i8*
-  call void @fpga_fifo_push_1(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !13
-
-ret:                                              ; preds = %empty
-  %10 = bitcast %struct.ap_uint.8* %1 to i8*
-  %11 = bitcast %struct.ap_uint.8* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %11, i8* align 1 %10, i64 1, i1 false)
-  ret void
-}
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @streamcpy_hls.p0struct.ap_int_base.9(%struct.ap_int_base.9* noalias nocapture, %struct.ap_int_base.9* noalias nocapture) unnamed_addr #3 {
-entry:
-  %2 = alloca %struct.ap_int_base.9
-  br label %empty
-
-empty:                                            ; preds = %push, %entry
-  %3 = bitcast %struct.ap_int_base.9* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_1(i8* %3)
-  br i1 %4, label %push, label %ret
-
-push:                                             ; preds = %empty
-  %5 = bitcast %struct.ap_int_base.9* %2 to i8*
-  %6 = bitcast %struct.ap_int_base.9* %1 to i8*
-  call void @fpga_fifo_pop_1(i8* %5, i8* %6)
-  %7 = load volatile %struct.ap_int_base.9, %struct.ap_int_base.9* %2
-  %8 = bitcast %struct.ap_int_base.9* %2 to i8*
-  %9 = bitcast %struct.ap_int_base.9* %0 to i8*
-  call void @fpga_fifo_push_1(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !14
-
-ret:                                              ; preds = %empty
-  %10 = bitcast %struct.ap_int_base.9* %1 to i8*
-  %11 = bitcast %struct.ap_int_base.9* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %11, i8* align 1 %10, i64 1, i1 false)
-  ret void
-}
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @streamcpy_hls.p0struct.ssdm_int.10(%struct.ssdm_int.10* noalias nocapture, %struct.ssdm_int.10* noalias nocapture) unnamed_addr #3 {
-entry:
-  %2 = alloca %struct.ssdm_int.10
-  br label %empty
-
-empty:                                            ; preds = %push, %entry
-  %3 = bitcast %struct.ssdm_int.10* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_1(i8* %3)
-  br i1 %4, label %push, label %ret
-
-push:                                             ; preds = %empty
-  %5 = bitcast %struct.ssdm_int.10* %2 to i8*
-  %6 = bitcast %struct.ssdm_int.10* %1 to i8*
-  call void @fpga_fifo_pop_1(i8* %5, i8* %6)
-  %7 = load volatile %struct.ssdm_int.10, %struct.ssdm_int.10* %2
-  %8 = bitcast %struct.ssdm_int.10* %2 to i8*
-  %9 = bitcast %struct.ssdm_int.10* %0 to i8*
-  call void @fpga_fifo_push_1(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !15
-
-ret:                                              ; preds = %empty
-  %10 = bitcast %struct.ssdm_int.10* %1 to i8*
-  %11 = bitcast %struct.ssdm_int.10* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %11, i8* align 1 %10, i64 1, i1 false)
-  ret void
-}
-
-; Function Attrs: noinline
-define internal fastcc void @onebyonecpy_hls.p0a57600struct.ap_uint([57600 x %struct.ap_uint]* noalias, [57600 x %struct.ap_uint]* noalias) unnamed_addr #2 {
-entry:
-  %2 = icmp eq [57600 x %struct.ap_uint]* %0, null
-  %3 = icmp eq [57600 x %struct.ap_uint]* %1, null
-  %4 = or i1 %2, %3
-  br i1 %4, label %ret, label %copy
+  %0 = icmp eq [57600 x %"struct.ap_uint<128>"]* %src, null
+  br i1 %0, label %ret, label %copy
 
 copy:                                             ; preds = %entry
+  call void @"arraycpy_hls.p0a57600struct.ap_uint<128>"([57600 x i128]* %dst, [57600 x %"struct.ap_uint<128>"]* nonnull %src, i64 57600)
+  br label %ret
+
+ret:                                              ; preds = %copy, %entry
+  ret void
+}
+
+; Function Attrs: argmemonly noinline norecurse willreturn
+define void @"arraycpy_hls.p0a57600struct.ap_uint<128>"([57600 x i128]* nocapture "unpacked"="0.0" %dst, [57600 x %"struct.ap_uint<128>"]* readonly "unpacked"="1" %src, i64 "unpacked"="2" %num) local_unnamed_addr #5 {
+entry:
+  %0 = icmp eq [57600 x %"struct.ap_uint<128>"]* %src, null
+  br i1 %0, label %ret, label %copy
+
+copy:                                             ; preds = %entry
+  %for.loop.cond1 = icmp sgt i64 %num, 0
+  br i1 %for.loop.cond1, label %for.loop.lr.ph, label %copy.split
+
+for.loop.lr.ph:                                   ; preds = %copy
   br label %for.loop
 
-for.loop:                                         ; preds = %for.loop.head, %copy
-  %for.loop.idx9 = phi i64 [ 0, %copy ], [ %for.loop.idx.next, %for.loop.head ]
-  %dst.addr = getelementptr [57600 x %struct.ap_uint], [57600 x %struct.ap_uint]* %0, i64 0, i64 %for.loop.idx9
-  %src.addr = getelementptr [57600 x %struct.ap_uint], [57600 x %struct.ap_uint]* %1, i64 0, i64 %for.loop.idx9
-  %5 = bitcast %struct.ap_uint* %src.addr to i8*
-  %6 = call i1 @fpga_fifo_exist_16(i8* %5)
-  br i1 %6, label %7, label %8
+for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
+  %for.loop.idx2 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
+  %src.addr.0.0.05 = getelementptr [57600 x %"struct.ap_uint<128>"], [57600 x %"struct.ap_uint<128>"]* %src, i64 0, i64 %for.loop.idx2, i32 0, i32 0, i32 0
+  %dst.addr.0.0.06 = getelementptr [57600 x i128], [57600 x i128]* %dst, i64 0, i64 %for.loop.idx2
+  %1 = load i128, i128* %src.addr.0.0.05, align 16
+  store i128 %1, i128* %dst.addr.0.0.06, align 16
+  %for.loop.idx.next = add nuw nsw i64 %for.loop.idx2, 1
+  %exitcond = icmp ne i64 %for.loop.idx.next, %num
+  br i1 %exitcond, label %for.loop, label %copy.split
 
-; <label>:7:                                      ; preds = %for.loop
-  call fastcc void @streamcpy_hls.p0struct.ap_uint(%struct.ap_uint* %dst.addr, %struct.ap_uint* %src.addr)
-  br label %for.loop.head
+copy.split:                                       ; preds = %for.loop, %copy
+  br label %ret
 
-; <label>:8:                                      ; preds = %for.loop
-  %src.addr.01 = getelementptr [57600 x %struct.ap_uint], [57600 x %struct.ap_uint]* %1, i64 0, i64 %for.loop.idx9, i32 0
-  %dst.addr.02 = getelementptr [57600 x %struct.ap_uint], [57600 x %struct.ap_uint]* %0, i64 0, i64 %for.loop.idx9, i32 0
-  %9 = bitcast %struct.ap_int_base* %src.addr.01 to i8*
-  %10 = call i1 @fpga_fifo_exist_16(i8* %9)
-  br i1 %10, label %11, label %12
-
-; <label>:11:                                     ; preds = %8
-  call fastcc void @streamcpy_hls.p0struct.ap_int_base(%struct.ap_int_base* %dst.addr.02, %struct.ap_int_base* %src.addr.01)
-  br label %for.loop.head
-
-; <label>:12:                                     ; preds = %8
-  %src.addr.0.03 = getelementptr [57600 x %struct.ap_uint], [57600 x %struct.ap_uint]* %1, i64 0, i64 %for.loop.idx9, i32 0, i32 0
-  %dst.addr.0.04 = getelementptr [57600 x %struct.ap_uint], [57600 x %struct.ap_uint]* %0, i64 0, i64 %for.loop.idx9, i32 0, i32 0
-  %13 = bitcast %struct.ssdm_int* %src.addr.0.03 to i8*
-  %14 = call i1 @fpga_fifo_exist_16(i8* %13)
-  br i1 %14, label %15, label %16
-
-; <label>:15:                                     ; preds = %12
-  call fastcc void @streamcpy_hls.p0struct.ssdm_int(%struct.ssdm_int* %dst.addr.0.04, %struct.ssdm_int* %src.addr.0.03)
-  br label %for.loop.head
-
-; <label>:16:                                     ; preds = %12
-  %dst.addr.0.0.06.gep7 = getelementptr [57600 x %struct.ap_uint], [57600 x %struct.ap_uint]* %0, i64 0, i64 %for.loop.idx9, i32 0, i32 0, i32 0
-  %17 = bitcast i128* %dst.addr.0.0.06.gep7 to i8*
-  %src.addr.0.0.05.gep8 = getelementptr [57600 x %struct.ap_uint], [57600 x %struct.ap_uint]* %1, i64 0, i64 %for.loop.idx9, i32 0, i32 0, i32 0
-  %18 = bitcast i128* %src.addr.0.0.05.gep8 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %17, i8* align 1 %18, i64 16, i1 false)
-  br label %for.loop.head
-
-for.loop.head:                                    ; preds = %16, %15, %11, %7
-  %for.loop.idx.next = add nuw nsw i64 %for.loop.idx9, 1
-  %exitcond = icmp ne i64 %for.loop.idx.next, 57600
-  br i1 %exitcond, label %for.loop, label %ret
-
-ret:                                              ; preds = %for.loop.head, %entry
+ret:                                              ; preds = %copy.split, %entry
   ret void
 }
 
-declare i1 @fpga_fifo_exist_16(i8*) local_unnamed_addr
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @streamcpy_hls.p0struct.ap_uint(%struct.ap_uint* noalias nocapture, %struct.ap_uint* noalias nocapture) unnamed_addr #3 {
+; Function Attrs: argmemonly noinline willreturn
+define internal fastcc void @copy_out(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* "unpacked"="0", i24* align 512 "unpacked"="1.0" %_V_data_V, i3* align 512 "unpacked"="1.1" %_V_keep_V, i3* align 512 "unpacked"="1.2" %_V_strb_V, i1* align 512 "unpacked"="1.3" %_V_user_V, i1* align 512 "unpacked"="1.4" %_V_last_V, [57600 x %"struct.ap_uint<128>"]* "unpacked"="2", [57600 x i128]* nocapture readonly "unpacked"="3.0") unnamed_addr #6 {
 entry:
-  %2 = alloca %struct.ap_uint
-  br label %empty
-
-empty:                                            ; preds = %push, %entry
-  %3 = bitcast %struct.ap_uint* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_16(i8* %3)
-  br i1 %4, label %push, label %ret
-
-push:                                             ; preds = %empty
-  %5 = bitcast %struct.ap_uint* %2 to i8*
-  %6 = bitcast %struct.ap_uint* %1 to i8*
-  call void @fpga_fifo_pop_16(i8* %5, i8* %6)
-  %7 = load volatile %struct.ap_uint, %struct.ap_uint* %2
-  %8 = bitcast %struct.ap_uint* %2 to i8*
-  %9 = bitcast %struct.ap_uint* %0 to i8*
-  call void @fpga_fifo_push_16(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !16
-
-ret:                                              ; preds = %empty
-  %10 = bitcast %struct.ap_uint* %1 to i8*
-  %11 = bitcast %struct.ap_uint* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %11, i8* align 1 %10, i64 16, i1 false)
+  call fastcc void @"onebyonecpy_hls.p0class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %0, i24* align 512 %_V_data_V, i3* align 512 %_V_keep_V, i3* align 512 %_V_strb_V, i1* align 512 %_V_user_V, i1* align 512 %_V_last_V)
+  call fastcc void @"onebyonecpy_hls.p0a57600struct.ap_uint<128>.11"([57600 x %"struct.ap_uint<128>"]* %1, [57600 x i128]* %2)
   ret void
 }
 
-; Function Attrs: argmemonly noinline
-define internal fastcc void @streamcpy_hls.p0struct.ap_int_base(%struct.ap_int_base* noalias nocapture, %struct.ap_int_base* noalias nocapture) unnamed_addr #3 {
-entry:
-  %2 = alloca %struct.ap_int_base
-  br label %empty
-
-empty:                                            ; preds = %push, %entry
-  %3 = bitcast %struct.ap_int_base* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_16(i8* %3)
-  br i1 %4, label %push, label %ret
-
-push:                                             ; preds = %empty
-  %5 = bitcast %struct.ap_int_base* %2 to i8*
-  %6 = bitcast %struct.ap_int_base* %1 to i8*
-  call void @fpga_fifo_pop_16(i8* %5, i8* %6)
-  %7 = load volatile %struct.ap_int_base, %struct.ap_int_base* %2
-  %8 = bitcast %struct.ap_int_base* %2 to i8*
-  %9 = bitcast %struct.ap_int_base* %0 to i8*
-  call void @fpga_fifo_push_16(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !17
-
-ret:                                              ; preds = %empty
-  %10 = bitcast %struct.ap_int_base* %1 to i8*
-  %11 = bitcast %struct.ap_int_base* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %11, i8* align 1 %10, i64 16, i1 false)
-  ret void
-}
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @streamcpy_hls.p0struct.ssdm_int(%struct.ssdm_int* noalias nocapture, %struct.ssdm_int* noalias nocapture) unnamed_addr #3 {
-entry:
-  %2 = alloca %struct.ssdm_int
-  br label %empty
-
-empty:                                            ; preds = %push, %entry
-  %3 = bitcast %struct.ssdm_int* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_16(i8* %3)
-  br i1 %4, label %push, label %ret
-
-push:                                             ; preds = %empty
-  %5 = bitcast %struct.ssdm_int* %2 to i8*
-  %6 = bitcast %struct.ssdm_int* %1 to i8*
-  call void @fpga_fifo_pop_16(i8* %5, i8* %6)
-  %7 = load volatile %struct.ssdm_int, %struct.ssdm_int* %2
-  %8 = bitcast %struct.ssdm_int* %2 to i8*
-  %9 = bitcast %struct.ssdm_int* %0 to i8*
-  call void @fpga_fifo_push_16(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !18
-
-ret:                                              ; preds = %empty
-  %10 = bitcast %struct.ssdm_int* %1 to i8*
-  %11 = bitcast %struct.ssdm_int* %0 to i8*
-  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %11, i8* align 1 %10, i64 16, i1 false)
-  ret void
-}
-
-; Function Attrs: noinline
-define internal fastcc void @copy_out(%"class.hls::stream.1"*, %"class.hls::stream.1"* noalias align 512, [57600 x %struct.ap_uint]*, [57600 x %struct.ap_uint]* noalias) unnamed_addr #5 {
-entry:
-  call fastcc void @"onebyonecpy_hls.p0class.hls::stream.1"(%"class.hls::stream.1"* %0, %"class.hls::stream.1"* align 512 %1)
-  call fastcc void @onebyonecpy_hls.p0a57600struct.ap_uint([57600 x %struct.ap_uint]* %2, [57600 x %struct.ap_uint]* %3)
-  ret void
-}
+declare i8* @malloc(i64) local_unnamed_addr
 
 declare void @free(i8*) local_unnamed_addr
 
-declare void @apatb_DMA24bUnit_mm2s_hw(%"class.hls::stream.1"*, %struct.ap_uint.14*, %struct.ap_uint.14*, %struct.ap_uint*)
-
-define void @DMA24bUnit_mm2s_hw_stub_wrapper(%"class.hls::stream.1"*, %struct.ap_uint.14*, %struct.ap_uint.14*, %struct.ap_uint*) #6 {
+; Function Attrs: argmemonly noinline norecurse willreturn
+define internal fastcc void @"onebyonecpy_hls.p0a57600struct.ap_uint<128>.11"([57600 x %"struct.ap_uint<128>"]* "unpacked"="0" %dst, [57600 x i128]* nocapture readonly "unpacked"="1.0" %src) unnamed_addr #4 {
 entry:
-  %4 = bitcast %struct.ap_uint* %3 to [57600 x %struct.ap_uint]*
-  call void @copy_out(%"class.hls::stream.1"* null, %"class.hls::stream.1"* %0, [57600 x %struct.ap_uint]* null, [57600 x %struct.ap_uint]* %4)
-  %5 = bitcast [57600 x %struct.ap_uint]* %4 to %struct.ap_uint*
-  call void @DMA24bUnit_mm2s_hw_stub(%"class.hls::stream.1"* %0, %struct.ap_uint.14* %1, %struct.ap_uint.14* %2, %struct.ap_uint* %5)
-  call void @copy_in(%"class.hls::stream.1"* null, %"class.hls::stream.1"* %0, [57600 x %struct.ap_uint]* null, [57600 x %struct.ap_uint]* %4)
+  %0 = icmp eq [57600 x %"struct.ap_uint<128>"]* %dst, null
+  br i1 %0, label %ret, label %copy
+
+copy:                                             ; preds = %entry
+  call void @"arraycpy_hls.p0a57600struct.ap_uint<128>.14"([57600 x %"struct.ap_uint<128>"]* nonnull %dst, [57600 x i128]* %src, i64 57600)
+  br label %ret
+
+ret:                                              ; preds = %copy, %entry
   ret void
 }
 
-declare void @DMA24bUnit_mm2s_hw_stub(%"class.hls::stream.1"*, %struct.ap_uint.14*, %struct.ap_uint.14*, %struct.ap_uint*)
+; Function Attrs: argmemonly noinline norecurse willreturn
+define void @"arraycpy_hls.p0a57600struct.ap_uint<128>.14"([57600 x %"struct.ap_uint<128>"]* "unpacked"="0" %dst, [57600 x i128]* nocapture readonly "unpacked"="1.0" %src, i64 "unpacked"="2" %num) local_unnamed_addr #5 {
+entry:
+  %0 = icmp eq [57600 x %"struct.ap_uint<128>"]* %dst, null
+  br i1 %0, label %ret, label %copy
+
+copy:                                             ; preds = %entry
+  %for.loop.cond1 = icmp sgt i64 %num, 0
+  br i1 %for.loop.cond1, label %for.loop.lr.ph, label %copy.split
+
+for.loop.lr.ph:                                   ; preds = %copy
+  br label %for.loop
+
+for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
+  %for.loop.idx2 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
+  %src.addr.0.0.05 = getelementptr [57600 x i128], [57600 x i128]* %src, i64 0, i64 %for.loop.idx2
+  %dst.addr.0.0.06 = getelementptr [57600 x %"struct.ap_uint<128>"], [57600 x %"struct.ap_uint<128>"]* %dst, i64 0, i64 %for.loop.idx2, i32 0, i32 0, i32 0
+  %1 = load i128, i128* %src.addr.0.0.05, align 16
+  store i128 %1, i128* %dst.addr.0.0.06, align 16
+  %for.loop.idx.next = add nuw nsw i64 %for.loop.idx2, 1
+  %exitcond = icmp ne i64 %for.loop.idx.next, %num
+  br i1 %exitcond, label %for.loop, label %copy.split
+
+copy.split:                                       ; preds = %for.loop, %copy
+  br label %ret
+
+ret:                                              ; preds = %copy.split, %entry
+  ret void
+}
+
+; Function Attrs: argmemonly noinline willreturn
+define internal fastcc void @"onebyonecpy_hls.p0class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>.27"(i24* align 512 "unpacked"="0.0" %dst_V_data_V, i3* align 512 "unpacked"="0.1" %dst_V_keep_V, i3* align 512 "unpacked"="0.2" %dst_V_strb_V, i1* align 512 "unpacked"="0.3" %dst_V_user_V, i1* align 512 "unpacked"="0.4" %dst_V_last_V, %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %src) unnamed_addr #2 {
+entry:
+  %0 = icmp eq %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %src, null
+  br i1 %0, label %ret, label %copy
+
+copy:                                             ; preds = %entry
+  call fastcc void @"streamcpy_hls.p0class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>.30"(i24* align 512 %dst_V_data_V, i3* align 512 %dst_V_keep_V, i3* align 512 %dst_V_strb_V, i1* align 512 %dst_V_user_V, i1* align 512 %dst_V_last_V, %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* nonnull %src)
+  br label %ret
+
+ret:                                              ; preds = %copy, %entry
+  ret void
+}
+
+; Function Attrs: argmemonly noinline willreturn
+define internal fastcc void @"streamcpy_hls.p0class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>.30"(i24* nocapture align 512 "unpacked"="0.0" %_V_data_V, i3* nocapture align 512 "unpacked"="0.1" %_V_keep_V, i3* nocapture align 512 "unpacked"="0.2" %_V_strb_V, i1* nocapture align 512 "unpacked"="0.3" %_V_user_V, i1* nocapture align 512 "unpacked"="0.4" %_V_last_V, %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* nocapture) unnamed_addr #3 {
+entry:
+  %1 = alloca %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"
+  %2 = alloca i24
+  %3 = alloca i3
+  %4 = alloca i3
+  %5 = alloca i1
+  %6 = alloca i1
+  br label %empty
+
+empty:                                            ; preds = %push, %entry
+  %7 = bitcast %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %0 to i8*
+  %8 = call i1 @fpga_fifo_not_empty_12(i8* %7)
+  br i1 %8, label %push, label %ret
+
+push:                                             ; preds = %empty
+  %9 = bitcast %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %1 to i8*
+  %10 = bitcast %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %0 to i8*
+  call void @fpga_fifo_pop_12(i8* %9, i8* %10)
+  %11 = load volatile %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>", %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %1
+  %.fca.0.0.0.0.0.extract = extractvalue %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>" %11, 0, 0, 0, 0, 0
+  %.fca.0.1.0.0.0.extract = extractvalue %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>" %11, 0, 1, 0, 0, 0
+  %.fca.0.2.0.0.0.extract = extractvalue %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>" %11, 0, 2, 0, 0, 0
+  %.fca.0.3.0.0.0.extract = extractvalue %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>" %11, 0, 3, 0, 0, 0
+  %.fca.0.4.0.0.0.extract = extractvalue %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>" %11, 0, 4, 0, 0, 0
+  store i24 %.fca.0.0.0.0.0.extract, i24* %2
+  %12 = bitcast i24* %2 to i8*
+  %13 = bitcast i24* %_V_data_V to i8*
+  call void @fpga_fifo_push_4(i8* %12, i8* %13)
+  store i3 %.fca.0.1.0.0.0.extract, i3* %4
+  %14 = bitcast i3* %4 to i8*
+  %15 = bitcast i3* %_V_keep_V to i8*
+  call void @fpga_fifo_push_1(i8* %14, i8* %15)
+  store i3 %.fca.0.2.0.0.0.extract, i3* %3
+  %16 = bitcast i3* %3 to i8*
+  %17 = bitcast i3* %_V_strb_V to i8*
+  call void @fpga_fifo_push_1(i8* %16, i8* %17)
+  store i1 %.fca.0.3.0.0.0.extract, i1* %6
+  %18 = bitcast i1* %6 to i8*
+  %19 = bitcast i1* %_V_user_V to i8*
+  call void @fpga_fifo_push_1(i8* %18, i8* %19)
+  store i1 %.fca.0.4.0.0.0.extract, i1* %5
+  %20 = bitcast i1* %5 to i8*
+  %21 = bitcast i1* %_V_last_V to i8*
+  call void @fpga_fifo_push_1(i8* %20, i8* %21)
+  br label %empty, !llvm.loop !5
+
+ret:                                              ; preds = %empty
+  ret void
+}
+
+declare void @apatb_DMA24bUnit_mm2s_hw(i24*, i3*, i3*, i1*, i1*, %"struct.ap_uint<12>"*, %"struct.ap_uint<12>"*, [57600 x i128]*)
+
+; Function Attrs: argmemonly noinline willreturn
+define internal fastcc void @copy_back(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* "unpacked"="0", i24* align 512 "unpacked"="1.0" %_V_data_V, i3* align 512 "unpacked"="1.1" %_V_keep_V, i3* align 512 "unpacked"="1.2" %_V_strb_V, i1* align 512 "unpacked"="1.3" %_V_user_V, i1* align 512 "unpacked"="1.4" %_V_last_V, [57600 x %"struct.ap_uint<128>"]* "unpacked"="2", [57600 x i128]* nocapture readonly "unpacked"="3.0") unnamed_addr #6 {
+entry:
+  call fastcc void @"onebyonecpy_hls.p0class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %0, i24* align 512 %_V_data_V, i3* align 512 %_V_keep_V, i3* align 512 %_V_strb_V, i1* align 512 %_V_user_V, i1* align 512 %_V_last_V)
+  ret void
+}
+
+declare void @DMA24bUnit_mm2s_hw_stub(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* noalias nonnull, %"struct.ap_uint<12>"* nocapture readonly, %"struct.ap_uint<12>"* nocapture readonly, %"struct.ap_uint<128>"* noalias nocapture nonnull readonly)
+
+define void @DMA24bUnit_mm2s_hw_stub_wrapper(i24*, i3*, i3*, i1*, i1*, %"struct.ap_uint<12>"*, %"struct.ap_uint<12>"*, [57600 x i128]*) #7 {
+entry:
+  %8 = call i8* @malloc(i64 12)
+  %9 = bitcast i8* %8 to %"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"*
+  %10 = call i8* @malloc(i64 921600)
+  %11 = bitcast i8* %10 to [57600 x %"struct.ap_uint<128>"]*
+  call void @copy_out(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %9, i24* %0, i3* %1, i3* %2, i1* %3, i1* %4, [57600 x %"struct.ap_uint<128>"]* %11, [57600 x i128]* %7)
+  %12 = bitcast [57600 x %"struct.ap_uint<128>"]* %11 to %"struct.ap_uint<128>"*
+  call void @DMA24bUnit_mm2s_hw_stub(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %9, %"struct.ap_uint<12>"* %5, %"struct.ap_uint<12>"* %6, %"struct.ap_uint<128>"* %12)
+  call void @copy_in(%"class.hls::stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>"* %9, i24* %0, i3* %1, i3* %2, i1* %3, i1* %4, [57600 x %"struct.ap_uint<128>"]* %11, [57600 x i128]* %7)
+  call void @free(i8* %8)
+  call void @free(i8* %10)
+  ret void
+}
 
 declare i1 @fpga_fifo_not_empty_12(i8*)
 
 declare i1 @fpga_fifo_not_empty_4(i8*)
-
-declare i1 @fpga_fifo_not_empty_1(i8*)
-
-declare i1 @fpga_fifo_not_empty_16(i8*)
-
-declare void @fpga_fifo_pop_16(i8*, i8*)
 
 declare void @fpga_fifo_pop_12(i8*, i8*)
 
 declare void @fpga_fifo_pop_4(i8*, i8*)
 
 declare void @fpga_fifo_pop_1(i8*, i8*)
-
-declare void @fpga_fifo_push_16(i8*, i8*)
 
 declare void @fpga_fifo_push_12(i8*, i8*)
 
@@ -834,12 +331,13 @@ declare void @fpga_fifo_push_4(i8*, i8*)
 declare void @fpga_fifo_push_1(i8*, i8*)
 
 attributes #0 = { noinline "fpga.wrapper.func"="wrapper" }
-attributes #1 = { noinline "fpga.wrapper.func"="copyin" }
-attributes #2 = { noinline "fpga.wrapper.func"="onebyonecpy_hls" }
-attributes #3 = { argmemonly noinline "fpga.wrapper.func"="streamcpy_hls" }
-attributes #4 = { argmemonly nounwind }
-attributes #5 = { noinline "fpga.wrapper.func"="copyout" }
-attributes #6 = { "fpga.wrapper.func"="stub" }
+attributes #1 = { argmemonly noinline willreturn "fpga.wrapper.func"="copyin" }
+attributes #2 = { argmemonly noinline willreturn "fpga.wrapper.func"="onebyonecpy_hls" }
+attributes #3 = { argmemonly noinline willreturn "fpga.wrapper.func"="streamcpy_hls" }
+attributes #4 = { argmemonly noinline norecurse willreturn "fpga.wrapper.func"="onebyonecpy_hls" }
+attributes #5 = { argmemonly noinline norecurse willreturn "fpga.wrapper.func"="arraycpy_hls" }
+attributes #6 = { argmemonly noinline willreturn "fpga.wrapper.func"="copyout" }
+attributes #7 = { "fpga.wrapper.func"="stub" }
 
 !llvm.dbg.cu = !{}
 !llvm.ident = !{!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0}
@@ -853,15 +351,3 @@ attributes #6 = { "fpga.wrapper.func"="stub" }
 !4 = !{}
 !5 = distinct !{!5, !6}
 !6 = !{!"llvm.loop.rotate.disable"}
-!7 = distinct !{!7, !6}
-!8 = distinct !{!8, !6}
-!9 = distinct !{!9, !6}
-!10 = distinct !{!10, !6}
-!11 = distinct !{!11, !6}
-!12 = distinct !{!12, !6}
-!13 = distinct !{!13, !6}
-!14 = distinct !{!14, !6}
-!15 = distinct !{!15, !6}
-!16 = distinct !{!16, !6}
-!17 = distinct !{!17, !6}
-!18 = distinct !{!18, !6}

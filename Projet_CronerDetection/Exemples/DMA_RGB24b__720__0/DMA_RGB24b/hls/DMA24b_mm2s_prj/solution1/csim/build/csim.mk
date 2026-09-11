@@ -1,6 +1,9 @@
 # ==============================================================
-# Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
-# Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+# Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+# Tool Version Limit: 2024.11
+# Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+# Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+# 
 # ==============================================================
 CSIM_DESIGN = 1
 
@@ -14,13 +17,17 @@ __SIM_FIR__ = 1
 
 __SIM_DDS__ = 1
 
+__USE_CLANG__ = 1
+
+__USE_VCXX_CLANG__ = 1
+
 ObjDir = obj
 
 HLS_SOURCES = ../../../../../src/tb.cpp ../../../../../src/DMA24b_mm2s.cpp
 
 override TARGET := csim.exe
 
-AUTOPILOT_ROOT := /tools/xilinx/Vitis_HLS/2020.2
+AUTOPILOT_ROOT := /media/glen/Crucial/Logiciels/VitisHLS/Vitis/2024.2
 AUTOPILOT_MACH := lnx64
 ifdef AP_GCC_M32
   AUTOPILOT_MACH := Linux_x86
@@ -28,14 +35,13 @@ ifdef AP_GCC_M32
 endif
 IFLAG += -fPIC
 ifndef AP_GCC_PATH
-  AP_GCC_PATH := /tools/xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/bin
+  AP_GCC_PATH := /media/glen/Crucial/Logiciels/VitisHLS/Vivado/2024.2/tps/lnx64/gcc-8.3.0/bin
 endif
 AUTOPILOT_TOOL := ${AUTOPILOT_ROOT}/${AUTOPILOT_MACH}/tools
-AP_CLANG_PATH := ${AUTOPILOT_TOOL}/clang-3.9/bin
+AP_CLANG_PATH := ${XILINX_VCXX}/libexec
 AUTOPILOT_TECH := ${AUTOPILOT_ROOT}/common/technology
 
 
-IFLAG += -I "${AUTOPILOT_TOOL}/systemc/include"
 IFLAG += -I "${AUTOPILOT_ROOT}/include"
 IFLAG += -I "${AUTOPILOT_ROOT}/include/ap_sysc"
 IFLAG += -I "${AUTOPILOT_TECH}/generic/SystemC"
@@ -43,6 +49,10 @@ IFLAG += -I "${AUTOPILOT_TECH}/generic/SystemC/AESL_FP_comp"
 IFLAG += -I "${AUTOPILOT_TECH}/generic/SystemC/AESL_comp"
 IFLAG += -I "${AUTOPILOT_TOOL}/auto_cc/include"
 IFLAG += -I "/usr/include/x86_64-linux-gnu"
+IFLAG += -D__HLS_COSIM__
+
+IFLAG += -D__HLS_CSIM__
+
 IFLAG += -D__VITIS_HLS__
 
 IFLAG += -D__SIM_FPO__
@@ -54,11 +64,16 @@ IFLAG += -D__SIM_FIR__
 IFLAG += -D__SIM_DDS__
 
 IFLAG += -D__DSP48E1__
-IFLAG += -I../../../src -Wno-unknown-pragmas 
 IFLAG += -g
 DFLAG += -D__xilinx_ip_top= -DAESL_TB
 CCFLAG += -Werror=return-type
-TOOLCHAIN += 
+CCFLAG += -Wno-abi
+CCFLAG += -fdebug-default-version=4
+CCFLAG += --gcc-toolchain=/media/glen/Crucial/Logiciels/VitisHLS/Vivado/2024.2/tps/lnx64/gcc-8.3.0
+CCFLAG += -Werror=uninitialized
+CCFLAG += -Wno-c++11-narrowing
+CCFLAG += -Wno-error=sometimes-uninitialized
+LFLAG += --gcc-toolchain=/media/glen/Crucial/Logiciels/VitisHLS/Vivado/2024.2/tps/lnx64/gcc-8.3.0
 
 
 
@@ -68,14 +83,14 @@ all: $(TARGET)
 
 
 
-$(ObjDir)/tb.o: ../../../../../src/tb.cpp $(ObjDir)/.dir
+$(ObjDir)/tb.o: ../../../../../src/tb.cpp $(ObjDir)/.dir csim.mk
 	$(Echo) "   Compiling ../../../../../src/tb.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD -I../../../../../src -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -I../../../../../src -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/tb.d
 
-$(ObjDir)/DMA24b_mm2s.o: ../../../../../src/DMA24b_mm2s.cpp $(ObjDir)/.dir
+$(ObjDir)/DMA24b_mm2s.o: ../../../../../src/DMA24b_mm2s.cpp $(ObjDir)/.dir csim.mk
 	$(Echo) "   Compiling ../../../../../src/DMA24b_mm2s.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD -I../../../../../src  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -I../../../.././../src  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/DMA24b_mm2s.d

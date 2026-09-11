@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!DOCTYPE boost_serialization>
-<boost_serialization signature="serialization::archive" version="15">
+<boost_serialization signature="serialization::archive" version="17">
 <syndb class_id="0" tracking_level="0" version="0">
 	<userIPLatency>-1</userIPLatency>
 	<userIPName></userIPName>
 	<cdfg class_id="1" tracking_level="1" version="0" object_id="_0">
 		<name>DMA24b_mm2s</name>
+		<module_structure>Dataflow</module_structure>
 		<ret_bitwidth>0</ret_bitwidth>
 		<ports class_id="2" tracking_level="0" version="0">
 			<count>9</count>
@@ -15,7 +16,7 @@
 					<Obj class_id="5" tracking_level="0" version="0">
 						<type>1</type>
 						<id>1</id>
-						<name>gmem</name>
+						<name>STR_video_out_V_data_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -25,18 +26,21 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>STR_video_out</originalName>
 						<rtlName></rtlName>
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>0</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>128</bitwidth>
+					<bitwidth>24</bitwidth>
 				</Value>
-				<direction>0</direction>
-				<if_type>4</if_type>
+				<direction>1</direction>
+				<if_type>0</if_type>
 				<array_size>0</array_size>
 				<bit_vecs class_id="7" tracking_level="0" version="0">
 					<count>0</count>
@@ -48,39 +52,6 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>STR_video_out_V_data_V</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName>STR_video_out</originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<coreId>0</coreId>
-					</Obj>
-					<bitwidth>24</bitwidth>
-				</Value>
-				<direction>1</direction>
-				<if_type>0</if_type>
-				<array_size>0</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_3">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>3</id>
 						<name>STR_video_out_V_keep_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -97,7 +68,10 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>0</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>3</bitwidth>
 				</Value>
@@ -109,11 +83,11 @@
 					<item_version>0</item_version>
 				</bit_vecs>
 			</item>
-			<item class_id_reference="3" object_id="_4">
+			<item class_id_reference="3" object_id="_3">
 				<Value>
 					<Obj>
 						<type>1</type>
-						<id>4</id>
+						<id>3</id>
 						<name>STR_video_out_V_strb_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -130,7 +104,10 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>0</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>3</bitwidth>
 				</Value>
@@ -142,11 +119,11 @@
 					<item_version>0</item_version>
 				</bit_vecs>
 			</item>
-			<item class_id_reference="3" object_id="_5">
+			<item class_id_reference="3" object_id="_4">
 				<Value>
 					<Obj>
 						<type>1</type>
-						<id>5</id>
+						<id>4</id>
 						<name>STR_video_out_V_user_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -163,7 +140,10 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>132</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
 				</Value>
@@ -175,11 +155,11 @@
 					<item_version>0</item_version>
 				</bit_vecs>
 			</item>
-			<item class_id_reference="3" object_id="_6">
+			<item class_id_reference="3" object_id="_5">
 				<Value>
 					<Obj>
 						<type>1</type>
-						<id>6</id>
+						<id>5</id>
 						<name>STR_video_out_V_last_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -196,11 +176,50 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>1649</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
 				</Value>
 				<direction>1</direction>
+				<if_type>0</if_type>
+				<array_size>0</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_6">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>6</id>
+						<name>image_w</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName>image_w</originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>12</bitwidth>
+				</Value>
+				<direction>0</direction>
 				<if_type>0</if_type>
 				<array_size>0</array_size>
 				<bit_vecs>
@@ -213,7 +232,7 @@
 					<Obj>
 						<type>1</type>
 						<id>7</id>
-						<name>image_w</name>
+						<name>image_h</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -223,13 +242,16 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>image_h</originalName>
 						<rtlName></rtlName>
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>22</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>12</bitwidth>
 				</Value>
@@ -246,7 +268,7 @@
 					<Obj>
 						<type>1</type>
 						<id>8</id>
-						<name>image_h</name>
+						<name>gmem</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -262,12 +284,15 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>1768645477</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>12</bitwidth>
+					<bitwidth>128</bitwidth>
 				</Value>
 				<direction>0</direction>
-				<if_type>0</if_type>
+				<if_type>4</if_type>
 				<array_size>0</array_size>
 				<bit_vecs>
 					<count>0</count>
@@ -295,7 +320,10 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>0</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
 				</Value>
@@ -318,15 +346,15 @@
 						<id>10</id>
 						<name>BAR_image_in_read</name>
 						<fileName>../src/DMA24b_mm2s.cpp</fileName>
-						<fileDirectory>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<fileDirectory>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</fileDirectory>
+						<lineNumber>69</lineNumber>
 						<contextFuncName>DMA24b_mm2s</contextFuncName>
 						<contextNormFuncName>DMA24b_mm2s</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item class_id="10" tracking_level="0" version="0">
-								<first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
+								<first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
 								<second class_id="11" tracking_level="0" version="0">
 									<count>1</count>
 									<item_version>0</item_version>
@@ -335,7 +363,7 @@
 											<first>../src/DMA24b_mm2s.cpp</first>
 											<second>DMA24b_mm2s</second>
 										</first>
-										<second>77</second>
+										<second>69</second>
 									</item>
 								</second>
 							</item>
@@ -346,15 +374,18 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>0</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>30</item>
 					<item>31</item>
+					<item>32</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
@@ -372,15 +403,15 @@
 						<id>11</id>
 						<name>image_h_read</name>
 						<fileName>../src/DMA24b_mm2s.cpp</fileName>
-						<fileDirectory>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<fileDirectory>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</fileDirectory>
+						<lineNumber>69</lineNumber>
 						<contextFuncName>DMA24b_mm2s</contextFuncName>
 						<contextNormFuncName>DMA24b_mm2s</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
+								<first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -389,7 +420,7 @@
 											<first>../src/DMA24b_mm2s.cpp</first>
 											<second>DMA24b_mm2s</second>
 										</first>
-										<second>77</second>
+										<second>69</second>
 									</item>
 								</second>
 							</item>
@@ -400,15 +431,18 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>132</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>12</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>33</item>
 					<item>34</item>
+					<item>35</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
@@ -426,15 +460,15 @@
 						<id>12</id>
 						<name>image_w_read</name>
 						<fileName>../src/DMA24b_mm2s.cpp</fileName>
-						<fileDirectory>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<fileDirectory>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</fileDirectory>
+						<lineNumber>69</lineNumber>
 						<contextFuncName>DMA24b_mm2s</contextFuncName>
 						<contextNormFuncName>DMA24b_mm2s</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
+								<first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -443,7 +477,7 @@
 											<first>../src/DMA24b_mm2s.cpp</first>
 											<second>DMA24b_mm2s</second>
 										</first>
-										<second>77</second>
+										<second>69</second>
 									</item>
 								</second>
 							</item>
@@ -454,15 +488,18 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>1634493285</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>12</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>35</item>
 					<item>36</item>
+					<item>37</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
@@ -480,15 +517,15 @@
 						<id>13</id>
 						<name>image_h_c</name>
 						<fileName>../src/DMA24b_mm2s.cpp</fileName>
-						<fileDirectory>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<fileDirectory>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</fileDirectory>
+						<lineNumber>69</lineNumber>
 						<contextFuncName>DMA24b_mm2s</contextFuncName>
 						<contextNormFuncName>DMA24b_mm2s</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
+								<first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -497,7 +534,7 @@
 											<first>../src/DMA24b_mm2s.cpp</first>
 											<second>DMA24b_mm2s</second>
 										</first>
-										<second>77</second>
+										<second>69</second>
 									</item>
 								</second>
 							</item>
@@ -508,60 +545,10 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>132</coreId>
-					</Obj>
-					<bitwidth>12</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>38</item>
-				</oprand_edges>
-				<opcode>alloca</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>4</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_14">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>14</id>
-						<name>image_w_c</name>
-						<fileName>../src/DMA24b_mm2s.cpp</fileName>
-						<fileDirectory>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</fileDirectory>
-						<lineNumber>77</lineNumber>
-						<contextFuncName>DMA24b_mm2s</contextFuncName>
-						<contextNormFuncName>DMA24b_mm2s</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>../src/DMA24b_mm2s.cpp</first>
-											<second>DMA24b_mm2s</second>
-										</first>
-										<second>77</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<coreId>4081</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>12</bitwidth>
 				</Value>
@@ -576,6 +563,62 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
+				<m_topoIndex>4</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_14">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>16</id>
+						<name>image_w_c</name>
+						<fileName>../src/DMA24b_mm2s.cpp</fileName>
+						<fileDirectory>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</fileDirectory>
+						<lineNumber>69</lineNumber>
+						<contextFuncName>DMA24b_mm2s</contextFuncName>
+						<contextNormFuncName>DMA24b_mm2s</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>../src/DMA24b_mm2s.cpp</first>
+											<second>DMA24b_mm2s</second>
+										</first>
+										<second>69</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>12</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>40</item>
+				</oprand_edges>
+				<opcode>alloca</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
 				<m_topoIndex>5</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -583,10 +626,10 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>18</id>
+						<id>23</id>
 						<name>mm_fifo</name>
 						<fileName>../src/DMA24b_mm2s.cpp</fileName>
-						<fileDirectory>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</fileDirectory>
+						<fileDirectory>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</fileDirectory>
 						<lineNumber>73</lineNumber>
 						<contextFuncName>DMA24b_mm2s</contextFuncName>
 						<contextNormFuncName>DMA24b_mm2s</contextNormFuncName>
@@ -594,7 +637,7 @@
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
+								<first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -614,14 +657,17 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>132</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>128</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>40</item>
+					<item>41</item>
 				</oprand_edges>
 				<opcode>alloca</opcode>
 				<m_Display>0</m_Display>
@@ -636,10 +682,10 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>25</id>
+						<id>26</id>
 						<name>_ln75</name>
 						<fileName>../src/DMA24b_mm2s.cpp</fileName>
-						<fileDirectory>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</fileDirectory>
+						<fileDirectory>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</fileDirectory>
 						<lineNumber>75</lineNumber>
 						<contextFuncName>DMA24b_mm2s</contextFuncName>
 						<contextNormFuncName>DMA24b_mm2s</contextNormFuncName>
@@ -647,7 +693,7 @@
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
+								<first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -667,14 +713,16 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>3037258313</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>8</count>
 					<item_version>0</item_version>
-					<item>42</item>
 					<item>43</item>
 					<item>44</item>
 					<item>45</item>
@@ -682,13 +730,14 @@
 					<item>47</item>
 					<item>48</item>
 					<item>49</item>
+					<item>50</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>3.88</m_delay>
+				<m_delay>3.84</m_delay>
 				<m_topoIndex>7</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -696,10 +745,10 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>26</id>
+						<id>27</id>
 						<name>_ln77</name>
 						<fileName>../src/DMA24b_mm2s.cpp</fileName>
-						<fileDirectory>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</fileDirectory>
+						<fileDirectory>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</fileDirectory>
 						<lineNumber>77</lineNumber>
 						<contextFuncName>DMA24b_mm2s</contextFuncName>
 						<contextNormFuncName>DMA24b_mm2s</contextNormFuncName>
@@ -707,7 +756,7 @@
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
+								<first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -727,14 +776,16 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>0</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>11</count>
 					<item_version>0</item_version>
-					<item>51</item>
 					<item>52</item>
 					<item>53</item>
 					<item>54</item>
@@ -743,8 +794,9 @@
 					<item>57</item>
 					<item>58</item>
 					<item>59</item>
-					<item>213</item>
-					<item>214</item>
+					<item>60</item>
+					<item>231</item>
+					<item>232</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 				<m_Display>0</m_Display>
@@ -759,10 +811,10 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>27</id>
+						<id>28</id>
 						<name>_ln78</name>
 						<fileName>../src/DMA24b_mm2s.cpp</fileName>
-						<fileDirectory>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</fileDirectory>
+						<fileDirectory>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</fileDirectory>
 						<lineNumber>78</lineNumber>
 						<contextFuncName>DMA24b_mm2s</contextFuncName>
 						<contextNormFuncName>DMA24b_mm2s</contextNormFuncName>
@@ -770,7 +822,7 @@
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
+								<first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -790,7 +842,10 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>49</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
 				</Value>
@@ -815,7 +870,7 @@
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>37</id>
+						<id>38</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -832,7 +887,10 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>3037260960</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
 				</Value>
@@ -843,7 +901,7 @@
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>41</id>
+						<id>42</id>
 						<name>DMA24b_mm2s_fetch</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -860,7 +918,10 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>7137</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
 				</Value>
@@ -871,7 +932,7 @@
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>50</id>
+						<id>51</id>
 						<name>DMA24b_mm2s_streamout</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -888,7 +949,10 @@
 						<opType></opType>
 						<implIndex></implIndex>
 						<coreName></coreName>
-						<coreId>543516788</coreId>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
 				</Value>
@@ -902,7 +966,7 @@
 			<item class_id="18" tracking_level="1" version="0" object_id="_22">
 				<Obj>
 					<type>3</type>
-					<id>28</id>
+					<id>29</id>
 					<name>DMA24b_mm2s</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
@@ -919,7 +983,10 @@
 					<opType></opType>
 					<implIndex></implIndex>
 					<coreName></coreName>
-					<coreId>0</coreId>
+					<isStorage>0</isStorage>
+					<storageDepth>0</storageDepth>
+					<coreId>4294967295</coreId>
+					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
 					<count>9</count>
@@ -928,11 +995,11 @@
 					<item>11</item>
 					<item>12</item>
 					<item>13</item>
-					<item>14</item>
-					<item>18</item>
-					<item>25</item>
+					<item>16</item>
+					<item>23</item>
 					<item>26</item>
 					<item>27</item>
+					<item>28</item>
 				</node_objs>
 			</item>
 		</blocks>
@@ -940,178 +1007,178 @@
 			<count>25</count>
 			<item_version>0</item_version>
 			<item class_id="20" tracking_level="1" version="0" object_id="_23">
-				<id>31</id>
+				<id>32</id>
 				<edge_type>1</edge_type>
 				<source_obj>9</source_obj>
 				<sink_obj>10</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_24">
-				<id>34</id>
+				<id>35</id>
 				<edge_type>1</edge_type>
-				<source_obj>8</source_obj>
+				<source_obj>7</source_obj>
 				<sink_obj>11</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_25">
-				<id>36</id>
+				<id>37</id>
 				<edge_type>1</edge_type>
-				<source_obj>7</source_obj>
+				<source_obj>6</source_obj>
 				<sink_obj>12</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_26">
-				<id>38</id>
+				<id>39</id>
 				<edge_type>1</edge_type>
-				<source_obj>37</source_obj>
+				<source_obj>38</source_obj>
 				<sink_obj>13</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_27">
-				<id>39</id>
+				<id>40</id>
 				<edge_type>1</edge_type>
-				<source_obj>37</source_obj>
-				<sink_obj>14</sink_obj>
+				<source_obj>38</source_obj>
+				<sink_obj>16</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_28">
-				<id>40</id>
+				<id>41</id>
 				<edge_type>1</edge_type>
-				<source_obj>37</source_obj>
-				<sink_obj>18</sink_obj>
+				<source_obj>38</source_obj>
+				<sink_obj>23</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_29">
-				<id>42</id>
+				<id>43</id>
 				<edge_type>1</edge_type>
-				<source_obj>41</source_obj>
-				<sink_obj>25</sink_obj>
+				<source_obj>42</source_obj>
+				<sink_obj>26</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_30">
-				<id>43</id>
+				<id>44</id>
 				<edge_type>1</edge_type>
-				<source_obj>1</source_obj>
-				<sink_obj>25</sink_obj>
+				<source_obj>8</source_obj>
+				<sink_obj>26</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_31">
-				<id>44</id>
-				<edge_type>1</edge_type>
-				<source_obj>18</source_obj>
-				<sink_obj>25</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_32">
 				<id>45</id>
 				<edge_type>1</edge_type>
 				<source_obj>10</source_obj>
-				<sink_obj>25</sink_obj>
+				<sink_obj>26</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_32">
+				<id>46</id>
+				<edge_type>1</edge_type>
+				<source_obj>23</source_obj>
+				<sink_obj>26</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_33">
-				<id>46</id>
+				<id>47</id>
 				<edge_type>1</edge_type>
 				<source_obj>12</source_obj>
-				<sink_obj>25</sink_obj>
+				<sink_obj>26</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_34">
-				<id>47</id>
+				<id>48</id>
 				<edge_type>1</edge_type>
 				<source_obj>11</source_obj>
-				<sink_obj>25</sink_obj>
+				<sink_obj>26</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_35">
-				<id>48</id>
+				<id>49</id>
 				<edge_type>1</edge_type>
-				<source_obj>14</source_obj>
-				<sink_obj>25</sink_obj>
+				<source_obj>16</source_obj>
+				<sink_obj>26</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_36">
-				<id>49</id>
+				<id>50</id>
 				<edge_type>1</edge_type>
 				<source_obj>13</source_obj>
-				<sink_obj>25</sink_obj>
+				<sink_obj>26</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_37">
-				<id>51</id>
+				<id>52</id>
 				<edge_type>1</edge_type>
-				<source_obj>50</source_obj>
-				<sink_obj>26</sink_obj>
+				<source_obj>51</source_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_38">
-				<id>52</id>
+				<id>53</id>
 				<edge_type>1</edge_type>
-				<source_obj>18</source_obj>
-				<sink_obj>26</sink_obj>
+				<source_obj>1</source_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_39">
-				<id>53</id>
+				<id>54</id>
 				<edge_type>1</edge_type>
 				<source_obj>2</source_obj>
-				<sink_obj>26</sink_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_40">
-				<id>54</id>
+				<id>55</id>
 				<edge_type>1</edge_type>
 				<source_obj>3</source_obj>
-				<sink_obj>26</sink_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_41">
-				<id>55</id>
+				<id>56</id>
 				<edge_type>1</edge_type>
 				<source_obj>4</source_obj>
-				<sink_obj>26</sink_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_42">
-				<id>56</id>
+				<id>57</id>
 				<edge_type>1</edge_type>
 				<source_obj>5</source_obj>
-				<sink_obj>26</sink_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_43">
-				<id>57</id>
+				<id>58</id>
 				<edge_type>1</edge_type>
-				<source_obj>6</source_obj>
-				<sink_obj>26</sink_obj>
+				<source_obj>23</source_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_44">
-				<id>58</id>
+				<id>59</id>
 				<edge_type>1</edge_type>
-				<source_obj>14</source_obj>
-				<sink_obj>26</sink_obj>
+				<source_obj>16</source_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_45">
-				<id>59</id>
+				<id>60</id>
 				<edge_type>1</edge_type>
 				<source_obj>13</source_obj>
-				<sink_obj>26</sink_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_46">
-				<id>213</id>
+				<id>231</id>
 				<edge_type>4</edge_type>
-				<source_obj>25</source_obj>
-				<sink_obj>26</sink_obj>
+				<source_obj>26</source_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_47">
-				<id>214</id>
+				<id>232</id>
 				<edge_type>4</edge_type>
-				<source_obj>25</source_obj>
-				<sink_obj>26</sink_obj>
+				<source_obj>26</source_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 		</edges>
@@ -1131,28 +1198,20 @@
 			<basic_blocks>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>28</item>
+				<item>29</item>
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>-1</mMinLatency>
-			<mMaxLatency>-1</mMaxLatency>
+			<mMinLatency>21</mMinLatency>
+			<mMaxLatency>16707621</mMaxLatency>
 			<mIsDfPipe>1</mIsDfPipe>
 			<mDfPipe class_id="23" tracking_level="1" version="0" object_id="_49">
 				<port_list class_id="24" tracking_level="0" version="0">
 					<count>9</count>
 					<item_version>0</item_version>
 					<item class_id="25" tracking_level="1" version="0" object_id="_50">
-						<name>gmem</name>
-						<dir>0</dir>
-						<type>1</type>
-						<need_hs>1</need_hs>
-						<top_port class_id="-1"></top_port>
-						<chan class_id="-1"></chan>
-					</item>
-					<item class_id_reference="25" object_id="_51">
 						<name>STR_video_out_V_data_V</name>
 						<dir>1</dir>
 						<type>3</type>
@@ -1160,7 +1219,7 @@
 						<top_port class_id="-1"></top_port>
 						<chan class_id="-1"></chan>
 					</item>
-					<item class_id_reference="25" object_id="_52">
+					<item class_id_reference="25" object_id="_51">
 						<name>STR_video_out_V_keep_V</name>
 						<dir>1</dir>
 						<type>3</type>
@@ -1168,7 +1227,7 @@
 						<top_port class_id="-1"></top_port>
 						<chan class_id="-1"></chan>
 					</item>
-					<item class_id_reference="25" object_id="_53">
+					<item class_id_reference="25" object_id="_52">
 						<name>STR_video_out_V_strb_V</name>
 						<dir>1</dir>
 						<type>3</type>
@@ -1176,7 +1235,7 @@
 						<top_port class_id="-1"></top_port>
 						<chan class_id="-1"></chan>
 					</item>
-					<item class_id_reference="25" object_id="_54">
+					<item class_id_reference="25" object_id="_53">
 						<name>STR_video_out_V_user_V</name>
 						<dir>1</dir>
 						<type>3</type>
@@ -1184,7 +1243,7 @@
 						<top_port class_id="-1"></top_port>
 						<chan class_id="-1"></chan>
 					</item>
-					<item class_id_reference="25" object_id="_55">
+					<item class_id_reference="25" object_id="_54">
 						<name>STR_video_out_V_last_V</name>
 						<dir>1</dir>
 						<type>3</type>
@@ -1192,7 +1251,7 @@
 						<top_port class_id="-1"></top_port>
 						<chan class_id="-1"></chan>
 					</item>
-					<item class_id_reference="25" object_id="_56">
+					<item class_id_reference="25" object_id="_55">
 						<name>image_w</name>
 						<dir>0</dir>
 						<type>3</type>
@@ -1200,10 +1259,18 @@
 						<top_port class_id="-1"></top_port>
 						<chan class_id="-1"></chan>
 					</item>
-					<item class_id_reference="25" object_id="_57">
+					<item class_id_reference="25" object_id="_56">
 						<name>image_h</name>
 						<dir>0</dir>
 						<type>3</type>
+						<need_hs>1</need_hs>
+						<top_port class_id="-1"></top_port>
+						<chan class_id="-1"></chan>
+					</item>
+					<item class_id_reference="25" object_id="_57">
+						<name>gmem</name>
+						<dir>0</dir>
+						<type>1</type>
 						<need_hs>1</need_hs>
 						<top_port class_id="-1"></top_port>
 						<chan class_id="-1"></chan>
@@ -1223,7 +1290,7 @@
 					<item class_id="28" tracking_level="1" version="0" object_id="_59">
 						<type>0</type>
 						<name>DMA24b_mm2s_fetch_U0</name>
-						<ssdmobj_id>25</ssdmobj_id>
+						<ssdmobj_id>26</ssdmobj_id>
 						<pins class_id="29" tracking_level="0" version="0">
 							<count>4</count>
 							<item_version>0</item_version>
@@ -1233,18 +1300,18 @@
 									<dir>0</dir>
 									<type>1</type>
 									<need_hs>1</need_hs>
-									<top_port class_id_reference="25" object_id_reference="_50"></top_port>
+									<top_port class_id_reference="25" object_id_reference="_57"></top_port>
 									<chan class_id="-1"></chan>
 								</port>
 								<inst class_id="31" tracking_level="1" version="0" object_id="_62">
 									<type>0</type>
 									<name>DMA24b_mm2s_fetch_U0</name>
-									<ssdmobj_id>25</ssdmobj_id>
+									<ssdmobj_id>26</ssdmobj_id>
 								</inst>
 							</item>
 							<item class_id_reference="30" object_id="_63">
 								<port class_id_reference="25" object_id="_64">
-									<name>mm_buffer</name>
+									<name>BAR_image_in</name>
 									<dir>0</dir>
 									<type>3</type>
 									<need_hs>1</need_hs>
@@ -1255,22 +1322,22 @@
 							</item>
 							<item class_id_reference="30" object_id="_65">
 								<port class_id_reference="25" object_id="_66">
-									<name>img_w</name>
+									<name>image_w</name>
 									<dir>0</dir>
 									<type>3</type>
 									<need_hs>1</need_hs>
-									<top_port class_id_reference="25" object_id_reference="_56"></top_port>
+									<top_port class_id_reference="25" object_id_reference="_55"></top_port>
 									<chan class_id="-1"></chan>
 								</port>
 								<inst class_id_reference="31" object_id_reference="_62"></inst>
 							</item>
 							<item class_id_reference="30" object_id="_67">
 								<port class_id_reference="25" object_id="_68">
-									<name>img_h</name>
+									<name>image_h</name>
 									<dir>0</dir>
 									<type>3</type>
 									<need_hs>1</need_hs>
-									<top_port class_id_reference="25" object_id_reference="_57"></top_port>
+									<top_port class_id_reference="25" object_id_reference="_56"></top_port>
 									<chan class_id="-1"></chan>
 								</port>
 								<inst class_id_reference="31" object_id_reference="_62"></inst>
@@ -1283,7 +1350,7 @@
 					<item class_id_reference="28" object_id="_69">
 						<type>0</type>
 						<name>DMA24b_mm2s_streamout_U0</name>
-						<ssdmobj_id>26</ssdmobj_id>
+						<ssdmobj_id>27</ssdmobj_id>
 						<pins>
 							<count>5</count>
 							<item_version>0</item_version>
@@ -1293,13 +1360,13 @@
 									<dir>1</dir>
 									<type>3</type>
 									<need_hs>0</need_hs>
-									<top_port class_id_reference="25" object_id_reference="_51"></top_port>
+									<top_port class_id_reference="25" object_id_reference="_50"></top_port>
 									<chan class_id="-1"></chan>
 								</port>
 								<inst class_id_reference="31" object_id="_72">
 									<type>0</type>
 									<name>DMA24b_mm2s_streamout_U0</name>
-									<ssdmobj_id>26</ssdmobj_id>
+									<ssdmobj_id>27</ssdmobj_id>
 								</inst>
 							</item>
 							<item class_id_reference="30" object_id="_73">
@@ -1308,7 +1375,7 @@
 									<dir>1</dir>
 									<type>3</type>
 									<need_hs>0</need_hs>
-									<top_port class_id_reference="25" object_id_reference="_52"></top_port>
+									<top_port class_id_reference="25" object_id_reference="_51"></top_port>
 									<chan class_id="-1"></chan>
 								</port>
 								<inst class_id_reference="31" object_id_reference="_72"></inst>
@@ -1319,7 +1386,7 @@
 									<dir>1</dir>
 									<type>3</type>
 									<need_hs>0</need_hs>
-									<top_port class_id_reference="25" object_id_reference="_53"></top_port>
+									<top_port class_id_reference="25" object_id_reference="_52"></top_port>
 									<chan class_id="-1"></chan>
 								</port>
 								<inst class_id_reference="31" object_id_reference="_72"></inst>
@@ -1330,7 +1397,7 @@
 									<dir>1</dir>
 									<type>3</type>
 									<need_hs>0</need_hs>
-									<top_port class_id_reference="25" object_id_reference="_54"></top_port>
+									<top_port class_id_reference="25" object_id_reference="_53"></top_port>
 									<chan class_id="-1"></chan>
 								</port>
 								<inst class_id_reference="31" object_id_reference="_72"></inst>
@@ -1341,7 +1408,7 @@
 									<dir>1</dir>
 									<type>3</type>
 									<need_hs>0</need_hs>
-									<top_port class_id_reference="25" object_id_reference="_55"></top_port>
+									<top_port class_id_reference="25" object_id_reference="_54"></top_port>
 									<chan class_id="-1"></chan>
 								</port>
 								<inst class_id_reference="31" object_id_reference="_72"></inst>
@@ -1358,66 +1425,88 @@
 					<item class_id="26" tracking_level="1" version="0" object_id="_81">
 						<type>1</type>
 						<name>mm_fifo</name>
-						<ssdmobj_id>18</ssdmobj_id>
+						<ssdmobj_id>23</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>256</depth>
 						<bitwidth>128</bitwidth>
 						<suggested_type>0</suggested_type>
 						<suggested_depth>256</suggested_depth>
-						<source class_id_reference="30" object_id="_82">
-							<port class_id_reference="25" object_id="_83">
-								<name>in</name>
-								<dir>0</dir>
-								<type>3</type>
-								<need_hs>0</need_hs>
-								<top_port class_id="-1"></top_port>
-								<chan class_id="-1"></chan>
-							</port>
-							<inst class_id_reference="31" object_id_reference="_62"></inst>
-						</source>
-						<sink class_id_reference="30" object_id="_84">
-							<port class_id_reference="25" object_id="_85">
-								<name>out</name>
-								<dir>1</dir>
-								<type>3</type>
-								<need_hs>0</need_hs>
-								<top_port class_id="-1"></top_port>
-								<chan class_id="-1"></chan>
-							</port>
-							<inst class_id_reference="31" object_id_reference="_72"></inst>
-						</sink>
+						<source_list>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item class_id_reference="30" object_id="_82">
+								<port class_id_reference="25" object_id="_83">
+									<name>in</name>
+									<dir>0</dir>
+									<type>3</type>
+									<need_hs>0</need_hs>
+									<top_port class_id="-1"></top_port>
+									<chan class_id="-1"></chan>
+								</port>
+								<inst class_id_reference="31" object_id_reference="_62"></inst>
+							</item>
+						</source_list>
+						<sink_list>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item class_id_reference="30" object_id="_84">
+								<port class_id_reference="25" object_id="_85">
+									<name>out</name>
+									<dir>1</dir>
+									<type>3</type>
+									<need_hs>0</need_hs>
+									<top_port class_id="-1"></top_port>
+									<chan class_id="-1"></chan>
+								</port>
+								<inst class_id_reference="31" object_id_reference="_72"></inst>
+							</item>
+						</sink_list>
+						<bram_cost>0</bram_cost>
+						<uram_cost>0</uram_cost>
+						<storage_size>128 256 1</storage_size>
 					</item>
 					<item class_id_reference="26" object_id="_86">
 						<type>1</type>
 						<name>image_w_c</name>
-						<ssdmobj_id>14</ssdmobj_id>
+						<ssdmobj_id>16</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>2</depth>
 						<bitwidth>12</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>2</suggested_depth>
-						<source class_id_reference="30" object_id="_87">
-							<port class_id_reference="25" object_id="_88">
-								<name>in</name>
-								<dir>0</dir>
-								<type>3</type>
-								<need_hs>0</need_hs>
-								<top_port class_id="-1"></top_port>
-								<chan class_id="-1"></chan>
-							</port>
-							<inst class_id_reference="31" object_id_reference="_62"></inst>
-						</source>
-						<sink class_id_reference="30" object_id="_89">
-							<port class_id_reference="25" object_id="_90">
-								<name>out</name>
-								<dir>1</dir>
-								<type>3</type>
-								<need_hs>0</need_hs>
-								<top_port class_id="-1"></top_port>
-								<chan class_id="-1"></chan>
-							</port>
-							<inst class_id_reference="31" object_id_reference="_72"></inst>
-						</sink>
+						<source_list>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item class_id_reference="30" object_id="_87">
+								<port class_id_reference="25" object_id="_88">
+									<name>in</name>
+									<dir>0</dir>
+									<type>3</type>
+									<need_hs>0</need_hs>
+									<top_port class_id="-1"></top_port>
+									<chan class_id="-1"></chan>
+								</port>
+								<inst class_id_reference="31" object_id_reference="_62"></inst>
+							</item>
+						</source_list>
+						<sink_list>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item class_id_reference="30" object_id="_89">
+								<port class_id_reference="25" object_id="_90">
+									<name>out</name>
+									<dir>1</dir>
+									<type>3</type>
+									<need_hs>0</need_hs>
+									<top_port class_id="-1"></top_port>
+									<chan class_id="-1"></chan>
+								</port>
+								<inst class_id_reference="31" object_id_reference="_72"></inst>
+							</item>
+						</sink_list>
+						<bram_cost>0</bram_cost>
+						<uram_cost>0</uram_cost>
+						<storage_size>12 2 1</storage_size>
 					</item>
 					<item class_id_reference="26" object_id="_91">
 						<type>1</type>
@@ -1428,28 +1517,39 @@
 						<bitwidth>12</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>2</suggested_depth>
-						<source class_id_reference="30" object_id="_92">
-							<port class_id_reference="25" object_id="_93">
-								<name>in</name>
-								<dir>0</dir>
-								<type>3</type>
-								<need_hs>0</need_hs>
-								<top_port class_id="-1"></top_port>
-								<chan class_id="-1"></chan>
-							</port>
-							<inst class_id_reference="31" object_id_reference="_62"></inst>
-						</source>
-						<sink class_id_reference="30" object_id="_94">
-							<port class_id_reference="25" object_id="_95">
-								<name>out</name>
-								<dir>1</dir>
-								<type>3</type>
-								<need_hs>0</need_hs>
-								<top_port class_id="-1"></top_port>
-								<chan class_id="-1"></chan>
-							</port>
-							<inst class_id_reference="31" object_id_reference="_72"></inst>
-						</sink>
+						<source_list>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item class_id_reference="30" object_id="_92">
+								<port class_id_reference="25" object_id="_93">
+									<name>in</name>
+									<dir>0</dir>
+									<type>3</type>
+									<need_hs>0</need_hs>
+									<top_port class_id="-1"></top_port>
+									<chan class_id="-1"></chan>
+								</port>
+								<inst class_id_reference="31" object_id_reference="_62"></inst>
+							</item>
+						</source_list>
+						<sink_list>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item class_id_reference="30" object_id="_94">
+								<port class_id_reference="25" object_id="_95">
+									<name>out</name>
+									<dir>1</dir>
+									<type>3</type>
+									<need_hs>0</need_hs>
+									<top_port class_id="-1"></top_port>
+									<chan class_id="-1"></chan>
+								</port>
+								<inst class_id_reference="31" object_id_reference="_72"></inst>
+							</item>
+						</sink_list>
+						<bram_cost>0</bram_cost>
+						<uram_cost>0</uram_cost>
+						<storage_size>12 2 1</storage_size>
 					</item>
 				</channel_list>
 				<net_list class_id="33" tracking_level="0" version="0">
@@ -1493,35 +1593,35 @@
 			</second>
 		</item>
 		<item>
-			<first>14</first>
+			<first>16</first>
 			<second>
 				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
-			<first>18</first>
+			<first>23</first>
 			<second>
 				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
-			<first>25</first>
+			<first>26</first>
 			<second>
 				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
-			<first>26</first>
+			<first>27</first>
 			<second>
 				<first>2</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
-			<first>27</first>
+			<first>28</first>
 			<second>
 				<first>3</first>
 				<second>0</second>
@@ -1532,7 +1632,7 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item class_id="40" tracking_level="0" version="0">
-			<first>28</first>
+			<first>29</first>
 			<second class_id="41" tracking_level="0" version="0">
 				<first>0</first>
 				<second>3</second>
@@ -1547,10 +1647,10 @@
 			<basic_blocks>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>28</item>
+				<item>29</item>
 			</basic_blocks>
 			<nodes>
-				<count>18</count>
+				<count>19</count>
 				<item_version>0</item_version>
 				<item>10</item>
 				<item>11</item>
@@ -1570,18 +1670,23 @@
 				<item>25</item>
 				<item>26</item>
 				<item>27</item>
+				<item>28</item>
 			</nodes>
 			<anchor_node>-1</anchor_node>
 			<region_type>16</region_type>
 			<interval>0</interval>
 			<pipe_depth>0</pipe_depth>
+			<mDBIIViolationVec class_id="44" tracking_level="0" version="0">
+				<count>0</count>
+				<item_version>0</item_version>
+			</mDBIIViolationVec>
 		</item>
 	</regions>
-	<dp_fu_nodes class_id="44" tracking_level="0" version="0">
+	<dp_fu_nodes class_id="45" tracking_level="0" version="0">
 		<count>0</count>
 		<item_version>0</item_version>
 	</dp_fu_nodes>
-	<dp_fu_nodes_expression class_id="45" tracking_level="0" version="0">
+	<dp_fu_nodes_expression class_id="46" tracking_level="0" version="0">
 		<count>0</count>
 		<item_version>0</item_version>
 	</dp_fu_nodes_expression>
@@ -1597,7 +1702,7 @@
 		<count>0</count>
 		<item_version>0</item_version>
 	</return_ports>
-	<dp_mem_port_nodes class_id="46" tracking_level="0" version="0">
+	<dp_mem_port_nodes class_id="47" tracking_level="0" version="0">
 		<count>0</count>
 		<item_version>0</item_version>
 	</dp_mem_port_nodes>
@@ -1617,7 +1722,7 @@
 		<count>0</count>
 		<item_version>0</item_version>
 	</dp_regname_phi>
-	<dp_port_io_nodes class_id="47" tracking_level="0" version="0">
+	<dp_port_io_nodes class_id="48" tracking_level="0" version="0">
 		<count>0</count>
 		<item_version>0</item_version>
 	</dp_port_io_nodes>

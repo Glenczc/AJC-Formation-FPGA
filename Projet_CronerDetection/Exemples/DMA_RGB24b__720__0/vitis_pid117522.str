@@ -1,0 +1,71 @@
+/*
+
+Xilinx Vitis v2020.2.0 (64-bit) [Major: 2020, Minor: 2]
+SW Build 3064172 on 2020-11-18-06:24:19
+
+Process ID (PID): 117522
+License: Customer
+
+Current time: 	Thu Sep 10 15:36:30 CEST 2026
+Time zone: 	heure normale d’Europe centrale (Europe/Paris)
+
+OS: Ubuntu
+OS Version: 6.8.0-139-generic
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: :0
+Screen size: 1920x1080
+Available screens: 2
+Available disk space: 60 GB
+
+Java version: 	11.0.2 64-bit
+Java home: 	/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/tps/lnx64/jre11.0.2
+Java executable location: 	/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/tps/lnx64/jre11.0.2/bin/java
+Java initial memory (-Xms): 	64 MB
+Java maximum memory (-Xmx):	 1 024 MB
+
+Java library paths: /media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/tps/lnx64/javafx-sdk-11.0.2/lib:/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/lib/lnx64.o/Ubuntu:/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/lib/lnx64.o:/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/tps/lnx64/jre11.0.2/lib/:/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/tps/lnx64/jre11.0.2/lib//server:/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/lib/lnx64.o:/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/lib/lnx64.o/Ubuntu:/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/lib/lnx64.o:/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/tps/lnx64/python-3.8.3/lib:/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/bin/../lnx64/tools/dot/lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+
+Java class paths: /media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/eclipse/lnx64.o//plugins/org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar
+LD_LIBRARY_PATH: /media/glen/Crucial/Logiciels/Vivado/Vitis
+
+User name: 	glen
+User home directory: /home/glen
+User working directory: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0
+User country: 	FR
+User language: 	fr
+User locale: 	fr_FR
+
+RDI_BASEROOT: /media/glen/Crucial/Logiciels/Vivado/Vitis
+HDI_APPROOT: /media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2
+RDI_DATADIR: /media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/data
+RDI_BINDIR: /media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/bin
+
+Vitis preferences directory: /home/glen/.Xilinx/Vitis/2020.2/
+Vitis workspace directory: /home/glen/Documents/AJC-Expleo/Travaux/TD_SoC/SoC_led/PS
+Vitis workspace log file location: /home/glen/Documents/AJC-Expleo/Travaux/TD_SoC/SoC_led/PS/.metadata/.log
+Engine tmp dir: 	
+
+Xilinx Environment Variables
+----------------------------
+XILINX_DSP: 
+XILINX_HLS: /media/glen/Crucial/Logiciels/Vivado/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: /media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2
+XILINX_SDK: /media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2
+XILINX_VITIS: /media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2
+XILINX_VIVADO: /media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2
+XILINX_VIVADO_HLS: /media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2
+_RDI_DONT_SET_XILINX_AS_PATH: True
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+selectMenuItem("File", "design_1_wrapper_3", "WorkbenchWindow", "MenuItem.FILE");
+selectMenuItem("Open File", "design_1_wrapper_3", "WorkbenchWindow", "MenuItem.OPEN_FILE");
+selectButton("Exit", "Confirm Exit", "MessageDialogWithToggle", "Button.EXIT");
+// Exiting Xilinx Vitis with a status code '0' at 9/10/26, 4:29:36 PM CEST
+// Elapsed time: 00:53:07
+

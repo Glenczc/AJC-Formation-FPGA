@@ -1,9 +1,9 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'DMA24b_mm2s_fetch'" level="0">
-<item name = "Date">Thu Sep  3 13:59:38 2026
+<item name = "Date">Fri Sep 11 11:21:27 2026
 </item>
-<item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)</item>
+<item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">DMA24b_mm2s_prj</item>
 <item name = "Solution">solution1 (Vivado IP Flow Target)</item>
 <item name = "Product family">zynq</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">6.66 ns, 4.862 ns, 1.80 ns</column>
+<column name="ap_clk">6.66 ns, 5.579 ns, 1.80 ns</column>
 </table>
 </item>
 </section>
@@ -24,19 +24,18 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">?, ?, ?, ?, ?, ?, none</column>
+<column name="">11, 3112220, 73.260 ns, 20.727 ms, 11, 3112220, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116">DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop, 4, 3112213, 26.640 ns, 20.727 ms, 1, 3112201, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- line_loop">?, ?, 3 ~ 1012, -, -, ?, no</column>
-<column name=" + burst_loop_beat_loop">41, 1001, 3, 1, 1, 40 ~ 1000, yes</column>
 </table>
 </item>
 </section>

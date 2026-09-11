@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/src/constraints/Cora-Z7-10-Master.xdc rfile:../../../../src/constraints/Cora-Z7-10-Master.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/src/constraints/Cora-Z7-10-Master.xdc rfile:../../../../src/constraints/Cora-Z7-10-Master.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:11 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN L15   IOSTANDARD LVCMOS33 } [get_ports { led_tri_o[0] }]; #IO_L22N_T3_AD7N_35 Sch=led0_b
 set_property src_info {type:XDC file:1 line:12 export:INPUT save:INPUT read:READ} [current_design]

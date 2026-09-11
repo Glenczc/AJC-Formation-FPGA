@@ -1,96 +1,8 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 10
-set name DMA24bUnit_mm2s_mul_mul_12ns_8ns_20_4_1
-set corename simcore_mul
-set op mul
-set stage_num 4
-set max_latency -1
-set registered_input 1
-set clk_width 1
-set clk_signed 0
-set reset_width 1
-set reset_signed 0
-set in0_width 12
-set in0_signed 0
-set in1_width 8
-set in1_signed 0
-set ce_width 1
-set ce_signed 0
-set out_width 20
-set exp i0*i1
-set arg_lists {i0 {12 0 +} i1 {8 0 +} p {20 0 +} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mul] == "ap_gen_simcore_mul"} {
-eval "ap_gen_simcore_mul { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    clk_width ${clk_width} \
-    clk_signed ${clk_signed} \
-    reset_width ${reset_width} \
-    reset_signed ${reset_signed} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    ce_width ${ce_width} \
-    ce_signed ${ce_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mul, check your AutoPilot builtin lib"
-}
-}
-
-
+set name DMA24bUnit_mm2s_mul_12ns_8ns_20_2_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mul
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    clk_width ${clk_width} \
-    clk_signed ${clk_signed} \
-    reset_width ${reset_width} \
-    reset_signed ${reset_signed} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    ce_width ${ce_width} \
-    ce_signed ${ce_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
 }
 
 
@@ -105,14 +17,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 13 \
+    id 28 \
     name STR_video_out_V_data_V \
     reset_level 1 \
     sync_rst true \
     corename {STR_video_out} \
     metadata {  } \
     op interface \
-    ports { STR_video_out_TDATA { O 24 vector } STR_video_out_TREADY { I 1 bit } } \
+    ports { STR_video_out_TDATA { O 24 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'STR_video_out_V_data_V'"
@@ -124,7 +36,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 14 \
+    id 29 \
     name STR_video_out_V_keep_V \
     reset_level 1 \
     sync_rst true \
@@ -143,7 +55,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 15 \
+    id 30 \
     name STR_video_out_V_strb_V \
     reset_level 1 \
     sync_rst true \
@@ -162,7 +74,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 16 \
+    id 31 \
     name STR_video_out_V_user_V \
     reset_level 1 \
     sync_rst true \
@@ -181,14 +93,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 17 \
+    id 32 \
     name STR_video_out_V_last_V \
     reset_level 1 \
     sync_rst true \
     corename {STR_video_out} \
     metadata {  } \
     op interface \
-    ports { STR_video_out_TVALID { O 1 bit } STR_video_out_TLAST { O 1 vector } } \
+    ports { STR_video_out_TVALID { O 1 bit } STR_video_out_TREADY { I 1 bit } STR_video_out_TLAST { O 1 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'STR_video_out_V_last_V'"
@@ -199,22 +111,22 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 12 \
-    name mm_fifo1 \
+    id 33 \
+    name mm_fifo \
     type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_mm_fifo1 \
+    corename dc_mm_fifo \
     op interface \
-    ports { mm_fifo1_dout { I 128 vector } mm_fifo1_empty_n { I 1 bit } mm_fifo1_read { O 1 bit } } \
+    ports { mm_fifo_dout { I 128 vector } mm_fifo_empty_n { I 1 bit } mm_fifo_read { O 1 bit } mm_fifo_num_data_valid { I 9 vector } mm_fifo_fifo_cap { I 9 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 18 \
+    id 34 \
     name img_w \
     type fifo \
     dir I \
@@ -222,14 +134,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_img_w \
     op interface \
-    ports { img_w_dout { I 12 vector } img_w_empty_n { I 1 bit } img_w_read { O 1 bit } } \
+    ports { img_w_dout { I 12 vector } img_w_empty_n { I 1 bit } img_w_read { O 1 bit } img_w_num_data_valid { I 3 vector } img_w_fifo_cap { I 3 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 19 \
+    id 35 \
     name img_h \
     type fifo \
     dir I \
@@ -237,7 +149,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_img_h \
     op interface \
-    ports { img_h_dout { I 12 vector } img_h_empty_n { I 1 bit } img_h_read { O 1 bit } } \
+    ports { img_h_dout { I 12 vector } img_h_empty_n { I 1 bit } img_h_read { O 1 bit } img_h_num_data_valid { I 3 vector } img_h_fifo_cap { I 3 vector } } \
 } "
 }
 

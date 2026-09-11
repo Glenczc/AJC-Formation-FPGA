@@ -2,6 +2,7 @@
 set TopModule "DMA24bUnit_mm2s"
 set ClockPeriod 6.66
 set ClockList ap_clk
+set AxiliteClockList {}
 set HasVivadoClockPeriod 0
 set CombLogicFlag 0
 set PipelineFlag 0
@@ -13,7 +14,7 @@ set FftOrFirFlag 0
 set NbRWValue 0
 set intNbAccess 0
 set NewDSPMapping 1
-set HasDSPModule 1
+set HasDSPModule 0
 set ResetLevelFlag 0
 set ResetStyle control
 set ResetSyncFlag 1
@@ -42,21 +43,21 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xc7z020:-clg400:-1
-set SourceFiles {sc {} c ../../../src/DMA24b_mm2s.cpp}
-set SourceFlags {sc {} c -I../src}
-set DirectiveFile /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls/DMA24b_mm2s_prj/solution1/solution1.directive
-set TBFiles {verilog ../../../src/tb.cpp bc ../../../src/tb.cpp vhdl ../../../src/tb.cpp sc ../../../src/tb.cpp cas ../../../src/tb.cpp c {}}
+set SourceFiles {sc {} c {../.././../src/DMA24b_mm2s.cpp ../../../src/DMA24b_mm2s.cpp}}
+set SourceFlags {sc {} c {{ -I../.././../src } {} -I../src}}
+set DirectiveFile {}
+set TBFiles {verilog ../../../src/tb.cpp bc ../../../src/tb.cpp sc ../../../src/tb.cpp vhdl ../../../src/tb.cpp c {} cas ../../../src/tb.cpp}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
-set TBTops {verilog {} bc {} vhdl {} sc {} cas {} c {}}
-set TBInstNames {verilog {} bc {} vhdl {} sc {} cas {} c {}}
+set TBTops {verilog {} bc {} sc {} vhdl {} c {} cas {}}
+set TBInstNames {verilog {} bc {} sc {} vhdl {} c {} cas {}}
 set XDCFiles {}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
 set TBTVFileNotFound {}
 set AppFile ../hls.app
 set ApsFile solution1.aps
-set AvePath ../..
+set AvePath ../../.
 set DefaultPlatform DefaultPlatform
 set multiClockList {}
 set SCPortClockMap {}

@@ -1,0 +1,57 @@
+
+*** Running vivado
+    with args -log design_1_axi4s_monitor_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axi4s_monitor_0_0.tcl
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source design_1_axi4s_monitor_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'user.org:user:ControleurVGA:1.0'. The one found in IP location '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2' will take precedence over the same IP in location /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA
+Command: synth_design -top design_1_axi4s_monitor_0_0 -part xc7z007sclg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Device 21-403] Loading part xc7z007sclg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 64549
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 2379.887 ; gain = 0.000 ; free physical = 1806 ; free virtual = 10509
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_axi4s_monitor_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi4s_monitor_0_0/synth/design_1_axi4s_monitor_0_0.vhd:72]
+	Parameter G_FILE_BASENAME bound to: stream_out - type: string 
+	Parameter G_DATA_WIDTH bound to: 24 - type: integer 
+	Parameter G_IMG_WIDTH bound to: 1280 - type: integer 
+	Parameter G_IMG_HEIGHT bound to: 100 - type: integer 
+	Parameter G_NB_IMAGES bound to: 1 - type: integer 
+	Parameter G_TIMEOUT_CY bound to: 10000 - type: integer 
+	Parameter G_SYNC_ON_SOF bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'axi4s_monitor' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/d799/src/Axi4s_monitor.vhd:53' bound to instance 'U0' of component 'axi4s_monitor' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi4s_monitor_0_0/synth/design_1_axi4s_monitor_0_0.vhd:114]
+INFO: [Synth 8-638] synthesizing module 'axi4s_monitor' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/d799/src/Axi4s_monitor.vhd:80]
+	Parameter G_FILE_BASENAME bound to: stream_out - type: string 
+	Parameter G_DATA_WIDTH bound to: 24 - type: integer 
+	Parameter G_IMG_WIDTH bound to: 1280 - type: integer 
+	Parameter G_IMG_HEIGHT bound to: 100 - type: integer 
+	Parameter G_NB_IMAGES bound to: 1 - type: integer 
+	Parameter G_TIMEOUT_CY bound to: 10000 - type: integer 
+	Parameter G_SYNC_ON_SOF bound to: 0 - type: bool 
+WARNING: [Synth 8-2897] clock signal used as data [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/d799/src/Axi4s_monitor.vhd:189]
+WARNING: [Synth 8-2897] clock signal used as data [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/d799/src/Axi4s_monitor.vhd:189]
+ERROR: [Synth 8-27] nested clocked statements not supported [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/d799/src/Axi4s_monitor.vhd:192]
+ERROR: [Synth 8-285] failed synthesizing module 'axi4s_monitor' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/d799/src/Axi4s_monitor.vhd:80]
+ERROR: [Synth 8-285] failed synthesizing module 'design_1_axi4s_monitor_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi4s_monitor_0_0/synth/design_1_axi4s_monitor_0_0.vhd:72]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2379.887 ; gain = 0.000 ; free physical = 2401 ; free virtual = 11101
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+12 Infos, 3 Warnings, 0 Critical Warnings and 4 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Fri Sep 11 16:23:27 2026...

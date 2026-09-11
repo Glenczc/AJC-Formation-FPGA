@@ -1,13 +1,19 @@
 # ==============================================================
-# Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
-# Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+# Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+# Tool Version Limit: 2024.11
+# Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+# Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+# 
 # ==============================================================
-set ::env(LD_LIBRARY_PATH) $::env(LD_LIBRARY_PATH):/tools/xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0
-set ::env(LD_LIBRARY_PATH) $::env(LD_LIBRARY_PATH):/tools/xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1
-set ::env(LD_LIBRARY_PATH) $::env(LD_LIBRARY_PATH):/tools/xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0
-set ::env(LD_LIBRARY_PATH) $::env(LD_LIBRARY_PATH):/tools/xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0
-set ::env(LD_LIBRARY_PATH) $::env(LD_LIBRARY_PATH):/usr/lib/x86_64-linux-gnu
-set ::env(LD_LIBRARY_PATH) $::env(LD_LIBRARY_PATH):/tools/xilinx/Vitis_HLS/2020.2/lnx64/csim
+set ::env(LD_LIBRARY_PATH) /media/glen/Crucial/Logiciels/VitisHLS/Vitis/2024.2/lnx64/tools/fpo_v7_1:$::env(LD_LIBRARY_PATH)
+set ::env(LD_LIBRARY_PATH) /media/glen/Crucial/Logiciels/VitisHLS/Vitis/2024.2/lnx64/tools/fft_v9_1:$::env(LD_LIBRARY_PATH)
+set ::env(LD_LIBRARY_PATH) /media/glen/Crucial/Logiciels/VitisHLS/Vitis/2024.2/lnx64/tools/fir_v7_0:$::env(LD_LIBRARY_PATH)
+set ::env(LD_LIBRARY_PATH) /media/glen/Crucial/Logiciels/VitisHLS/Vitis/2024.2/lnx64/tools/dds_v6_0:$::env(LD_LIBRARY_PATH)
+set ::env(LD_LIBRARY_PATH) /media/glen/Crucial/Logiciels/VitisHLS/Vivado/2024.2/tps/lnx64/gcc-8.3.0/lib:$::env(LD_LIBRARY_PATH)
+set ::env(LD_LIBRARY_PATH) /media/glen/Crucial/Logiciels/VitisHLS/Vitis/2024.2/lib/lnx64.o/Ubuntu:$::env(LD_LIBRARY_PATH)
+set ::env(LD_LIBRARY_PATH) /usr/lib/x86_64-linux-gnu:$::env(LD_LIBRARY_PATH)
+set_param hls.enable_hidden_option_error false
+set ::env(LD_LIBRARY_PATH) $::env(LD_LIBRARY_PATH):/media/glen/Crucial/Logiciels/VitisHLS/Vitis/2024.2/lnx64/csim
 ### C sim ###
 if {![file exists csim.exe]} {
   puts "@E C-simulation is not set up properly. Please re-run csim."
@@ -30,15 +36,8 @@ if {$ret || $err != ""} {
         if { [regexp {segmentation violation} $err] } {
             puts "@E Simulation failed: SIGSEGV."
         } else {
-            puts "@E Simulation failed."
+            puts "@E Simulation failed with unknown error."
         }
-        return -code error
-    }
-}
-if {[file exists $logfile]} {
-    set cmdret [catch {eval exec "grep \"Error:\" $logfile"} err]
-    if {$cmdret == 0} {
-        puts "@E Simulation failed."
         return -code error
     }
 }

@@ -1,13 +1,13 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Tue Sep  1 14:29:17 2026
-| Host         : isaac running 64-bit Ubuntu 18.04.6 LTS
-| Command      : report_utilization -file /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/logs/utilization.rpt
+| Date         : Fri Sep 11 14:27:12 2026
+| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.4 LTS
+| Command      : report_utilization -file /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/logs/utilization.rpt
 | Design       : design_1_wrapper
 | Device       : 7z010clg400-1
 | Design State : Routed
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 

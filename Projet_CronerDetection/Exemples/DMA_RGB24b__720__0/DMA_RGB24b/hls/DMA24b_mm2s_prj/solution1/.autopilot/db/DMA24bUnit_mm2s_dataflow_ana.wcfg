@@ -37,22 +37,22 @@
          <obj_property name="Render_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s//AESL_inst_DMA24bUnit_mm2s_activity.dataflowTxWaveData.Cycles</obj_property>
          <obj_property name="Value_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s//AESL_inst_DMA24bUnit_mm2s_activity.dataflowTxWaveData.OutStanding</obj_property>
          <obj_property name="Detail_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s//AESL_inst_DMA24bUnit_mm2s_activity.dataflowTxTooltipData</obj_property>
-         <wvobject type="group" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/grp_DMA24b_mm2s_fu_78_activity">
-            <obj_property name="label">grp_DMA24b_mm2s_fu_78_activity</obj_property>
+         <wvobject type="group" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/grp_DMA24b_mm2s_fu_86_activity">
+            <obj_property name="label">grp_DMA24b_mm2s_fu_86_activity</obj_property>
             <obj_property name="DisplayName">label</obj_property>
             <obj_property name="UseFullPath">true</obj_property>
-            <obj_property name="ElementShortName">grp_DMA24b_mm2s_fu_78_activity</obj_property>
-            <obj_property name="ObjectShortName">grp_DMA24b_mm2s_fu_78_activity</obj_property>
+            <obj_property name="ElementShortName">grp_DMA24b_mm2s_fu_86_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_DMA24b_mm2s_fu_86_activity</obj_property>
             <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
             <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
             <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="CustomSignalColor">turquoise</obj_property>
             <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-            <obj_property name="Render_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/grp_DMA24b_mm2s_fu_78_activity.dataflowTxWaveData.Cycles</obj_property>
-            <obj_property name="Value_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/grp_DMA24b_mm2s_fu_78_activity.dataflowTxWaveData.OutStanding</obj_property>
-            <obj_property name="Detail_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/grp_DMA24b_mm2s_fu_78_activity.dataflowTxTooltipData</obj_property>
-            <wvobject type="group" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/DMA24b_mm2s_fetch_U0_activity">
+            <obj_property name="Render_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/grp_DMA24b_mm2s_fu_86_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/grp_DMA24b_mm2s_fu_86_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/grp_DMA24b_mm2s_fu_86_activity.dataflowTxTooltipData</obj_property>
+            <wvobject type="group" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/DMA24b_mm2s_fetch_U0_activity">
                <obj_property name="label">DMA24b_mm2s_fetch_U0_activity</obj_property>
                <obj_property name="DisplayName">label</obj_property>
                <obj_property name="UseFullPath">true</obj_property>
@@ -64,11 +64,27 @@
                <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="CustomSignalColor">turquoise</obj_property>
                <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-               <obj_property name="Render_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/DMA24b_mm2s_fetch_U0_activity.dataflowTxWaveData.Cycles</obj_property>
-               <obj_property name="Value_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/DMA24b_mm2s_fetch_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
-               <obj_property name="Detail_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/DMA24b_mm2s_fetch_U0_activity.dataflowTxTooltipData</obj_property>
+               <obj_property name="Render_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/DMA24b_mm2s_fetch_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/DMA24b_mm2s_fetch_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/DMA24b_mm2s_fetch_U0_activity.dataflowTxTooltipData</obj_property>
+               <wvobject type="group" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116/grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116_activity">
+                  <obj_property name="label">grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116_activity</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <obj_property name="UseFullPath">true</obj_property>
+                  <obj_property name="ElementShortName">grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116_activity</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+                  <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+                  <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+                  <obj_property name="UseCustomSignalColor">true</obj_property>
+                  <obj_property name="CustomSignalColor">turquoise</obj_property>
+                  <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+                  <obj_property name="Render_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116/grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116/grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116/grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116_activity.dataflowTxTooltipData</obj_property>
+               </wvobject>
             </wvobject>
-            <wvobject type="group" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/DMA24b_mm2s_streamout_U0_activity">
+            <wvobject type="group" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/DMA24b_mm2s_streamout_U0_activity">
                <obj_property name="label">DMA24b_mm2s_streamout_U0_activity</obj_property>
                <obj_property name="DisplayName">label</obj_property>
                <obj_property name="UseFullPath">true</obj_property>
@@ -80,9 +96,25 @@
                <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="CustomSignalColor">turquoise</obj_property>
                <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-               <obj_property name="Render_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/DMA24b_mm2s_streamout_U0_activity.dataflowTxWaveData.Cycles</obj_property>
-               <obj_property name="Value_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/DMA24b_mm2s_streamout_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
-               <obj_property name="Detail_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/DMA24b_mm2s_streamout_U0_activity.dataflowTxTooltipData</obj_property>
+               <obj_property name="Render_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/DMA24b_mm2s_streamout_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/DMA24b_mm2s_streamout_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/DMA24b_mm2s_streamout_U0_activity.dataflowTxTooltipData</obj_property>
+               <wvobject type="group" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72/grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72_activity">
+                  <obj_property name="label">grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72_activity</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <obj_property name="UseFullPath">true</obj_property>
+                  <obj_property name="ElementShortName">grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72_activity</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+                  <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+                  <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+                  <obj_property name="UseCustomSignalColor">true</obj_property>
+                  <obj_property name="CustomSignalColor">turquoise</obj_property>
+                  <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+                  <obj_property name="Render_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72/grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72/grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72/grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72_activity.dataflowTxTooltipData</obj_property>
+               </wvobject>
             </wvobject>
          </wvobject>
       </wvobject>
@@ -94,9 +126,9 @@
    <wvobject type="group" fp_name="AESL_inst_DMA24bUnit_mm2s_group">
       <obj_property name="label">AESL_inst_DMA24bUnit_mm2s</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject type="protoinst" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/grp_DMA24b_mm2s_fu_78_activity">
-         <obj_property name="ElementShortName">grp_DMA24b_mm2s_fu_78_activity</obj_property>
-         <obj_property name="ObjectShortName">grp_DMA24b_mm2s_fu_78_activity</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/grp_DMA24b_mm2s_fu_86_activity">
+         <obj_property name="ElementShortName">grp_DMA24b_mm2s_fu_86_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_DMA24b_mm2s_fu_86_activity</obj_property>
       </wvobject>
       <wvobject type="group" fp_name="AESL_inst_DMA24bUnit_mm2s_Handshake_group">
          <obj_property name="label">Block-level handshake</obj_property>
@@ -114,33 +146,33 @@
             <obj_property name="ObjectShortName">ap_done</obj_property>
          </wvobject>
       </wvobject>
-      <wvobject type="group" fp_name="grp_DMA24b_mm2s_fu_78_group">
-         <obj_property name="label">grp_DMA24b_mm2s_fu_78</obj_property>
+      <wvobject type="group" fp_name="grp_DMA24b_mm2s_fu_86_group">
+         <obj_property name="label">grp_DMA24b_mm2s_fu_86</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject type="protoinst" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/DMA24b_mm2s_fetch_U0_activity">
+         <wvobject type="protoinst" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/DMA24b_mm2s_fetch_U0_activity">
             <obj_property name="ElementShortName">DMA24b_mm2s_fetch_U0_activity</obj_property>
             <obj_property name="ObjectShortName">DMA24b_mm2s_fetch_U0_activity</obj_property>
          </wvobject>
-         <wvobject type="protoinst" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/DMA24b_mm2s_streamout_U0_activity">
+         <wvobject type="protoinst" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/DMA24b_mm2s_streamout_U0_activity">
             <obj_property name="ElementShortName">DMA24b_mm2s_streamout_U0_activity</obj_property>
             <obj_property name="ObjectShortName">DMA24b_mm2s_streamout_U0_activity</obj_property>
          </wvobject>
-         <wvobject type="group" fp_name="grp_DMA24b_mm2s_fu_78_Handshake_group">
+         <wvobject type="group" fp_name="grp_DMA24b_mm2s_fu_86_Handshake_group">
             <obj_property name="label">Block-level handshake</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/ap_start">
+            <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/ap_start">
                <obj_property name="ElementShortName">ap_start</obj_property>
                <obj_property name="ObjectShortName">ap_start</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/ap_ready">
+            <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/ap_ready">
                <obj_property name="ElementShortName">ap_ready</obj_property>
                <obj_property name="ObjectShortName">ap_ready</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/ap_done">
+            <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/ap_done">
                <obj_property name="ElementShortName">ap_done</obj_property>
                <obj_property name="ObjectShortName">ap_done</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/ap_continue">
+            <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/ap_continue">
                <obj_property name="ElementShortName">ap_continue</obj_property>
                <obj_property name="ObjectShortName">ap_continue</obj_property>
             </wvobject>
@@ -148,6 +180,10 @@
          <wvobject type="group" fp_name="DMA24b_mm2s_fetch_U0_group">
             <obj_property name="label">DMA24b_mm2s_fetch_U0</obj_property>
             <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116/grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116_activity">
+               <obj_property name="ElementShortName">grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116_activity</obj_property>
+            </wvobject>
             <wvobject type="group" fp_name="DMA24b_mm2s_fetch_U0_Input_group">
                <obj_property name="label">Input Channels</obj_property>
                <obj_property name="DisplayName">label</obj_property>
@@ -155,23 +191,23 @@
             <wvobject type="group" fp_name="DMA24b_mm2s_fetch_U0_Handshake_group">
                <obj_property name="label">Block-level handshake</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/ap_start">
+               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/ap_start">
                   <obj_property name="ElementShortName">ap_start</obj_property>
                   <obj_property name="ObjectShortName">ap_start</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/real_start">
+               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/real_start">
                   <obj_property name="ElementShortName">real_start</obj_property>
                   <obj_property name="ObjectShortName">real_start</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/ap_ready">
+               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/ap_ready">
                   <obj_property name="ElementShortName">ap_ready</obj_property>
                   <obj_property name="ObjectShortName">ap_ready</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/ap_done">
+               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/ap_done">
                   <obj_property name="ElementShortName">ap_done</obj_property>
                   <obj_property name="ObjectShortName">ap_done</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/ap_continue">
+               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/ap_continue">
                   <obj_property name="ElementShortName">ap_continue</obj_property>
                   <obj_property name="ObjectShortName">ap_continue</obj_property>
                </wvobject>
@@ -179,58 +215,74 @@
             <wvobject type="group" fp_name="DMA24b_mm2s_fetch_U0_Output_group">
                <obj_property name="label">Output Channels</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="group" fp_name="mm_fifo1_group">
-                  <obj_property name="label">mm_fifo1(mm_fifo_U, FIFO)</obj_property>
+               <wvobject type="group" fp_name="mm_fifo_group">
+                  <obj_property name="label">mm_fifo(mm_fifo_U, FIFO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/mm_fifo1_blk_n">
-                     <obj_property name="ElementShortName">mm_fifo1_blk_n</obj_property>
-                     <obj_property name="ObjectShortName">mm_fifo1_blk_n</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/mm_fifo_din">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/mm_fifo1_din">
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/mm_fifo_full_n">
+                     <obj_property name="ElementShortName">mm_fifo_full_n</obj_property>
+                     <obj_property name="ObjectShortName">mm_fifo_full_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/mm_fifo1_full_n">
-                     <obj_property name="ElementShortName">mm_fifo1_full_n</obj_property>
-                     <obj_property name="ObjectShortName">mm_fifo1_full_n</obj_property>
-                  </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/mm_fifo1_write">
-                     <obj_property name="ElementShortName">mm_fifo1_write</obj_property>
-                     <obj_property name="ObjectShortName">mm_fifo1_write</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/mm_fifo_write">
+                     <obj_property name="ElementShortName">mm_fifo_write</obj_property>
+                     <obj_property name="ObjectShortName">mm_fifo_write</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="img_w_out_group">
-                  <obj_property name="label">img_w_out(image_w_c_U, FIFO)</obj_property>
+               <wvobject type="group" fp_name="image_w_c_group">
+                  <obj_property name="label">image_w_c(image_w_c_U, FIFO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/img_w_out_blk_n">
-                     <obj_property name="ElementShortName">img_w_out_blk_n</obj_property>
-                     <obj_property name="ObjectShortName">img_w_out_blk_n</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/image_w_c_blk_n">
+                     <obj_property name="ElementShortName">image_w_c_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">image_w_c_blk_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/img_w_out_din">
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/image_w_c_din">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/img_w_out_full_n">
-                     <obj_property name="ElementShortName">img_w_out_full_n</obj_property>
-                     <obj_property name="ObjectShortName">img_w_out_full_n</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/image_w_c_full_n">
+                     <obj_property name="ElementShortName">image_w_c_full_n</obj_property>
+                     <obj_property name="ObjectShortName">image_w_c_full_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/img_w_out_write">
-                     <obj_property name="ElementShortName">img_w_out_write</obj_property>
-                     <obj_property name="ObjectShortName">img_w_out_write</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/image_w_c_write">
+                     <obj_property name="ElementShortName">image_w_c_write</obj_property>
+                     <obj_property name="ObjectShortName">image_w_c_write</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="img_h_out_group">
-                  <obj_property name="label">img_h_out(image_h_c_U, FIFO)</obj_property>
+               <wvobject type="group" fp_name="image_h_c_group">
+                  <obj_property name="label">image_h_c(image_h_c_U, FIFO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/img_h_out_blk_n">
-                     <obj_property name="ElementShortName">img_h_out_blk_n</obj_property>
-                     <obj_property name="ObjectShortName">img_h_out_blk_n</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/image_h_c_blk_n">
+                     <obj_property name="ElementShortName">image_h_c_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">image_h_c_blk_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/img_h_out_din">
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/image_h_c_din">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/img_h_out_full_n">
-                     <obj_property name="ElementShortName">img_h_out_full_n</obj_property>
-                     <obj_property name="ObjectShortName">img_h_out_full_n</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/image_h_c_full_n">
+                     <obj_property name="ElementShortName">image_h_c_full_n</obj_property>
+                     <obj_property name="ObjectShortName">image_h_c_full_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_fetch_U0/img_h_out_write">
-                     <obj_property name="ElementShortName">img_h_out_write</obj_property>
-                     <obj_property name="ObjectShortName">img_h_out_write</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/image_h_c_write">
+                     <obj_property name="ElementShortName">image_h_c_write</obj_property>
+                     <obj_property name="ObjectShortName">image_h_c_write</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116_group">
+               <obj_property name="label">grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116_Handshake_group">
+                  <obj_property name="label">Block-level handshake</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116/ap_start">
+                     <obj_property name="ElementShortName">ap_start</obj_property>
+                     <obj_property name="ObjectShortName">ap_start</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116/ap_ready">
+                     <obj_property name="ElementShortName">ap_ready</obj_property>
+                     <obj_property name="ObjectShortName">ap_ready</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_fetch_U0/grp_DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop_fu_116/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
                   </wvobject>
                </wvobject>
             </wvobject>
@@ -238,45 +290,45 @@
          <wvobject type="group" fp_name="DMA24b_mm2s_streamout_U0_group">
             <obj_property name="label">DMA24b_mm2s_streamout_U0</obj_property>
             <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72/grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72_activity">
+               <obj_property name="ElementShortName">grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72_activity</obj_property>
+            </wvobject>
             <wvobject type="group" fp_name="DMA24b_mm2s_streamout_U0_Input_group">
                <obj_property name="label">Input Channels</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="group" fp_name="mm_fifo1_group">
-                  <obj_property name="label">mm_fifo1(mm_fifo_U, FIFO)</obj_property>
+               <wvobject type="group" fp_name="mm_fifo_group">
+                  <obj_property name="label">mm_fifo(mm_fifo_U, FIFO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/mm_fifo1_blk_n">
-                     <obj_property name="ElementShortName">mm_fifo1_blk_n</obj_property>
-                     <obj_property name="ObjectShortName">mm_fifo1_blk_n</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/mm_fifo_dout">
+                     <obj_property name="ElementShortName">mm_fifo_dout[127:0]</obj_property>
+                     <obj_property name="ObjectShortName">mm_fifo_dout[127:0]</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/mm_fifo1_dout">
-                     <obj_property name="ElementShortName">mm_fifo1_dout[127:0]</obj_property>
-                     <obj_property name="ObjectShortName">mm_fifo1_dout[127:0]</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/mm_fifo_empty_n">
+                     <obj_property name="ElementShortName">mm_fifo_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">mm_fifo_empty_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/mm_fifo1_empty_n">
-                     <obj_property name="ElementShortName">mm_fifo1_empty_n</obj_property>
-                     <obj_property name="ObjectShortName">mm_fifo1_empty_n</obj_property>
-                  </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/mm_fifo1_read">
-                     <obj_property name="ElementShortName">mm_fifo1_read</obj_property>
-                     <obj_property name="ObjectShortName">mm_fifo1_read</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/mm_fifo_read">
+                     <obj_property name="ElementShortName">mm_fifo_read</obj_property>
+                     <obj_property name="ObjectShortName">mm_fifo_read</obj_property>
                   </wvobject>
                </wvobject>
                <wvobject type="group" fp_name="img_w_group">
                   <obj_property name="label">img_w(image_w_c_U, FIFO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/img_w_blk_n">
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/img_w_blk_n">
                      <obj_property name="ElementShortName">img_w_blk_n</obj_property>
                      <obj_property name="ObjectShortName">img_w_blk_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/img_w_dout">
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/img_w_dout">
                      <obj_property name="ElementShortName">img_w_dout[11:0]</obj_property>
                      <obj_property name="ObjectShortName">img_w_dout[11:0]</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/img_w_empty_n">
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/img_w_empty_n">
                      <obj_property name="ElementShortName">img_w_empty_n</obj_property>
                      <obj_property name="ObjectShortName">img_w_empty_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/img_w_read">
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/img_w_read">
                      <obj_property name="ElementShortName">img_w_read</obj_property>
                      <obj_property name="ObjectShortName">img_w_read</obj_property>
                   </wvobject>
@@ -284,19 +336,19 @@
                <wvobject type="group" fp_name="img_h_group">
                   <obj_property name="label">img_h(image_h_c_U, FIFO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/img_h_blk_n">
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/img_h_blk_n">
                      <obj_property name="ElementShortName">img_h_blk_n</obj_property>
                      <obj_property name="ObjectShortName">img_h_blk_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/img_h_dout">
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/img_h_dout">
                      <obj_property name="ElementShortName">img_h_dout[11:0]</obj_property>
                      <obj_property name="ObjectShortName">img_h_dout[11:0]</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/img_h_empty_n">
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/img_h_empty_n">
                      <obj_property name="ElementShortName">img_h_empty_n</obj_property>
                      <obj_property name="ObjectShortName">img_h_empty_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/img_h_read">
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/img_h_read">
                      <obj_property name="ElementShortName">img_h_read</obj_property>
                      <obj_property name="ObjectShortName">img_h_read</obj_property>
                   </wvobject>
@@ -305,19 +357,19 @@
             <wvobject type="group" fp_name="DMA24b_mm2s_streamout_U0_Handshake_group">
                <obj_property name="label">Block-level handshake</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/ap_start">
+               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/ap_start">
                   <obj_property name="ElementShortName">ap_start</obj_property>
                   <obj_property name="ObjectShortName">ap_start</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/ap_ready">
+               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/ap_ready">
                   <obj_property name="ElementShortName">ap_ready</obj_property>
                   <obj_property name="ObjectShortName">ap_ready</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/ap_done">
+               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/ap_done">
                   <obj_property name="ElementShortName">ap_done</obj_property>
                   <obj_property name="ObjectShortName">ap_done</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_78/DMA24b_mm2s_streamout_U0/ap_continue">
+               <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/ap_continue">
                   <obj_property name="ElementShortName">ap_continue</obj_property>
                   <obj_property name="ObjectShortName">ap_continue</obj_property>
                </wvobject>
@@ -325,6 +377,26 @@
             <wvobject type="group" fp_name="DMA24b_mm2s_streamout_U0_Output_group">
                <obj_property name="label">Output Channels</obj_property>
                <obj_property name="DisplayName">label</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72_group">
+               <obj_property name="label">grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72_Handshake_group">
+                  <obj_property name="label">Block-level handshake</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72/ap_start">
+                     <obj_property name="ElementShortName">ap_start</obj_property>
+                     <obj_property name="ObjectShortName">ap_start</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72/ap_ready">
+                     <obj_property name="ElementShortName">ap_ready</obj_property>
+                     <obj_property name="ObjectShortName">ap_ready</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_DMA24bUnit_mm2s_top/AESL_inst_DMA24bUnit_mm2s/grp_DMA24b_mm2s_fu_86/DMA24b_mm2s_streamout_U0/grp_DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop_fu_72/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                  </wvobject>
+               </wvobject>
             </wvobject>
          </wvobject>
       </wvobject>

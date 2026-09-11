@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!DOCTYPE boost_serialization>
-<boost_serialization signature="serialization::archive" version="15">
+<boost_serialization signature="serialization::archive" version="17">
   <syndb class_id="0" tracking_level="0" version="0">
     <userIPLatency>-1</userIPLatency>
     <userIPName/>
     <cdfg class_id="1" tracking_level="1" version="0" object_id="_0">
       <name>DMA24bUnit_mm2s</name>
+      <module_structure>Sequential</module_structure>
       <ret_bitwidth>0</ret_bitwidth>
       <ports class_id="2" tracking_level="0" version="0">
         <count>9</count>
@@ -31,7 +32,10 @@
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>1834967604</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>128</bitwidth>
           </Value>
@@ -64,7 +68,10 @@
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>0</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>24</bitwidth>
           </Value>
@@ -97,7 +104,10 @@
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>0</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>3</bitwidth>
           </Value>
@@ -130,7 +140,10 @@
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>0</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>3</bitwidth>
           </Value>
@@ -163,7 +176,10 @@
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>0</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>1</bitwidth>
           </Value>
@@ -196,7 +212,10 @@
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>0</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>1</bitwidth>
           </Value>
@@ -229,7 +248,10 @@
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>49</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>12</bitwidth>
           </Value>
@@ -262,7 +284,10 @@
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>132</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>12</bitwidth>
           </Value>
@@ -295,7 +320,10 @@
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>132</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>64</bitwidth>
           </Value>
@@ -318,7 +346,7 @@
               <id>24</id>
               <name>image_in_read</name>
               <fileName>../src/DMA24b_mm2s.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
+              <fileDirectory>../.</fileDirectory>
               <lineNumber>58</lineNumber>
               <contextFuncName>DMA24bUnit_mm2s</contextFuncName>
               <contextNormFuncName>DMA24bUnit_mm2s</contextNormFuncName>
@@ -326,7 +354,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item class_id="10" tracking_level="0" version="0">
-                  <first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
+                  <first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
                   <second class_id="11" tracking_level="0" version="0">
                     <count>1</count>
                     <item_version>0</item_version>
@@ -340,21 +368,24 @@
                   </second>
                 </item>
               </inlineStackInfo>
-              <originalName>image_in</originalName>
+              <originalName/>
               <rtlName/>
               <control/>
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>0</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>64</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
             <item_version>0</item_version>
-            <item>31</item>
             <item>32</item>
+            <item>33</item>
           </oprand_edges>
           <opcode>read</opcode>
           <m_Display>0</m_Display>
@@ -372,7 +403,7 @@
               <id>25</id>
               <name>image_h_read</name>
               <fileName>../src/DMA24b_mm2s.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
+              <fileDirectory>../.</fileDirectory>
               <lineNumber>58</lineNumber>
               <contextFuncName>DMA24bUnit_mm2s</contextFuncName>
               <contextNormFuncName>DMA24bUnit_mm2s</contextNormFuncName>
@@ -380,7 +411,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
+                  <first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -394,21 +425,24 @@
                   </second>
                 </item>
               </inlineStackInfo>
-              <originalName>image_h</originalName>
+              <originalName/>
               <rtlName/>
               <control/>
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>3038348713</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>12</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
             <item_version>0</item_version>
-            <item>34</item>
             <item>35</item>
+            <item>36</item>
           </oprand_edges>
           <opcode>read</opcode>
           <m_Display>0</m_Display>
@@ -426,7 +460,7 @@
               <id>26</id>
               <name>image_w_read</name>
               <fileName>../src/DMA24b_mm2s.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
+              <fileDirectory>../.</fileDirectory>
               <lineNumber>58</lineNumber>
               <contextFuncName>DMA24bUnit_mm2s</contextFuncName>
               <contextNormFuncName>DMA24bUnit_mm2s</contextNormFuncName>
@@ -434,7 +468,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
+                  <first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -448,21 +482,24 @@
                   </second>
                 </item>
               </inlineStackInfo>
-              <originalName>image_w</originalName>
+              <originalName/>
               <rtlName/>
               <control/>
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>4227858560</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>12</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
             <item_version>0</item_version>
-            <item>36</item>
             <item>37</item>
+            <item>38</item>
           </oprand_edges>
           <opcode>read</opcode>
           <m_Display>0</m_Display>
@@ -480,7 +517,7 @@
               <id>27</id>
               <name>_ln64</name>
               <fileName>../src/DMA24b_mm2s.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
+              <fileDirectory>../.</fileDirectory>
               <lineNumber>64</lineNumber>
               <contextFuncName>DMA24bUnit_mm2s</contextFuncName>
               <contextNormFuncName>DMA24bUnit_mm2s</contextNormFuncName>
@@ -488,7 +525,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
+                  <first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -503,19 +540,21 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>grp_DMA24b_mm2s_fu_78</rtlName>
+              <rtlName>grp_DMA24b_mm2s_fu_86</rtlName>
               <control/>
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>0</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
           </Value>
           <oprand_edges>
             <count>10</count>
             <item_version>0</item_version>
-            <item>39</item>
             <item>40</item>
             <item>41</item>
             <item>42</item>
@@ -525,13 +564,14 @@
             <item>46</item>
             <item>47</item>
             <item>48</item>
+            <item>49</item>
           </oprand_edges>
           <opcode>call</opcode>
           <m_Display>0</m_Display>
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>3.88</m_delay>
+          <m_delay>3.84</m_delay>
           <m_topoIndex>4</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -539,10 +579,10 @@
           <Value>
             <Obj>
               <type>0</type>
-              <id>28</id>
+              <id>29</id>
               <name>_ln65</name>
               <fileName>../src/DMA24b_mm2s.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
+              <fileDirectory>../.</fileDirectory>
               <lineNumber>65</lineNumber>
               <contextFuncName>DMA24bUnit_mm2s</contextFuncName>
               <contextNormFuncName>DMA24bUnit_mm2s</contextNormFuncName>
@@ -550,7 +590,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/DMA_RGB24b/hls</first>
+                  <first>/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -570,7 +610,10 @@
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>4227858560</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
           </Value>
@@ -595,7 +638,7 @@
           <Value>
             <Obj>
               <type>2</type>
-              <id>38</id>
+              <id>39</id>
               <name>DMA24b_mm2s</name>
               <fileName/>
               <fileDirectory/>
@@ -612,7 +655,10 @@
               <opType/>
               <implIndex/>
               <coreName/>
-              <coreId>49</coreId>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
           </Value>
@@ -626,7 +672,7 @@
         <item class_id="18" tracking_level="1" version="0" object_id="_16">
           <Obj>
             <type>3</type>
-            <id>29</id>
+            <id>30</id>
             <name>DMA24bUnit_mm2s</name>
             <fileName/>
             <fileDirectory/>
@@ -643,7 +689,10 @@
             <opType/>
             <implIndex/>
             <coreName/>
-            <coreId>0</coreId>
+            <isStorage>0</isStorage>
+            <storageDepth>0</storageDepth>
+            <coreId>4294967295</coreId>
+            <rtlModuleName/>
           </Obj>
           <node_objs>
             <count>5</count>
@@ -652,7 +701,7 @@
             <item>25</item>
             <item>26</item>
             <item>27</item>
-            <item>28</item>
+            <item>29</item>
           </node_objs>
         </item>
       </blocks>
@@ -660,91 +709,91 @@
         <count>13</count>
         <item_version>0</item_version>
         <item class_id="20" tracking_level="1" version="0" object_id="_17">
-          <id>32</id>
+          <id>33</id>
           <edge_type>1</edge_type>
           <source_obj>9</source_obj>
           <sink_obj>24</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_18">
-          <id>35</id>
+          <id>36</id>
           <edge_type>1</edge_type>
           <source_obj>8</source_obj>
           <sink_obj>25</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_19">
-          <id>37</id>
+          <id>38</id>
           <edge_type>1</edge_type>
           <source_obj>7</source_obj>
           <sink_obj>26</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_20">
-          <id>39</id>
+          <id>40</id>
           <edge_type>1</edge_type>
-          <source_obj>38</source_obj>
+          <source_obj>39</source_obj>
           <sink_obj>27</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_21">
-          <id>40</id>
-          <edge_type>1</edge_type>
-          <source_obj>1</source_obj>
-          <sink_obj>27</sink_obj>
-          <is_back_edge>0</is_back_edge>
-        </item>
-        <item class_id_reference="20" object_id="_22">
           <id>41</id>
           <edge_type>1</edge_type>
           <source_obj>2</source_obj>
           <sink_obj>27</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
-        <item class_id_reference="20" object_id="_23">
+        <item class_id_reference="20" object_id="_22">
           <id>42</id>
           <edge_type>1</edge_type>
           <source_obj>3</source_obj>
           <sink_obj>27</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
-        <item class_id_reference="20" object_id="_24">
+        <item class_id_reference="20" object_id="_23">
           <id>43</id>
           <edge_type>1</edge_type>
           <source_obj>4</source_obj>
           <sink_obj>27</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
-        <item class_id_reference="20" object_id="_25">
+        <item class_id_reference="20" object_id="_24">
           <id>44</id>
           <edge_type>1</edge_type>
           <source_obj>5</source_obj>
           <sink_obj>27</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
-        <item class_id_reference="20" object_id="_26">
+        <item class_id_reference="20" object_id="_25">
           <id>45</id>
           <edge_type>1</edge_type>
           <source_obj>6</source_obj>
           <sink_obj>27</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
-        <item class_id_reference="20" object_id="_27">
+        <item class_id_reference="20" object_id="_26">
           <id>46</id>
           <edge_type>1</edge_type>
           <source_obj>26</source_obj>
           <sink_obj>27</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
-        <item class_id_reference="20" object_id="_28">
+        <item class_id_reference="20" object_id="_27">
           <id>47</id>
           <edge_type>1</edge_type>
           <source_obj>25</source_obj>
           <sink_obj>27</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
-        <item class_id_reference="20" object_id="_29">
+        <item class_id_reference="20" object_id="_28">
           <id>48</id>
+          <edge_type>1</edge_type>
+          <source_obj>1</source_obj>
+          <sink_obj>27</sink_obj>
+          <is_back_edge>0</is_back_edge>
+        </item>
+        <item class_id_reference="20" object_id="_29">
+          <id>49</id>
           <edge_type>1</edge_type>
           <source_obj>24</source_obj>
           <sink_obj>27</sink_obj>
@@ -767,14 +816,14 @@
         <basic_blocks>
           <count>1</count>
           <item_version>0</item_version>
-          <item>29</item>
+          <item>30</item>
         </basic_blocks>
         <mII>-1</mII>
         <mDepth>-1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
-        <mMinLatency>-1</mMinLatency>
-        <mMaxLatency>-1</mMaxLatency>
+        <mMinLatency>23</mMinLatency>
+        <mMaxLatency>16707623</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
@@ -825,7 +874,7 @@
         <item class_id_reference="26" object_id="_39">
           <id>3</id>
           <operations>
-            <count>15</count>
+            <count>16</count>
             <item_version>0</item_version>
             <item class_id_reference="28" object_id="_40">
               <id>10</id>
@@ -902,13 +951,18 @@
               <stage>1</stage>
               <latency>1</latency>
             </item>
+            <item class_id_reference="28" object_id="_55">
+              <id>29</id>
+              <stage>1</stage>
+              <latency>1</latency>
+            </item>
           </operations>
         </item>
       </states>
       <transitions class_id="29" tracking_level="0" version="0">
         <count>2</count>
         <item_version>0</item_version>
-        <item class_id="30" tracking_level="1" version="0" object_id="_55">
+        <item class_id="30" tracking_level="1" version="0" object_id="_56">
           <inState>1</inState>
           <outState>2</outState>
           <condition class_id="31" tracking_level="0" version="0">
@@ -923,7 +977,7 @@
             </sop>
           </condition>
         </item>
-        <item class_id_reference="30" object_id="_56">
+        <item class_id_reference="30" object_id="_57">
           <inState>2</inState>
           <outState>3</outState>
           <condition>
@@ -940,7 +994,7 @@
         </item>
       </transitions>
     </fsm>
-    <res class_id="34" tracking_level="1" version="0" object_id="_57">
+    <res class_id="34" tracking_level="1" version="0" object_id="_58">
       <dp_component_resource class_id="35" tracking_level="0" version="0">
         <count>7</count>
         <item_version>0</item_version>
@@ -951,20 +1005,20 @@
             <item_version>0</item_version>
             <item class_id="38" tracking_level="0" version="0">
               <first>BRAM</first>
-              <second>12</second>
+              <second>8</second>
             </item>
             <item>
               <first>FF</first>
-              <second>613</second>
+              <second>776</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>787</second>
+              <second>869</second>
             </item>
           </second>
         </item>
         <item>
-          <first>grp_DMA24b_mm2s_fu_78 (DMA24b_mm2s)</first>
+          <first>grp_DMA24b_mm2s_fu_86 (DMA24b_mm2s)</first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -974,15 +1028,15 @@
             </item>
             <item>
               <first>DSP</first>
-              <second>2</second>
+              <second>3</second>
             </item>
             <item>
               <first>FF</first>
-              <second>969</second>
+              <second>1351</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>1209</second>
+              <second>1372</second>
             </item>
           </second>
         </item>
@@ -1023,10 +1077,10 @@
         </item>
       </dp_component_resource>
       <dp_expression_resource>
-        <count>3</count>
+        <count>2</count>
         <item_version>0</item_version>
         <item>
-          <first>ap_sync_grp_DMA24b_mm2s_fu_78_ap_done ( or ) </first>
+          <first>ap_sync_grp_DMA24b_mm2s_fu_86_ap_ready ( or ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -1049,30 +1103,7 @@
           </second>
         </item>
         <item>
-          <first>ap_sync_grp_DMA24b_mm2s_fu_78_ap_ready ( or ) </first>
-          <second>
-            <count>4</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(0P0)</first>
-              <second>1</second>
-            </item>
-            <item>
-              <first>(1P1)</first>
-              <second>1</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>2</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>grp_DMA24b_mm2s_fu_78_STR_video_out_TREADY ( and ) </first>
+          <first>grp_DMA24b_mm2s_fu_86_STR_video_out_TREADY ( and ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -1104,35 +1135,12 @@
         <item_version>0</item_version>
       </dp_memory_resource>
       <dp_multiplexer_resource>
-        <count>3</count>
+        <count>8</count>
         <item_version>0</item_version>
         <item>
-          <first>ap_NS_fsm</first>
+          <first>STR_video_out_TDATA_int_regslice</first>
           <second>
-            <count>4</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(0Size)</first>
-              <second>4</second>
-            </item>
-            <item>
-              <first>(1Bits)</first>
-              <second>1</second>
-            </item>
-            <item>
-              <first>(2Count)</first>
-              <second>4</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>20</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>gmem_ARVALID</first>
-          <second>
-            <count>4</count>
+            <count>5</count>
             <item_version>0</item_version>
             <item>
               <first>(0Size)</first>
@@ -1140,11 +1148,15 @@
             </item>
             <item>
               <first>(1Bits)</first>
-              <second>1</second>
+              <second>24</second>
             </item>
             <item>
               <first>(2Count)</first>
-              <second>2</second>
+              <second>48</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
             </item>
             <item>
               <first>LUT</first>
@@ -1153,9 +1165,36 @@
           </second>
         </item>
         <item>
-          <first>gmem_RREADY</first>
+          <first>STR_video_out_TKEEP_int_regslice</first>
           <second>
-            <count>4</count>
+            <count>5</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(0Size)</first>
+              <second>2</second>
+            </item>
+            <item>
+              <first>(1Bits)</first>
+              <second>3</second>
+            </item>
+            <item>
+              <first>(2Count)</first>
+              <second>6</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>9</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>STR_video_out_TLAST_int_regslice</first>
+          <second>
+            <count>5</count>
             <item_version>0</item_version>
             <item>
               <first>(0Size)</first>
@@ -1168,6 +1207,145 @@
             <item>
               <first>(2Count)</first>
               <second>2</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>9</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>STR_video_out_TSTRB_int_regslice</first>
+          <second>
+            <count>5</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(0Size)</first>
+              <second>2</second>
+            </item>
+            <item>
+              <first>(1Bits)</first>
+              <second>3</second>
+            </item>
+            <item>
+              <first>(2Count)</first>
+              <second>6</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>9</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>STR_video_out_TUSER_int_regslice</first>
+          <second>
+            <count>5</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(0Size)</first>
+              <second>2</second>
+            </item>
+            <item>
+              <first>(1Bits)</first>
+              <second>1</second>
+            </item>
+            <item>
+              <first>(2Count)</first>
+              <second>2</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>9</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>ap_NS_fsm</first>
+          <second>
+            <count>5</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(0Size)</first>
+              <second>4</second>
+            </item>
+            <item>
+              <first>(1Bits)</first>
+              <second>1</second>
+            </item>
+            <item>
+              <first>(2Count)</first>
+              <second>4</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>20</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>gmem_0_ARVALID</first>
+          <second>
+            <count>5</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(0Size)</first>
+              <second>2</second>
+            </item>
+            <item>
+              <first>(1Bits)</first>
+              <second>1</second>
+            </item>
+            <item>
+              <first>(2Count)</first>
+              <second>2</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>9</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>gmem_0_RREADY</first>
+          <second>
+            <count>5</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(0Size)</first>
+              <second>2</second>
+            </item>
+            <item>
+              <first>(1Bits)</first>
+              <second>1</second>
+            </item>
+            <item>
+              <first>(2Count)</first>
+              <second>2</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
             </item>
             <item>
               <first>LUT</first>
@@ -1177,8 +1355,103 @@
         </item>
       </dp_multiplexer_resource>
       <dp_register_resource>
-        <count>4</count>
+        <count>12</count>
         <item_version>0</item_version>
+        <item>
+          <first>STR_video_out_TDATA_reg</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(Bits)</first>
+              <second>24</second>
+            </item>
+            <item>
+              <first>(Consts)</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>24</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>STR_video_out_TKEEP_reg</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(Bits)</first>
+              <second>3</second>
+            </item>
+            <item>
+              <first>(Consts)</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>3</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>STR_video_out_TLAST_reg</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(Bits)</first>
+              <second>1</second>
+            </item>
+            <item>
+              <first>(Consts)</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>1</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>STR_video_out_TSTRB_reg</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(Bits)</first>
+              <second>3</second>
+            </item>
+            <item>
+              <first>(Consts)</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>3</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>STR_video_out_TUSER_reg</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(Bits)</first>
+              <second>1</second>
+            </item>
+            <item>
+              <first>(Consts)</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>1</second>
+            </item>
+          </second>
+        </item>
         <item>
           <first>ap_CS_fsm</first>
           <second>
@@ -1199,7 +1472,7 @@
           </second>
         </item>
         <item>
-          <first>ap_sync_reg_grp_DMA24b_mm2s_fu_78_ap_done</first>
+          <first>ap_sync_reg_grp_DMA24b_mm2s_fu_86_ap_done</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -1218,7 +1491,7 @@
           </second>
         </item>
         <item>
-          <first>ap_sync_reg_grp_DMA24b_mm2s_fu_78_ap_ready</first>
+          <first>ap_sync_reg_grp_DMA24b_mm2s_fu_86_ap_ready</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -1237,7 +1510,7 @@
           </second>
         </item>
         <item>
-          <first>grp_DMA24b_mm2s_fu_78_ap_start_reg</first>
+          <first>grp_DMA24b_mm2s_fu_86_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -1252,6 +1525,63 @@
             <item>
               <first>FF</first>
               <second>1</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>image_h_read_reg_113</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(Bits)</first>
+              <second>12</second>
+            </item>
+            <item>
+              <first>(Consts)</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>12</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>image_in_read_reg_108</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(Bits)</first>
+              <second>64</second>
+            </item>
+            <item>
+              <first>(Consts)</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>64</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>image_w_read_reg_118</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(Bits)</first>
+              <second>12</second>
+            </item>
+            <item>
+              <first>(Consts)</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>12</second>
             </item>
           </second>
         </item>
@@ -1267,7 +1597,7 @@
           </second>
         </item>
         <item>
-          <first>grp_DMA24b_mm2s_fu_78</first>
+          <first>grp_DMA24b_mm2s_fu_86</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -1313,7 +1643,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item class_id="40" tracking_level="0" version="0">
-          <first>grp_DMA24b_mm2s_fu_78 (DMA24b_mm2s)</first>
+          <first>grp_DMA24b_mm2s_fu_86 (DMA24b_mm2s)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -1366,7 +1696,7 @@
         </second>
       </item>
       <item>
-        <first>28</first>
+        <first>29</first>
         <second>
           <first>2</first>
           <second>0</second>
@@ -1377,7 +1707,7 @@
       <count>1</count>
       <item_version>0</item_version>
       <item class_id="45" tracking_level="0" version="0">
-        <first>29</first>
+        <first>30</first>
         <second class_id="46" tracking_level="0" version="0">
           <first>0</first>
           <second>2</second>
@@ -1392,7 +1722,7 @@
       <count>4</count>
       <item_version>0</item_version>
       <item class_id="49" tracking_level="0" version="0">
-        <first>60</first>
+        <first>68</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1400,7 +1730,7 @@
         </second>
       </item>
       <item>
-        <first>66</first>
+        <first>74</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1408,7 +1738,7 @@
         </second>
       </item>
       <item>
-        <first>72</first>
+        <first>80</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1416,7 +1746,7 @@
         </second>
       </item>
       <item>
-        <first>78</first>
+        <first>86</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -1433,7 +1763,7 @@
       <count>1</count>
       <item_version>0</item_version>
       <item class_id="52" tracking_level="0" version="0">
-        <first>grp_DMA24b_mm2s_fu_78</first>
+        <first>grp_DMA24b_mm2s_fu_86</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -1446,7 +1776,7 @@
       <count>3</count>
       <item_version>0</item_version>
       <item>
-        <first>image_h_read_read_fu_66</first>
+        <first>image_h_read_read_fu_74</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1454,7 +1784,7 @@
         </second>
       </item>
       <item>
-        <first>image_in_read_read_fu_60</first>
+        <first>image_in_read_read_fu_68</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1462,7 +1792,7 @@
         </second>
       </item>
       <item>
-        <first>image_w_read_read_fu_72</first>
+        <first>image_w_read_read_fu_80</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1482,7 +1812,7 @@
       <count>3</count>
       <item_version>0</item_version>
       <item>
-        <first>100</first>
+        <first>108</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1490,7 +1820,7 @@
         </second>
       </item>
       <item>
-        <first>105</first>
+        <first>113</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1498,7 +1828,7 @@
         </second>
       </item>
       <item>
-        <first>110</first>
+        <first>118</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1510,7 +1840,7 @@
       <count>3</count>
       <item_version>0</item_version>
       <item>
-        <first>image_h_read_reg_105</first>
+        <first>image_h_read_reg_113</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1518,7 +1848,7 @@
         </second>
       </item>
       <item>
-        <first>image_in_read_reg_100</first>
+        <first>image_in_read_reg_108</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1526,7 +1856,7 @@
         </second>
       </item>
       <item>
-        <first>image_w_read_reg_110</first>
+        <first>image_w_read_reg_118</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

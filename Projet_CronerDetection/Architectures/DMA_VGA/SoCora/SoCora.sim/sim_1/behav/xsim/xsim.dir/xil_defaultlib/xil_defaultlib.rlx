@@ -1,0 +1,8 @@
+0.7
+2020.2
+Nov 18 2020
+09:20:35
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/SoCora/SoCora.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,axi_vip_v1_1_8;processing_system7_vip_v1_0_10;xilinx_vip,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/src/sim/Axi4s_driver.vhd,1777539559,vhdl,,,,axi4s_driver,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/src/sim/Axi4s_monitor.vhd,1787126667,vhdl,,,,axi4s_monitor,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/src/sim/tb_environnement.vhd,1789136615,vhdl,,,,tb_environnement,,,,,,,,

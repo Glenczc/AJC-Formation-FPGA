@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.runs/synth_1/design_1_wrapper.tcl"
+  variable script "/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.runs/synth_1/design_1_wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -77,30 +77,30 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.cache/wt [current_project]
-set_property parent.project_path /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.xpr [current_project]
+set_property webtalk.parent_dir /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.cache/wt [current_project]
+set_property parent.project_path /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.cache/ip [current_project]
+set_property ip_output_repo /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.srcs/sources_1/imports/hdl/design_1_wrapper.vhd
-add_files /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.srcs/sources_1/bd/design_1/design_1.bd
-set_property used_in_implementation false [get_files -all /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_board.xdc]
-set_property used_in_implementation false [get_files -all /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0.xdc]
-set_property used_in_implementation false [get_files -all /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_board.xdc]
-set_property used_in_implementation false [get_files -all /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.xdc]
-set_property used_in_implementation false [get_files -all /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/design_1_ooc.xdc]
+read_vhdl -library xil_defaultlib /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.srcs/sources_1/imports/hdl/design_1_wrapper.vhd
+add_files /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.srcs/sources_1/bd/design_1/design_1.bd
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -111,8 +111,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/src/constraints/Cora-Z7-10-Master.xdc
-set_property used_in_implementation false [get_files /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/src/constraints/Cora-Z7-10-Master.xdc]
+read_xdc /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/src/constraints/Cora-Z7-10-Master.xdc
+set_property used_in_implementation false [get_files /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/src/constraints/Cora-Z7-10-Master.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

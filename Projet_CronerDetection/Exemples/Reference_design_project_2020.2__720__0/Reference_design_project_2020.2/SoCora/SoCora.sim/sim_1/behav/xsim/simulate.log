@@ -11,4 +11,4 @@ Note:
  Verification (le diff doit etre VIDE en boucle simple) :
    diff <(head -32 src/sim/sample_in_gray.txt) src/sim/output/stream_out_0.txt
 ==============================================================
-Time: 205205 ns  Iteration: 0  Process: /tb_environnement/p_fin  File: /mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/src/sim/tb_environnement.vhd
+Time: 205205 ns  Iteration: 0  Process: /tb_environnement/p_fin  File: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/src/sim/tb_environnement.vhd

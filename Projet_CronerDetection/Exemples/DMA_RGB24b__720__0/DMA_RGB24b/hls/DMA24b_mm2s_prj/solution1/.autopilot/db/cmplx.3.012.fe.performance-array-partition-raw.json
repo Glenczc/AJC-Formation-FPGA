@@ -1,0 +1,41 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "1",
+    "file": "DMA24b_mm2s.cpp",
+    "fileloc": 58,
+    "instructions": 14,
+    "name": "DMA24bUnit_mm2s",
+    "total_instructions": 459
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "3 2",
+    "file": "DMA24b_mm2s.cpp",
+    "fileloc": 68,
+    "instructions": 8,
+    "name": "DMA24b_mm2s",
+    "total_instructions": 445
+  },
+  "2": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "DMA24b_mm2s.cpp",
+    "fileloc": 34,
+    "instructions": 323,
+    "name": "DMA24b_mm2s_streamout",
+    "stores": {
+      "L": 80
+    },
+    "total_instructions": 400
+  },
+  "3": {
+    "basicblocks": 10,
+    "calls": "",
+    "file": "DMA24b_mm2s.cpp",
+    "fileloc": 10,
+    "instructions": 37,
+    "name": "DMA24b_mm2s_fetch",
+    "total_instructions": 37
+  }
+}

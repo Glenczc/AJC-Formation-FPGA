@@ -1,29 +1,23 @@
-{"sourceFile": [{
-      "name": "",
-      "directive": [
+[
+  {
+    "functionLabel": "",
+    "functionName": "DMA24bUnit_mm2s",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
         {
-          "functionName": "DMA24bUnit_mm2s",
-          "label": "",
-          "functionLabel": "",
-          "pragma": {
-            "name": "TOP",
-            "option": [{
-                "name": "name",
-                "value": "DMA24bUnit_mm2s"
-              }]
-          }
-        },
-        {
-          "functionName": "DMA24bUnit_mm2s",
-          "label": "",
-          "functionLabel": "",
-          "pragma": {
-            "name": "TOP",
-            "option": [{
-                "name": "name",
-                "value": "DMA24bUnit_mm2s"
-              }]
-          }
+          "name": "name",
+          "value": "DMA24bUnit_mm2s"
         }
       ]
-    }]}
+    },
+    "slx": false,
+    "sourceFile": "/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls/run_hls.tcl",
+    "sourceLine": 15,
+    "success": true
+  }
+]

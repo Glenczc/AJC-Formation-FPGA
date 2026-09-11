@@ -3,9 +3,9 @@
 ================================================================
 == Vitis HLS Report for 'DMA24b_mm2s'
 ================================================================
-* Date:           Thu Sep  3 13:59:39 2026
+* Date:           Fri Sep 11 11:21:28 2026
 
-* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        DMA24b_mm2s_prj
 * Solution:       solution1 (Vivado IP Flow Target)
 * Product family: zynq
@@ -20,27 +20,27 @@
     +--------+---------+----------+------------+
     |  Clock |  Target | Estimated| Uncertainty|
     +--------+---------+----------+------------+
-    |ap_clk  |  6.66 ns|  4.862 ns|     1.80 ns|
+    |ap_clk  |  6.66 ns|  5.579 ns|     1.80 ns|
     +--------+---------+----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+----------+-----+-----+----------+
-    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
-    |   min   |   max   |    min   |    max   | min | max |   Type   |
-    +---------+---------+----------+----------+-----+-----+----------+
-    |        ?|        ?|         ?|         ?|    ?|    ?|  dataflow|
-    +---------+---------+----------+----------+-----+-----+----------+
+    +---------+----------+----------+-----------+-----+----------+----------+
+    |  Latency (cycles)  |  Latency (absolute)  |    Interval    | Pipeline |
+    |   min   |    max   |    min   |    max    | min |    max   |   Type   |
+    +---------+----------+----------+-----------+-----+----------+----------+
+    |       21|  16707621|  0.140 us|  0.111 sec|   12|  16707606|  dataflow|
+    +---------+----------+----------+-----------+-----+----------+----------+
 
     + Detail: 
         * Instance: 
-        +--------------------------+-----------------------+---------+---------+----------+----------+-----+-----+---------+
-        |                          |                       |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
-        |         Instance         |         Module        |   min   |   max   |    min   |    max   | min | max |   Type  |
-        +--------------------------+-----------------------+---------+---------+----------+----------+-----+-----+---------+
-        |DMA24b_mm2s_fetch_U0      |DMA24b_mm2s_fetch      |        ?|        ?|         ?|         ?|    ?|    ?|     none|
-        |DMA24b_mm2s_streamout_U0  |DMA24b_mm2s_streamout  |        ?|        ?|         ?|         ?|    ?|    ?|     none|
-        +--------------------------+-----------------------+---------+---------+----------+----------+-----+-----+---------+
+        +--------------------------+-----------------------+---------+----------+-----------+-----------+-----+----------+---------+
+        |                          |                       |  Latency (cycles)  |   Latency (absolute)  |    Interval    | Pipeline|
+        |         Instance         |         Module        |   min   |    max   |    min    |    max    | min |    max   |   Type  |
+        +--------------------------+-----------------------+---------+----------+-----------+-----------+-----+----------+---------+
+        |DMA24b_mm2s_fetch_U0      |DMA24b_mm2s_fetch      |       11|   3112220|  73.260 ns|  20.727 ms|   11|   3112220|       no|
+        |DMA24b_mm2s_streamout_U0  |DMA24b_mm2s_streamout  |        5|  16707605|  33.300 ns|  0.111 sec|    5|  16707605|       no|
+        +--------------------------+-----------------------+---------+----------+-----------+-----------+-----+----------+---------+
 
         * Loop: 
         N/A
@@ -57,16 +57,16 @@
 |DSP              |        -|    -|       -|      -|    -|
 |Expression       |        -|    -|       0|      2|    -|
 |FIFO             |        8|    -|     357|    213|    -|
-|Instance         |        -|    2|     612|    994|    -|
+|Instance         |        -|    3|     994|   1157|    -|
 |Memory           |        -|    -|       -|      -|    -|
 |Multiplexer      |        -|    -|       -|      -|    -|
 |Register         |        -|    -|       -|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        8|    2|     969|   1209|    0|
+|Total            |        8|    3|    1351|   1372|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
-|Utilization (%)  |        2|   ~0|      ~0|      2|    0|
+|Utilization (%)  |        2|    1|       1|      2|    0|
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
@@ -74,10 +74,10 @@
     +--------------------------+-----------------------+---------+----+-----+-----+-----+
     |         Instance         |         Module        | BRAM_18K| DSP|  FF | LUT | URAM|
     +--------------------------+-----------------------+---------+----+-----+-----+-----+
-    |DMA24b_mm2s_fetch_U0      |DMA24b_mm2s_fetch      |        0|   1|  340|  451|    0|
-    |DMA24b_mm2s_streamout_U0  |DMA24b_mm2s_streamout  |        0|   1|  272|  543|    0|
+    |DMA24b_mm2s_fetch_U0      |DMA24b_mm2s_fetch      |        0|   2|  619|  582|    0|
+    |DMA24b_mm2s_streamout_U0  |DMA24b_mm2s_streamout  |        0|   1|  375|  575|    0|
     +--------------------------+-----------------------+---------+----+-----+-----+-----+
-    |Total                     |                       |        0|   2|  612|  994|    0|
+    |Total                     |                       |        0|   3|  994| 1157|    0|
     +--------------------------+-----------------------+---------+----+-----+-----+-----+
 
     * DSP: 
@@ -118,73 +118,74 @@
 == Interface
 ================================================================
 * Summary: 
-+----------------------+-----+-----+------------+------------------------+--------------+
-|       RTL Ports      | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
-+----------------------+-----+-----+------------+------------------------+--------------+
-|m_axi_gmem_AWVALID    |  out|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_AWREADY    |   in|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_AWADDR     |  out|   64|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_AWID       |  out|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_AWLEN      |  out|   32|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_AWSIZE     |  out|    3|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_AWBURST    |  out|    2|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_AWLOCK     |  out|    2|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_AWCACHE    |  out|    4|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_AWPROT     |  out|    3|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_AWQOS      |  out|    4|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_AWREGION   |  out|    4|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_AWUSER     |  out|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_WVALID     |  out|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_WREADY     |   in|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_WDATA      |  out|  128|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_WSTRB      |  out|   16|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_WLAST      |  out|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_WID        |  out|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_WUSER      |  out|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_ARVALID    |  out|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_ARREADY    |   in|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_ARADDR     |  out|   64|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_ARID       |  out|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_ARLEN      |  out|   32|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_ARSIZE     |  out|    3|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_ARBURST    |  out|    2|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_ARLOCK     |  out|    2|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_ARCACHE    |  out|    4|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_ARPROT     |  out|    3|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_ARQOS      |  out|    4|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_ARREGION   |  out|    4|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_ARUSER     |  out|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_RVALID     |   in|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_RREADY     |  out|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_RDATA      |   in|  128|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_RLAST      |   in|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_RID        |   in|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_RUSER      |   in|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_RRESP      |   in|    2|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_BVALID     |   in|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_BREADY     |  out|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_BRESP      |   in|    2|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_BID        |   in|    1|       m_axi|                    gmem|       pointer|
-|m_axi_gmem_BUSER      |   in|    1|       m_axi|                    gmem|       pointer|
-|STR_video_out_TDATA   |  out|   24|        axis|  STR_video_out_V_data_V|       pointer|
-|STR_video_out_TKEEP   |  out|    3|        axis|  STR_video_out_V_keep_V|       pointer|
-|STR_video_out_TSTRB   |  out|    3|        axis|  STR_video_out_V_strb_V|       pointer|
-|STR_video_out_TUSER   |  out|    1|        axis|  STR_video_out_V_user_V|       pointer|
-|STR_video_out_TLAST   |  out|    1|        axis|  STR_video_out_V_last_V|       pointer|
-|STR_video_out_TVALID  |  out|    1|        axis|  STR_video_out_V_last_V|       pointer|
-|STR_video_out_TREADY  |   in|    1|        axis|  STR_video_out_V_last_V|       pointer|
-|image_w               |   in|   12|     ap_none|                 image_w|        scalar|
-|image_w_ap_vld        |   in|    1|     ap_none|                 image_w|        scalar|
-|image_h               |   in|   12|     ap_none|                 image_h|        scalar|
-|image_h_ap_vld        |   in|    1|     ap_none|                 image_h|        scalar|
-|BAR_image_in          |   in|   64|     ap_none|            BAR_image_in|        scalar|
-|BAR_image_in_ap_vld   |   in|    1|     ap_none|            BAR_image_in|        scalar|
-|ap_clk                |   in|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
-|ap_rst                |   in|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
-|ap_start              |   in|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
-|ap_done               |  out|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
-|ap_ready              |  out|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
-|ap_idle               |  out|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
-|ap_continue           |   in|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
-+----------------------+-----+-----+------------+------------------------+--------------+
++-----------------------+-----+-----+------------+------------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++-----------------------+-----+-----+------------+------------------------+--------------+
+|STR_video_out_TDATA    |  out|   24|        axis|  STR_video_out_V_data_V|       pointer|
+|STR_video_out_TKEEP    |  out|    3|        axis|  STR_video_out_V_keep_V|       pointer|
+|STR_video_out_TSTRB    |  out|    3|        axis|  STR_video_out_V_strb_V|       pointer|
+|STR_video_out_TUSER    |  out|    1|        axis|  STR_video_out_V_user_V|       pointer|
+|STR_video_out_TLAST    |  out|    1|        axis|  STR_video_out_V_last_V|       pointer|
+|STR_video_out_TVALID   |  out|    1|        axis|  STR_video_out_V_last_V|       pointer|
+|STR_video_out_TREADY   |   in|    1|        axis|  STR_video_out_V_last_V|       pointer|
+|image_w                |   in|   12|     ap_none|                 image_w|        scalar|
+|image_w_ap_vld         |   in|    1|     ap_none|                 image_w|        scalar|
+|image_h                |   in|   12|     ap_none|                 image_h|        scalar|
+|image_h_ap_vld         |   in|    1|     ap_none|                 image_h|        scalar|
+|m_axi_gmem_0_AWVALID   |  out|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_AWREADY   |   in|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_AWADDR    |  out|   64|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_AWID      |  out|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_AWLEN     |  out|   32|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_AWSIZE    |  out|    3|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_AWBURST   |  out|    2|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_AWLOCK    |  out|    2|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_AWCACHE   |  out|    4|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_AWPROT    |  out|    3|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_AWQOS     |  out|    4|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_AWREGION  |  out|    4|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_AWUSER    |  out|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_WVALID    |  out|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_WREADY    |   in|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_WDATA     |  out|  128|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_WSTRB     |  out|   16|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_WLAST     |  out|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_WID       |  out|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_WUSER     |  out|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_ARVALID   |  out|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_ARREADY   |   in|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_ARADDR    |  out|   64|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_ARID      |  out|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_ARLEN     |  out|   32|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_ARSIZE    |  out|    3|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_ARBURST   |  out|    2|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_ARLOCK    |  out|    2|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_ARCACHE   |  out|    4|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_ARPROT    |  out|    3|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_ARQOS     |  out|    4|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_ARREGION  |  out|    4|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_ARUSER    |  out|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_RVALID    |   in|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_RREADY    |  out|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_RDATA     |   in|  128|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_RLAST     |   in|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_RID       |   in|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_RFIFONUM  |   in|   11|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_RUSER     |   in|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_RRESP     |   in|    2|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_BVALID    |   in|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_BREADY    |  out|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_BRESP     |   in|    2|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_BID       |   in|    1|       m_axi|                    gmem|       pointer|
+|m_axi_gmem_0_BUSER     |   in|    1|       m_axi|                    gmem|       pointer|
+|BAR_image_in           |   in|   64|     ap_none|            BAR_image_in|        scalar|
+|BAR_image_in_ap_vld    |   in|    1|     ap_none|            BAR_image_in|        scalar|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
+|ap_rst                 |   in|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
+|ap_start               |   in|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
+|ap_done                |  out|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
+|ap_ready               |  out|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
+|ap_idle                |  out|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
+|ap_continue            |   in|    1|  ap_ctrl_hs|             DMA24b_mm2s|  return value|
++-----------------------+-----+-----+------------+------------------------+--------------+
 

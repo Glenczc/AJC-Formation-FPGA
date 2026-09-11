@@ -1,0 +1,20 @@
+---
+MainSourceFile:  /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/hls/DMA24b_mm2s_prj/solution1/.autopilot/db/DMA24b_mm2s.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
+    FileOffset:      '75:43'
+    FilePath:        ../src/DMA24b_mm2s.cpp
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
+    FileOffset:      '75:52'
+    FilePath:        ../src/DMA24b_mm2s.cpp
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
+    FileOffset:      '77:48'
+    FilePath:        ../src/DMA24b_mm2s.cpp
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
+    FileOffset:      '77:57'
+    FilePath:        ../src/DMA24b_mm2s.cpp
+...

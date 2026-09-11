@@ -64,7 +64,7 @@
  * chemins absolus : la csim Vitis HLS s'execute depuis <prj>/<solution>/csim/build
  * (le testbench accepte aussi 2 arguments : <dir_in> <dir_out>)
  */
-#define INPUT_DATA_PATH_o  "/mnt/isaac_sbay0/lbo-ws/Temp/FPGA_EXPLEO/samples/input/"
-#define OUTPUT_DATA_PATH_o "/mnt/isaac_sbay0/lbo-ws/Temp/FPGA_EXPLEO/samples/output/"
+#define INPUT_DATA_PATH_o  "/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/samples/input/"
+#define OUTPUT_DATA_PATH_o "/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/DMA_RGB24b__720__0/DMA_RGB24b/samples/output/"
 
 #endif // GENERICS_N_OPTIONS_H
