@@ -1,0 +1,18 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/34f8/hdl" --include "/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/xilinx_vip/include" \
+"../../../../SoCora.ip_user_files/bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/1d41/src/clk_wiz_0_clk_wiz.v" \
+"../../../../SoCora.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0_clk_wiz_0_0/sim/design_1_clk_wiz_0_clk_wiz_0_0.v" \
+"../../../../SoCora.ip_user_files/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
+"../../../../SoCora.ip_user_files/bd/design_1/ip/design_1_auto_cc_0/sim/design_1_auto_cc_0.v" \
+"../../../../SoCora.ip_user_files/bd/design_1/ip/design_1_auto_ds_0/sim/design_1_auto_ds_0.v" \
+"../../../../SoCora.ip_user_files/bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+
+sv xil_defaultlib  --include "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/34f8/hdl" --include "/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/xilinx_vip/include" \
+"../../../../../src/sim/tb_socora_gpio.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,33 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s_fetch.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s_streamout.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_fifo_w128_d256_A.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_fifo_w12_d2_S.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_gmem_m_axi.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_mul_mul_11s_13ns_24_4_1.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_mul_mul_12ns_8ns_20_4_1.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_regslice_both.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_start_for_DMA24b_mm2s_streamout_U0.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ip/design_1_DMA24bUnit_mm2s_0_0/sim/design_1_DMA24bUnit_mm2s_0_0.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/b355/src/ControleurVGA_v2.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ip/design_1_ControleurVGA_0_0/sim/design_1_ControleurVGA_0_0.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/db4a/src/AXI4_stream_Slave.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/src/AXI4_stream_Slave.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ip/design_1_AXI4_stream_Slave_1_0/sim/design_1_AXI4_stream_Slave_1_0.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/sim/design_1.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ipshared/ecff/src/AXI4_stream_Master_24b.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/sim/design_1_AXI4_stream_Master_2_0_0.vhd" \
+"../../../../SoCora.ip_user_files/bd/design_1/ip/design_1_AXI4_stream_Slave_1_1/sim/design_1_AXI4_stream_Slave_1_1.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd" \
+"../../../../../src/sim/Axi4s_driver.vhd" \
+"../../../../../src/sim/Axi4s_monitor.vhd" \
+"../../../../../src/sim/tb_environnement.vhd" \
+"../../../../../src/sim/tb_socora_gpio_stim.vhd" \
+"../../../../../src/sim/tb_DMA_AXI_VGA.vhd" \
+"../../../../../src/sim/tb_wrapper.vhd" \
+
+# Do not sort compile order
+nosort

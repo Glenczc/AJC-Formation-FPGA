@@ -1,0 +1,40 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto fef437f626214085906fe12ed4f70d07 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L fifo_generator_v13_2_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot TPG_AXI_VGA_tb_behav xil_defaultlib.TPG_AXI_VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module fifo_generator_v13_2_5.fifo_generator_v13_2_5_bhv_ver_s...
+Compiling module fifo_generator_v13_2_5.fifo_generator_v13_2_5_CONV_VER(...
+Compiling module fifo_generator_v13_2_5.fifo_generator_vlog_beh(C_COMMON...
+Compiling module xil_defaultlib.fifo_generator_0
+Compiling architecture behavioral of entity xil_defaultlib.AXI4_stream_Master [axi4_stream_master_default]
+Compiling architecture design_1_axi4_stream_master_2_0_1_arch of entity xil_defaultlib.design_1_AXI4_stream_Master_2_0_1 [design_1_axi4_stream_master_2_0_...]
+Compiling architecture behavioral of entity xil_defaultlib.AXI4_stream_Slave [\AXI4_stream_Slave(word_width=24...]
+Compiling architecture design_1_axi4_stream_slave_0_1_arch of entity xil_defaultlib.design_1_AXI4_stream_Slave_0_1 [design_1_axi4_stream_slave_0_1_d...]
+Compiling architecture behavioral of entity xil_defaultlib.ControleurVGA [controleurvga_default]
+Compiling architecture design_1_controleurvga_0_4_arch of entity xil_defaultlib.design_1_ControleurVGA_0_4 [design_1_controleurvga_0_4_defau...]
+Compiling architecture behavioral of entity xil_defaultlib.TPG [tpg_default]
+Compiling architecture design_1_tpg_0_2_arch of entity xil_defaultlib.design_1_TPG_0_2 [design_1_tpg_0_2_default]
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=36.5,...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.design_1_clk_wiz_0_clk_wiz_0_1
+Compiling architecture structure of entity xil_defaultlib.design_1 [design_1_default]
+Compiling architecture structure of entity xil_defaultlib.design_1_wrapper [design_1_wrapper_default]
+Compiling architecture behavioral of entity xil_defaultlib.tpg_axi_vga_tb
+Built simulation snapshot TPG_AXI_VGA_tb_behav

@@ -1,0 +1,12 @@
+
+{ 
+    crc :  3960638349311997531  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto a3f026e018754fa680b034e71549393c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L axi_infrastructure_v1_1_0 -L axi_vip_v1_1_8 -L processing_system7_vip_v1_0_10 -L fifo_generator_v13_2_5 -L axi_clock_converter_v2_1_21 -L generic_baseblocks_v2_1_0 -L axi_data_fifo_v2_1_21 -L axi_register_slice_v2_1_22 -L axi_protocol_converter_v2_1_22 -L blk_mem_gen_v8_4_4 -L axi_dwidth_converter_v2_1_22 -L uvm -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_DMA_AXI_VGA_behav xil_defaultlib.tb_DMA_AXI_VGA xil_defaultlib.glbl" , 
+    buildDate : "Nov 18 2020" , 
+    buildTime : "09:20:35" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--no-as-needed  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/tb_DMA_AXI_VGA_behav/xsimk\"   \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_1.lnx64.o\" \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_2.lnx64.o\" \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_3.lnx64.o\" \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_4.lnx64.o\" \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_5.lnx64.o\" \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_6.lnx64.o\" \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_7.lnx64.o\" \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_8.lnx64.o\" \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_9.lnx64.o\" \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_10.lnx64.o\" \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_11.lnx64.o\" \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_12.lnx64.o\" \"xsim.dir/tb_DMA_AXI_VGA_behav/obj/xsim_13.lnx64.o\" -L\"/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/lib/lnx64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

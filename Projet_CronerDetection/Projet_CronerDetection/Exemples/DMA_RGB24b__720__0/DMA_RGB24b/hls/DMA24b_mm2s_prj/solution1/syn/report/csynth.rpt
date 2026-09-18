@@ -1,0 +1,208 @@
+
+
+================================================================
+== Synthesis Summary Report of 'DMA24bUnit_mm2s'
+================================================================
++ General Information: 
+    * Date:           Fri Sep 11 11:21:29 2026
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        DMA24b_mm2s_prj
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------------------------------------------+--------+-------+----------+-----------+----------+----------+---------+----------+---------+---------+-----------+-----------+-----+
+    |                             Modules                            |  Issue |       | Latency  |  Latency  | Iteration|          |   Trip  |          |         |         |           |           |     |
+    |                             & Loops                            |  Type  | Slack | (cycles) |    (ns)   |  Latency | Interval |  Count  | Pipelined|  BRAM   |   DSP   |     FF    |    LUT    | URAM|
+    +----------------------------------------------------------------+--------+-------+----------+-----------+----------+----------+---------+----------+---------+---------+-----------+-----------+-----+
+    |+ DMA24bUnit_mm2s                                               |  Timing|  -0.72|  16707623|  1.113e+08|         -|  16707624|        -|        no|  16 (5%)|   3 (1%)|  2253 (2%)|  2330 (4%)|    -|
+    | + DMA24b_mm2s*                                                 |  Timing|  -0.72|  16707621|  1.113e+08|         -|  16707606|        -|  dataflow|   8 (2%)|   3 (1%)|  1351 (1%)|  1374 (2%)|    -|
+    |  + DMA24b_mm2s_fetch                                           |  Timing|  -0.72|   3112220|  2.073e+07|         -|   3112220|        -|        no|        -|  2 (~0%)|  619 (~0%)|   582 (1%)|    -|
+    |   + DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop  |  Timing|  -0.72|   3112213|  2.073e+07|         -|   3112213|        -|        no|        -|        -|  370 (~0%)|  431 (~0%)|    -|
+    |    o line_loop_burst_loop_beat_loop                            |       -|   4.86|   3112211|  2.073e+07|        13|         1|  3112200|       yes|        -|        -|          -|          -|    -|
+    |  + DMA24b_mm2s_streamout                                       |       -|   0.11|  16707605|  1.113e+08|         -|  16707605|        -|        no|        -|  1 (~0%)|  375 (~0%)|   577 (1%)|    -|
+    |   + DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop        |       -|   0.11|  16707602|  1.113e+08|         -|  16707602|        -|        no|        -|        -|  237 (~0%)|  460 (~0%)|    -|
+    |    o line_loop_group_loop                                      |       -|   4.86|  16707600|  1.113e+08|        17|        16|  1044225|       yes|        -|        -|          -|          -|    -|
+    +----------------------------------------------------------------+--------+-------+----------+-----------+----------+----------+---------+----------+---------+---------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface  | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|            |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem | READ_ONLY  | 128 -> 128 | 64            | 0       | direct | 0        | 0         | 64           | 16           | 16          | 16          | BRAM=8            |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* AXIS
++---------------+-----------+---------------+-------+-------+-------+--------+-------+-------+--------+
+| Interface     | Direction | Register Mode | TDATA | TKEEP | TLAST | TREADY | TSTRB | TUSER | TVALID |
++---------------+-----------+---------------+-------+-------+-------+--------+-------+-------+--------+
+| STR_video_out | out       | both          | 24    | 3     | 1     | 1      | 3     | 1     | 1      |
++---------------+-----------+---------------+-------+-------+-------+--------+-------+-------+--------+
+
+* Other Ports
++----------+---------+-----------+----------+
+| Port     | Mode    | Direction | Bitwidth |
++----------+---------+-----------+----------+
+| image_h  | ap_none | in        | 12       |
+| image_in | ap_none | in        | 64       |
+| image_w  | ap_none | in        | 12       |
++----------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst_n  | reset      | ap_rst_n                          |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++---------------+-----------+---------------------------------------------------------+
+| Argument      | Direction | Datatype                                                |
++---------------+-----------+---------------------------------------------------------+
+| STR_video_out | out       | stream<hls::axis<ap_uint<24>, 1, 0, 0, '8', false>, 0>& |
+| image_w       | in        | ap_uint<12>                                             |
+| image_h       | in        | ap_uint<12>                                             |
+| image_in      | in        | pointer                                                 |
++---------------+-----------+---------------------------------------------------------+
+
+* SW-to-HW Mapping
++---------------+---------------+-----------+----------+-----------+
+| Argument      | HW Interface  | HW Type   | HW Usage | HW Info   |
++---------------+---------------+-----------+----------+-----------+
+| STR_video_out | STR_video_out | interface |          |           |
+| image_w       | image_w       | port      |          |           |
+| image_h       | image_h       | port      |          |           |
+| image_in      | m_axi_gmem    | interface |          | channel=0 |
+| image_in      | image_in      | port      | offset   |           |
++---------------+---------------+-----------+----------+-----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+----------+-------+
+| HW Interface | Direction | Length   | Width |
++--------------+-----------+----------+-------+
+| m_axi_gmem   | read      | variable | 128   |
++--------------+-----------+----------+-------+
+
+* All M_AXI Variable Accesses
++--------------+-----------+------------------------------+-----------+--------------+----------+------------+------------------------------+------------+--------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable  | Access Location              | Direction | Burst Status | Length   | Loop       | Loop Location                | Resolution | Problem                                                                                                |
++--------------+-----------+------------------------------+-----------+--------------+----------+------------+------------------------------+------------+--------------------------------------------------------------------------------------------------------+
+| m_axi_gmem   | mm_buffer | ../src/DMA24b_mm2s.cpp:18:17 | read      | Widen Fail   |          | beat_loop  | ../src/DMA24b_mm2s.cpp:16:15 | 214-353    | Could not widen since type i128 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem   | mm_buffer | ../src/DMA24b_mm2s.cpp:18:17 | read      | Fail         |          | line_loop  | ../src/DMA24b_mm2s.cpp:14:13 | 214-230    | Stride is incompatible                                                                                 |
+| m_axi_gmem   | mm_buffer | ../src/DMA24b_mm2s.cpp:18:17 | read      | Inferred     | variable | burst_loop | ../src/DMA24b_mm2s.cpp:15:15 |            |                                                                                                        |
++--------------+-----------+------------------------------+-----------+--------------+----------+------------+------------------------------+------------+--------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------------------------------------+-----+--------+--------------------+--------+----------+---------+
+| Name                                                           | DSP | Pragma | Variable           | Op     | Impl     | Latency |
++----------------------------------------------------------------+-----+--------+--------------------+--------+----------+---------+
+| + DMA24bUnit_mm2s                                              | 3   |        |                    |        |          |         |
+|  + DMA24b_mm2s                                                 | 3   |        |                    |        |          |         |
+|   + DMA24b_mm2s_fetch                                          | 2   |        |                    |        |          |         |
+|     beats_per_line_fu_151_p2                                   |     |        | beats_per_line     | sub    | fabric   | 0       |
+|     mul_10ns_12ns_21_2_1_U7                                    | 1   |        | mul_ln13           | mul    | auto     | 1       |
+|     cmp32_fu_166_p2                                            |     |        | cmp32              | setgt  | auto     | 0       |
+|     mul_ln14_fu_211_p2                                         |     |        | mul_ln14           | add    | fabric   | 0       |
+|     empty_fu_217_p3                                            |     |        | empty              | select | auto_sel | 0       |
+|     bound_fu_232_p2                                            |     |        | bound              | add    | fabric   | 0       |
+|     mul_12ns_11ns_22_2_1_U8                                    | 1   |        | bound4             | mul    | auto     | 1       |
+|    + DMA24b_mm2s_fetch_Pipeline_line_loop_burst_loop_beat_loop | 0   |        |                    |        |          |         |
+|      icmp_ln14_fu_207_p2                                       |     |        | icmp_ln14          | seteq  | auto     | 0       |
+|      add_ln14_fu_213_p2                                        |     |        | add_ln14           | add    | fabric   | 0       |
+|      icmp_ln15_fu_230_p2                                       |     |        | icmp_ln15          | seteq  | auto     | 0       |
+|      or_ln14_fu_302_p2                                         |     |        | or_ln14            | or     | auto     | 0       |
+|      xor_ln14_fu_307_p2                                        |     |        | xor_ln14           | xor    | auto     | 0       |
+|      icmp_ln16_fu_312_p2                                       |     |        | icmp_ln16          | seteq  | auto     | 0       |
+|      and_ln14_fu_318_p2                                        |     |        | and_ln14           | and    | auto     | 0       |
+|      add_ln14_1_fu_235_p2                                      |     |        | add_ln14_1         | add    | fabric   | 0       |
+|      select_ln14_fu_241_p3                                     |     |        | select_ln14        | select | auto_sel | 0       |
+|      or_ln15_fu_324_p2                                         |     |        | or_ln15            | or     | auto     | 0       |
+|      xor_ln15_fu_330_p2                                        |     |        | xor_ln15           | xor    | auto     | 0       |
+|      and_ln15_fu_336_p2                                        |     |        | and_ln15           | and    | auto     | 0       |
+|      or_ln15_1_fu_342_p2                                       |     |        | or_ln15_1          | or     | auto     | 0       |
+|      empty_54_fu_269_p2                                        |     |        | empty_54           | sub    | fabric   | 0       |
+|      empty_55_fu_350_p2                                        |     |        | empty_55           | add    | fabric   | 0       |
+|      add_ln16_fu_365_p2                                        |     |        | add_ln16           | add    | fabric   | 0       |
+|      or_ln16_fu_371_p2                                         |     |        | or_ln16            | or     | auto     | 0       |
+|      select_ln16_fu_376_p3                                     |     |        | select_ln16        | select | auto_sel | 0       |
+|      add_ln15_fu_275_p2                                        |     |        | add_ln15           | add    | fabric   | 0       |
+|      select_ln15_fu_281_p3                                     |     |        | select_ln15        | select | auto_sel | 0       |
+|   + DMA24b_mm2s_streamout                                      | 1   |        |                    |        |          |         |
+|     last_i_fu_138_p2                                           |     |        | last_i             | add    | fabric   | 0       |
+|     mul_12ns_8ns_20_2_1_U26                                    | 1   |        | bound              | mul    | auto     | 1       |
+|    + DMA24b_mm2s_streamout_Pipeline_line_loop_group_loop       | 0   |        |                    |        |          |         |
+|      icmp_ln39_fu_428_p2                                       |     |        | icmp_ln39          | setgt  | auto     | 0       |
+|      icmp_ln38_fu_433_p2                                       |     |        | icmp_ln38          | seteq  | auto     | 0       |
+|      add_ln38_fu_438_p2                                        |     |        | add_ln38           | add    | fabric   | 0       |
+|      select_ln38_fu_453_p3                                     |     |        | select_ln38        | select | auto_sel | 0       |
+|      add_ln38_1_fu_447_p2                                      |     |        | add_ln38_1         | add    | fabric   | 0       |
+|      select_ln38_1_fu_463_p3                                   |     |        | select_ln38_1      | select | auto_sel | 0       |
+|      video_elt_out_last_fu_472_p2                              |     |        | video_elt_out_last | seteq  | auto     | 0       |
+|      or_ln51_fu_492_p2                                         |     |        | or_ln51            | or     | auto     | 0       |
+|      video_elt_out_user_fu_516_p2                              |     |        | video_elt_out_user | seteq  | auto     | 0       |
+|      i_3_fu_523_p2                                             |     |        | i_3                | add    | fabric   | 0       |
++----------------------------------------------------------------+-----+--------+--------------------+--------+----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+--------------+-------------+------+------+--------+-----------+--------+---------+------------------+
+| Name              | Usage        | Type        | BRAM | URAM | Pragma | Variable  | Impl   | Latency | Bitwidth, Depth, |
+|                   |              |             |      |      |        |           |        |         | Banks            |
++-------------------+--------------+-------------+------+------+--------+-----------+--------+---------+------------------+
+| + DMA24bUnit_mm2s |              |             | 16   | 0    |        |           |        |         |                  |
+|   gmem_m_axi_U    | interface    | m_axi       | 8    |      |        |           |        |         |                  |
+|  + DMA24b_mm2s    |              |             | 8    | 0    |        |           |        |         |                  |
+|    mm_fifo_U      | fifo channel | stream      | 8    |      |        | mm_fifo   | memory | 0       | 128, 256, 1      |
+|    image_w_c_U    | fifo channel | scalar prop |      |      |        | image_w_c | srl    | 0       | 12, 2, 1         |
+|    image_h_c_U    | fifo channel | scalar prop |      |      |        | image_h_c | srl    | 0       | 12, 2, 1         |
++-------------------+--------------+-------------+------+------+--------+-----------+--------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+---------------------------------------------------------------------------+--------------------------------------------------------+
+| Type      | Options                                                                   | Location                                               |
++-----------+---------------------------------------------------------------------------+--------------------------------------------------------+
+| pipeline  | II = 1                                                                    | ../src/DMA24b_mm2s.cpp:17 in dma24b_mm2s_fetch         |
+| pipeline  | II = 16                                                                   | ../src/DMA24b_mm2s.cpp:40 in dma24b_mm2s_streamout     |
+| unroll    |                                                                           | ../src/DMA24b_mm2s.cpp:42 in dma24b_mm2s_streamout     |
+| unroll    |                                                                           | ../src/DMA24b_mm2s.cpp:46 in dma24b_mm2s_streamout     |
+| interface | axis port = STR_video_out                                                 | ../src/DMA24b_mm2s.cpp:59 in dma24bunit_mm2s           |
+| interface | ap_none port = image_w                                                    | ../src/DMA24b_mm2s.cpp:60 in dma24bunit_mm2s           |
+| interface | ap_none port = image_h                                                    | ../src/DMA24b_mm2s.cpp:61 in dma24bunit_mm2s           |
+| interface | m_axi port=image_in depth=DDR_SIZE offset=direct max_read_burst_length=64 | ../src/DMA24b_mm2s.cpp:62 in dma24bunit_mm2s, image_in |
+| dataflow  |                                                                           | ../src/DMA24b_mm2s.cpp:69 in dma24b_mm2s               |
+| inline    |                                                                           | ../src/DMA24b_mm2s_utils.h:56 in dma24b_mm2s_get_pixel |
+| inline    |                                                                           | ../src/DMA24b_mm2s_utils.h:75 in dma24b_mm2s_set_pixel |
++-----------+---------------------------------------------------------------------------+--------------------------------------------------------+
+
+

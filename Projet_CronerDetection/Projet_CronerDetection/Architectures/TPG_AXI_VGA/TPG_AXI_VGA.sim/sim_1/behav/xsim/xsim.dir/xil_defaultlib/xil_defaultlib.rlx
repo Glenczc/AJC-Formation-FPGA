@@ -1,0 +1,19 @@
+0.7
+2020.2
+Nov 18 2020
+09:20:35
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd,1789043785,vhdl,,,,design_1_wrapper,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_1/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v,1788947009,verilog,,,,fifo_generator_0,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_1/sim/design_1_AXI4_stream_Master_2_0_1.vhd,1789043785,vhdl,,,,design_1_axi4_stream_master_2_0_1,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ip/design_1_AXI4_stream_Slave_0_1/sim/design_1_AXI4_stream_Slave_0_1.vhd,1788947009,vhdl,,,,design_1_axi4_stream_slave_0_1,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ip/design_1_ControleurVGA_0_4/sim/design_1_ControleurVGA_0_4.vhd,1789043597,vhdl,,,,design_1_controleurvga_0_4,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ip/design_1_TPG_0_2/sim/design_1_TPG_0_2.vhd,1789043785,vhdl,,,,design_1_tpg_0_2,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0_clk_wiz_0_1/sim/design_1_clk_wiz_0_clk_wiz_0_1.v,1788857194,verilog,,/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_1/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v,,design_1_clk_wiz_0_clk_wiz_0_1,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ipshared/0409/src/TPG.vhd,1789028273,vhdl,,,,tpg,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ipshared/1d41/src/clk_wiz_0_clk_wiz.v,1788857194,verilog,,/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0_clk_wiz_0_1/sim/design_1_clk_wiz_0_clk_wiz_0_1.v,,clk_wiz_0_clk_wiz,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ipshared/b355/src/ControleurVGA_v2.vhd,1789043597,vhdl,,,,controleurvga,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ipshared/db4a/src/AXI4_stream_Slave.vhd,1788947009,vhdl,,,,axi4_stream_slave,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ipshared/ecff/src/AXI4_stream_Master_24b.vhd,1788947007,vhdl,,,,axi4_stream_master,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/sim/design_1.vhd,1789043785,vhdl,,,,design_1,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/src/TPG_AXI_VGA_tb.vhd,1788880388,vhdl,,,,tpg_axi_vga_tb,,,,,,,,

@@ -1,0 +1,6 @@
+Concernant les livrables pour le projet, vous devrez fournir :
+- le plan de validation
+- les schémas d'architecture
+- le rapport de validation (qui suit votre plan de validation)
+- vos codes sources
+Ce sont les même rendu que vous feriez à un client qui vous a commandé un projet 😉

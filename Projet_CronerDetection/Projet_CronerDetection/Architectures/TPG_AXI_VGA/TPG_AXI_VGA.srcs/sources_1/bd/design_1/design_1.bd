@@ -1,0 +1,294 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x6457A7D1A0A3DED5",
+      "device": "xc7z007sclg400-1",
+      "gen_directory": "../../../../TPG_AXI_VGA.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2020.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "clk_wiz_0_clk_wiz_0": "",
+      "AXI4_stream_Master_2_0": "",
+      "AXI4_stream_Slave_0": "",
+      "TPG_0": "",
+      "ControleurVGA_0": "",
+      "AXI4_stream_Master_2_1": "",
+      "AXI4_stream_Slave_1": "",
+      "xlconstant_0": ""
+    },
+    "ports": {
+      "VGA_R": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "VGA_B": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "VGA_HS_O": {
+        "direction": "O"
+      },
+      "VGA_VS_O": {
+        "direction": "O"
+      },
+      "VGA_G": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "reset": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "CLK_I": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_CLK_I",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "125000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "clk_wiz_0_clk_wiz_0": {
+        "vlnv": "user.org:user:clk_wiz_0_clk_wiz:1.0",
+        "xci_name": "design_1_clk_wiz_0_clk_wiz_0_1",
+        "xci_path": "ip/design_1_clk_wiz_0_clk_wiz_0_1/design_1_clk_wiz_0_clk_wiz_0_1.xci",
+        "inst_hier_path": "clk_wiz_0_clk_wiz_0"
+      },
+      "AXI4_stream_Master_2_0": {
+        "vlnv": "user.org:user:AXI4_stream_Master_24b:1.0",
+        "xci_name": "design_1_AXI4_stream_Master_2_0_1",
+        "xci_path": "ip/design_1_AXI4_stream_Master_2_0_1/design_1_AXI4_stream_Master_2_0_1.xci",
+        "inst_hier_path": "AXI4_stream_Master_2_0",
+        "parameters": {
+          "nb_ligne": {
+            "value": "480"
+          }
+        }
+      },
+      "AXI4_stream_Slave_0": {
+        "vlnv": "user.org:user:AXI4_stream_Slave:1.0",
+        "xci_name": "design_1_AXI4_stream_Slave_0_1",
+        "xci_path": "ip/design_1_AXI4_stream_Slave_0_1/design_1_AXI4_stream_Slave_0_1.xci",
+        "inst_hier_path": "AXI4_stream_Slave_0",
+        "parameters": {
+          "WORD_WIDTH": {
+            "value": "24"
+          }
+        }
+      },
+      "TPG_0": {
+        "vlnv": "user.org:user:TPG:1.0",
+        "xci_name": "design_1_TPG_0_2",
+        "xci_path": "ip/design_1_TPG_0_2/design_1_TPG_0_2.xci",
+        "inst_hier_path": "TPG_0",
+        "parameters": {
+          "FRAME_HEIGHT": {
+            "value": "480"
+          }
+        }
+      },
+      "ControleurVGA_0": {
+        "vlnv": "user.org:user:ControleurVGA:1.0",
+        "xci_name": "design_1_ControleurVGA_0_4",
+        "xci_path": "ip/design_1_ControleurVGA_0_4/design_1_ControleurVGA_0_4.xci",
+        "inst_hier_path": "ControleurVGA_0"
+      },
+      "AXI4_stream_Master_2_1": {
+        "vlnv": "user.org:user:AXI4_stream_Master_24b:1.0",
+        "xci_name": "design_1_AXI4_stream_Master_2_0_2",
+        "xci_path": "ip/design_1_AXI4_stream_Master_2_0_2/design_1_AXI4_stream_Master_2_0_2.xci",
+        "inst_hier_path": "AXI4_stream_Master_2_1",
+        "parameters": {
+          "nb_ligne": {
+            "value": "480"
+          }
+        }
+      },
+      "AXI4_stream_Slave_1": {
+        "vlnv": "user.org:user:AXI4_stream_Slave:1.0",
+        "xci_name": "design_1_AXI4_stream_Slave_0_2",
+        "xci_path": "ip/design_1_AXI4_stream_Slave_0_2/design_1_AXI4_stream_Slave_0_2.xci",
+        "inst_hier_path": "AXI4_stream_Slave_1",
+        "parameters": {
+          "WORD_WIDTH": {
+            "value": "24"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "design_1_xlconstant_0_0",
+        "xci_path": "ip/design_1_xlconstant_0_0/design_1_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0"
+      }
+    },
+    "interface_nets": {
+      "AXI4_stream_Master_2_1_interface_axis": {
+        "interface_ports": [
+          "AXI4_stream_Master_2_1/interface_axis",
+          "AXI4_stream_Slave_1/interface_axis"
+        ]
+      },
+      "AXI4_stream_Master_2_0_interface_axis": {
+        "interface_ports": [
+          "AXI4_stream_Master_2_0/interface_axis",
+          "AXI4_stream_Slave_0/interface_axis"
+        ]
+      }
+    },
+    "nets": {
+      "CLK_I_1": {
+        "ports": [
+          "CLK_I",
+          "clk_wiz_0_clk_wiz_0/clk_in1"
+        ]
+      },
+      "clk_wiz_0_clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0_clk_wiz_0/clk_out1",
+          "AXI4_stream_Master_2_0/clk",
+          "AXI4_stream_Slave_0/clk",
+          "TPG_0/clk",
+          "ControleurVGA_0/clk",
+          "AXI4_stream_Slave_1/clk",
+          "AXI4_stream_Master_2_1/clk"
+        ]
+      },
+      "reset_1": {
+        "ports": [
+          "reset",
+          "AXI4_stream_Master_2_0/reset",
+          "AXI4_stream_Slave_0/reset",
+          "TPG_0/reset",
+          "ControleurVGA_0/reset",
+          "AXI4_stream_Slave_1/reset",
+          "AXI4_stream_Master_2_1/reset"
+        ]
+      },
+      "TPG_0_pixel": {
+        "ports": [
+          "TPG_0/pixel",
+          "AXI4_stream_Master_2_0/data_in"
+        ]
+      },
+      "TPG_0_px_valid": {
+        "ports": [
+          "TPG_0/px_valid",
+          "AXI4_stream_Master_2_0/wr_en"
+        ]
+      },
+      "ControleurVGA_0_VGA_HS_O": {
+        "ports": [
+          "ControleurVGA_0/VGA_HS_O",
+          "VGA_HS_O"
+        ]
+      },
+      "ControleurVGA_0_VGA_VS_O": {
+        "ports": [
+          "ControleurVGA_0/VGA_VS_O",
+          "VGA_VS_O"
+        ]
+      },
+      "ControleurVGA_0_VGA_R": {
+        "ports": [
+          "ControleurVGA_0/VGA_R",
+          "VGA_R"
+        ]
+      },
+      "ControleurVGA_0_VGA_G": {
+        "ports": [
+          "ControleurVGA_0/VGA_G",
+          "VGA_G"
+        ]
+      },
+      "ControleurVGA_0_VGA_B": {
+        "ports": [
+          "ControleurVGA_0/VGA_B",
+          "VGA_B"
+        ]
+      },
+      "AXI4_stream_Slave_0_data_out": {
+        "ports": [
+          "AXI4_stream_Slave_0/data_out",
+          "AXI4_stream_Master_2_1/data_in"
+        ]
+      },
+      "AXI4_stream_Slave_1_data_out": {
+        "ports": [
+          "AXI4_stream_Slave_1/data_out",
+          "ControleurVGA_0/pixel"
+        ]
+      },
+      "AXI4_stream_Slave_1_valid": {
+        "ports": [
+          "AXI4_stream_Slave_1/valid",
+          "ControleurVGA_0/valid"
+        ]
+      },
+      "AXI4_stream_Slave_1_last": {
+        "ports": [
+          "AXI4_stream_Slave_1/last",
+          "ControleurVGA_0/H_end"
+        ]
+      },
+      "AXI4_stream_Slave_1_user": {
+        "ports": [
+          "AXI4_stream_Slave_1/user",
+          "ControleurVGA_0/V_end"
+        ]
+      },
+      "ControleurVGA_0_ready": {
+        "ports": [
+          "ControleurVGA_0/ready",
+          "AXI4_stream_Slave_1/ready"
+        ]
+      },
+      "AXI4_stream_Slave_0_valid": {
+        "ports": [
+          "AXI4_stream_Slave_0/valid",
+          "AXI4_stream_Master_2_1/wr_en"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "AXI4_stream_Slave_0/ready"
+        ]
+      }
+    }
+  }
+}
