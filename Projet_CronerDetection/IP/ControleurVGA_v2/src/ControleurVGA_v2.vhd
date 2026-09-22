@@ -196,7 +196,7 @@ begin
 
 
   -- H Synchro
-  process (clk)
+  process (clk,reset)
   begin
     if (reset = '1') then
         h_sync_reg <= H_POL;
@@ -220,7 +220,7 @@ begin
   
   
   -- V Synchro
-  process (clk)
+  process (clk,reset)
   begin
     if (reset = '1') then
         v_sync_reg <= H_POL;
@@ -233,9 +233,9 @@ begin
     end if;
   end process;
   
-  vga_red <= pixel(3 downto 0);
-  vga_green <= pixel(11 downto 8);
-  vga_blue <= pixel(19 downto 16);  
+  vga_green <= pixel(7 downto 4);
+  vga_red <= pixel(15 downto 12);
+  vga_blue <= pixel(23 downto 20);  
   
   ready <= '1' when (current_state = reception) else '0';
 

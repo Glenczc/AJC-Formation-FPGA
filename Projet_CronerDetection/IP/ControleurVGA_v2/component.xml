@@ -2,7 +2,7 @@
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>user.org</spirit:vendor>
   <spirit:library>user</spirit:library>
-  <spirit:name>ControleurVGA</spirit:name>
+  <spirit:name>ControleurVGA_v2</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
@@ -58,7 +58,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b1b8a7c8</spirit:value>
+            <spirit:value>04e14c9c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -74,7 +74,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b1b8a7c8</spirit:value>
+            <spirit:value>04e14c9c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -277,7 +277,7 @@
       <spirit:file>
         <spirit:name>src/ControleurVGA_v2.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_b1b8a7c8</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_04e14c9c</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -292,7 +292,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/ControleurVGA_v1_0.tcl</spirit:name>
+        <spirit:name>xgui/ControleurVGA_v2_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_f92e9879</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
@@ -339,24 +339,27 @@
       </xilinx:taxonomies>
       <xilinx:displayName>ControleurVGA_v2</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2026-09-10T12:32:41Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1</xilinx:coreRevision>
+      <xilinx:upgrades>
+        <xilinx:canUpgradeFrom>user.org:user:ControleurVGA:1.0</xilinx:canUpgradeFrom>
+      </xilinx:upgrades>
+      <xilinx:coreCreationDateTime>2026-09-21T15:13:59Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fb2d6bc_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@392c6e96_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@335f1440_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@a6f6eaa_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e8053a4_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7150dcf9_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3018c2b7_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ec5b98f_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7536c8c4_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60c560bb_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d84519f_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38bf0466_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ab232cf_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e78f088_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45ab6142_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18ae9524_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6124e5fe_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dc42337_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v2</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="50102c5c"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="18a8b4d6"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="db3c6c6d"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="4013c4f3"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="b8c6bc3b"/>
     </xilinx:packagingInfo>

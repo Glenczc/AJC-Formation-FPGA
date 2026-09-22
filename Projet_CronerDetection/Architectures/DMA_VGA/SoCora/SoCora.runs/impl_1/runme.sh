@@ -7,9 +7,9 @@
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/tools/xilinx/Vitis/2020.2/bin:/tools/xilinx/Vivado/2020.2/ids_lite/ISE/bin/lin64:/tools/xilinx/Vivado/2020.2/bin
+  PATH=/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/bin:/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/ids_lite/ISE/bin/lin64:/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/bin
 else
-  PATH=/tools/xilinx/Vitis/2020.2/bin:/tools/xilinx/Vivado/2020.2/ids_lite/ISE/bin/lin64:/tools/xilinx/Vivado/2020.2/bin:$PATH
+  PATH=/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/bin:/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/ids_lite/ISE/bin/lin64:/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/bin:$PATH
 fi
 export PATH
 
@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.runs/impl_1'
+HD_PWD='/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/SoCora/SoCora.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -37,7 +37,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
+/bin/touch .write_bitstream.begin.rst
 EAStep vivado -log design_1_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
 
 

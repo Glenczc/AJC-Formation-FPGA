@@ -1,1 +1,0 @@
--wto "7ad0c694514749c4acecbfb885fb0e7d" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "AXI4_stream_Slave_tb_behav" "xil_defaultlib.AXI4_stream_Slave_tb" -log "elaborate.log" 

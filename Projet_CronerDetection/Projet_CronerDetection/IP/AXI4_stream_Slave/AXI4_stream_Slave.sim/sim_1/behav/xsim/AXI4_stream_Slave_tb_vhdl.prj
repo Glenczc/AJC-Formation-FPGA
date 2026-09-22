@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../src/AXI4_stream_Slave.vhd" \
-"../../../../../src/AXI4_stream_Slave_tb.vhd" \
-
-# Do not sort compile order
-nosort

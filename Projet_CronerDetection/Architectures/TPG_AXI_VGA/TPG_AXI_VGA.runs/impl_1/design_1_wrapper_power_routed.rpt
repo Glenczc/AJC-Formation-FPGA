@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date             : Thu Sep 10 14:38:53 2026
-| Host             : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.4 LTS
+| Date             : Thu Sep 17 16:07:26 2026
+| Host             : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
 | Device           : xc7z007sclg400-1
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |      657 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      296 |     14400 |            2.06 |
+| Slice Logic    |    <0.001 |      762 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      339 |     14400 |            2.35 |
 |   CARRY4       |    <0.001 |       55 |      4400 |            1.25 |
-|   Register     |    <0.001 |      216 |     28800 |            0.75 |
-|   Others       |     0.000 |       12 |       --- |             --- |
-| Signals        |    <0.001 |      469 |       --- |             --- |
-| Block RAM      |    <0.001 |      0.5 |        50 |            1.00 |
+|   Register     |    <0.001 |      252 |     28800 |            0.88 |
+|   Others       |     0.000 |       17 |       --- |             --- |
+| Signals        |    <0.001 |      576 |       --- |             --- |
+| Block RAM      |    <0.001 |        1 |        50 |            2.00 |
 | MMCM           |     0.115 |        1 |         2 |           50.00 |
 | I/O            |    <0.001 |       16 |       100 |           16.00 |
 | Static Power   |     0.094 |          |           |                 |

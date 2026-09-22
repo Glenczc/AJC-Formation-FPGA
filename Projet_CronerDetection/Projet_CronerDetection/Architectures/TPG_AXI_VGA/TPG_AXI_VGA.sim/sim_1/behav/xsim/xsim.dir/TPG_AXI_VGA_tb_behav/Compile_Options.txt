@@ -1,1 +1,0 @@
--wto "fef437f626214085906fe12ed4f70d07" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "fifo_generator_v13_2_5" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "TPG_AXI_VGA_tb_behav" "xil_defaultlib.TPG_AXI_VGA_tb" "xil_defaultlib.glbl" -log "elaborate.log" 

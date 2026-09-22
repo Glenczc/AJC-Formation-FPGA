@@ -161,17 +161,90 @@ proc create_root_design { parentCell } {
 
 
   # Create ports
-  set S01_ACLK_0 [ create_bd_port -dir I -type clk S01_ACLK_0 ]
+  set CLK_I [ create_bd_port -dir I CLK_I ]
+  set VGA_B [ create_bd_port -dir O -from 3 -to 0 VGA_B ]
+  set VGA_G [ create_bd_port -dir O -from 3 -to 0 VGA_G ]
+  set VGA_HS_O [ create_bd_port -dir O VGA_HS_O ]
+  set VGA_R [ create_bd_port -dir O -from 3 -to 0 VGA_R ]
+  set VGA_VS_O [ create_bd_port -dir O VGA_VS_O ]
+  set reset [ create_bd_port -dir I -type rst reset ]
+  set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_HIGH} \
+ ] $reset
+
+  # Create instance: AXI4_stream_Master_2_0, and set properties
+  set AXI4_stream_Master_2_0 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Master_24b:1.0 AXI4_stream_Master_2_0 ]
+
+  # Create instance: AXI4_stream_Slave_1, and set properties
+  set AXI4_stream_Slave_1 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Slave:1.0 AXI4_stream_Slave_1 ]
+  set_property -dict [ list \
+   CONFIG.WORD_WIDTH {24} \
+ ] $AXI4_stream_Slave_1
+
+  set_property -dict [ list \
+   CONFIG.FREQ_HZ {100000000} \
+   CONFIG.CLK_DOMAIN {clk_wiz} \
+ ] [get_bd_pins /AXI4_stream_Slave_1/clk]
+
+  set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_HIGH} \
+ ] [get_bd_pins /AXI4_stream_Slave_1/reset]
+
+  # Create instance: AXI4_stream_Slave_2, and set properties
+  set AXI4_stream_Slave_2 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Slave:1.0 AXI4_stream_Slave_2 ]
+  set_property -dict [ list \
+   CONFIG.WORD_WIDTH {24} \
+ ] $AXI4_stream_Slave_2
+
+  set_property -dict [ list \
+   CONFIG.FREQ_HZ {100000000} \
+   CONFIG.CLK_DOMAIN {clk_wiz} \
+ ] [get_bd_pins /AXI4_stream_Slave_2/clk]
+
+  set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_HIGH} \
+ ] [get_bd_pins /AXI4_stream_Slave_2/reset]
+
+  # Create instance: ControleurVGA_v2_0, and set properties
+  set ControleurVGA_v2_0 [ create_bd_cell -type ip -vlnv user.org:user:ControleurVGA_v2:1.0 ControleurVGA_v2_0 ]
 
   # Create instance: DMA24bUnit_mm2s_0, and set properties
   set DMA24bUnit_mm2s_0 [ create_bd_cell -type ip -vlnv user.org:user:DMA24bUnit_mm2s:1.0 DMA24bUnit_mm2s_0 ]
 
-  # Create instance: axi4s_monitor_0, and set properties
-  set axi4s_monitor_0 [ create_bd_cell -type ip -vlnv user.org:user:axi4s_monitor:1.0 axi4s_monitor_0 ]
   set_property -dict [ list \
-   CONFIG.G_DATA_WIDTH {24} \
-   CONFIG.G_SYNC_ON_SOF {false} \
- ] $axi4s_monitor_0
+   CONFIG.FREQ_HZ {100000000} \
+   CONFIG.CLK_DOMAIN {clk_wiz} \
+ ] [get_bd_pins /DMA24bUnit_mm2s_0/ap_clk]
+
+  # Create instance: addr_base, and set properties
+  set addr_base [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 addr_base ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {0x00400000} \
+   CONFIG.CONST_WIDTH {64} \
+ ] $addr_base
+
+  # Create instance: axi_mem_intercon, and set properties
+  set axi_mem_intercon [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_mem_intercon ]
+  set_property -dict [ list \
+   CONFIG.NUM_MI {1} \
+ ] $axi_mem_intercon
+
+  # Create instance: clk_wiz_0_clk_wiz_0, and set properties
+  set clk_wiz_0_clk_wiz_0 [ create_bd_cell -type ip -vlnv user.org:user:clk_wiz_0_clk_wiz:1.0 clk_wiz_0_clk_wiz_0 ]
+
+  # Create instance: image_h, and set properties
+  set image_h [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 image_h ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {480} \
+   CONFIG.CONST_WIDTH {12} \
+ ] $image_h
+
+  # Create instance: image_w, and set properties
+  set image_w [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 image_w ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {640} \
+   CONFIG.CONST_WIDTH {12} \
+ ] $image_w
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -982,7 +1055,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_USE_S_AXI_ACP {0} \
    CONFIG.PCW_USE_S_AXI_GP0 {0} \
    CONFIG.PCW_USE_S_AXI_GP1 {0} \
-   CONFIG.PCW_USE_S_AXI_HP0 {0} \
+   CONFIG.PCW_USE_S_AXI_HP0 {1} \
    CONFIG.PCW_USE_S_AXI_HP1 {0} \
    CONFIG.PCW_USE_S_AXI_HP2 {0} \
    CONFIG.PCW_USE_S_AXI_HP3 {0} \
@@ -995,34 +1068,59 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_WDT_PERIPHERAL_FREQMHZ {133.333333} \
  ] $processing_system7_0
 
-  # Create instance: ps7_0_axi_periph, and set properties
-  set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
+  # Create instance: reset_not, and set properties
+  set reset_not [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 reset_not ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {1} \
-   CONFIG.NUM_SI {2} \
- ] $ps7_0_axi_periph
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $reset_not
 
-  # Create instance: rst_ps7_0_50M, and set properties
-  set rst_ps7_0_50M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_50M ]
+  # Create instance: start, and set properties
+  set start [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 start ]
 
   # Create interface connections
-  connect_bd_intf_net -intf_net DMA24bUnit_mm2s_0_STR_video_out [get_bd_intf_pins DMA24bUnit_mm2s_0/STR_video_out] [get_bd_intf_pins axi4s_monitor_0/s]
-  connect_bd_intf_net -intf_net DMA24bUnit_mm2s_0_m_axi_gmem [get_bd_intf_pins DMA24bUnit_mm2s_0/m_axi_gmem] [get_bd_intf_pins ps7_0_axi_periph/S01_AXI]
+  connect_bd_intf_net -intf_net AXI4_stream_Master_2_0_interface_axis [get_bd_intf_pins AXI4_stream_Master_2_0/interface_axis] [get_bd_intf_pins AXI4_stream_Slave_2/interface_axis]
+  connect_bd_intf_net -intf_net DMA24bUnit_mm2s_0_STR_video_out [get_bd_intf_pins AXI4_stream_Slave_1/interface_axis] [get_bd_intf_pins DMA24bUnit_mm2s_0/STR_video_out]
+  connect_bd_intf_net -intf_net DMA24bUnit_mm2s_0_m_axi_gmem [get_bd_intf_pins DMA24bUnit_mm2s_0/m_axi_gmem] [get_bd_intf_pins axi_mem_intercon/S00_AXI]
+  connect_bd_intf_net -intf_net axi_mem_intercon_M00_AXI [get_bd_intf_pins axi_mem_intercon/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
-  connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
 
   # Create port connections
-  connect_bd_net -net S01_ACLK_0_1 [get_bd_ports S01_ACLK_0] [get_bd_pins ps7_0_axi_periph/S01_ACLK]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DMA24bUnit_mm2s_0/ap_clk] [get_bd_pins axi4s_monitor_0/clk_i] [get_bd_pins axi4s_monitor_0/rst_i] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_50M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins DMA24bUnit_mm2s_0/ap_rst_n] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins ps7_0_axi_periph/S01_ARESETN] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn]
+  connect_bd_net -net AXI4_stream_Master_2_0_fulln [get_bd_pins AXI4_stream_Master_2_0/fulln] [get_bd_pins AXI4_stream_Slave_1/ready]
+  connect_bd_net -net AXI4_stream_Slave_1_data_out [get_bd_pins AXI4_stream_Master_2_0/data_in] [get_bd_pins AXI4_stream_Slave_1/data_out]
+  connect_bd_net -net AXI4_stream_Slave_1_valid [get_bd_pins AXI4_stream_Master_2_0/wr_en] [get_bd_pins AXI4_stream_Slave_1/valid]
+  connect_bd_net -net AXI4_stream_Slave_2_data_out [get_bd_pins AXI4_stream_Slave_2/data_out] [get_bd_pins ControleurVGA_v2_0/pixel]
+  connect_bd_net -net AXI4_stream_Slave_2_last [get_bd_pins AXI4_stream_Slave_2/last] [get_bd_pins ControleurVGA_v2_0/H_end]
+  connect_bd_net -net AXI4_stream_Slave_2_user [get_bd_pins AXI4_stream_Slave_2/user] [get_bd_pins ControleurVGA_v2_0/V_end]
+  connect_bd_net -net AXI4_stream_Slave_2_valid [get_bd_pins AXI4_stream_Slave_2/valid] [get_bd_pins ControleurVGA_v2_0/valid]
+  connect_bd_net -net CLK_I_1 [get_bd_ports CLK_I] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_in1]
+  connect_bd_net -net ControleurVGA_v2_0_VGA_B [get_bd_ports VGA_B] [get_bd_pins ControleurVGA_v2_0/VGA_B]
+  connect_bd_net -net ControleurVGA_v2_0_VGA_G [get_bd_ports VGA_G] [get_bd_pins ControleurVGA_v2_0/VGA_G]
+  connect_bd_net -net ControleurVGA_v2_0_VGA_HS_O [get_bd_ports VGA_HS_O] [get_bd_pins ControleurVGA_v2_0/VGA_HS_O]
+  connect_bd_net -net ControleurVGA_v2_0_VGA_R [get_bd_ports VGA_R] [get_bd_pins ControleurVGA_v2_0/VGA_R]
+  connect_bd_net -net ControleurVGA_v2_0_VGA_VS_O [get_bd_ports VGA_VS_O] [get_bd_pins ControleurVGA_v2_0/VGA_VS_O]
+  connect_bd_net -net ControleurVGA_v2_0_ready [get_bd_pins AXI4_stream_Slave_2/ready] [get_bd_pins ControleurVGA_v2_0/ready]
+  connect_bd_net -net ap_rst_n_0_1 [get_bd_ports reset] [get_bd_pins AXI4_stream_Master_2_0/reset] [get_bd_pins AXI4_stream_Slave_1/reset] [get_bd_pins AXI4_stream_Slave_2/reset] [get_bd_pins ControleurVGA_v2_0/reset] [get_bd_pins reset_not/Op1]
+  connect_bd_net -net clk_wiz_0_clk_wiz_0_clk_out1 [get_bd_pins AXI4_stream_Master_2_0/clk] [get_bd_pins AXI4_stream_Slave_1/clk] [get_bd_pins AXI4_stream_Slave_2/clk] [get_bd_pins ControleurVGA_v2_0/clk] [get_bd_pins DMA24bUnit_mm2s_0/ap_clk] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_out1]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK]
+  connect_bd_net -net reset_not_Res [get_bd_pins DMA24bUnit_mm2s_0/ap_rst_n] [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins reset_not/Res]
+  connect_bd_net -net start_dout [get_bd_pins DMA24bUnit_mm2s_0/ap_start] [get_bd_pins start/dout]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins DMA24bUnit_mm2s_0/image_w] [get_bd_pins image_w/dout]
+  connect_bd_net -net xlconstant_1_dout [get_bd_pins DMA24bUnit_mm2s_0/image_h] [get_bd_pins image_h/dout]
+  connect_bd_net -net xlconstant_2_dout [get_bd_pins DMA24bUnit_mm2s_0/image_in] [get_bd_pins addr_base/dout]
 
   # Create address segments
+  assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces DMA24bUnit_mm2s_0/m_axi_gmem] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] -force
 
 
   # Restore current instance
   current_bd_instance $oldCurInst
+
+  # Create PFM attributes
+  set_property PFM_NAME {xilinx:xc7z007sclg400-1:DMA_seul:0.0} [get_files [current_bd_design].bd]
+
 
   validate_bd_design
   save_bd_design

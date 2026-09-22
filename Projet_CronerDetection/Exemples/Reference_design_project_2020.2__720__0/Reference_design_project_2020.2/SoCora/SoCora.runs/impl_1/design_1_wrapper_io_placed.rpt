@@ -1,11 +1,11 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date                      : Fri Sep 11 14:26:18 2026
-| Host                      : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.4 LTS
+| Date                      : Tue Sep 15 11:17:19 2026
+| Host                      : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 | Command                   : report_io -file design_1_wrapper_io_placed.rpt
 | Design                    : design_1_wrapper
-| Device                    : xc7z010
+| Device                    : xc7z007s
 | Speed File                : -1
 | Package                   : clg400
 | Package Version           : FINAL 2012-10-23

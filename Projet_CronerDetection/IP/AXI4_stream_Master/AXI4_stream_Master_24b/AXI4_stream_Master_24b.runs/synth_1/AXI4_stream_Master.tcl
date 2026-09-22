@@ -71,6 +71,8 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 1
+set_param xicom.use_bs_reader 1
+set_param tcl.collectionResultDisplayLimit 0
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z007sclg400-1
 
@@ -83,14 +85,17 @@ set_property parent.project_path /home/glen/Documents/AJC-Expleo/Travaux/Projet_
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property ip_repo_paths /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI4_stream_Master/AXI4_stream_Master_24b [current_project]
+update_ip_catalog
 set_property ip_output_repo /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI4_stream_Master/AXI4_stream_Master_24b/AXI4_stream_Master_24b.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+add_files -quiet /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI4_stream_Master/AXI4_stream_Master_24b/AXI4_stream_Master_24b.runs/fifo_generator_0_synth_1/fifo_generator_0.dcp
+set_property used_in_implementation false [get_files /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI4_stream_Master/AXI4_stream_Master_24b/AXI4_stream_Master_24b.runs/fifo_generator_0_synth_1/fifo_generator_0.dcp]
 read_vhdl -library xil_defaultlib /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI4_stream_Master/src/AXI4_stream_Master_24b.vhd
 read_ip -quiet /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI4_stream_Master/AXI4_stream_Master_24b/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
-set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI4_stream_Master/AXI4_stream_Master_24b/AXI4_stream_Master_24b.gen/sources_1/ip/fifo_generator_0/fifo_generator_0.xdc]
-set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI4_stream_Master/AXI4_stream_Master_24b/AXI4_stream_Master_24b.gen/sources_1/ip/fifo_generator_0/fifo_generator_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI4_stream_Master/AXI4_stream_Master_24b/tmp_edit_project.gen/sources_1/ip/fifo_generator_0/fifo_generator_0.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

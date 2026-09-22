@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
---Date        : Fri Sep 11 16:21:09 2026
---Host        : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.4 LTS
+--Date        : Mon Sep 21 17:14:39 2026
+--Host        : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
 --Purpose     : IP block netlist
@@ -13,6 +13,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1_wrapper is
   port (
+    CLK_I : in STD_LOGIC;
     DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
     DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
@@ -34,13 +35,25 @@ entity design_1_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
-    S01_ACLK_0 : in STD_LOGIC
+    VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_HS_O : out STD_LOGIC;
+    VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_VS_O : out STD_LOGIC;
+    reset : in STD_LOGIC
   );
 end design_1_wrapper;
 
 architecture STRUCTURE of design_1_wrapper is
   component design_1 is
   port (
+    reset : in STD_LOGIC;
+    CLK_I : in STD_LOGIC;
+    VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_HS_O : out STD_LOGIC;
+    VGA_VS_O : out STD_LOGIC;
+    VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 );
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
@@ -61,13 +74,13 @@ architecture STRUCTURE of design_1_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    S01_ACLK_0 : in STD_LOGIC
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component design_1;
 begin
 design_1_i: component design_1
      port map (
+      CLK_I => CLK_I,
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
       DDR_ba(2 downto 0) => DDR_ba(2 downto 0),
       DDR_cas_n => DDR_cas_n,
@@ -89,6 +102,11 @@ design_1_i: component design_1
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
-      S01_ACLK_0 => S01_ACLK_0
+      VGA_B(3 downto 0) => VGA_B(3 downto 0),
+      VGA_G(3 downto 0) => VGA_G(3 downto 0),
+      VGA_HS_O => VGA_HS_O,
+      VGA_R(3 downto 0) => VGA_R(3 downto 0),
+      VGA_VS_O => VGA_VS_O,
+      reset => reset
     );
 end STRUCTURE;

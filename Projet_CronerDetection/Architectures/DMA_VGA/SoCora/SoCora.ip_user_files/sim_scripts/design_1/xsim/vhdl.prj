@@ -1,5 +1,4 @@
 vhdl xil_defaultlib  \
-"../../../bd/design_1/ip/design_1_rst_ps7_0_50M_0/sim/design_1_rst_ps7_0_50M_0.vhd" \
 "../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s.vhd" \
 "../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s_fetch.vhd" \
 "../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s_streamout.vhd" \
@@ -12,8 +11,13 @@ vhdl xil_defaultlib  \
 "../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_start_for_DMA24b_mm2s_streamout_U0.vhd" \
 "../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s.vhd" \
 "../../../bd/design_1/ip/design_1_DMA24bUnit_mm2s_0_0/sim/design_1_DMA24bUnit_mm2s_0_0.vhd" \
+"../../../bd/design_1/ipshared/db4a/src/AXI4_stream_Slave.vhd" \
+"../../../bd/design_1/ip/design_1_AXI4_stream_Slave_1_0/sim/design_1_AXI4_stream_Slave_1_0.vhd" \
+"../../../bd/design_1/ip/design_1_AXI4_stream_Slave_1_1/sim/design_1_AXI4_stream_Slave_1_1.vhd" \
+"../../../bd/design_1/ipshared/bf65/src/ControleurVGA_v2.vhd" \
+"../../../bd/design_1/ip/design_1_ControleurVGA_v2_0_0/sim/design_1_ControleurVGA_v2_0_0.vhd" \
+"../../../bd/design_1/ipshared/0f1b/src/AXI4_stream_Master_24b.vhd" \
+"../../../bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/sim/design_1_AXI4_stream_Master_2_0_0.vhd" \
 "../../../bd/design_1/sim/design_1.vhd" \
-"../../../bd/design_1/ipshared/d799/src/Axi4s_monitor.vhd" \
-"../../../bd/design_1/ip/design_1_axi4s_monitor_0_0/sim/design_1_axi4s_monitor_0_0.vhd" \
 
 nosort

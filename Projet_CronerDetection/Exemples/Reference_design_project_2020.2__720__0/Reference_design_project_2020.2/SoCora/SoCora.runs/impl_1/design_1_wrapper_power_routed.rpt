@@ -1,11 +1,11 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date             : Fri Sep 11 14:26:35 2026
-| Host             : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.4 LTS
+| Date             : Tue Sep 15 11:17:39 2026
+| Host             : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
-| Device           : xc7z010clg400-1
+| Device           : xc7z007sclg400-1
 | Design State     : routed
 | Grade            : commercial
 | Process          : typical
@@ -54,9 +54,9 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.002 |        3 |       --- |             --- |
 | Slice Logic             |    <0.001 |     1740 |       --- |             --- |
-|   LUT as Logic          |    <0.001 |      519 |     17600 |            2.95 |
+|   LUT as Logic          |    <0.001 |      519 |     14400 |            3.60 |
 |   CARRY4                |    <0.001 |       18 |      4400 |            0.41 |
-|   Register              |    <0.001 |      769 |     35200 |            2.18 |
+|   Register              |    <0.001 |      769 |     28800 |            2.67 |
 |   LUT as Shift Register |    <0.001 |       62 |      6000 |            1.03 |
 |   Others                |     0.000 |      207 |       --- |             --- |
 | Signals                 |    <0.001 |     1261 |       --- |             --- |
@@ -153,7 +153,7 @@ Table of Contents
 |   design_1_i             |     1.254 |
 |     processing_system7_0 |     1.251 |
 |       inst               |     1.251 |
-|     ps7_0_axi_periph     |     0.002 |
+|     ps7_0_axi_periph     |     0.003 |
 |       s00_couplers       |     0.002 |
 +--------------------------+-----------+
 

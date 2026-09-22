@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Sep 10 14:36:25 2026" VIVADOVERSION="2020.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Sep 17 15:52:10 2026" VIVADOVERSION="2020.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z007s" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -35,6 +35,8 @@
         <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="reset"/>
         <CONNECTION INSTANCE="TPG_0" PORT="reset"/>
         <CONNECTION INSTANCE="ControleurVGA_0" PORT="reset"/>
+        <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="reset"/>
+        <CONNECTION INSTANCE="AXI4_stream_Master_2_1" PORT="reset"/>
       </CONNECTIONS>
     </PORT>
     <PORT CLKFREQUENCY="125000000" DIR="I" NAME="CLK_I" SIGIS="clk" SIGNAME="External_Ports_CLK_I">
@@ -127,6 +129,86 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
+    <MODULE COREREVISION="4" FULLNAME="/AXI4_stream_Master_2_1" HWVERSION="1.0" INSTANCE="AXI4_stream_Master_2_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI4_stream_Master_24b" VLNV="user.org:user:AXI4_stream_Master_24b:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="nb_colone" VALUE="640"/>
+        <PARAMETER NAME="nb_ligne" VALUE="480"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_AXI4_stream_Master_2_0_2"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="23" NAME="data_in" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="data_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="wr_en" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_1_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tvalid" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_1_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tlast" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_1_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tuser" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_1_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tready" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_1_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="tready"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="AXI4_stream_Master_2_1_interface_axis" NAME="interface_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
     <MODULE COREREVISION="4" FULLNAME="/AXI4_stream_Slave_0" HWVERSION="1.0" INSTANCE="AXI4_stream_Slave_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI4_stream_Slave" VLNV="user.org:user:AXI4_stream_Slave:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -172,20 +254,106 @@
         </PORT>
         <PORT DIR="O" LEFT="23" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_data_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ControleurVGA_0" PORT="pixel"/>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_1" PORT="data_in"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="valid" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_valid">
           <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_1" PORT="wr_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="last" SIGIS="undef"/>
+        <PORT DIR="O" NAME="user" SIGIS="undef"/>
+        <PORT DIR="I" NAME="ready" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="AXI4_stream_Master_2_0_interface_axis" NAME="interface_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="4" FULLNAME="/AXI4_stream_Slave_1" HWVERSION="1.0" INSTANCE="AXI4_stream_Slave_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI4_stream_Slave" VLNV="user.org:user:AXI4_stream_Slave:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="WORD_WIDTH" VALUE="24"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_AXI4_stream_Slave_0_2"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_1_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_1" PORT="tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tvalid" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_1_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_1" PORT="tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tlast" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_1_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_1" PORT="tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tuser" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_1_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_1" PORT="tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tready" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_1_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_1" PORT="tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="23" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_0" PORT="pixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="valid" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_valid">
+          <CONNECTIONS>
             <CONNECTION INSTANCE="ControleurVGA_0" PORT="valid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="last" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_last">
+        <PORT DIR="O" NAME="last" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_last">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ControleurVGA_0" PORT="H_end"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="user" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_user">
+        <PORT DIR="O" NAME="user" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_user">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ControleurVGA_0" PORT="V_end"/>
           </CONNECTIONS>
@@ -197,7 +365,7 @@
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="AXI4_stream_Master_2_0_interface_axis" NAME="interface_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="AXI4_stream_Master_2_1_interface_axis" NAME="interface_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
@@ -238,29 +406,29 @@
             <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="23" NAME="pixel" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_data_out">
+        <PORT DIR="I" LEFT="23" NAME="pixel" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_data_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="data_out"/>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="data_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="H_end" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_last">
+        <PORT DIR="I" NAME="H_end" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_last">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="last"/>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="last"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="V_end" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_user">
+        <PORT DIR="I" NAME="V_end" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_user">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="user"/>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="user"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="valid" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_valid">
+        <PORT DIR="I" NAME="valid" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_valid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="valid"/>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="valid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="ready" SIGIS="undef" SIGNAME="ControleurVGA_0_ready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="ready"/>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="ready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="VGA_HS_O" SIGIS="undef" SIGNAME="ControleurVGA_0_VGA_HS_O">
@@ -336,11 +504,30 @@
             <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="clk"/>
             <CONNECTION INSTANCE="TPG_0" PORT="clk"/>
             <CONNECTION INSTANCE="ControleurVGA_0" PORT="clk"/>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="clk"/>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_1" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="clk_in1" SIGIS="undef" SIGNAME="External_Ports_CLK_I">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="CLK_I"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="7" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconstant_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="ready"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

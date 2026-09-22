@@ -7,9 +7,9 @@
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/tools/xilinx/Vitis/2020.2/bin:/tools/xilinx/Vivado/2020.2/ids_lite/ISE/bin/lin64:/tools/xilinx/Vivado/2020.2/bin
+  PATH=/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/bin:/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/ids_lite/ISE/bin/lin64:/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/bin
 else
-  PATH=/tools/xilinx/Vitis/2020.2/bin:/tools/xilinx/Vivado/2020.2/ids_lite/ISE/bin/lin64:/tools/xilinx/Vivado/2020.2/bin:$PATH
+  PATH=/media/glen/Crucial/Logiciels/Vivado/Vitis/2020.2/bin:/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/ids_lite/ISE/bin/lin64:/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/bin:$PATH
 fi
 export PATH
 
@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/mnt/isaac_sbay0/lbo-ws/Projects/DVR-008-002/Base_Design_Project/Reference_design_project_2020.2/SoCora/SoCora.runs/design_1_axi_gpio_1_0_synth_1'
+HD_PWD='/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/SoCora/SoCora.runs/design_1_axi_gpio_1_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

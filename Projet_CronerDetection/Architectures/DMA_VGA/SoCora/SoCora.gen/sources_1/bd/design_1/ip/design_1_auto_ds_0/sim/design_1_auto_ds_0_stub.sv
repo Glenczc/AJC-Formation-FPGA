@@ -119,8 +119,8 @@ module design_1_auto_ds_0 (
   output bit [3 : 0] m_axi_awqos,
   output bit_as_bool m_axi_awvalid,
   input bit_as_bool m_axi_awready,
-  output bit [31 : 0] m_axi_wdata,
-  output bit [3 : 0] m_axi_wstrb,
+  output bit [63 : 0] m_axi_wdata,
+  output bit [7 : 0] m_axi_wstrb,
   output bit_as_bool m_axi_wlast,
   output bit_as_bool m_axi_wvalid,
   input bit_as_bool m_axi_wready,
@@ -138,7 +138,7 @@ module design_1_auto_ds_0 (
   output bit [3 : 0] m_axi_arqos,
   output bit_as_bool m_axi_arvalid,
   input bit_as_bool m_axi_arready,
-  input bit [31 : 0] m_axi_rdata,
+  input bit [63 : 0] m_axi_rdata,
   input bit [1 : 0] m_axi_rresp,
   input bit_as_bool m_axi_rlast,
   input bit_as_bool m_axi_rvalid,
@@ -204,8 +204,8 @@ module design_1_auto_ds_0 (s_axi_aclk,s_axi_aresetn,s_axi_awid,s_axi_awaddr,s_ax
   output wire [3 : 0] m_axi_awqos;
   output wire m_axi_awvalid;
   input bit m_axi_awready;
-  output wire [31 : 0] m_axi_wdata;
-  output wire [3 : 0] m_axi_wstrb;
+  output wire [63 : 0] m_axi_wdata;
+  output wire [7 : 0] m_axi_wstrb;
   output wire m_axi_wlast;
   output wire m_axi_wvalid;
   input bit m_axi_wready;
@@ -223,7 +223,7 @@ module design_1_auto_ds_0 (s_axi_aclk,s_axi_aresetn,s_axi_awid,s_axi_awaddr,s_ax
   output wire [3 : 0] m_axi_arqos;
   output wire m_axi_arvalid;
   input bit m_axi_arready;
-  input bit [31 : 0] m_axi_rdata;
+  input bit [63 : 0] m_axi_rdata;
   input bit [1 : 0] m_axi_rresp;
   input bit m_axi_rlast;
   input bit m_axi_rvalid;
@@ -286,8 +286,8 @@ module design_1_auto_ds_0 (s_axi_aclk,s_axi_aresetn,s_axi_awid,s_axi_awaddr,s_ax
   output wire [3 : 0] m_axi_awqos;
   output wire m_axi_awvalid;
   input bit m_axi_awready;
-  output wire [31 : 0] m_axi_wdata;
-  output wire [3 : 0] m_axi_wstrb;
+  output wire [63 : 0] m_axi_wdata;
+  output wire [7 : 0] m_axi_wstrb;
   output wire m_axi_wlast;
   output wire m_axi_wvalid;
   input bit m_axi_wready;
@@ -305,7 +305,7 @@ module design_1_auto_ds_0 (s_axi_aclk,s_axi_aresetn,s_axi_awid,s_axi_awaddr,s_ax
   output wire [3 : 0] m_axi_arqos;
   output wire m_axi_arvalid;
   input bit m_axi_arready;
-  input bit [31 : 0] m_axi_rdata;
+  input bit [63 : 0] m_axi_rdata;
   input bit [1 : 0] m_axi_rresp;
   input bit m_axi_rlast;
   input bit m_axi_rvalid;

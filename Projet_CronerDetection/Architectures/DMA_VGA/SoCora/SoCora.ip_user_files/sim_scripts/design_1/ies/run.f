@@ -28,38 +28,7 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
 -endlib
--makelib ies_lib/generic_baseblocks_v2_1_0 \
-  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
--endlib
--makelib ies_lib/axi_register_slice_v2_1_22 \
-  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v" \
--endlib
--makelib ies_lib/fifo_generator_v13_2_5 \
-  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/276e/simulation/fifo_generator_vlog_beh.v" \
--endlib
--makelib ies_lib/fifo_generator_v13_2_5 \
-  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/276e/hdl/fifo_generator_v13_2_rfs.vhd" \
--endlib
--makelib ies_lib/fifo_generator_v13_2_5 \
-  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/276e/hdl/fifo_generator_v13_2_rfs.v" \
--endlib
--makelib ies_lib/axi_data_fifo_v2_1_21 \
-  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/54c0/hdl/axi_data_fifo_v2_1_vl_rfs.v" \
--endlib
--makelib ies_lib/axi_crossbar_v2_1_23 \
-  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/bc0a/hdl/axi_crossbar_v2_1_vl_rfs.v" \
--endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
--endlib
--makelib ies_lib/lib_cdc_v1_0_2 \
-  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd" \
--endlib
--makelib ies_lib/proc_sys_reset_v5_0_13 \
-  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/design_1/ip/design_1_rst_ps7_0_50M_0/sim/design_1_rst_ps7_0_50M_0.vhd" \
   "../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s.vhd" \
   "../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s_fetch.vhd" \
   "../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s_streamout.vhd" \
@@ -72,21 +41,68 @@
   "../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_start_for_DMA24b_mm2s_streamout_U0.vhd" \
   "../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s.vhd" \
   "../../../bd/design_1/ip/design_1_DMA24bUnit_mm2s_0_0/sim/design_1_DMA24bUnit_mm2s_0_0.vhd" \
-  "../../../bd/design_1/sim/design_1.vhd" \
-  "../../../bd/design_1/ipshared/d799/src/Axi4s_monitor.vhd" \
-  "../../../bd/design_1/ip/design_1_axi4s_monitor_0_0/sim/design_1_axi4s_monitor_0_0.vhd" \
--endlib
--makelib ies_lib/axi_protocol_converter_v2_1_22 \
-  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/5cee/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+  "../../../bd/design_1/ipshared/1d41/src/clk_wiz_0_clk_wiz.v" \
+  "../../../bd/design_1/ip/design_1_clk_wiz_0_clk_wiz_0_0/sim/design_1_clk_wiz_0_clk_wiz_0_0.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_1/ipshared/db4a/src/AXI4_stream_Slave.vhd" \
+  "../../../bd/design_1/ip/design_1_AXI4_stream_Slave_1_0/sim/design_1_AXI4_stream_Slave_1_0.vhd" \
+  "../../../bd/design_1/ip/design_1_AXI4_stream_Slave_1_1/sim/design_1_AXI4_stream_Slave_1_1.vhd" \
+-endlib
+-makelib ies_lib/xlconstant_v1_1_7 \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.v" \
+  "../../../bd/design_1/ip/design_1_xlconstant_0_1/sim/design_1_xlconstant_0_1.v" \
+  "../../../bd/design_1/ip/design_1_xlconstant_0_2/sim/design_1_xlconstant_0_2.v" \
+-endlib
+-makelib ies_lib/util_vector_logic_v2_0_1 \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/3f90/hdl/util_vector_logic_v2_0_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_util_vector_logic_0_0/sim/design_1_util_vector_logic_0_0.v" \
+  "../../../bd/design_1/ip/design_1_xlconstant_0_3/sim/design_1_xlconstant_0_3.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_1/ipshared/bf65/src/ControleurVGA_v2.vhd" \
+  "../../../bd/design_1/ip/design_1_ControleurVGA_v2_0_0/sim/design_1_ControleurVGA_v2_0_0.vhd" \
+-endlib
+-makelib ies_lib/fifo_generator_v13_2_5 \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/simulation/fifo_generator_vlog_beh.v" \
+-endlib
+-makelib ies_lib/fifo_generator_v13_2_5 \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/hdl/fifo_generator_v13_2_rfs.vhd" \
+-endlib
+-makelib ies_lib/fifo_generator_v13_2_5 \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/hdl/fifo_generator_v13_2_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_1/ipshared/0f1b/src/AXI4_stream_Master_24b.vhd" \
+  "../../../bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/sim/design_1_AXI4_stream_Master_2_0_0.vhd" \
 -endlib
 -makelib ies_lib/axi_clock_converter_v2_1_21 \
   "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/1304/hdl/axi_clock_converter_v2_1_vl_rfs.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_auto_cc_0/sim/design_1_auto_cc_0.v" \
+-endlib
+-makelib ies_lib/generic_baseblocks_v2_1_0 \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/axi_data_fifo_v2_1_21 \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/54c0/hdl/axi_data_fifo_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/axi_register_slice_v2_1_22 \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/axi_protocol_converter_v2_1_22 \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/5cee/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib
 -makelib ies_lib/blk_mem_gen_v8_4_4 \
   "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/2985/simulation/blk_mem_gen_v8_4.v" \
@@ -96,7 +112,10 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_auto_ds_0/sim/design_1_auto_ds_0.v" \
-  "../../../bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" \
+  "../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_1/sim/design_1.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v

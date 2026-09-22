@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Mon Sep  7 12:03:42 2026
-| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.4 LTS
+| Date         : Mon Sep 21 15:18:35 2026
+| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 | Command      : report_utilization -file AXI4_stream_Master_utilization_synth.rpt -pb AXI4_stream_Master_utilization_synth.pb
 | Design       : AXI4_stream_Master
 | Device       : 7z007sclg400-1
@@ -33,8 +33,8 @@ Table of Contents
 | Slice LUTs*             |   53 |     0 |     14400 |  0.37 |
 |   LUT as Logic          |   53 |     0 |     14400 |  0.37 |
 |   LUT as Memory         |    0 |     0 |      6000 |  0.00 |
-| Slice Registers         |   62 |     0 |     28800 |  0.22 |
-|   Register as Flip Flop |   62 |     0 |     28800 |  0.22 |
+| Slice Registers         |   55 |     0 |     28800 |  0.19 |
+|   Register as Flip Flop |   55 |     0 |     28800 |  0.19 |
 |   Register as Latch     |    0 |     0 |     28800 |  0.00 |
 | F7 Muxes                |    0 |     0 |      8800 |  0.00 |
 | F8 Muxes                |    0 |     0 |      4400 |  0.00 |
@@ -55,22 +55,23 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 62    |          Yes |           - |        Reset |
-| 0     |          Yes |         Set |            - |
-| 0     |          Yes |       Reset |            - |
+| 19    |          Yes |           - |        Reset |
+| 2     |          Yes |         Set |            - |
+| 34    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
 2. Memory
 ---------
 
-+----------------+------+-------+-----------+-------+
-|    Site Type   | Used | Fixed | Available | Util% |
-+----------------+------+-------+-----------+-------+
-| Block RAM Tile |    0 |     0 |        50 |  0.00 |
-|   RAMB36/FIFO* |    0 |     0 |        50 |  0.00 |
-|   RAMB18       |    0 |     0 |       100 |  0.00 |
-+----------------+------+-------+-----------+-------+
++-------------------+------+-------+-----------+-------+
+|     Site Type     | Used | Fixed | Available | Util% |
++-------------------+------+-------+-----------+-------+
+| Block RAM Tile    |  0.5 |     0 |        50 |  1.00 |
+|   RAMB36/FIFO*    |    0 |     0 |        50 |  0.00 |
+|   RAMB18          |    1 |     0 |       100 |  1.00 |
+|     RAMB18E1 only |    1 |       |           |       |
++-------------------+------+-------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
 
 
@@ -90,7 +91,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   55 |     0 |       100 | 55.00 |
+| Bonded IOB                  |   56 |     0 |       100 | 56.00 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         2 |  0.00 |
@@ -146,16 +147,18 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT4     |   70 |                 LUT |
-| FDCE     |   62 |        Flop & Latch |
+| FDRE     |   34 |        Flop & Latch |
+| OBUF     |   28 |                  IO |
 | IBUF     |   28 |                  IO |
-| OBUF     |   27 |                  IO |
-| CARRY4   |   16 |          CarryLogic |
-| LUT5     |    5 |                 LUT |
-| LUT6     |    3 |                 LUT |
-| LUT1     |    3 |                 LUT |
-| LUT3     |    1 |                 LUT |
-| LUT2     |    1 |                 LUT |
+| FDCE     |   19 |        Flop & Latch |
+| LUT5     |   16 |                 LUT |
+| LUT4     |   15 |                 LUT |
+| LUT6     |   12 |                 LUT |
+| LUT2     |   10 |                 LUT |
+| LUT1     |    9 |                 LUT |
+| LUT3     |    8 |                 LUT |
+| FDSE     |    2 |        Flop & Latch |
+| RAMB18E1 |    1 |        Block Memory |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
@@ -163,11 +166,9 @@ Table of Contents
 8. Black Boxes
 --------------
 
-+------------------+------+
-|     Ref Name     | Used |
-+------------------+------+
-| fifo_generator_0 |    1 |
-+------------------+------+
++----------+------+
+| Ref Name | Used |
++----------+------+
 
 
 9. Instantiated Netlists
