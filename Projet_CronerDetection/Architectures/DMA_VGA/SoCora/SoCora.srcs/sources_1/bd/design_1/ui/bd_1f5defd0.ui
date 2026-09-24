@@ -1,66 +1,70 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.03551",
-   "Default View_TopLeft":"583,435",
+   "Default View_ScaleFactor":"0.707845",
+   "Default View_TopLeft":"-85,-78",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 5 -x 1550 -y 430 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 5 -x 1550 -y 460 -defaultsOSRD
-preplace port reset -pg 1 -lvl 0 -x -70 -y 160 -defaultsOSRD
-preplace port CLK_I -pg 1 -lvl 0 -x -70 -y 60 -defaultsOSRD
-preplace port VGA_HS_O -pg 1 -lvl 5 -x 1550 -y 660 -defaultsOSRD
-preplace port VGA_VS_O -pg 1 -lvl 5 -x 1550 -y 690 -defaultsOSRD
-preplace portBus VGA_B -pg 1 -lvl 5 -x 1550 -y 750 -defaultsOSRD
-preplace portBus VGA_R -pg 1 -lvl 5 -x 1550 -y 720 -defaultsOSRD
-preplace portBus VGA_G -pg 1 -lvl 5 -x 1550 -y 780 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 4 -x 1310 -y 480 -defaultsOSRD
-preplace inst DMA24bUnit_mm2s_0 -pg 1 -lvl 2 -x 520 -y 490 -defaultsOSRD
-preplace inst axi_mem_intercon -pg 1 -lvl 3 -x 920 -y 470 -defaultsOSRD
-preplace inst clk_wiz_0_clk_wiz_0 -pg 1 -lvl 1 -x 120 -y 60 -defaultsOSRD
-preplace inst AXI4_stream_Slave_1 -pg 1 -lvl 1 -x 120 -y 750 -defaultsOSRD
-preplace inst AXI4_stream_Slave_2 -pg 1 -lvl 3 -x 920 -y 730 -defaultsOSRD
-preplace inst image_w -pg 1 -lvl 1 -x 120 -y 360 -defaultsOSRD
-preplace inst image_h -pg 1 -lvl 1 -x 120 -y 460 -defaultsOSRD
-preplace inst addr_base -pg 1 -lvl 1 -x 120 -y 560 -defaultsOSRD
-preplace inst reset_not -pg 1 -lvl 1 -x 120 -y 160 -defaultsOSRD
-preplace inst start -pg 1 -lvl 1 -x 120 -y 260 -defaultsOSRD
-preplace inst AXI4_stream_Master_2_0 -pg 1 -lvl 2 -x 520 -y 830 -defaultsOSRD
-preplace inst ControleurVGA_v2_0 -pg 1 -lvl 4 -x 1310 -y 710 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 2 3 740 590 1100 590 1520
-preplace netloc AXI4_stream_Slave_1_data_out 1 1 1 290 720n
-preplace netloc clk_wiz_0_clk_wiz_0_clk_out1 1 0 4 -40 850 300 310 730 630 1100
-preplace netloc AXI4_stream_Slave_1_valid 1 1 1 270 740n
-preplace netloc xlconstant_0_dout 1 1 1 310J 360n
-preplace netloc xlconstant_1_dout 1 1 1 270J 460n
-preplace netloc xlconstant_2_dout 1 1 1 270J 540n
-preplace netloc CLK_I_1 1 0 1 NJ 60
-preplace netloc ap_rst_n_0_1 1 0 4 -50 840 280 740 740 640 1080J
-preplace netloc reset_not_Res 1 1 2 330 320 720
-preplace netloc start_dout 1 1 1 320J 260n
-preplace netloc ControleurVGA_v2_0_VGA_HS_O 1 4 1 1530J 660n
-preplace netloc ControleurVGA_v2_0_VGA_VS_O 1 4 1 1530J 690n
-preplace netloc ControleurVGA_v2_0_VGA_R 1 4 1 NJ 720
-preplace netloc ControleurVGA_v2_0_VGA_B 1 4 1 1530J 740n
-preplace netloc ControleurVGA_v2_0_VGA_G 1 4 1 1530J 760n
-preplace netloc AXI4_stream_Slave_2_data_out 1 3 1 N 700
-preplace netloc AXI4_stream_Slave_2_last 1 3 1 1090 720n
-preplace netloc AXI4_stream_Slave_2_user 1 3 1 1100 740n
-preplace netloc AXI4_stream_Slave_2_valid 1 3 1 1080 720n
-preplace netloc ControleurVGA_v2_0_ready 1 2 3 760 820 NJ 820 1520
-preplace netloc AXI4_stream_Master_2_0_fulln 1 0 3 -30 920 N 920 700
-preplace netloc DMA24bUnit_mm2s_0_m_axi_gmem 1 2 1 710 410n
-preplace netloc DMA24bUnit_mm2s_0_STR_video_out 1 0 3 -30 660 N 660 700
-preplace netloc processing_system7_0_FIXED_IO 1 4 1 1520J 450n
-preplace netloc axi_mem_intercon_M00_AXI 1 3 1 N 470
-preplace netloc AXI4_stream_Master_2_0_interface_axis 1 2 1 750 700n
-preplace netloc processing_system7_0_DDR 1 4 1 NJ 430
-levelinfo -pg 1 -70 120 520 920 1310 1550
-pagesize -pg 1 -db -bbox -sgen -160 0 1680 970
+preplace port DDR -pg 1 -lvl 5 -x 1510 -y 390 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 1510 -y 420 -defaultsOSRD
+preplace port reset -pg 1 -lvl 0 -x 0 -y 30 -defaultsOSRD
+preplace port CLK_I -pg 1 -lvl 0 -x 0 -y 540 -defaultsOSRD
+preplace port VGA_HS_O -pg 1 -lvl 5 -x 1510 -y 610 -defaultsOSRD
+preplace port VGA_VS_O -pg 1 -lvl 5 -x 1510 -y 640 -defaultsOSRD
+preplace port start -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace portBus VGA_B -pg 1 -lvl 5 -x 1510 -y 700 -defaultsOSRD
+preplace portBus VGA_R -pg 1 -lvl 5 -x 1510 -y 670 -defaultsOSRD
+preplace portBus VGA_G -pg 1 -lvl 5 -x 1510 -y 730 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 4 -x 1270 -y 440 -defaultsOSRD
+preplace inst DMA24bUnit_mm2s_0 -pg 1 -lvl 2 -x 530 -y 390 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 3 -x 880 -y 430 -defaultsOSRD
+preplace inst clk_wiz_0_clk_wiz_0 -pg 1 -lvl 1 -x 190 -y 540 -defaultsOSRD
+preplace inst AXI4_stream_Slave_1 -pg 1 -lvl 1 -x 190 -y 740 -defaultsOSRD
+preplace inst AXI4_stream_Slave_2 -pg 1 -lvl 3 -x 880 -y 720 -defaultsOSRD
+preplace inst image_w -pg 1 -lvl 1 -x 190 -y 240 -defaultsOSRD
+preplace inst image_h -pg 1 -lvl 1 -x 190 -y 340 -defaultsOSRD
+preplace inst addr_base -pg 1 -lvl 1 -x 190 -y 440 -defaultsOSRD
+preplace inst AXI4_stream_Master_2_0 -pg 1 -lvl 2 -x 530 -y 700 -defaultsOSRD
+preplace inst start_not -pg 1 -lvl 1 -x 190 -y 140 -defaultsOSRD
+preplace inst ControleurVGA_v2_0 -pg 1 -lvl 4 -x 1270 -y 660 -defaultsOSRD
+preplace inst reset_wiz_0 -pg 1 -lvl 1 -x 190 -y 20 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 2 3 700 550 1040 550 1480
+preplace netloc AXI4_stream_Slave_1_data_out 1 1 1 N 710
+preplace netloc clk_wiz_0_clk_wiz_0_clk_out1 1 0 4 20 610 380 500 690 610 NJ
+preplace netloc AXI4_stream_Slave_1_valid 1 1 1 N 730
+preplace netloc xlconstant_0_dout 1 1 1 350J 240n
+preplace netloc xlconstant_1_dout 1 1 1 340J 340n
+preplace netloc xlconstant_2_dout 1 1 1 NJ 440
+preplace netloc CLK_I_1 1 0 1 NJ 540
+preplace netloc ap_rst_n_0_1 1 0 4 30 650 360 790 700 630 NJ
+preplace netloc reset_not_Res 1 1 2 390 280 680
+preplace netloc ControleurVGA_v2_0_VGA_HS_O 1 4 1 1490J 610n
+preplace netloc ControleurVGA_v2_0_VGA_VS_O 1 4 1 1490J 640n
+preplace netloc ControleurVGA_v2_0_VGA_R 1 4 1 NJ 670
+preplace netloc ControleurVGA_v2_0_VGA_B 1 4 1 1490J 690n
+preplace netloc ControleurVGA_v2_0_VGA_G 1 4 1 1490J 710n
+preplace netloc AXI4_stream_Slave_2_data_out 1 3 1 1040 650n
+preplace netloc AXI4_stream_Slave_2_last 1 3 1 1050 670n
+preplace netloc AXI4_stream_Slave_2_user 1 3 1 1060 690n
+preplace netloc AXI4_stream_Slave_2_valid 1 3 1 N 710
+preplace netloc ControleurVGA_v2_0_ready 1 2 3 710 810 NJ 810 1480
+preplace netloc AXI4_stream_Master_2_0_fulln 1 0 3 40 830 N 830 670
+preplace netloc start_1 1 0 1 NJ 140
+preplace netloc start_not_Res 1 1 1 370J 140n
+preplace netloc reset_1 1 0 1 NJ 30
+preplace netloc DMA24bUnit_mm2s_0_m_axi_gmem 1 2 1 N 370
+preplace netloc DMA24bUnit_mm2s_0_STR_video_out 1 0 3 40 600 N 600 670
+preplace netloc processing_system7_0_FIXED_IO 1 4 1 1480J 410n
+preplace netloc axi_mem_intercon_M00_AXI 1 3 1 N 430
+preplace netloc AXI4_stream_Master_2_0_interface_axis 1 2 1 N 690
+preplace netloc processing_system7_0_DDR 1 4 1 NJ 390
+levelinfo -pg 1 0 190 530 880 1270 1510
+pagesize -pg 1 -db -bbox -sgen -90 -50 1640 840
 "
 }
 {
    "da_axi4_cnt":"6",
    "da_axi4_s2mm_cnt":"3",
+   "da_board_cnt":"1",
    "da_clkrst_cnt":"3"
 }

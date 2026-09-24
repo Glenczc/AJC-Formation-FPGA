@@ -1,6 +1,69 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Wed Sep 23 12:42:24 2026
+| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_ControleurVGA_v2_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_ControleurVGA_v2_0_0 (user.org:user:ControleurVGA_v2:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Wed Sep 23 11:39:09 2026
+| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_ControleurVGA_v2_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_ControleurVGA_v2_0_0 (user.org:user:ControleurVGA_v2:1.0) from (Rev. 1) to (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Tue Sep 22 15:00:40 2026
+| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_ControleurVGA_v2_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_ControleurVGA_v2_0_0 (user.org:user:ControleurVGA_v2:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
 | Date         : Mon Sep 21 17:14:28 2026
 | Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 | Command      : upgrade_ip

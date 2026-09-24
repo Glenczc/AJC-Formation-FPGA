@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1789653157">
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1790264501">
   <File Type="VDS-TIMING-PB" Name="design_1_wrapper_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="design_1_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="design_1_wrapper.dcp"/>
@@ -53,5 +53,7 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_ControleurVGA_0_4"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_AXI4_stream_Master_2_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_AXI4_stream_Master_2_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_TPG_0_3"/>
 </GenRun>

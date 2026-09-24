@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../src/reset_wiz.vhd" \
+"../../../../../src/reset_wiz_tb.vhd" \
+
+# Do not sort compile order
+nosort

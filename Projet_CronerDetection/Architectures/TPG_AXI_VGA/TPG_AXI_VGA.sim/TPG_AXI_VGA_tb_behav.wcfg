@@ -12,20 +12,24 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="14fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomEndTime time="2001000001fs"></ZoomEndTime>
+      <Cursor1Time time="1616020000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="140"></NameColumnWidth>
-      <ValueColumnWidth column_width="67"></ValueColumnWidth>
+      <NameColumnWidth column_width="135"></NameColumnWidth>
+      <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="38" />
+   <WVObjectSize size="48" />
    <wave_markers>
       <marker label="" time="9027820000" />
    </wave_markers>
    <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/CLK_I">
       <obj_property name="ElementShortName">CLK_I</obj_property>
       <obj_property name="ObjectShortName">CLK_I</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/clk_wiz_0_clk_wiz_0/clk_out1">
+      <obj_property name="ElementShortName">clk_out1</obj_property>
+      <obj_property name="ObjectShortName">clk_out1</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/reset">
       <obj_property name="ElementShortName">reset</obj_property>
@@ -48,22 +52,26 @@
    <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/TPG_0/pixel">
       <obj_property name="ElementShortName">pixel[23:0]</obj_property>
       <obj_property name="ObjectShortName">pixel[23:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/TPG_0/U0/vga_red">
       <obj_property name="ElementShortName">vga_red[7:0]</obj_property>
       <obj_property name="ObjectShortName">vga_red[7:0]</obj_property>
       <obj_property name="CustomSignalColor">#FF0000</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/TPG_0/U0/vga_green">
       <obj_property name="ElementShortName">vga_green[7:0]</obj_property>
       <obj_property name="ObjectShortName">vga_green[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/TPG_0/U0/vga_blue">
       <obj_property name="ElementShortName">vga_blue[7:0]</obj_property>
       <obj_property name="ObjectShortName">vga_blue[7:0]</obj_property>
       <obj_property name="CustomSignalColor">#0000FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/TPG_0/U0/active">
       <obj_property name="ElementShortName">active</obj_property>
@@ -78,12 +86,64 @@
       <obj_property name="ObjectShortName">wr_en</obj_property>
    </wvobject>
    <wvobject fp_name="divider113" type="divider">
-      <obj_property name="label">AXI master</obj_property>
+      <obj_property name="label">AXI master 0</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_0/U0/fifo/full">
-      <obj_property name="ElementShortName">full</obj_property>
-      <obj_property name="ObjectShortName">full</obj_property>
+   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_2/U0/fulln">
+      <obj_property name="ElementShortName">fulln</obj_property>
+      <obj_property name="ObjectShortName">fulln</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_2/U0/rd_en">
+      <obj_property name="ElementShortName">rd_en</obj_property>
+      <obj_property name="ObjectShortName">rd_en</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_2/U0/h_count">
+      <obj_property name="ElementShortName">h_count[9:0]</obj_property>
+      <obj_property name="ObjectShortName">h_count[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_2/U0/v_count">
+      <obj_property name="ElementShortName">v_count[8:0]</obj_property>
+      <obj_property name="ObjectShortName">v_count[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_2/U0/tdata">
+      <obj_property name="ElementShortName">tdata[23:0]</obj_property>
+      <obj_property name="ObjectShortName">tdata[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_2/U0/tlast_reg">
+      <obj_property name="ElementShortName">tlast_reg</obj_property>
+      <obj_property name="ObjectShortName">tlast_reg</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_2/U0/tlast">
+      <obj_property name="ElementShortName">tlast</obj_property>
+      <obj_property name="ObjectShortName">tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_2/U0/tuser_reg">
+      <obj_property name="ElementShortName">tuser_reg</obj_property>
+      <obj_property name="ObjectShortName">tuser_reg</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_2/U0/tuser">
+      <obj_property name="ElementShortName">tuser</obj_property>
+      <obj_property name="ObjectShortName">tuser</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_2/U0/tvalid">
+      <obj_property name="ElementShortName">tvalid</obj_property>
+      <obj_property name="ObjectShortName">tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_2/U0/tready">
+      <obj_property name="ElementShortName">tready</obj_property>
+      <obj_property name="ObjectShortName">tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider113" type="divider">
+      <obj_property name="label">AXI slave 0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Slave_0/data_out">
+      <obj_property name="ElementShortName">data_out[23:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider113" type="divider">
+      <obj_property name="label"> AXI Master 1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_0/U0/fifo/empty">
       <obj_property name="ElementShortName">empty</obj_property>
@@ -93,14 +153,35 @@
       <obj_property name="ElementShortName">rd_en</obj_property>
       <obj_property name="ObjectShortName">rd_en</obj_property>
    </wvobject>
-   <wvobject type="other" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_0/U0/h_count">
-      <obj_property name="ElementShortName">h_count</obj_property>
-      <obj_property name="ObjectShortName">h_count</obj_property>
+   <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_0/U0/h_count">
+      <obj_property name="ElementShortName">h_count[9:0]</obj_property>
+      <obj_property name="ObjectShortName">h_count[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_0/U0/v_count">
+      <obj_property name="ElementShortName">v_count[8:0]</obj_property>
+      <obj_property name="ObjectShortName">v_count[8:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_0/tdata">
       <obj_property name="ElementShortName">tdata[23:0]</obj_property>
       <obj_property name="ObjectShortName">tdata[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_0/U0/tlast_reg">
+      <obj_property name="ElementShortName">tlast_reg</obj_property>
+      <obj_property name="ObjectShortName">tlast_reg</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_0/U0/tlast">
+      <obj_property name="ElementShortName">tlast</obj_property>
+      <obj_property name="ObjectShortName">tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_0/U0/tuser_reg">
+      <obj_property name="ElementShortName">tuser_reg</obj_property>
+      <obj_property name="ObjectShortName">tuser_reg</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Master_2_0/U0/tuser">
+      <obj_property name="ElementShortName">tuser</obj_property>
+      <obj_property name="ObjectShortName">tuser</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Slave_0/tvalid">
       <obj_property name="ElementShortName">tvalid</obj_property>
@@ -111,55 +192,16 @@
       <obj_property name="ObjectShortName">tready</obj_property>
    </wvobject>
    <wvobject fp_name="divider113" type="divider">
-      <obj_property name="label">AXI slave</obj_property>
+      <obj_property name="label"> AXI Slave 1</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/ControleurVGA_0/pixel">
-      <obj_property name="ElementShortName">pixel[23:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel[23:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/ControleurVGA_0/H_end">
-      <obj_property name="ElementShortName">H_end</obj_property>
-      <obj_property name="ObjectShortName">H_end</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/ControleurVGA_0/V_end">
-      <obj_property name="ElementShortName">V_end</obj_property>
-      <obj_property name="ObjectShortName">V_end</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/ControleurVGA_0/ready">
-      <obj_property name="ElementShortName">ready</obj_property>
-      <obj_property name="ObjectShortName">ready</obj_property>
+   <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/AXI4_stream_Slave_1/data_out">
+      <obj_property name="ElementShortName">data_out[23:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[23:0]</obj_property>
    </wvobject>
    <wvobject fp_name="divider113" type="divider">
       <obj_property name="label">Controleur</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject type="other" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/ControleurVGA_0/U0/current_state">
-      <obj_property name="ElementShortName">current_state</obj_property>
-      <obj_property name="ObjectShortName">current_state</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/ControleurVGA_0/U0/h_counter">
-      <obj_property name="ElementShortName">h_counter[7:0]</obj_property>
-      <obj_property name="ObjectShortName">h_counter[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/ControleurVGA_0/U0/h_counter_max">
-      <obj_property name="ElementShortName">h_counter_max[9:0]</obj_property>
-      <obj_property name="ObjectShortName">h_counter_max[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/ControleurVGA_0/U0/v_counter">
-      <obj_property name="ElementShortName">v_counter[5:0]</obj_property>
-      <obj_property name="ObjectShortName">v_counter[5:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/ControleurVGA_0/U0/h_sync_reg">
-      <obj_property name="ElementShortName">h_sync_reg</obj_property>
-      <obj_property name="ObjectShortName">h_sync_reg</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/TPG_AXI_VGA_tb/dut/design_1_i/ControleurVGA_0/U0/v_sync_reg">
-      <obj_property name="ElementShortName">v_sync_reg</obj_property>
-      <obj_property name="ObjectShortName">v_sync_reg</obj_property>
    </wvobject>
    <wvobject fp_name="divider113" type="divider">
       <obj_property name="label">OUTPUT</obj_property>

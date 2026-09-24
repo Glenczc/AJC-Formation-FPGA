@@ -1,7 +1,7 @@
-Running: xsim.dir/TPG_AXI_VGA_tb_behav/xsimk -simmode gui -wdb TPG_AXI_VGA_tb_behav.wdb -simrunnum 0 -socket 56453
+Running: xsim.dir/TPG_AXI_VGA_tb_behav/xsimk -simmode gui -wdb TPG_AXI_VGA_tb_behav.wdb -simrunnum 0 -socket 38925
 Design successfully loaded
-Design Loading Memory Usage: 35092 KB (Peak: 35092 KB)
-Design Loading CPU Usage: 50 ms
+Design Loading Memory Usage: 35476 KB (Peak: 35476 KB)
+Design Loading CPU Usage: 40 ms
 Simulation completed
-Simulation Memory Usage: 116828 KB (Peak: 174360 KB)
-Simulation CPU Usage: 50 ms
+Simulation Memory Usage: 125932 KB (Peak: 174744 KB)
+Simulation CPU Usage: 3340 ms

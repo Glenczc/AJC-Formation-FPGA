@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: user.org:user:AXI4_stream_Master_24b:1.0
--- IP Revision: 4
+-- IP Revision: 1
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -59,6 +59,7 @@ ENTITY design_1_AXI4_stream_Master_2_0_2 IS
     reset : IN STD_LOGIC;
     data_in : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
     wr_en : IN STD_LOGIC;
+    fulln : OUT STD_LOGIC;
     tdata : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
     tvalid : OUT STD_LOGIC;
     tlast : OUT STD_LOGIC;
@@ -80,6 +81,7 @@ ARCHITECTURE design_1_AXI4_stream_Master_2_0_2_arch OF design_1_AXI4_stream_Mast
       reset : IN STD_LOGIC;
       data_in : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
       wr_en : IN STD_LOGIC;
+      fulln : OUT STD_LOGIC;
       tdata : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
       tvalid : OUT STD_LOGIC;
       tlast : OUT STD_LOGIC;
@@ -112,6 +114,7 @@ BEGIN
       reset => reset,
       data_in => data_in,
       wr_en => wr_en,
+      fulln => fulln,
       tdata => tdata,
       tvalid => tvalid,
       tlast => tlast,

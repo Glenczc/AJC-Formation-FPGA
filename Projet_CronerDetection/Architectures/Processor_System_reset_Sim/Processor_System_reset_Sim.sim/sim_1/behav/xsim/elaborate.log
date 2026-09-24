@@ -1,0 +1,9 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 19c1cd5bd60e42b2988d5d76f48cf2ec --incr --debug typical --relax --mt 8 -L xil_defaultlib -L lib_cdc_v1_0_2 -L proc_sys_reset_v5_0_13 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot ProcSysReset_tb_behav xil_defaultlib.ProcSysReset_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-718] formal port <clk_in1_0> does not exist in entity <design_1>.  Please compare the definition of block <design_1> to its component declaration and its instantion to detect the mismatch. [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/src/ProcSysReset_tb.vhd:22]
+ERROR: [VRFC 10-718] formal port <ext_reset_in_0> does not exist in entity <design_1>.  Please compare the definition of block <design_1> to its component declaration and its instantion to detect the mismatch. [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/src/ProcSysReset_tb.vhd:23]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

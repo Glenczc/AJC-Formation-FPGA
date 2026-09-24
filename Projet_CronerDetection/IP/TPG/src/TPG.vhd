@@ -29,7 +29,7 @@ entity TPG is
              FRAME_HEIGHT : natural := 480);
     Port ( clk        : in STD_LOGIC;
            reset      : in STD_LOGIC;
-           pixel      : out std_logic_vector(23 downto 0);
+           pixel      : out std_logic_vector(23 downto 0) := (others => '0');
            px_valid   : out std_logic);
 end TPG;
 
@@ -109,9 +109,17 @@ begin
                                             (not(h_cntr_reg < 512) and (v_cntr_reg(8) = '0' and v_cntr_reg(3) = '1')))) else
               (others=>'0');
               
- pixel(7 downto 0) <= vga_red;
- pixel(15 downto 8) <= vga_green;
- pixel(23 downto 16) <= vga_blue;
+-- pixel(7 downto 0) <= vga_red;
+-- pixel(15 downto 8) <= vga_green;
+-- pixel(23 downto 16) <= vga_blue;
+
+pixel(3 downto 0) <= (others => '0');
+pixel(11 downto 8) <= (others => '0');
+pixel(19 downto 16) <= (others => '0');
+   
+pixel(7 downto 4) <= vga_red(3 downto 0);
+pixel(15 downto 12) <= vga_green(3 downto 0);
+pixel(23 downto 20) <= vga_blue(3 downto 0);
  
  ------------------------------------------------------
  -------         MOVING BOX LOGIC                ------

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x4C4485328A993769",
+      "boundary_crc": "0x324A27BD909EB2B7",
       "device": "xc7z007sclg400-1",
       "gen_directory": "../../../../SoCora.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -27,10 +27,10 @@
       "image_w": "",
       "image_h": "",
       "addr_base": "",
-      "reset_not": "",
-      "start": "",
       "AXI4_stream_Master_2_0": "",
-      "ControleurVGA_v2_0": ""
+      "start_not": "",
+      "ControleurVGA_v2_0": "",
+      "reset_wiz_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -135,6 +135,19 @@
         "direction": "O",
         "left": "3",
         "right": "0"
+      },
+      "start": {
+        "direction": "I",
+        "parameters": {
+          "PortType": {
+            "value": "undef",
+            "value_src": "ip_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "ip_prop"
+          }
+        }
       }
     },
     "components": {
@@ -2107,12 +2120,6 @@
               }
             },
             "interface_nets": {
-              "auto_pc_to_s00_couplers": {
-                "interface_ports": [
-                  "M_AXI",
-                  "auto_pc/M_AXI"
-                ]
-              },
               "s00_couplers_to_auto_cc": {
                 "interface_ports": [
                   "S_AXI",
@@ -2129,6 +2136,12 @@
                 "interface_ports": [
                   "auto_cc/M_AXI",
                   "auto_ds/S_AXI"
+                ]
+              },
+              "auto_pc_to_s00_couplers": {
+                "interface_ports": [
+                  "M_AXI",
+                  "auto_pc/M_AXI"
                 ]
               }
             },
@@ -2165,16 +2178,16 @@
           }
         },
         "interface_nets": {
-          "s00_couplers_to_axi_mem_intercon": {
-            "interface_ports": [
-              "M00_AXI",
-              "s00_couplers/M_AXI"
-            ]
-          },
           "axi_mem_intercon_to_s00_couplers": {
             "interface_ports": [
               "S00_AXI",
               "s00_couplers/S_AXI"
+            ]
+          },
+          "s00_couplers_to_axi_mem_intercon": {
+            "interface_ports": [
+              "M00_AXI",
+              "s00_couplers/M_AXI"
             ]
           }
         },
@@ -2275,11 +2288,17 @@
           }
         }
       },
-      "reset_not": {
+      "AXI4_stream_Master_2_0": {
+        "vlnv": "user.org:user:AXI4_stream_Master_24b:1.0",
+        "xci_name": "design_1_AXI4_stream_Master_2_0_0",
+        "xci_path": "ip/design_1_AXI4_stream_Master_2_0_0/design_1_AXI4_stream_Master_2_0_0.xci",
+        "inst_hier_path": "AXI4_stream_Master_2_0"
+      },
+      "start_not": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "design_1_util_vector_logic_0_0",
-        "xci_path": "ip/design_1_util_vector_logic_0_0/design_1_util_vector_logic_0_0.xci",
-        "inst_hier_path": "reset_not",
+        "xci_name": "design_1_util_vector_logic_0_1",
+        "xci_path": "ip/design_1_util_vector_logic_0_1/design_1_util_vector_logic_0_1.xci",
+        "inst_hier_path": "start_not",
         "parameters": {
           "C_OPERATION": {
             "value": "not"
@@ -2289,23 +2308,17 @@
           }
         }
       },
-      "start": {
-        "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "design_1_xlconstant_0_3",
-        "xci_path": "ip/design_1_xlconstant_0_3/design_1_xlconstant_0_3.xci",
-        "inst_hier_path": "start"
-      },
-      "AXI4_stream_Master_2_0": {
-        "vlnv": "user.org:user:AXI4_stream_Master_24b:1.0",
-        "xci_name": "design_1_AXI4_stream_Master_2_0_0",
-        "xci_path": "ip/design_1_AXI4_stream_Master_2_0_0/design_1_AXI4_stream_Master_2_0_0.xci",
-        "inst_hier_path": "AXI4_stream_Master_2_0"
-      },
       "ControleurVGA_v2_0": {
         "vlnv": "user.org:user:ControleurVGA_v2:1.0",
         "xci_name": "design_1_ControleurVGA_v2_0_0",
         "xci_path": "ip/design_1_ControleurVGA_v2_0_0/design_1_ControleurVGA_v2_0_0.xci",
         "inst_hier_path": "ControleurVGA_v2_0"
+      },
+      "reset_wiz_0": {
+        "vlnv": "user.org:user:reset_wiz:1.0",
+        "xci_name": "design_1_reset_wiz_0_0",
+        "xci_path": "ip/design_1_reset_wiz_0_0/design_1_reset_wiz_0_0.xci",
+        "inst_hier_path": "reset_wiz_0"
       }
     },
     "interface_nets": {
@@ -2370,7 +2383,8 @@
           "AXI4_stream_Slave_1/clk",
           "AXI4_stream_Slave_2/clk",
           "AXI4_stream_Master_2_0/clk",
-          "ControleurVGA_v2_0/clk"
+          "ControleurVGA_v2_0/clk",
+          "reset_wiz_0/clk"
         ]
       },
       "AXI4_stream_Slave_1_valid": {
@@ -2405,27 +2419,20 @@
       },
       "ap_rst_n_0_1": {
         "ports": [
-          "reset",
+          "reset_wiz_0/reset_out",
           "AXI4_stream_Slave_1/reset",
           "AXI4_stream_Slave_2/reset",
-          "reset_not/Op1",
           "AXI4_stream_Master_2_0/reset",
           "ControleurVGA_v2_0/reset"
         ]
       },
       "reset_not_Res": {
         "ports": [
-          "reset_not/Res",
+          "reset_wiz_0/resetn_out",
           "DMA24bUnit_mm2s_0/ap_rst_n",
           "axi_mem_intercon/M00_ARESETN",
           "axi_mem_intercon/S00_ARESETN",
           "axi_mem_intercon/ARESETN"
-        ]
-      },
-      "start_dout": {
-        "ports": [
-          "start/dout",
-          "DMA24bUnit_mm2s_0/ap_start"
         ]
       },
       "ControleurVGA_v2_0_VGA_HS_O": {
@@ -2492,6 +2499,24 @@
         "ports": [
           "AXI4_stream_Master_2_0/fulln",
           "AXI4_stream_Slave_1/ready"
+        ]
+      },
+      "start_1": {
+        "ports": [
+          "start",
+          "start_not/Op1"
+        ]
+      },
+      "start_not_Res": {
+        "ports": [
+          "start_not/Res",
+          "DMA24bUnit_mm2s_0/ap_start"
+        ]
+      },
+      "reset_1": {
+        "ports": [
+          "reset",
+          "reset_wiz_0/reset_in"
         ]
       }
     },

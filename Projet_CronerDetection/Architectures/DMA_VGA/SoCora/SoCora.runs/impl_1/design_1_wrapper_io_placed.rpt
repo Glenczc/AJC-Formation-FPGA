@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date                      : Mon Sep 21 17:31:00 2026
+| Date                      : Thu Sep 24 09:45:06 2026
 | Host                      : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 | Command                   : report_io -file design_1_wrapper_io_placed.rpt
 | Design                    : design_1_wrapper
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|           146 |
+|           147 |
 +---------------+
 
 
@@ -113,7 +113,7 @@ Table of Contents
 | D16        | FIXED_IO_mio[46]  |            | PS_MIO46_501            | OUT           | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |         | FIXED      | PULLUP    |          |      | NONE             |              |                   |              |
 | D17        |                   |            | GND                     | GND           |                   |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | D18        |                   | High Range | IO_L3N_T0_DQS_AD1N_35   | User IO       |                   |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| D19        |                   | High Range | IO_L4P_T0_35            | User IO       |                   |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| D19        | start             | High Range | IO_L4P_T0_35            | INPUT         | LVCMOS33          |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | D20        | reset             | High Range | IO_L4N_T0_35            | INPUT         | LVCMOS33          |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | E1         | DDR_dq[7]         |            | PS_DDR_DQ7_502          | INOUT         | SSTL15_T_DCI      |         |            | FAST |           DCI SPLIT |            FP_VTT_50 |         | FIXED      |           |          |      | SPLIT            |              |                   |              |
 | E2         | DDR_dq[8]         |            | PS_DDR_DQ8_502          | INOUT         | SSTL15_T_DCI      |         |            | FAST |           DCI SPLIT |            FP_VTT_50 |         | FIXED      |           |          |      | SPLIT            |              |                   |              |

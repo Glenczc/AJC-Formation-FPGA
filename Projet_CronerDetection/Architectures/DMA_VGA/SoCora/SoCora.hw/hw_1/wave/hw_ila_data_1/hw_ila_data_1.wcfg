@@ -10,16 +10,24 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1024fs"></ZoomEndTime>
-      <Cursor1Time time="359fs"></Cursor1Time>
+      <ZoomEndTime time="8fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="368"></NameColumnWidth>
-      <ValueColumnWidth column_width="78"></ValueColumnWidth>
+      <NameColumnWidth column_width="358"></NameColumnWidth>
+      <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="14" />
    <wave_markers>
+      <marker label="" time="512" />
    </wave_markers>
+   <wvobject type="logic" fp_name="u_ila_0_ap_start">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">u_ila_0_ap_start</obj_property>
+      <obj_property name="ObjectShortName">u_ila_0_ap_start</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
    <wvobject type="logic" fp_name="design_1_i/DMA24bUnit_mm2s_0_STR_video_out_TVALID">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">design_1_i/DMA24bUnit_mm2s_0_STR_video_out_TVALID</obj_property>
@@ -38,7 +46,7 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">design_1_i/AXI4_stream_Master_2_0/U0/h_count_reg[9:0]</obj_property>
       <obj_property name="ObjectShortName">h_count_reg[9:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -46,7 +54,35 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">design_1_i/AXI4_stream_Master_2_0/U0/v_count_reg[8:0]</obj_property>
       <obj_property name="ObjectShortName">v_count_reg[8:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_i/ControleurVGA_v2_0/H_end">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/ControleurVGA_v2_0/H_end</obj_property>
+      <obj_property name="ObjectShortName">H_end</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_i/ControleurVGA_v2_0/V_end">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/ControleurVGA_v2_0/V_end</obj_property>
+      <obj_property name="ObjectShortName">V_end</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_i/ControleurVGA_v2_0/VGA_HS_O">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/ControleurVGA_v2_0/VGA_HS_O</obj_property>
+      <obj_property name="ObjectShortName">VGA_HS_O</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_i/ControleurVGA_v2_0/VGA_VS_O">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/ControleurVGA_v2_0/VGA_VS_O</obj_property>
+      <obj_property name="ObjectShortName">VGA_VS_O</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

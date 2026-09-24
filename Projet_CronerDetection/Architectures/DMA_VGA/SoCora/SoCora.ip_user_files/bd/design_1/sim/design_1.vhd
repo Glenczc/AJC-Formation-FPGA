@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
---Date        : Mon Sep 21 17:14:38 2026
+--Date        : Wed Sep 23 18:17:01 2026
 --Host        : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1210,10 +1210,11 @@ entity design_1 is
     VGA_HS_O : out STD_LOGIC;
     VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
     VGA_VS_O : out STD_LOGIC;
-    reset : in STD_LOGIC
+    reset : in STD_LOGIC;
+    start : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=15,numNonXlnxBlks=6,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_axi4_s2mm_cnt=3,da_clkrst_cnt=3,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=15,numNonXlnxBlks=7,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_axi4_s2mm_cnt=3,da_board_cnt=1,da_clkrst_cnt=3,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -1451,17 +1452,6 @@ architecture STRUCTURE of design_1 is
     dout : out STD_LOGIC_VECTOR ( 63 downto 0 )
   );
   end component design_1_xlconstant_0_2;
-  component design_1_util_vector_logic_0_0 is
-  port (
-    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component design_1_util_vector_logic_0_0;
-  component design_1_xlconstant_0_3 is
-  port (
-    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component design_1_xlconstant_0_3;
   component design_1_AXI4_stream_Master_2_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -1476,6 +1466,12 @@ architecture STRUCTURE of design_1 is
     tready : in STD_LOGIC
   );
   end component design_1_AXI4_stream_Master_2_0_0;
+  component design_1_util_vector_logic_0_1 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Res : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component design_1_util_vector_logic_0_1;
   component design_1_ControleurVGA_v2_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -1492,6 +1488,14 @@ architecture STRUCTURE of design_1 is
     VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component design_1_ControleurVGA_v2_0_0;
+  component design_1_reset_wiz_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    reset_in : in STD_LOGIC;
+    reset_out : out STD_LOGIC;
+    resetn_out : out STD_LOGIC
+  );
+  end component design_1_reset_wiz_0_0;
   signal AXI4_stream_Master_2_0_fulln : STD_LOGIC;
   signal AXI4_stream_Master_2_0_interface_axis_TDATA : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal AXI4_stream_Master_2_0_interface_axis_TLAST : STD_LOGIC;
@@ -1617,8 +1621,10 @@ architecture STRUCTURE of design_1 is
   signal processing_system7_0_FIXED_IO_PS_CLK : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_PORB : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_SRSTB : STD_LOGIC;
-  signal reset_not_Res : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal start_dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal reset_1 : STD_LOGIC;
+  signal reset_not_Res : STD_LOGIC;
+  signal start_1 : STD_LOGIC;
+  signal start_not_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal xlconstant_1_dout : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal xlconstant_2_dout : STD_LOGIC_VECTOR ( 63 downto 0 );
@@ -1700,7 +1706,8 @@ begin
   VGA_HS_O <= ControleurVGA_v2_0_VGA_HS_O;
   VGA_R(3 downto 0) <= ControleurVGA_v2_0_VGA_R(3 downto 0);
   VGA_VS_O <= ControleurVGA_v2_0_VGA_VS_O;
-  ap_rst_n_0_1 <= reset;
+  reset_1 <= reset;
+  start_1 <= start;
 AXI4_stream_Master_2_0: component design_1_AXI4_stream_Master_2_0_0
      port map (
       clk => clk_wiz_0_clk_wiz_0_clk_out1,
@@ -1772,8 +1779,8 @@ DMA24bUnit_mm2s_0: component design_1_DMA24bUnit_mm2s_0_0
       ap_done => NLW_DMA24bUnit_mm2s_0_ap_done_UNCONNECTED,
       ap_idle => NLW_DMA24bUnit_mm2s_0_ap_idle_UNCONNECTED,
       ap_ready => NLW_DMA24bUnit_mm2s_0_ap_ready_UNCONNECTED,
-      ap_rst_n => reset_not_Res(0),
-      ap_start => start_dout(0),
+      ap_rst_n => reset_not_Res,
+      ap_start => start_not_Res(0),
       image_h(11 downto 0) => xlconstant_1_dout(11 downto 0),
       image_in(63 downto 0) => xlconstant_2_dout(63 downto 0),
       image_w(11 downto 0) => xlconstant_0_dout(11 downto 0),
@@ -1830,9 +1837,9 @@ addr_base: component design_1_xlconstant_0_2
 axi_mem_intercon: entity work.design_1_axi_mem_intercon_0
      port map (
       ACLK => processing_system7_0_FCLK_CLK0,
-      ARESETN(0) => reset_not_Res(0),
+      ARESETN(0) => reset_not_Res,
       M00_ACLK => processing_system7_0_FCLK_CLK0,
-      M00_ARESETN(0) => reset_not_Res(0),
+      M00_ARESETN(0) => reset_not_Res,
       M00_AXI_araddr(63 downto 0) => axi_mem_intercon_M00_AXI_ARADDR(63 downto 0),
       M00_AXI_arburst(1 downto 0) => axi_mem_intercon_M00_AXI_ARBURST(1 downto 0),
       M00_AXI_arcache(3 downto 0) => axi_mem_intercon_M00_AXI_ARCACHE(3 downto 0),
@@ -1867,7 +1874,7 @@ axi_mem_intercon: entity work.design_1_axi_mem_intercon_0
       M00_AXI_wstrb(7 downto 0) => axi_mem_intercon_M00_AXI_WSTRB(7 downto 0),
       M00_AXI_wvalid => axi_mem_intercon_M00_AXI_WVALID,
       S00_ACLK => clk_wiz_0_clk_wiz_0_clk_out1,
-      S00_ARESETN(0) => reset_not_Res(0),
+      S00_ARESETN(0) => reset_not_Res,
       S00_AXI_araddr(63 downto 0) => DMA24bUnit_mm2s_0_m_axi_gmem_ARADDR(63 downto 0),
       S00_AXI_arburst(1 downto 0) => DMA24bUnit_mm2s_0_m_axi_gmem_ARBURST(1 downto 0),
       S00_AXI_arcache(3 downto 0) => DMA24bUnit_mm2s_0_m_axi_gmem_ARCACHE(3 downto 0),
@@ -2039,13 +2046,16 @@ processing_system7_0: component design_1_processing_system7_0_0
       USB0_VBUS_PWRFAULT => '0',
       USB0_VBUS_PWRSELECT => NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED
     );
-reset_not: component design_1_util_vector_logic_0_0
+reset_wiz_0: component design_1_reset_wiz_0_0
      port map (
-      Op1(0) => ap_rst_n_0_1,
-      Res(0) => reset_not_Res(0)
+      clk => clk_wiz_0_clk_wiz_0_clk_out1,
+      reset_in => reset_1,
+      reset_out => ap_rst_n_0_1,
+      resetn_out => reset_not_Res
     );
-start: component design_1_xlconstant_0_3
+start_not: component design_1_util_vector_logic_0_1
      port map (
-      dout(0) => start_dout(0)
+      Op1(0) => start_1,
+      Res(0) => start_not_Res(0)
     );
 end STRUCTURE;

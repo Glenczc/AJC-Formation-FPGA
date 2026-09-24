@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Sep 22 17:55:57 2026
+# Process ID: 105581
+# Current directory: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.sim/sim_1/behav/xsim/xsim.dir/Driver_VGA_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.sim/sim_1/behav/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.sim/sim_1/behav/xsim/xsim.dir/Driver_VGA_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Sep 22 17:55:57 2026...

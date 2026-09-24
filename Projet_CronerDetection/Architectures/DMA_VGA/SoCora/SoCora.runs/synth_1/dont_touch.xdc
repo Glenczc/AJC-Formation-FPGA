@@ -14,6 +14,15 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_pr
 # IP: bd/design_1/ip/design_1_DMA24bUnit_mm2s_0_0/design_1_DMA24bUnit_mm2s_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_DMA24bUnit_mm2s_0_0 || ORIG_REF_NAME==design_1_DMA24bUnit_mm2s_0_0} -quiet] -quiet
 
+# IP: bd/design_1/ip/design_1_auto_cc_0/design_1_auto_cc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_auto_cc_0 || ORIG_REF_NAME==design_1_auto_cc_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_auto_ds_0 || ORIG_REF_NAME==design_1_auto_ds_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_auto_pc_0 || ORIG_REF_NAME==design_1_auto_pc_0} -quiet] -quiet
+
 # IP: bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_mem_intercon_0 || ORIG_REF_NAME==design_1_axi_mem_intercon_0} -quiet] -quiet
 
@@ -35,25 +44,16 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_xl
 # IP: bd/design_1/ip/design_1_xlconstant_0_2/design_1_xlconstant_0_2.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_xlconstant_0_2 || ORIG_REF_NAME==design_1_xlconstant_0_2} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_util_vector_logic_0_0/design_1_util_vector_logic_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_util_vector_logic_0_0 || ORIG_REF_NAME==design_1_util_vector_logic_0_0} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/design_1_AXI4_stream_Master_2_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_AXI4_stream_Master_2_0_0 || ORIG_REF_NAME==design_1_AXI4_stream_Master_2_0_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_xlconstant_0_3/design_1_xlconstant_0_3.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_xlconstant_0_3 || ORIG_REF_NAME==design_1_xlconstant_0_3} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_util_vector_logic_0_1/design_1_util_vector_logic_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_util_vector_logic_0_1 || ORIG_REF_NAME==design_1_util_vector_logic_0_1} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_ControleurVGA_v2_0_0/design_1_ControleurVGA_v2_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ControleurVGA_v2_0_0 || ORIG_REF_NAME==design_1_ControleurVGA_v2_0_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/design_1_AXI4_stream_Master_2_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_AXI4_stream_Master_2_0_0 || ORIG_REF_NAME==design_1_AXI4_stream_Master_2_0_0} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_auto_cc_0/design_1_auto_cc_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_auto_cc_0 || ORIG_REF_NAME==design_1_auto_cc_0} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_auto_ds_0 || ORIG_REF_NAME==design_1_auto_ds_0} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_auto_pc_0 || ORIG_REF_NAME==design_1_auto_pc_0} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_reset_wiz_0_0/design_1_reset_wiz_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_reset_wiz_0_0 || ORIG_REF_NAME==design_1_reset_wiz_0_0} -quiet] -quiet
 
 # XDC: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/SoCora/SoCora.gen/sources_1/bd/design_1/design_1_ooc.xdc

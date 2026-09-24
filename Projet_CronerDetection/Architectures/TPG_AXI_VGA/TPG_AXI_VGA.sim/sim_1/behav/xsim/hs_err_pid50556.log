@@ -1,0 +1,8 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/tps/lnx64/jre11.0.2/lib//server/libjvm.so(+0xc04c3b) [0x79a30a404c3b]
+/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/tps/lnx64/jre11.0.2/lib//server/libjvm.so(JVM_handle_linux_signal+0x14e) [0x79a30a4098de]
+/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/tps/lnx64/jre11.0.2/lib//server/libjvm.so(+0xbfd538) [0x79a30a3fd538]
+/lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x79a368645330]

@@ -74,52 +74,10 @@
                                 "id": 1,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 1,
-                                "nets": [
-                                    {
-                                        "name": "design_1_i/DMA24bUnit_mm2s_0/STR_video_out_TUSER",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "design_1_i/DMA24bUnit_mm2s_0/STR_video_out_TUSER[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe2",
-                                "id": 2,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 2,
-                                "nets": [
-                                    {
-                                        "name": "design_1_i/DMA24bUnit_mm2s_0/STR_video_out_TLAST",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "design_1_i/DMA24bUnit_mm2s_0/STR_video_out_TLAST[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe3",
-                                "id": 3,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
                                 "rightIndex": 9,
-                                "portIndex": 3,
+                                "portIndex": 1,
                                 "nets": [
                                     {
                                         "name": "design_1_i/AXI4_stream_Master_2_0/U0/h_count_reg",
@@ -160,18 +118,92 @@
                                 ]
                             },
                             {
+                                "name": "probe2",
+                                "id": 2,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 3,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "design_1_i/AXI4_stream_Master_2_0/tdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "design_1_i/AXI4_stream_Master_2_0/tdata[7]"
+                                            },
+                                            {
+                                                "name": "design_1_i/AXI4_stream_Master_2_0/tdata[6]"
+                                            },
+                                            {
+                                                "name": "design_1_i/AXI4_stream_Master_2_0/tdata[5]"
+                                            },
+                                            {
+                                                "name": "design_1_i/AXI4_stream_Master_2_0/tdata[4]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 3,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 3,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "design_1_i/ControleurVGA_v2_0/VGA_B",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "design_1_i/ControleurVGA_v2_0/VGA_B[3]"
+                                            },
+                                            {
+                                                "name": "design_1_i/ControleurVGA_v2_0/VGA_B[2]"
+                                            },
+                                            {
+                                                "name": "design_1_i/ControleurVGA_v2_0/VGA_B[1]"
+                                            },
+                                            {
+                                                "name": "design_1_i/ControleurVGA_v2_0/VGA_B[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
                                 "name": "probe4",
                                 "id": 4,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
+                                "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
+                                "rightIndex": 3,
                                 "portIndex": 4,
                                 "nets": [
                                     {
-                                        "name": "design_1_i/DMA24bUnit_mm2s_0/ap_done",
-                                        "isBus": false
+                                        "name": "design_1_i/AXI4_stream_Slave_1/data_out",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "design_1_i/AXI4_stream_Slave_1/data_out[7]"
+                                            },
+                                            {
+                                                "name": "design_1_i/AXI4_stream_Slave_1/data_out[6]"
+                                            },
+                                            {
+                                                "name": "design_1_i/AXI4_stream_Slave_1/data_out[5]"
+                                            },
+                                            {
+                                                "name": "design_1_i/AXI4_stream_Slave_1/data_out[4]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
@@ -186,8 +218,13 @@
                                 "portIndex": 5,
                                 "nets": [
                                     {
-                                        "name": "design_1_i/DMA24bUnit_mm2s_0/ap_idle",
-                                        "isBus": false
+                                        "name": "design_1_i/DMA24bUnit_mm2s_0/STR_video_out_TLAST",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "design_1_i/DMA24bUnit_mm2s_0/STR_video_out_TLAST[0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
@@ -196,14 +233,28 @@
                                 "id": 6,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
+                                "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
+                                "rightIndex": 3,
                                 "portIndex": 6,
                                 "nets": [
                                     {
-                                        "name": "design_1_i/AXI4_stream_Slave_1_valid",
-                                        "isBus": false
+                                        "name": "design_1_i/DMA24bUnit_mm2s_0/STR_video_out_TDATA",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "design_1_i/DMA24bUnit_mm2s_0/STR_video_out_TDATA[7]"
+                                            },
+                                            {
+                                                "name": "design_1_i/DMA24bUnit_mm2s_0/STR_video_out_TDATA[6]"
+                                            },
+                                            {
+                                                "name": "design_1_i/DMA24bUnit_mm2s_0/STR_video_out_TDATA[5]"
+                                            },
+                                            {
+                                                "name": "design_1_i/DMA24bUnit_mm2s_0/STR_video_out_TDATA[4]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
@@ -218,8 +269,13 @@
                                 "portIndex": 7,
                                 "nets": [
                                     {
-                                        "name": "design_1_i/DMA24bUnit_mm2s_0_STR_video_out_TVALID",
-                                        "isBus": false
+                                        "name": "design_1_i/DMA24bUnit_mm2s_0/STR_video_out_TUSER",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "design_1_i/DMA24bUnit_mm2s_0/STR_video_out_TUSER[0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
@@ -234,7 +290,151 @@
                                 "portIndex": 8,
                                 "nets": [
                                     {
+                                        "name": "design_1_i/DMA24bUnit_mm2s_0/ap_done",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe9",
+                                "id": 9,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 9,
+                                "nets": [
+                                    {
+                                        "name": "design_1_i/DMA24bUnit_mm2s_0/ap_idle",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe10",
+                                "id": 10,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 10,
+                                "nets": [
+                                    {
+                                        "name": "u_ila_0_ap_start",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe11",
+                                "id": 11,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 11,
+                                "nets": [
+                                    {
+                                        "name": "design_1_i/AXI4_stream_Slave_1_valid",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe12",
+                                "id": 12,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 12,
+                                "nets": [
+                                    {
+                                        "name": "design_1_i/DMA24bUnit_mm2s_0_STR_video_out_TVALID",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe13",
+                                "id": 13,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 13,
+                                "nets": [
+                                    {
                                         "name": "design_1_i/AXI4_stream_Master_2_0/fulln",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe14",
+                                "id": 14,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 14,
+                                "nets": [
+                                    {
+                                        "name": "design_1_i/ControleurVGA_v2_0/H_end",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe15",
+                                "id": 15,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 15,
+                                "nets": [
+                                    {
+                                        "name": "design_1_i/ControleurVGA_v2_0/V_end",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe16",
+                                "id": 16,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 16,
+                                "nets": [
+                                    {
+                                        "name": "design_1_i/ControleurVGA_v2_0/VGA_HS_O",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe17",
+                                "id": 17,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 17,
+                                "nets": [
+                                    {
+                                        "name": "design_1_i/ControleurVGA_v2_0/VGA_VS_O",
                                         "isBus": false
                                     }
                                 ]

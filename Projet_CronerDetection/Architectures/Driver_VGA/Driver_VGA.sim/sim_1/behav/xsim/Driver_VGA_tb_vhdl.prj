@@ -1,0 +1,21 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ipshared/0f1b/src/AXI4_stream_Master_24b.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/sim/design_1_AXI4_stream_Master_2_0_0.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ipshared/db4a/src/AXI4_stream_Slave.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ip/design_1_AXI4_stream_Slave_0_0/sim/design_1_AXI4_stream_Slave_0_0.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ip/design_1_AXI4_stream_Slave_1_0/sim/design_1_AXI4_stream_Slave_1_0.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ipshared/75f6/src/Axi4s_driver.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ipshared/src/Axi4s_driver.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ip/design_1_axi4s_driver_0_1/sim/design_1_axi4s_driver_0_1.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ipshared/df36/src/ControleurVGA_v2.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ipshared/src/ControleurVGA_v2.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ip/design_1_ControleurVGA_v2_0_1/sim/design_1_ControleurVGA_v2_0_1.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/sim/design_1.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ipshared/275d/src/reset_wiz.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ipshared/src/reset_wiz.vhd" \
+"../../../../Driver_VGA.ip_user_files/bd/design_1/ip/design_1_reset_wiz_0_0/sim/design_1_reset_wiz_0_0.vhd" \
+"../../../../../src/Driver_VGA_tb.vhd" \
+
+# Do not sort compile order
+nosort

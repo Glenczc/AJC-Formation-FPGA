@@ -1,0 +1,12 @@
+
+{ 
+    crc :  5631006124291704381  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 92b6b832f07b498ebddf08496a2abb7b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L fifo_generator_v13_2_5 -L lib_cdc_v1_0_2 -L proc_sys_reset_v5_0_13 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot design_1_wrapper_behav xil_defaultlib.design_1_wrapper xil_defaultlib.glbl" , 
+    buildDate : "Nov 18 2020" , 
+    buildTime : "09:20:35" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--no-as-needed  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/design_1_wrapper_behav/xsimk\"   \"xsim.dir/design_1_wrapper_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/design_1_wrapper_behav/obj/xsim_1.lnx64.o\" -L\"/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/lib/lnx64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

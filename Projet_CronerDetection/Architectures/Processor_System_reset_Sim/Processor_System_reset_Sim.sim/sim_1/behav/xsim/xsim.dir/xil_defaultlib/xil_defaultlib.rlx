@@ -1,0 +1,11 @@
+0.7
+2020.2
+Nov 18 2020
+09:20:35
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Processor_System_reset_Sim/Processor_System_reset_Sim.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0_0_1/PLL_2.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v,1790174942,verilog,,/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Processor_System_reset_Sim/Processor_System_reset_Sim.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0_0_1/PLL_2.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v,,design_1_clk_wiz_0_0_clk_wiz,,,../../../../Processor_System_reset_Sim.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/PLL_2.srcs/sources_1/bd/design_1/ipshared/d0f7,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Processor_System_reset_Sim/Processor_System_reset_Sim.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0_0_1/sim/design_1_clk_wiz_0_0.vhd,1790174937,vhdl,,,,design_1_clk_wiz_0_0,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Processor_System_reset_Sim/Processor_System_reset_Sim.ip_user_files/bd/design_1/ip/design_1_proc_sys_reset_0_0/sim/design_1_proc_sys_reset_0_0.vhd,1790175079,vhdl,,,,design_1_proc_sys_reset_0_0,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Processor_System_reset_Sim/Processor_System_reset_Sim.ip_user_files/bd/design_1/ipshared/58de/PLL_2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd,1790174151,vhdl,,,,design_1_wrapper,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Processor_System_reset_Sim/Processor_System_reset_Sim.ip_user_files/bd/design_1/ipshared/58de/PLL_2.gen/sources_1/bd/design_1/sim/design_1.vhd,1790174151,vhdl,,,,design_1,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Processor_System_reset_Sim/Processor_System_reset_Sim.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,,,,,,,
+/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/src/ProcSysReset_tb.vhd,1790174520,vhdl,,,,procsysreset_tb,,,,,,,,

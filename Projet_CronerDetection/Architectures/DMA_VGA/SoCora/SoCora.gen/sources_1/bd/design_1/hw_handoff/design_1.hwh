@@ -1,16 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Sep 21 17:14:40 2026" VIVADOVERSION="2020.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Sep 23 18:17:26 2026" VIVADOVERSION="2020.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z007s" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
     <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="reset"/>
-        <CONNECTION INSTANCE="AXI4_stream_Slave_2" PORT="reset"/>
-        <CONNECTION INSTANCE="reset_not" PORT="Op1"/>
-        <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="reset"/>
-        <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="reset"/>
+        <CONNECTION INSTANCE="reset_wiz_0" PORT="reset_in"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="CLK_I" SIGIS="undef" SIGNAME="External_Ports_CLK_I">
@@ -41,6 +37,11 @@
     <PORT DIR="O" LEFT="3" NAME="VGA_G" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v2_0_VGA_G">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="VGA_G"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="start" SIGIS="undef" SIGNAME="External_Ports_start">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="start_not" PORT="Op1"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="IO" LEFT="53" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_MIO">
@@ -212,9 +213,9 @@
             <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="reset_wiz_0_reset_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+            <CONNECTION INSTANCE="reset_wiz_0" PORT="reset_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="23" NAME="data_in" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_data_out">
@@ -296,9 +297,9 @@
             <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="reset_wiz_0_reset_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+            <CONNECTION INSTANCE="reset_wiz_0" PORT="reset_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_tdata">
@@ -382,9 +383,9 @@
             <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="reset_wiz_0_reset_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+            <CONNECTION INSTANCE="reset_wiz_0" PORT="reset_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tdata">
@@ -463,7 +464,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/ControleurVGA_v2_0" HWVERSION="1.0" INSTANCE="ControleurVGA_v2_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ControleurVGA_v2" VLNV="user.org:user:ControleurVGA_v2:1.0">
+    <MODULE COREREVISION="3" FULLNAME="/ControleurVGA_v2_0" HWVERSION="1.0" INSTANCE="ControleurVGA_v2_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ControleurVGA_v2" VLNV="user.org:user:ControleurVGA_v2:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="design_1_ControleurVGA_v2_0_0"/>
@@ -475,9 +476,9 @@
             <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="reset_wiz_0_reset_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+            <CONNECTION INSTANCE="reset_wiz_0" PORT="reset_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="23" NAME="pixel" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_2_data_out">
@@ -556,14 +557,14 @@
             <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="ap_rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="reset_not_Res">
+        <PORT DIR="I" NAME="ap_rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="reset_wiz_0_resetn_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="reset_not" PORT="Res"/>
+            <CONNECTION INSTANCE="reset_wiz_0" PORT="resetn_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="ap_start" SIGIS="undef" SIGNAME="start_dout">
+        <PORT DIR="I" NAME="ap_start" SIGIS="undef" SIGNAME="start_not_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="start" PORT="dout"/>
+            <CONNECTION INSTANCE="start_not" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="ap_done" SIGIS="undef"/>
@@ -1292,9 +1293,9 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="ARESETN" RIGHT="0" SIGIS="rst" SIGNAME="reset_not_Res">
+        <PORT DIR="I" LEFT="0" NAME="ARESETN" RIGHT="0" SIGIS="rst" SIGNAME="reset_wiz_0_resetn_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="reset_not" PORT="Res"/>
+            <CONNECTION INSTANCE="reset_wiz_0" PORT="resetn_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="S00_ACLK" SIGIS="clk" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
@@ -1302,9 +1303,9 @@
             <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="S00_ARESETN" RIGHT="0" SIGIS="rst" SIGNAME="reset_not_Res">
+        <PORT DIR="I" LEFT="0" NAME="S00_ARESETN" RIGHT="0" SIGIS="rst" SIGNAME="reset_wiz_0_resetn_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="reset_not" PORT="Res"/>
+            <CONNECTION INSTANCE="reset_wiz_0" PORT="resetn_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M00_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
@@ -1312,9 +1313,9 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_ARESETN" RIGHT="0" SIGIS="rst" SIGNAME="reset_not_Res">
+        <PORT DIR="I" LEFT="0" NAME="M00_ARESETN" RIGHT="0" SIGIS="rst" SIGNAME="reset_wiz_0_resetn_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="reset_not" PORT="Res"/>
+            <CONNECTION INSTANCE="reset_wiz_0" PORT="resetn_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="63" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awaddr">
@@ -1806,6 +1807,7 @@
             <CONNECTION INSTANCE="AXI4_stream_Slave_2" PORT="clk"/>
             <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="clk"/>
             <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="clk"/>
+            <CONNECTION INSTANCE="reset_wiz_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="clk_in1" SIGIS="undef" SIGNAME="External_Ports_CLK_I">
@@ -2161,12 +2163,12 @@
         <PARAMETER NAME="PCW_USE_S_AXI_HP1" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_S_AXI_HP2" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_S_AXI_HP3" VALUE="0"/>
-        <PARAMETER NAME="PCW_M_AXI_GP0_FREQMHZ" VALUE="50.0"/>
+        <PARAMETER NAME="PCW_M_AXI_GP0_FREQMHZ" VALUE="50"/>
         <PARAMETER NAME="PCW_M_AXI_GP1_FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PCW_S_AXI_GP0_FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PCW_S_AXI_GP1_FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PCW_S_AXI_ACP_FREQMHZ" VALUE="10"/>
-        <PARAMETER NAME="PCW_S_AXI_HP0_FREQMHZ" VALUE="50.0"/>
+        <PARAMETER NAME="PCW_S_AXI_HP0_FREQMHZ" VALUE="50"/>
         <PARAMETER NAME="PCW_S_AXI_HP1_FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PCW_S_AXI_HP2_FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PCW_S_AXI_HP3_FREQMHZ" VALUE="10"/>
@@ -2827,7 +2829,7 @@
         <PORT DIR="O" LEFT="3" NAME="M_AXI_GP0_AWLEN" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="3" NAME="M_AXI_GP0_AWQOS" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="3" NAME="M_AXI_GP0_WSTRB" RIGHT="0" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="5e+07" DIR="I" NAME="M_AXI_GP0_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="M_AXI_GP0_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -2894,7 +2896,7 @@
         <PORT DIR="O" LEFT="7" NAME="S_AXI_HP0_WCOUNT" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="2" NAME="S_AXI_HP0_RACOUNT" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="5" NAME="S_AXI_HP0_WACOUNT" RIGHT="0" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="5e+07" DIR="I" NAME="S_AXI_HP0_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="S_AXI_HP0_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -3024,7 +3026,7 @@
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="5e+07" DIR="O" NAME="FCLK_CLK0" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="O" NAME="FCLK_CLK0" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
@@ -3207,7 +3209,7 @@
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="8"/>
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI3"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="5e+07"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="12"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -3279,7 +3281,7 @@
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="8"/>
           <PARAMETER NAME="DATA_WIDTH" VALUE="64"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI3"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="5e+07"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="6"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -3351,22 +3353,32 @@
       <MEMORYMAP/>
       <PERIPHERALS/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/reset_not" HWVERSION="2.0" INSTANCE="reset_not" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+    <MODULE COREREVISION="3" FULLNAME="/reset_wiz_0" HWVERSION="1.0" INSTANCE="reset_wiz_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="reset_wiz" VLNV="user.org:user:reset_wiz:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="C_OPERATION" VALUE="not"/>
-        <PARAMETER NAME="C_SIZE" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_util_vector_logic_0_0"/>
-        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_notgate.png"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_reset_wiz_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_reset">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset_in" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Res" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="undef" SIGNAME="reset_not_Res">
+        <PORT DIR="O" NAME="reset_out" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="reset_wiz_0_reset_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="reset"/>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_2" PORT="reset"/>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="reset"/>
+            <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="resetn_out" SIGIS="undef" SIGNAME="reset_wiz_0_resetn_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ARESETN"/>
@@ -3377,16 +3389,22 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="7" FULLNAME="/start" HWVERSION="1.1" INSTANCE="start" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+    <MODULE COREREVISION="1" FULLNAME="/start_not" HWVERSION="2.0" INSTANCE="start_not" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconstant_0_3"/>
+        <PARAMETER NAME="C_OPERATION" VALUE="not"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_util_vector_logic_0_1"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_notgate.png"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="start_dout">
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_start">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="start"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="start_not_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="ap_start"/>
           </CONNECTIONS>

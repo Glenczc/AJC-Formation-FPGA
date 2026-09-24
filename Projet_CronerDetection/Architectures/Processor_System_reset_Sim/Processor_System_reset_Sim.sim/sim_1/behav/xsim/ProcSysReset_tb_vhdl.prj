@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Processor_System_reset_Sim.ip_user_files/bd/design_1/sim/design_1.vhd" \
+"../../../../Processor_System_reset_Sim.ip_user_files/bd/design_1/ipshared/58de/PLL_2.gen/sources_1/bd/design_1/sim/design_1.vhd" \
+"../../../../Processor_System_reset_Sim.ip_user_files/bd/design_1/ipshared/58de/PLL_2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd" \
+"../../../../Processor_System_reset_Sim.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0_0_1/sim/design_1_clk_wiz_0_0.vhd" \
+"../../../../Processor_System_reset_Sim.ip_user_files/bd/design_1/ip/design_1_proc_sys_reset_0_0/sim/design_1_proc_sys_reset_0_0.vhd" \
+"../../../../../src/ProcSysReset_tb.vhd" \
+
+# Do not sort compile order
+nosort

@@ -170,15 +170,9 @@ proc create_root_design { parentCell } {
 
   # Create instance: AXI4_stream_Master_2_0, and set properties
   set AXI4_stream_Master_2_0 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Master_24b:1.0 AXI4_stream_Master_2_0 ]
-  set_property -dict [ list \
-   CONFIG.nb_ligne {480} \
- ] $AXI4_stream_Master_2_0
 
-  # Create instance: AXI4_stream_Master_2_1, and set properties
-  set AXI4_stream_Master_2_1 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Master_24b:1.0 AXI4_stream_Master_2_1 ]
-  set_property -dict [ list \
-   CONFIG.nb_ligne {480} \
- ] $AXI4_stream_Master_2_1
+  # Create instance: AXI4_stream_Master_2_2, and set properties
+  set AXI4_stream_Master_2_2 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Master_24b:1.0 AXI4_stream_Master_2_2 ]
 
   # Create instance: AXI4_stream_Slave_0, and set properties
   set AXI4_stream_Slave_0 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Slave:1.0 AXI4_stream_Slave_0 ]
@@ -192,44 +186,38 @@ proc create_root_design { parentCell } {
    CONFIG.WORD_WIDTH {24} \
  ] $AXI4_stream_Slave_1
 
-  # Create instance: ControleurVGA_0, and set properties
-  set ControleurVGA_0 [ create_bd_cell -type ip -vlnv user.org:user:ControleurVGA:1.0 ControleurVGA_0 ]
+  # Create instance: ControleurVGA_v2_0, and set properties
+  set ControleurVGA_v2_0 [ create_bd_cell -type ip -vlnv user.org:user:ControleurVGA_v2:1.0 ControleurVGA_v2_0 ]
 
   # Create instance: TPG_0, and set properties
   set TPG_0 [ create_bd_cell -type ip -vlnv user.org:user:TPG:1.0 TPG_0 ]
-  set_property -dict [ list \
-   CONFIG.FRAME_HEIGHT {480} \
- ] $TPG_0
 
   # Create instance: clk_wiz_0_clk_wiz_0, and set properties
   set clk_wiz_0_clk_wiz_0 [ create_bd_cell -type ip -vlnv user.org:user:clk_wiz_0_clk_wiz:1.0 clk_wiz_0_clk_wiz_0 ]
 
-  # Create instance: xlconstant_0, and set properties
-  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
-
   # Create interface connections
-  connect_bd_intf_net -intf_net AXI4_stream_Master_2_0_interface_axis [get_bd_intf_pins AXI4_stream_Master_2_0/interface_axis] [get_bd_intf_pins AXI4_stream_Slave_0/interface_axis]
-  connect_bd_intf_net -intf_net AXI4_stream_Master_2_1_interface_axis [get_bd_intf_pins AXI4_stream_Master_2_1/interface_axis] [get_bd_intf_pins AXI4_stream_Slave_1/interface_axis]
+  connect_bd_intf_net -intf_net AXI4_stream_Master_2_0_interface_axis [get_bd_intf_pins AXI4_stream_Master_2_0/interface_axis] [get_bd_intf_pins AXI4_stream_Slave_1/interface_axis]
+  connect_bd_intf_net -intf_net AXI4_stream_Master_2_2_interface_axis [get_bd_intf_pins AXI4_stream_Master_2_2/interface_axis] [get_bd_intf_pins AXI4_stream_Slave_0/interface_axis]
 
   # Create port connections
-  connect_bd_net -net AXI4_stream_Slave_0_data_out [get_bd_pins AXI4_stream_Master_2_1/data_in] [get_bd_pins AXI4_stream_Slave_0/data_out]
-  connect_bd_net -net AXI4_stream_Slave_0_valid [get_bd_pins AXI4_stream_Master_2_1/wr_en] [get_bd_pins AXI4_stream_Slave_0/valid]
-  connect_bd_net -net AXI4_stream_Slave_1_data_out [get_bd_pins AXI4_stream_Slave_1/data_out] [get_bd_pins ControleurVGA_0/pixel]
-  connect_bd_net -net AXI4_stream_Slave_1_last [get_bd_pins AXI4_stream_Slave_1/last] [get_bd_pins ControleurVGA_0/H_end]
-  connect_bd_net -net AXI4_stream_Slave_1_user [get_bd_pins AXI4_stream_Slave_1/user] [get_bd_pins ControleurVGA_0/V_end]
-  connect_bd_net -net AXI4_stream_Slave_1_valid [get_bd_pins AXI4_stream_Slave_1/valid] [get_bd_pins ControleurVGA_0/valid]
+  connect_bd_net -net AXI4_stream_Master_2_0_fulln [get_bd_pins AXI4_stream_Master_2_0/fulln] [get_bd_pins AXI4_stream_Slave_0/ready]
+  connect_bd_net -net AXI4_stream_Slave_0_data_out [get_bd_pins AXI4_stream_Master_2_0/data_in] [get_bd_pins AXI4_stream_Slave_0/data_out]
+  connect_bd_net -net AXI4_stream_Slave_0_valid [get_bd_pins AXI4_stream_Master_2_0/wr_en] [get_bd_pins AXI4_stream_Slave_0/valid]
+  connect_bd_net -net AXI4_stream_Slave_1_data_out [get_bd_pins AXI4_stream_Slave_1/data_out] [get_bd_pins ControleurVGA_v2_0/pixel]
+  connect_bd_net -net AXI4_stream_Slave_1_last [get_bd_pins AXI4_stream_Slave_1/last] [get_bd_pins ControleurVGA_v2_0/H_end]
+  connect_bd_net -net AXI4_stream_Slave_1_user [get_bd_pins AXI4_stream_Slave_1/user] [get_bd_pins ControleurVGA_v2_0/V_end]
+  connect_bd_net -net AXI4_stream_Slave_1_valid [get_bd_pins AXI4_stream_Slave_1/valid] [get_bd_pins ControleurVGA_v2_0/valid]
   connect_bd_net -net CLK_I_1 [get_bd_ports CLK_I] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_in1]
-  connect_bd_net -net ControleurVGA_0_VGA_B [get_bd_ports VGA_B] [get_bd_pins ControleurVGA_0/VGA_B]
-  connect_bd_net -net ControleurVGA_0_VGA_G [get_bd_ports VGA_G] [get_bd_pins ControleurVGA_0/VGA_G]
-  connect_bd_net -net ControleurVGA_0_VGA_HS_O [get_bd_ports VGA_HS_O] [get_bd_pins ControleurVGA_0/VGA_HS_O]
-  connect_bd_net -net ControleurVGA_0_VGA_R [get_bd_ports VGA_R] [get_bd_pins ControleurVGA_0/VGA_R]
-  connect_bd_net -net ControleurVGA_0_VGA_VS_O [get_bd_ports VGA_VS_O] [get_bd_pins ControleurVGA_0/VGA_VS_O]
-  connect_bd_net -net ControleurVGA_0_ready [get_bd_pins AXI4_stream_Slave_1/ready] [get_bd_pins ControleurVGA_0/ready]
-  connect_bd_net -net TPG_0_pixel [get_bd_pins AXI4_stream_Master_2_0/data_in] [get_bd_pins TPG_0/pixel]
-  connect_bd_net -net TPG_0_px_valid [get_bd_pins AXI4_stream_Master_2_0/wr_en] [get_bd_pins TPG_0/px_valid]
-  connect_bd_net -net clk_wiz_0_clk_wiz_0_clk_out1 [get_bd_pins AXI4_stream_Master_2_0/clk] [get_bd_pins AXI4_stream_Master_2_1/clk] [get_bd_pins AXI4_stream_Slave_0/clk] [get_bd_pins AXI4_stream_Slave_1/clk] [get_bd_pins ControleurVGA_0/clk] [get_bd_pins TPG_0/clk] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_out1]
-  connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins AXI4_stream_Master_2_0/reset] [get_bd_pins AXI4_stream_Master_2_1/reset] [get_bd_pins AXI4_stream_Slave_0/reset] [get_bd_pins AXI4_stream_Slave_1/reset] [get_bd_pins ControleurVGA_0/reset] [get_bd_pins TPG_0/reset]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins AXI4_stream_Slave_0/ready] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net ControleurVGA_v2_0_VGA_B [get_bd_ports VGA_B] [get_bd_pins ControleurVGA_v2_0/VGA_B]
+  connect_bd_net -net ControleurVGA_v2_0_VGA_G [get_bd_ports VGA_G] [get_bd_pins ControleurVGA_v2_0/VGA_G]
+  connect_bd_net -net ControleurVGA_v2_0_VGA_HS_O [get_bd_ports VGA_HS_O] [get_bd_pins ControleurVGA_v2_0/VGA_HS_O]
+  connect_bd_net -net ControleurVGA_v2_0_VGA_R [get_bd_ports VGA_R] [get_bd_pins ControleurVGA_v2_0/VGA_R]
+  connect_bd_net -net ControleurVGA_v2_0_VGA_VS_O [get_bd_ports VGA_VS_O] [get_bd_pins ControleurVGA_v2_0/VGA_VS_O]
+  connect_bd_net -net ControleurVGA_v2_0_ready [get_bd_pins AXI4_stream_Slave_1/ready] [get_bd_pins ControleurVGA_v2_0/ready]
+  connect_bd_net -net TPG_0_pixel [get_bd_pins AXI4_stream_Master_2_2/data_in] [get_bd_pins TPG_0/pixel]
+  connect_bd_net -net TPG_0_px_valid [get_bd_pins AXI4_stream_Master_2_2/wr_en] [get_bd_pins TPG_0/px_valid]
+  connect_bd_net -net clk_wiz_0_clk_wiz_0_clk_out1 [get_bd_pins AXI4_stream_Master_2_0/clk] [get_bd_pins AXI4_stream_Master_2_2/clk] [get_bd_pins AXI4_stream_Slave_0/clk] [get_bd_pins AXI4_stream_Slave_1/clk] [get_bd_pins ControleurVGA_v2_0/clk] [get_bd_pins TPG_0/clk] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_out1]
+  connect_bd_net -net reset_2 [get_bd_ports reset] [get_bd_pins AXI4_stream_Master_2_0/reset] [get_bd_pins AXI4_stream_Master_2_2/reset] [get_bd_pins AXI4_stream_Slave_0/reset] [get_bd_pins AXI4_stream_Slave_1/reset] [get_bd_pins ControleurVGA_v2_0/reset] [get_bd_pins TPG_0/reset]
 
   # Create address segments
 

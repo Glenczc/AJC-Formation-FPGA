@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Sep 24 10:45:31 2026
+# Process ID: 18581
+# Current directory: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.runs/design_1_axi4s_driver_0_1_synth_1
+# Command line: vivado -log design_1_axi4s_driver_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axi4s_driver_0_1.tcl
+# Log file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.runs/design_1_axi4s_driver_0_1_synth_1/design_1_axi4s_driver_0_1.vds
+# Journal file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.runs/design_1_axi4s_driver_0_1_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_axi4s_driver_0_1.tcl -notrace

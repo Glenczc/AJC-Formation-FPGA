@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
---Date        : Mon Sep 21 17:14:39 2026
+--Date        : Wed Sep 23 18:17:01 2026
 --Host        : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -40,7 +40,8 @@ entity design_1_wrapper is
     VGA_HS_O : out STD_LOGIC;
     VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
     VGA_VS_O : out STD_LOGIC;
-    reset : in STD_LOGIC
+    reset : in STD_LOGIC;
+    start : in STD_LOGIC
   );
 end design_1_wrapper;
 
@@ -54,6 +55,7 @@ architecture STRUCTURE of design_1_wrapper is
     VGA_HS_O : out STD_LOGIC;
     VGA_VS_O : out STD_LOGIC;
     VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    start : in STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
@@ -107,6 +109,7 @@ design_1_i: component design_1
       VGA_HS_O => VGA_HS_O,
       VGA_R(3 downto 0) => VGA_R(3 downto 0),
       VGA_VS_O => VGA_VS_O,
-      reset => reset
+      reset => reset,
+      start => start
     );
 end STRUCTURE;

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Sep 24 15:06:14 2026
+# Process ID: 69846
+# Current directory: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/design_1_TPG_0_3_synth_1
+# Command line: vivado -log design_1_TPG_0_3.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_TPG_0_3.tcl
+# Log file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/design_1_TPG_0_3_synth_1/design_1_TPG_0_3.vds
+# Journal file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.runs/design_1_TPG_0_3_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_TPG_0_3.tcl -notrace

@@ -233,9 +233,9 @@ begin
     end if;
   end process;
   
-  vga_green <= pixel(7 downto 4);
-  vga_red <= pixel(15 downto 12);
-  vga_blue <= pixel(23 downto 20);  
+  vga_blue <= pixel(7 downto 4);
+  vga_green <= pixel(15 downto 12);
+  vga_red <= pixel(23 downto 20);  
   
   ready <= '1' when (current_state = reception) else '0';
 

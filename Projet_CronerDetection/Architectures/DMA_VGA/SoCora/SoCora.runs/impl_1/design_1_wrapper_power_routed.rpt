@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date             : Mon Sep 21 17:31:45 2026
+| Date             : Thu Sep 24 09:46:12 2026
 | Host             : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.008 |        7 |       --- |             --- |
-| Slice Logic              |     0.002 |    13612 |       --- |             --- |
-|   LUT as Logic           |     0.002 |     3696 |     14400 |           25.67 |
-|   Register               |    <0.001 |     7059 |     28800 |           24.51 |
+| Slice Logic              |     0.002 |    14654 |       --- |             --- |
+|   LUT as Logic           |     0.002 |     3999 |     14400 |           27.77 |
+|   Register               |    <0.001 |     7565 |     28800 |           26.27 |
 |   LUT as Distributed RAM |    <0.001 |      370 |      6000 |            6.17 |
-|   CARRY4                 |    <0.001 |      196 |      4400 |            4.45 |
-|   LUT as Shift Register  |    <0.001 |      171 |      6000 |            2.85 |
-|   F7/F8 Muxes            |    <0.001 |       18 |     17600 |            0.10 |
-|   Others                 |     0.000 |      660 |       --- |             --- |
-| Signals                  |     0.004 |    10165 |       --- |             --- |
-| Block RAM                |     0.007 |      7.5 |        50 |           15.00 |
+|   CARRY4                 |    <0.001 |      215 |      4400 |            4.89 |
+|   LUT as Shift Register  |    <0.001 |      230 |      6000 |            3.83 |
+|   F7/F8 Muxes            |    <0.001 |        4 |     17600 |            0.02 |
+|   Others                 |     0.000 |      756 |       --- |             --- |
+| Signals                  |     0.004 |    10838 |       --- |             --- |
+| Block RAM                |     0.007 |        8 |        50 |           16.00 |
 | MMCM                     |     0.115 |        1 |         2 |           50.00 |
 | DSPs                     |     0.000 |        2 |        66 |            3.03 |
-| I/O                      |    <0.001 |       16 |       100 |           16.00 |
+| I/O                      |    <0.001 |       17 |       100 |           17.00 |
 | PS7                      |     1.253 |        1 |       --- |             --- |
 | Static Power             |     0.121 |          |           |                 |
 | Total                    |     1.512 |          |           |                 |
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.028 |       0.021 |      0.007 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.028 |       0.022 |      0.007 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.072 |       0.064 |      0.008 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -171,9 +171,9 @@ Table of Contents
 |       inst               |     0.115 |
 |     processing_system7_0 |     1.254 |
 |       inst               |     1.254 |
-|   u_ila_0                |     0.002 |
-|     inst                 |     0.002 |
-|       ila_core_inst      |     0.002 |
+|   u_ila_0                |     0.003 |
+|     inst                 |     0.003 |
+|       ila_core_inst      |     0.003 |
 +--------------------------+-----------+
 
 

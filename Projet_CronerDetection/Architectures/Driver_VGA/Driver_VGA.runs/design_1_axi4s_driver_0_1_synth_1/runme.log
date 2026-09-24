@@ -1,0 +1,55 @@
+
+*** Running vivado
+    with args -log design_1_axi4s_driver_0_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axi4s_driver_0_1.tcl
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source design_1_axi4s_driver_0_1.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/ip'.
+Command: synth_design -top design_1_axi4s_driver_0_1 -part xc7z007sclg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Device 21-403] Loading part xc7z007sclg400-1
+CRITICAL WARNING: [filemgmt 20-1741] File 'Axi4s_driver.vhd' is used by one or more modules, but with different contents, and may lead to unpredictable results:
+* design_1_axi4s_driver_0_1 (/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.gen/sources_1/bd/design_1/ipshared/75f6/src/Axi4s_driver.vhd)
+* design_1_axi4s_driver_0_1 (/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.gen/sources_1/bd/design_1/ipshared/src/Axi4s_driver.vhd)
+Please reset and regenerate these modules to resolve the differences, or synthesize them independently.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 18900
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 2379.891 ; gain = 0.000 ; free physical = 2100 ; free virtual = 9205
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-2488] overwriting existing primary unit axi4s_driver [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.gen/sources_1/bd/design_1/ipshared/src/Axi4s_driver.vhd:29]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi4s_driver_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.gen/sources_1/bd/design_1/ip/design_1_axi4s_driver_0_1/synth/design_1_axi4s_driver_0_1.vhd:68]
+	Parameter G_FILE_PATH bound to: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/src/sim/sample_in_gray_crop.txt - type: string 
+	Parameter G_DATA_WIDTH bound to: 24 - type: integer 
+	Parameter G_INIT_DELAY bound to: 0 - type: integer 
+	Parameter G_TLAST_END_OF_LINE bound to: 1 - type: bool 
+	Parameter G_LOOP_COUNT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'axi4s_driver' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.gen/sources_1/bd/design_1/ipshared/src/Axi4s_driver.vhd:29' bound to instance 'U0' of component 'axi4s_driver' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.gen/sources_1/bd/design_1/ip/design_1_axi4s_driver_0_1/synth/design_1_axi4s_driver_0_1.vhd:103]
+INFO: [Synth 8-638] synthesizing module 'axi4s_driver' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.gen/sources_1/bd/design_1/ipshared/src/Axi4s_driver.vhd:52]
+	Parameter G_FILE_PATH bound to: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Exemples/Reference_design_project_2020.2__720__0/Reference_design_project_2020.2/src/sim/sample_in_gray_crop.txt - type: string 
+	Parameter G_DATA_WIDTH bound to: 24 - type: integer 
+	Parameter G_INIT_DELAY bound to: 0 - type: integer 
+	Parameter G_TLAST_END_OF_LINE bound to: 1 - type: bool 
+	Parameter G_LOOP_COUNT bound to: 0 - type: integer 
+ERROR: [Synth 8-27] Procedure argument of type 'line' is not supported [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.gen/sources_1/bd/design_1/ipshared/src/Axi4s_driver.vhd:84]
+ERROR: [Synth 8-285] failed synthesizing module 'axi4s_driver' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.gen/sources_1/bd/design_1/ipshared/src/Axi4s_driver.vhd:52]
+ERROR: [Synth 8-285] failed synthesizing module 'design_1_axi4s_driver_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Driver_VGA/Driver_VGA.gen/sources_1/bd/design_1/ip/design_1_axi4s_driver_0_1/synth/design_1_axi4s_driver_0_1.vhd:68]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 2379.891 ; gain = 0.000 ; free physical = 2212 ; free virtual = 9327
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+12 Infos, 0 Warnings, 2 Critical Warnings and 4 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 24 10:46:13 2026...

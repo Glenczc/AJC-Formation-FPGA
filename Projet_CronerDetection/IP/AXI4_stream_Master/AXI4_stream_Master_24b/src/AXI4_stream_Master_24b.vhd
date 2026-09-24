@@ -66,7 +66,6 @@ end component;
     signal v_count : std_logic_vector(8 downto 0) := (others => '0');
 
 
-
 begin
 
 
@@ -106,11 +105,13 @@ begin
         end if;
     end process;
     
-    tlast <= '1' when (h_count = nb_colone-1) else '0';
-    tuser <= '1' when (v_count = nb_ligne-1 and h_count = nb_colone-1) else '0';
-   
-    tvalid <= not empty;
-    fulln <= not full;
-    rd_en <= '1' when (tready = '1' and empty = '0') else '0';
-    
+
+
+tlast <= '1' when (h_count = nb_colone-1) else '0';
+tuser <= '1' when (v_count = nb_ligne-1 and h_count = nb_colone-1) else '0';
+
+tvalid <= not empty;
+fulln <= not full;
+rd_en <= '1' when (tready = '1' and empty = '0') else '0';
+
 end Behavioral;
