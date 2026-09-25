@@ -10,12 +10,8 @@
   "../../../bd/design_1/ip/design_1_clk_wiz_0_clk_wiz_0_1/sim/design_1_clk_wiz_0_clk_wiz_0_1.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../bd/design_1/ipshared/db4a/src/AXI4_stream_Slave.vhd" \
-  "../../../bd/design_1/ip/design_1_AXI4_stream_Slave_0_1/sim/design_1_AXI4_stream_Slave_0_1.vhd" \
-  "../../../bd/design_1/ipshared/df36/src/ControleurVGA_v2.vhd" \
-  "../../../bd/design_1/ip/design_1_ControleurVGA_v2_0_0/sim/design_1_ControleurVGA_v2_0_0.vhd" \
-  "../../../bd/design_1/ip/design_1_AXI4_stream_Slave_1_0/sim/design_1_AXI4_stream_Slave_1_0.vhd" \
-  "../../../bd/design_1/ipshared/f289/src/TPG.vhd" \
+  "../../../bd/design_1/ipshared/779f/src/TPG.vhd" \
+  "../../../bd/design_1/ipshared/src/TPG.vhd" \
   "../../../bd/design_1/ip/design_1_TPG_0_3/sim/design_1_TPG_0_3.vhd" \
 -endlib
 -makelib ies_lib/fifo_generator_v13_2_5 \
@@ -33,7 +29,8 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/design_1/ipshared/fa01/src/AXI4_stream_Master_24b.vhd" \
   "../../../bd/design_1/ip/design_1_AXI4_stream_Master_2_2_0/sim/design_1_AXI4_stream_Master_2_2_0.vhd" \
-  "../../../bd/design_1/ip/design_1_AXI4_stream_Master_2_0_2/sim/design_1_AXI4_stream_Master_2_0_2.vhd" \
+  "../../../bd/design_1/ipshared/9030/src/ControleurVGA_v3.vhd" \
+  "../../../bd/design_1/ip/design_1_ControleurVGA_v3_0_0/sim/design_1_ControleurVGA_v3_0_0.vhd" \
   "../../../bd/design_1/sim/design_1.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \

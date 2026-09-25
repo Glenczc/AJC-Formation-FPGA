@@ -1,0 +1,11 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ipshared/779f/src/TPG.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TPG'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ipshared/src/TPG.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TPG'
+WARNING: [VRFC 10-3607] overwriting existing primary unit 'tpg' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ipshared/src/TPG.vhd:27]
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/ip/design_1_TPG_0_3/sim/design_1_TPG_0_3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_TPG_0_3'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.ip_user_files/bd/design_1/sim/design_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_wrapper'

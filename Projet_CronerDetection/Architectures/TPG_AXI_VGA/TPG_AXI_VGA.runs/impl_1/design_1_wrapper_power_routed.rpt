@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date             : Thu Sep 24 17:45:43 2026
+| Date             : Fri Sep 25 17:21:08 2026
 | Host             : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.211        |
+| Total On-Chip Power (W)  | 0.210        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.117        |
+| Dynamic (W)              | 0.116        |
 | Device Static (W)        | 0.094        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 82.6         |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |      612 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      284 |     14400 |            1.97 |
-|   CARRY4       |    <0.001 |       39 |      4400 |            0.89 |
-|   Register     |    <0.001 |      201 |     28800 |            0.70 |
-|   Others       |     0.000 |       15 |       --- |             --- |
-| Signals        |    <0.001 |      417 |       --- |             --- |
-| Block RAM      |    <0.001 |        1 |        50 |            2.00 |
+| Slice Logic    |    <0.001 |      518 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      223 |     14400 |            1.55 |
+|   CARRY4       |    <0.001 |       55 |      4400 |            1.25 |
+|   Register     |    <0.001 |      149 |     28800 |            0.52 |
+|   Others       |     0.000 |       12 |       --- |             --- |
+| Signals        |    <0.001 |      299 |       --- |             --- |
+| Block RAM      |    <0.001 |      0.5 |        50 |            1.00 |
 | MMCM           |     0.115 |        1 |         2 |           50.00 |
 | I/O            |    <0.001 |       16 |       100 |           16.00 |
 | Static Power   |     0.094 |          |           |                 |
-| Total          |     0.211 |          |           |                 |
+| Total          |     0.210 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -151,7 +151,7 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| design_1_wrapper        |     0.117 |
+| design_1_wrapper        |     0.116 |
 |   design_1_i            |     0.116 |
 |     clk_wiz_0_clk_wiz_0 |     0.115 |
 |       inst              |     0.115 |

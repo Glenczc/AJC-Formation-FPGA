@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date             : Thu Sep 24 09:46:12 2026
+| Date             : Fri Sep 25 15:57:11 2026
 | Host             : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -52,17 +52,17 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.008 |        7 |       --- |             --- |
-| Slice Logic              |     0.002 |    14654 |       --- |             --- |
-|   LUT as Logic           |     0.002 |     3999 |     14400 |           27.77 |
-|   Register               |    <0.001 |     7565 |     28800 |           26.27 |
+| Clocks                   |     0.009 |        7 |       --- |             --- |
+| Slice Logic              |     0.002 |    14780 |       --- |             --- |
+|   LUT as Logic           |     0.002 |     3967 |     14400 |           27.55 |
+|   Register               |    <0.001 |     7768 |     28800 |           26.97 |
 |   LUT as Distributed RAM |    <0.001 |      370 |      6000 |            6.17 |
-|   CARRY4                 |    <0.001 |      215 |      4400 |            4.89 |
-|   LUT as Shift Register  |    <0.001 |      230 |      6000 |            3.83 |
-|   F7/F8 Muxes            |    <0.001 |        4 |     17600 |            0.02 |
-|   Others                 |     0.000 |      756 |       --- |             --- |
-| Signals                  |     0.004 |    10838 |       --- |             --- |
-| Block RAM                |     0.007 |        8 |        50 |           16.00 |
+|   CARRY4                 |    <0.001 |      221 |      4400 |            5.02 |
+|   LUT as Shift Register  |    <0.001 |      216 |      6000 |            3.60 |
+|   F7/F8 Muxes            |    <0.001 |       27 |     17600 |            0.15 |
+|   Others                 |     0.000 |      749 |       --- |             --- |
+| Signals                  |     0.003 |    10968 |       --- |             --- |
+| Block RAM                |     0.007 |      7.5 |        50 |           15.00 |
 | MMCM                     |     0.115 |        1 |         2 |           50.00 |
 | DSPs                     |     0.000 |        2 |        66 |            3.03 |
 | I/O                      |    <0.001 |       17 |       100 |           17.00 |
@@ -159,21 +159,24 @@ Table of Contents
 | Name                     | Power (W) |
 +--------------------------+-----------+
 | design_1_wrapper         |     1.391 |
-|   dbg_hub                |     0.001 |
-|     inst                 |     0.001 |
-|       BSCANID.u_xsdbm_id |     0.001 |
-|   design_1_i             |     1.386 |
-|     DMA24bUnit_mm2s_0    |     0.012 |
+|   dbg_hub                |     0.002 |
+|     inst                 |     0.002 |
+|       BSCANID.u_xsdbm_id |     0.002 |
+|   design_1_i             |     1.385 |
+|     DMA24bUnit_mm2s_0    |     0.011 |
 |       U0                 |     0.011 |
-|     axi_mem_intercon     |     0.005 |
-|       s00_couplers       |     0.005 |
+|     axi_mem_intercon     |     0.006 |
+|       s00_couplers       |     0.006 |
 |     clk_wiz_0_clk_wiz_0  |     0.115 |
 |       inst               |     0.115 |
 |     processing_system7_0 |     1.254 |
 |       inst               |     1.254 |
-|   u_ila_0                |     0.003 |
-|     inst                 |     0.003 |
-|       ila_core_inst      |     0.003 |
+|   u_ila_0                |     0.002 |
+|     inst                 |     0.002 |
+|       ila_core_inst      |     0.002 |
+|   u_ila_1                |     0.002 |
+|     inst                 |     0.002 |
+|       ila_core_inst      |     0.002 |
 +--------------------------+-----------+
 
 

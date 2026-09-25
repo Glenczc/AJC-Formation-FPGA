@@ -173,41 +173,8 @@ proc create_root_design { parentCell } {
  ] $reset
   set start [ create_bd_port -dir I start ]
 
-  # Create instance: AXI4_stream_Master_2_0, and set properties
-  set AXI4_stream_Master_2_0 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Master_24b:1.0 AXI4_stream_Master_2_0 ]
-
-  # Create instance: AXI4_stream_Slave_1, and set properties
-  set AXI4_stream_Slave_1 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Slave:1.0 AXI4_stream_Slave_1 ]
-  set_property -dict [ list \
-   CONFIG.WORD_WIDTH {24} \
- ] $AXI4_stream_Slave_1
-
-  set_property -dict [ list \
-   CONFIG.FREQ_HZ {100000000} \
-   CONFIG.CLK_DOMAIN {clk_wiz} \
- ] [get_bd_pins /AXI4_stream_Slave_1/clk]
-
-  set_property -dict [ list \
-   CONFIG.POLARITY {ACTIVE_HIGH} \
- ] [get_bd_pins /AXI4_stream_Slave_1/reset]
-
-  # Create instance: AXI4_stream_Slave_2, and set properties
-  set AXI4_stream_Slave_2 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Slave:1.0 AXI4_stream_Slave_2 ]
-  set_property -dict [ list \
-   CONFIG.WORD_WIDTH {24} \
- ] $AXI4_stream_Slave_2
-
-  set_property -dict [ list \
-   CONFIG.FREQ_HZ {100000000} \
-   CONFIG.CLK_DOMAIN {clk_wiz} \
- ] [get_bd_pins /AXI4_stream_Slave_2/clk]
-
-  set_property -dict [ list \
-   CONFIG.POLARITY {ACTIVE_HIGH} \
- ] [get_bd_pins /AXI4_stream_Slave_2/reset]
-
-  # Create instance: ControleurVGA_v2_0, and set properties
-  set ControleurVGA_v2_0 [ create_bd_cell -type ip -vlnv user.org:user:ControleurVGA_v2:1.0 ControleurVGA_v2_0 ]
+  # Create instance: ControleurVGA_v3_0, and set properties
+  set ControleurVGA_v3_0 [ create_bd_cell -type ip -vlnv user.org:user:ControleurVGA_v3:1.0 ControleurVGA_v3_0 ]
 
   # Create instance: DMA24bUnit_mm2s_0, and set properties
   set DMA24bUnit_mm2s_0 [ create_bd_cell -type ip -vlnv user.org:user:DMA24bUnit_mm2s:1.0 DMA24bUnit_mm2s_0 ]
@@ -1069,12 +1036,13 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_WDT_PERIPHERAL_FREQMHZ {133.333333} \
  ] $processing_system7_0
 
-  # Create instance: reset_wiz_0, and set properties
-  set reset_wiz_0 [ create_bd_cell -type ip -vlnv user.org:user:reset_wiz:1.0 reset_wiz_0 ]
-
+  # Create instance: reset_not, and set properties
+  set reset_not [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 reset_not ]
   set_property -dict [ list \
-   CONFIG.POLARITY {ACTIVE_HIGH} \
- ] [get_bd_pins /reset_wiz_0/reset_out]
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $reset_not
 
   # Create instance: start_not, and set properties
   set start_not [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 start_not ]
@@ -1085,33 +1053,23 @@ proc create_root_design { parentCell } {
  ] $start_not
 
   # Create interface connections
-  connect_bd_intf_net -intf_net AXI4_stream_Master_2_0_interface_axis [get_bd_intf_pins AXI4_stream_Master_2_0/interface_axis] [get_bd_intf_pins AXI4_stream_Slave_2/interface_axis]
-  connect_bd_intf_net -intf_net DMA24bUnit_mm2s_0_STR_video_out [get_bd_intf_pins AXI4_stream_Slave_1/interface_axis] [get_bd_intf_pins DMA24bUnit_mm2s_0/STR_video_out]
+  connect_bd_intf_net -intf_net DMA24bUnit_mm2s_0_STR_video_out [get_bd_intf_pins ControleurVGA_v3_0/interface_axis] [get_bd_intf_pins DMA24bUnit_mm2s_0/STR_video_out]
   connect_bd_intf_net -intf_net DMA24bUnit_mm2s_0_m_axi_gmem [get_bd_intf_pins DMA24bUnit_mm2s_0/m_axi_gmem] [get_bd_intf_pins axi_mem_intercon/S00_AXI]
   connect_bd_intf_net -intf_net axi_mem_intercon_M00_AXI [get_bd_intf_pins axi_mem_intercon/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
 
   # Create port connections
-  connect_bd_net -net AXI4_stream_Master_2_0_fulln [get_bd_pins AXI4_stream_Master_2_0/fulln] [get_bd_pins AXI4_stream_Slave_1/ready]
-  connect_bd_net -net AXI4_stream_Slave_1_data_out [get_bd_pins AXI4_stream_Master_2_0/data_in] [get_bd_pins AXI4_stream_Slave_1/data_out]
-  connect_bd_net -net AXI4_stream_Slave_1_valid [get_bd_pins AXI4_stream_Master_2_0/wr_en] [get_bd_pins AXI4_stream_Slave_1/valid]
-  connect_bd_net -net AXI4_stream_Slave_2_data_out [get_bd_pins AXI4_stream_Slave_2/data_out] [get_bd_pins ControleurVGA_v2_0/pixel]
-  connect_bd_net -net AXI4_stream_Slave_2_last [get_bd_pins AXI4_stream_Slave_2/last] [get_bd_pins ControleurVGA_v2_0/H_end]
-  connect_bd_net -net AXI4_stream_Slave_2_user [get_bd_pins AXI4_stream_Slave_2/user] [get_bd_pins ControleurVGA_v2_0/V_end]
-  connect_bd_net -net AXI4_stream_Slave_2_valid [get_bd_pins AXI4_stream_Slave_2/valid] [get_bd_pins ControleurVGA_v2_0/valid]
   connect_bd_net -net CLK_I_1 [get_bd_ports CLK_I] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_in1]
-  connect_bd_net -net ControleurVGA_v2_0_VGA_B [get_bd_ports VGA_B] [get_bd_pins ControleurVGA_v2_0/VGA_B]
-  connect_bd_net -net ControleurVGA_v2_0_VGA_G [get_bd_ports VGA_G] [get_bd_pins ControleurVGA_v2_0/VGA_G]
-  connect_bd_net -net ControleurVGA_v2_0_VGA_HS_O [get_bd_ports VGA_HS_O] [get_bd_pins ControleurVGA_v2_0/VGA_HS_O]
-  connect_bd_net -net ControleurVGA_v2_0_VGA_R [get_bd_ports VGA_R] [get_bd_pins ControleurVGA_v2_0/VGA_R]
-  connect_bd_net -net ControleurVGA_v2_0_VGA_VS_O [get_bd_ports VGA_VS_O] [get_bd_pins ControleurVGA_v2_0/VGA_VS_O]
-  connect_bd_net -net ControleurVGA_v2_0_ready [get_bd_pins AXI4_stream_Slave_2/ready] [get_bd_pins ControleurVGA_v2_0/ready]
-  connect_bd_net -net ap_rst_n_0_1 [get_bd_pins AXI4_stream_Master_2_0/reset] [get_bd_pins AXI4_stream_Slave_1/reset] [get_bd_pins AXI4_stream_Slave_2/reset] [get_bd_pins ControleurVGA_v2_0/reset] [get_bd_pins reset_wiz_0/reset_out]
-  connect_bd_net -net clk_wiz_0_clk_wiz_0_clk_out1 [get_bd_pins AXI4_stream_Master_2_0/clk] [get_bd_pins AXI4_stream_Slave_1/clk] [get_bd_pins AXI4_stream_Slave_2/clk] [get_bd_pins ControleurVGA_v2_0/clk] [get_bd_pins DMA24bUnit_mm2s_0/ap_clk] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_out1] [get_bd_pins reset_wiz_0/clk]
+  connect_bd_net -net ControleurVGA_v3_0_VGA_B [get_bd_ports VGA_B] [get_bd_pins ControleurVGA_v3_0/VGA_B]
+  connect_bd_net -net ControleurVGA_v3_0_VGA_G [get_bd_ports VGA_G] [get_bd_pins ControleurVGA_v3_0/VGA_G]
+  connect_bd_net -net ControleurVGA_v3_0_VGA_HS_O [get_bd_ports VGA_HS_O] [get_bd_pins ControleurVGA_v3_0/VGA_HS_O]
+  connect_bd_net -net ControleurVGA_v3_0_VGA_R [get_bd_ports VGA_R] [get_bd_pins ControleurVGA_v3_0/VGA_R]
+  connect_bd_net -net ControleurVGA_v3_0_VGA_VS_O [get_bd_ports VGA_VS_O] [get_bd_pins ControleurVGA_v3_0/VGA_VS_O]
+  connect_bd_net -net clk_wiz_0_clk_wiz_0_clk_out1 [get_bd_pins ControleurVGA_v3_0/clk] [get_bd_pins DMA24bUnit_mm2s_0/ap_clk] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_out1]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK]
-  connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins reset_wiz_0/reset_in]
-  connect_bd_net -net reset_not_Res [get_bd_pins DMA24bUnit_mm2s_0/ap_rst_n] [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins reset_wiz_0/resetn_out]
+  connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins ControleurVGA_v3_0/reset] [get_bd_pins reset_not/Op1]
+  connect_bd_net -net reset_not_Res [get_bd_pins DMA24bUnit_mm2s_0/ap_rst_n] [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins reset_not/Res]
   connect_bd_net -net start_1 [get_bd_ports start] [get_bd_pins start_not/Op1]
   connect_bd_net -net start_not_Res [get_bd_pins DMA24bUnit_mm2s_0/ap_start] [get_bd_pins start_not/Res]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins DMA24bUnit_mm2s_0/image_w] [get_bd_pins image_w/dout]

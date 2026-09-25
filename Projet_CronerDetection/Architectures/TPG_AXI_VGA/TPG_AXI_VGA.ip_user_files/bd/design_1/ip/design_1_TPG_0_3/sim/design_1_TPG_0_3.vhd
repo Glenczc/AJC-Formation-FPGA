@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: user.org:user:TPG:1.0
--- IP Revision: 2
+-- IP Revision: 3
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -58,7 +58,8 @@ ENTITY design_1_TPG_0_3 IS
     clk : IN STD_LOGIC;
     reset : IN STD_LOGIC;
     pixel : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
-    px_valid : OUT STD_LOGIC
+    px_valid : OUT STD_LOGIC;
+    start : IN STD_LOGIC
   );
 END design_1_TPG_0_3;
 
@@ -74,7 +75,8 @@ ARCHITECTURE design_1_TPG_0_3_arch OF design_1_TPG_0_3 IS
       clk : IN STD_LOGIC;
       reset : IN STD_LOGIC;
       pixel : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
-      px_valid : OUT STD_LOGIC
+      px_valid : OUT STD_LOGIC;
+      start : IN STD_LOGIC
     );
   END COMPONENT TPG;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
@@ -95,6 +97,7 @@ BEGIN
       clk => clk,
       reset => reset,
       pixel => pixel,
-      px_valid => px_valid
+      px_valid => px_valid,
+      start => start
     );
 END design_1_TPG_0_3_arch;

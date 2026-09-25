@@ -1,195 +1,50 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Wed Sep 23 12:42:24 2026
+| Date         : Fri Sep 25 15:41:15 2026
 | Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 | Command      : upgrade_ip
 | Device       : xc7z007sclg400-1
 ------------------------------------------------------------------------------------
 
-Upgrade Log for IP 'design_1_ControleurVGA_v2_0_0'
+Upgrade Log for IP 'design_1_ControleurVGA_v3_0_0'
 
 1. Summary
 ----------
 
-SUCCESS in the upgrade of design_1_ControleurVGA_v2_0_0 (user.org:user:ControleurVGA_v2:1.0) from (Rev. 2) to (Rev. 3)
-
-
-
-
-
-
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Wed Sep 23 11:39:09 2026
-| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
-| Command      : upgrade_ip
-| Device       : xc7z007sclg400-1
-------------------------------------------------------------------------------------
-
-Upgrade Log for IP 'design_1_ControleurVGA_v2_0_0'
-
-1. Summary
-----------
-
-SUCCESS in the upgrade of design_1_ControleurVGA_v2_0_0 (user.org:user:ControleurVGA_v2:1.0) from (Rev. 1) to (Rev. 2)
-
-
-
-
-
-
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Tue Sep 22 15:00:40 2026
-| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
-| Command      : upgrade_ip
-| Device       : xc7z007sclg400-1
-------------------------------------------------------------------------------------
-
-Upgrade Log for IP 'design_1_ControleurVGA_v2_0_0'
-
-1. Summary
-----------
-
-SUCCESS in the conversion of design_1_ControleurVGA_v2_0_0 (user.org:user:ControleurVGA_v2:1.0 (Rev. 1)) to Vivado generation flows.
-
-
-
-
-
-
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Mon Sep 21 17:14:28 2026
-| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
-| Command      : upgrade_ip
-| Device       : xc7z007sclg400-1
-------------------------------------------------------------------------------------
-
-Upgrade Log for IP 'design_1_ControleurVGA_v2_0_0'
-
-1. Summary
-----------
-
-SUCCESS in the conversion of design_1_ControleurVGA_v2_0_0 (user.org:user:ControleurVGA_v2:1.0 (Rev. 1)) to Vivado generation flows.
-
-
-
-
-
-
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Mon Sep 21 17:01:33 2026
-| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
-| Command      : upgrade_ip
-| Device       : xc7z007sclg400-1
-------------------------------------------------------------------------------------
-
-Upgrade Log for IP 'design_1_ControleurVGA_v2_0_0'
-
-1. Summary
-----------
-
-SUCCESS in the conversion of design_1_ControleurVGA_v2_0_0 (user.org:user:ControleurVGA_v2:1.0 (Rev. 1)) to Vivado generation flows.
-
-
-
-
-
-
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Mon Sep 21 15:55:05 2026
-| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
-| Command      : upgrade_ip
-| Device       : xc7z007sclg400-1
-------------------------------------------------------------------------------------
-
-Upgrade Log for IP 'design_1_ControleurVGA_v2_0_0'
-
-1. Summary
-----------
-
-SUCCESS in the upgrade of design_1_ControleurVGA_v2_0_0 (user.org:user:ControleurVGA_v2:1.0) from (Rev. 3) to (Rev. 1)
-
-
-
-
-
-
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Mon Sep 21 15:26:57 2026
-| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
-| Command      : upgrade_ip
-| Device       : xc7z007sclg400-1
-------------------------------------------------------------------------------------
-
-Upgrade Log for IP 'design_1_AXI4_stream_Master_2_0_0'
-
-1. Summary
-----------
-
-CAUTION (success, with warnings) in the upgrade of design_1_AXI4_stream_Master_2_0_0 (user.org:user:AXI4_stream_Master_24b:1.0) from (Rev. 5) to (Rev. 1)
+CAUTION (success, with warnings) in the conversion of design_1_ControleurVGA_v3_0_0 (user.org:user:ControleurVGA_v3:1.0 (Rev. 1)) to Vivado generation flows.
 
 After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
 
-2. Connection Warnings
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_ControleurVGA_v3_0_0'.
+
+
+-Upgrade has added interface 'interface_axis' (xilinx.com:interface:axis:1.0)
+
+
+3. Connection Warnings
 ----------------------
 
-Detected external port differences while upgrading 'design_1_AXI4_stream_Master_2_0_0'. These changes may impact your design.
+Detected external port differences while upgrading 'design_1_ControleurVGA_v3_0_0'. These changes may impact your design.
 
 
--Upgrade has added port 'fulln'
+-Upgrade has removed port 'pixel'
 
+-Upgrade has removed port 'ready'
 
+-Upgrade has removed port 'valid'
 
+-Upgrade has added port 'tdata'
 
+-Upgrade has added port 'tlast'
 
+-Upgrade has added port 'tready'
 
+-Upgrade has added port 'tuser'
 
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Mon Sep 21 15:11:12 2026
-| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
-| Command      : upgrade_ip
-| Device       : xc7z007sclg400-1
-------------------------------------------------------------------------------------
+-Upgrade has added port 'tvalid'
 
-Upgrade Log for IP 'design_1_AXI4_stream_Master_2_0_0'
-
-1. Summary
-----------
-
-SUCCESS in the upgrade of design_1_AXI4_stream_Master_2_0_0 (user.org:user:AXI4_stream_Master_24b:1.0) from (Rev. 4) to (Rev. 5)
-
-
-
-
-
-
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Fri Sep 18 15:46:11 2026
-| Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
-| Command      : upgrade_ip
-| Device       : xc7z007sclg400-1
-------------------------------------------------------------------------------------
-
-Upgrade Log for IP 'design_1_ControleurVGA_0_0'
-
-1. Summary
-----------
-
-SUCCESS in the conversion of design_1_ControleurVGA_0_0 (user.org:user:ControleurVGA:1.0 (Rev. 2)) to Vivado generation flows.
 

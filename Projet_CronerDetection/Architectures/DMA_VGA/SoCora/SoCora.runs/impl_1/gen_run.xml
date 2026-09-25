@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1790235738">
+<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1790344405">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BITSTR-SYSDEF" Name="design_1_wrapper.sysdef"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
@@ -132,9 +132,6 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_AXI4_stream_Master_2_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_AXI4_stream_Slave_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_reset_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_ControleurVGA_v2_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_ControleurVGA_v3_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_DMA24bUnit_mm2s_0_0"/>
 </GenRun>
