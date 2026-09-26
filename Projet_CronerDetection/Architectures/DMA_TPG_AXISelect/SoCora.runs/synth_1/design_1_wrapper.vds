@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat Sep 26 11:32:04 2026
-# Process ID: 27086
+# Start of session at: Sat Sep 26 15:27:55 2026
+# Process ID: 66111
 # Current directory: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1
 # Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/design_1_wrapper.vds
@@ -13,6 +13,7 @@ source design_1_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'user.org:user:Commandes:1.0'. The one found in IP location '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/Commandes' will take precedence over the same IP in location /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/Commandes/Commandes_1.0
 Command: synth_design -top design_1_wrapper -part xc7z007sclg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
@@ -20,82 +21,94 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007
 INFO: [Device 21-403] Loading part xc7z007sclg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 27163
+INFO: [Synth 8-7075] Helper process launched with PID 66151
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2394.797 ; gain = 0.000 ; free physical = 2712 ; free virtual = 9488
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2394.797 ; gain = 0.000 ; free physical = 1400 ; free virtual = 7681
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:48]
-INFO: [Synth 8-3491] module 'design_1' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1184' bound to instance 'design_1_i' of component 'design_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:83]
-INFO: [Synth 8-638] synthesizing module 'design_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1222]
-INFO: [Synth 8-3491] module 'design_1_AXI4_stream_Master_2_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_AXI4_stream_Master_2_0_0_stub.vhdl:5' bound to instance 'AXI4_stream_Master_2_0' of component 'design_1_AXI4_stream_Master_2_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1702]
-INFO: [Synth 8-638] synthesizing module 'design_1_AXI4_stream_Master_2_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_AXI4_stream_Master_2_0_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'design_1_AXI_Select_0_1' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_AXI_Select_0_1_stub.vhdl:5' bound to instance 'AXI_Select_0' of component 'design_1_AXI_Select_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1715]
-INFO: [Synth 8-638] synthesizing module 'design_1_AXI_Select_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_AXI_Select_0_1_stub.vhdl:27]
-INFO: [Synth 8-3491] module 'design_1_ControleurVGA_v3_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_ControleurVGA_v3_0_0_stub.vhdl:5' bound to instance 'ControleurVGA_v3_0' of component 'design_1_ControleurVGA_v3_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1734]
-INFO: [Synth 8-638] synthesizing module 'design_1_ControleurVGA_v3_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_ControleurVGA_v3_0_0_stub.vhdl:23]
-INFO: [Synth 8-3491] module 'design_1_DMA24bUnit_mm2s_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_DMA24bUnit_mm2s_0_0_stub.vhdl:5' bound to instance 'DMA24bUnit_mm2s_0' of component 'design_1_DMA24bUnit_mm2s_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1749]
-INFO: [Synth 8-638] synthesizing module 'design_1_DMA24bUnit_mm2s_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_DMA24bUnit_mm2s_0_0_stub.vhdl:72]
-INFO: [Synth 8-3491] module 'design_1_TPG_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_TPG_0_0_stub.vhdl:5' bound to instance 'TPG_0' of component 'design_1_TPG_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1813]
-INFO: [Synth 8-638] synthesizing module 'design_1_TPG_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_TPG_0_0_stub.vhdl:16]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_mem_intercon_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:931]
+INFO: [Synth 8-3491] module 'design_1' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1970' bound to instance 'design_1_i' of component 'design_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:83]
+INFO: [Synth 8-638] synthesizing module 'design_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2008]
+INFO: [Synth 8-3491] module 'design_1_AXI4_stream_Master_2_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_AXI4_stream_Master_2_0_0_stub.vhdl:5' bound to instance 'AXI4_stream_Master_2_0' of component 'design_1_AXI4_stream_Master_2_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2553]
+INFO: [Synth 8-638] synthesizing module 'design_1_AXI4_stream_Master_2_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_AXI4_stream_Master_2_0_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_AXI_Select_0_1' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_AXI_Select_0_1_stub.vhdl:5' bound to instance 'AXI_Select_0' of component 'design_1_AXI_Select_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2566]
+INFO: [Synth 8-638] synthesizing module 'design_1_AXI_Select_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_AXI_Select_0_1_stub.vhdl:27]
+INFO: [Synth 8-3491] module 'design_1_Commandes_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_Commandes_0_0_stub.vhdl:5' bound to instance 'Commandes_0' of component 'design_1_Commandes_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2585]
+INFO: [Synth 8-638] synthesizing module 'design_1_Commandes_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_Commandes_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'design_1_ControleurVGA_v3_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_ControleurVGA_v3_0_0_stub.vhdl:5' bound to instance 'ControleurVGA_v3_0' of component 'design_1_ControleurVGA_v3_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2610]
+INFO: [Synth 8-638] synthesizing module 'design_1_ControleurVGA_v3_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_ControleurVGA_v3_0_0_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'design_1_DMA24bUnit_mm2s_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_DMA24bUnit_mm2s_0_0_stub.vhdl:5' bound to instance 'DMA24bUnit_mm2s_0' of component 'design_1_DMA24bUnit_mm2s_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2625]
+INFO: [Synth 8-638] synthesizing module 'design_1_DMA24bUnit_mm2s_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_DMA24bUnit_mm2s_0_0_stub.vhdl:72]
+INFO: [Synth 8-3491] module 'design_1_TPG_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_TPG_0_0_stub.vhdl:5' bound to instance 'TPG_0' of component 'design_1_TPG_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2689]
+INFO: [Synth 8-638] synthesizing module 'design_1_TPG_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_TPG_0_0_stub.vhdl:16]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_mem_intercon_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1456]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_7HNO1D' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:100]
-INFO: [Synth 8-3491] module 'design_1_auto_cc_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_auto_cc_0_stub.vhdl:5' bound to instance 'auto_cc' of component 'design_1_auto_cc_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:591]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_cc_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_auto_cc_0_stub.vhdl:103]
-INFO: [Synth 8-3491] module 'design_1_auto_ds_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_auto_ds_0_stub.vhdl:5' bound to instance 'auto_ds' of component 'design_1_auto_ds_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:686]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_ds_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_auto_ds_0_stub.vhdl:87]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:765]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_auto_pc_0_stub.vhdl:81]
+INFO: [Synth 8-3491] module 'design_1_auto_cc_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_auto_cc_0_stub.vhdl:5' bound to instance 'auto_cc' of component 'design_1_auto_cc_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:591]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_cc_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_auto_cc_0_stub.vhdl:103]
+INFO: [Synth 8-3491] module 'design_1_auto_ds_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_auto_ds_0_stub.vhdl:5' bound to instance 'auto_ds' of component 'design_1_auto_ds_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:686]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_ds_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_auto_ds_0_stub.vhdl:87]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:765]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_auto_pc_0_stub.vhdl:81]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_7HNO1D' (1#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:100]
-INFO: [Synth 8-256] done synthesizing module 'design_1_axi_mem_intercon_1' (2#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:931]
-INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_clk_wiz_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_clk_wiz_0_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0_clk_wiz_0' of component 'design_1_clk_wiz_0_clk_wiz_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1907]
-INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_clk_wiz_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_clk_wiz_0_clk_wiz_0_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'design_1_xlconstant_1_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_1_0/synth/design_1_xlconstant_1_0.v:57' bound to instance 'image_h' of component 'design_1_xlconstant_1_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1912]
+INFO: [Synth 8-256] done synthesizing module 'design_1_axi_mem_intercon_1' (2#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1456]
+INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_clk_wiz_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_clk_wiz_0_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0_clk_wiz_0' of component 'design_1_clk_wiz_0_clk_wiz_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2783]
+INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_clk_wiz_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_clk_wiz_0_clk_wiz_0_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'design_1_xlconstant_1_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_1_0/synth/design_1_xlconstant_1_0.v:57' bound to instance 'image_h' of component 'design_1_xlconstant_1_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2788]
 INFO: [Synth 8-6157] synthesizing module 'design_1_xlconstant_1_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_1_0/synth/design_1_xlconstant_1_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 12'b000111100000 
 	Parameter CONST_WIDTH bound to: 12 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (3#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconstant_1_0' (4#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_1_0/synth/design_1_xlconstant_1_0.v:57]
-INFO: [Synth 8-3491] module 'design_1_xlconstant_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57' bound to instance 'image_in' of component 'design_1_xlconstant_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1916]
+INFO: [Synth 8-3491] module 'design_1_xlconstant_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57' bound to instance 'image_in' of component 'design_1_xlconstant_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2792]
 INFO: [Synth 8-6157] synthesizing module 'design_1_xlconstant_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 64'b0000000000000000000000000000000000000000010000000000000000000000 
 	Parameter CONST_WIDTH bound to: 64 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized0' (4#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconstant_0_0' (5#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57]
-INFO: [Synth 8-3491] module 'design_1_xlconstant_2_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_2_0/synth/design_1_xlconstant_2_0.v:57' bound to instance 'image_w' of component 'design_1_xlconstant_2_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1920]
+INFO: [Synth 8-3491] module 'design_1_xlconstant_2_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_2_0/synth/design_1_xlconstant_2_0.v:57' bound to instance 'image_w' of component 'design_1_xlconstant_2_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2796]
 INFO: [Synth 8-6157] synthesizing module 'design_1_xlconstant_2_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_2_0/synth/design_1_xlconstant_2_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 12'b001010000000 
 	Parameter CONST_WIDTH bound to: 12 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized1' (5#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconstant_2_0' (6#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_2_0/synth/design_1_xlconstant_2_0.v:57]
-INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1924]
-INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_processing_system7_0_0_stub.vhdl:121]
-INFO: [Synth 8-3491] module 'design_1_util_vector_logic_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_util_vector_logic_0_0_stub.vhdl:5' bound to instance 'reset_not' of component 'design_1_util_vector_logic_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2037]
-INFO: [Synth 8-638] synthesizing module 'design_1_util_vector_logic_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-27086-glen-HP-ZBook-15u-G3/realtime/design_1_util_vector_logic_0_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'design_1_xlconstant_0_1' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_1/synth/design_1_xlconstant_0_1.v:57' bound to instance 'start' of component 'design_1_xlconstant_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2042]
+INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2800]
+INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_processing_system7_0_0_stub.vhdl:121]
+INFO: [Synth 8-638] synthesizing module 'design_1_ps7_0_axi_periph_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1777]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_UYSKKA' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:909]
+INFO: [Synth 8-3491] module 'design_1_auto_cc_1' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_auto_cc_1_stub.vhdl:5' bound to instance 'auto_cc' of component 'design_1_auto_cc_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1218]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_cc_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_auto_cc_1_stub.vhdl:91]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_1' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1301]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_auto_pc_1_stub.vhdl:70]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UYSKKA' (7#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:909]
+INFO: [Synth 8-256] done synthesizing module 'design_1_ps7_0_axi_periph_0' (8#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1777]
+INFO: [Synth 8-3491] module 'design_1_util_vector_logic_0_0' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_util_vector_logic_0_0_stub.vhdl:5' bound to instance 'reset_not' of component 'design_1_util_vector_logic_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2979]
+INFO: [Synth 8-638] synthesizing module 'design_1_util_vector_logic_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_util_vector_logic_0_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'design_1_xlconstant_0_1' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_1/synth/design_1_xlconstant_0_1.v:57' bound to instance 'start' of component 'design_1_xlconstant_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2984]
 INFO: [Synth 8-6157] synthesizing module 'design_1_xlconstant_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_1/synth/design_1_xlconstant_0_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized2' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 1'b1 
 	Parameter CONST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized2' (6#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconstant_0_1' (7#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_1/synth/design_1_xlconstant_0_1.v:57]
-INFO: [Synth 8-256] done synthesizing module 'design_1' (8#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:1222]
-INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (9#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:48]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized2' (8#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconstant_0_1' (9#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_1/synth/design_1_xlconstant_0_1.v:57]
+INFO: [Synth 8-3491] module 'design_1_util_vector_logic_0_1' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_util_vector_logic_0_1_stub.vhdl:5' bound to instance 'util_vector_logic_0' of component 'design_1_util_vector_logic_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2988]
+INFO: [Synth 8-638] synthesizing module 'design_1_util_vector_logic_0_1' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/.Xil/Vivado-66111-glen-HP-ZBook-15u-G3/realtime/design_1_util_vector_logic_0_1_stub.vhdl:14]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (10#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/synth/design_1.vhd:2008]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (11#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:48]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2394.797 ; gain = 0.000 ; free physical = 3214 ; free virtual = 10000
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2394.797 ; gain = 0.000 ; free physical = 1845 ; free virtual = 8140
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2394.797 ; gain = 0.000 ; free physical = 3238 ; free virtual = 10016
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2394.797 ; gain = 0.000 ; free physical = 1853 ; free virtual = 8140
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2394.797 ; gain = 0.000 ; free physical = 3238 ; free virtual = 10016
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2394.797 ; gain = 0.000 ; free physical = 1853 ; free virtual = 8140
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2394.797 ; gain = 0.000 ; free physical = 3238 ; free virtual = 10016
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2394.797 ; gain = 0.000 ; free physical = 1853 ; free virtual = 8144
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -122,6 +135,14 @@ Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection
 Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_util_vector_logic_0_0/design_1_util_vector_logic_0_0/design_1_util_vector_logic_0_0_in_context.xdc] for cell 'design_1_i/reset_not'
 Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI_Select_0_1/design_1_AXI_Select_0_1/design_1_AXI_Select_0_1_in_context.xdc] for cell 'design_1_i/AXI_Select_0'
 Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI_Select_0_1/design_1_AXI_Select_0_1/design_1_AXI_Select_0_1_in_context.xdc] for cell 'design_1_i/AXI_Select_0'
+Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_Commandes_0_0/design_1_Commandes_0_0/design_1_Commandes_0_0_in_context.xdc] for cell 'design_1_i/Commandes_0'
+Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_Commandes_0_0/design_1_Commandes_0_0/design_1_Commandes_0_0_in_context.xdc] for cell 'design_1_i/Commandes_0'
+Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_cc_1/design_1_auto_cc_1/design_1_auto_cc_1_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_cc'
+Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_cc_1/design_1_auto_cc_1/design_1_auto_cc_1_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_cc'
+Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1/design_1_auto_pc_1_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1/design_1_auto_pc_1_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_util_vector_logic_0_1/design_1_util_vector_logic_0_1/design_1_util_vector_logic_0_1_in_context.xdc] for cell 'design_1_i/util_vector_logic_0'
+Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_util_vector_logic_0_1/design_1_util_vector_logic_0_1/design_1_util_vector_logic_0_1_in_context.xdc] for cell 'design_1_i/util_vector_logic_0'
 Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/Cora-Z7-07-Master-ILA.xdc]
 Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/Cora-Z7-07-Master-ILA.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/Cora-Z7-07-Master-ILA.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
@@ -130,20 +151,20 @@ Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection
 Finished Parsing XDC File [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2424.840 ; gain = 0.000 ; free physical = 3246 ; free virtual = 10032
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2424.840 ; gain = 0.000 ; free physical = 1879 ; free virtual = 8160
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2424.840 ; gain = 0.000 ; free physical = 3246 ; free virtual = 10032
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2424.840 ; gain = 0.000 ; free physical = 1879 ; free virtual = 8160
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2424.840 ; gain = 30.043 ; free physical = 3366 ; free virtual = 10144
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2424.840 ; gain = 30.043 ; free physical = 2052 ; free virtual = 8331
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2424.840 ; gain = 30.043 ; free physical = 3366 ; free virtual = 10144
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2424.840 ; gain = 30.043 ; free physical = 2052 ; free virtual = 8331
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -427,11 +448,16 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/image_h. (constraint f
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/image_w. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/start. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/AXI_Select_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/Commandes_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/ps7_0_axi_periph/s00_couplers/auto_cc. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/ps7_0_axi_periph. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/util_vector_logic_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2424.840 ; gain = 30.043 ; free physical = 3366 ; free virtual = 10144
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2424.840 ; gain = 30.043 ; free physical = 2043 ; free virtual = 8330
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2424.840 ; gain = 30.043 ; free physical = 3367 ; free virtual = 10154
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2424.840 ; gain = 30.043 ; free physical = 2042 ; free virtual = 8334
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -453,25 +479,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2424.840 ; gain = 30.043 ; free physical = 3386 ; free virtual = 10169
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2424.840 ; gain = 30.043 ; free physical = 2058 ; free virtual = 8362
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2425.840 ; gain = 31.043 ; free physical = 3426 ; free virtual = 10211
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2428.840 ; gain = 34.043 ; free physical = 2056 ; free virtual = 8352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2425.840 ; gain = 31.043 ; free physical = 3426 ; free virtual = 10211
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2428.840 ; gain = 34.043 ; free physical = 2056 ; free virtual = 8352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2445.879 ; gain = 51.082 ; free physical = 3411 ; free virtual = 10196
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2448.879 ; gain = 54.082 ; free physical = 2039 ; free virtual = 8341
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -489,37 +515,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2451.816 ; gain = 57.020 ; free physical = 3433 ; free virtual = 10207
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2454.816 ; gain = 60.020 ; free physical = 2090 ; free virtual = 8391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2451.816 ; gain = 57.020 ; free physical = 3433 ; free virtual = 10207
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2454.816 ; gain = 60.020 ; free physical = 2090 ; free virtual = 8391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2451.816 ; gain = 57.020 ; free physical = 3433 ; free virtual = 10207
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2454.816 ; gain = 60.020 ; free physical = 2090 ; free virtual = 8391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2451.816 ; gain = 57.020 ; free physical = 3433 ; free virtual = 10207
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2454.816 ; gain = 60.020 ; free physical = 2090 ; free virtual = 8391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2451.816 ; gain = 57.020 ; free physical = 3433 ; free virtual = 10207
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2454.816 ; gain = 60.020 ; free physical = 2090 ; free virtual = 8391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2451.816 ; gain = 57.020 ; free physical = 3433 ; free virtual = 10207
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2454.816 ; gain = 60.020 ; free physical = 2090 ; free virtual = 8391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -532,14 +558,18 @@ Report BlackBoxes:
 |1     |design_1_auto_cc_0                |         1|
 |2     |design_1_auto_ds_0                |         1|
 |3     |design_1_auto_pc_0                |         1|
-|4     |design_1_AXI4_stream_Master_2_0_0 |         1|
-|5     |design_1_AXI_Select_0_1           |         1|
-|6     |design_1_ControleurVGA_v3_0_0     |         1|
-|7     |design_1_DMA24bUnit_mm2s_0_0      |         1|
-|8     |design_1_TPG_0_0                  |         1|
-|9     |design_1_clk_wiz_0_clk_wiz_0_0    |         1|
-|10    |design_1_processing_system7_0_0   |         1|
-|11    |design_1_util_vector_logic_0_0    |         1|
+|4     |design_1_auto_cc_1                |         1|
+|5     |design_1_auto_pc_1                |         1|
+|6     |design_1_AXI4_stream_Master_2_0_0 |         1|
+|7     |design_1_AXI_Select_0_1           |         1|
+|8     |design_1_Commandes_0_0            |         1|
+|9     |design_1_ControleurVGA_v3_0_0     |         1|
+|10    |design_1_DMA24bUnit_mm2s_0_0      |         1|
+|11    |design_1_TPG_0_0                  |         1|
+|12    |design_1_clk_wiz_0_clk_wiz_0_0    |         1|
+|13    |design_1_processing_system7_0_0   |         1|
+|14    |design_1_util_vector_logic_0_0    |         1|
+|15    |design_1_util_vector_logic_0_1    |         1|
 +------+----------------------------------+----------+
 
 Report Cell Usage: 
@@ -548,38 +578,42 @@ Report Cell Usage:
 +------+---------------------------------------+------+
 |1     |design_1_AXI4_stream_Master_2_0_0_bbox |     1|
 |2     |design_1_AXI_Select_0_1_bbox           |     1|
-|3     |design_1_ControleurVGA_v3_0_0_bbox     |     1|
-|4     |design_1_DMA24bUnit_mm2s_0_0_bbox      |     1|
-|5     |design_1_TPG_0_0_bbox                  |     1|
-|6     |design_1_auto_cc_0_bbox                |     1|
-|7     |design_1_auto_ds_0_bbox                |     1|
-|8     |design_1_auto_pc_0_bbox                |     1|
-|9     |design_1_clk_wiz_0_clk_wiz_0_0_bbox    |     1|
-|10    |design_1_processing_system7_0_0_bbox   |     1|
-|11    |design_1_util_vector_logic_0_0_bbox    |     1|
-|12    |IBUF                                   |     2|
-|13    |OBUF                                   |    14|
+|3     |design_1_Commandes_0_0_bbox            |     1|
+|4     |design_1_ControleurVGA_v3_0_0_bbox     |     1|
+|5     |design_1_DMA24bUnit_mm2s_0_0_bbox      |     1|
+|6     |design_1_TPG_0_0_bbox                  |     1|
+|7     |design_1_auto_cc_0_bbox                |     1|
+|8     |design_1_auto_cc_1_bbox                |     1|
+|9     |design_1_auto_ds_0_bbox                |     1|
+|10    |design_1_auto_pc_0_bbox                |     1|
+|11    |design_1_auto_pc_1_bbox                |     1|
+|12    |design_1_clk_wiz_0_clk_wiz_0_0_bbox    |     1|
+|13    |design_1_processing_system7_0_0_bbox   |     1|
+|14    |design_1_util_vector_logic_0_0_bbox    |     1|
+|15    |design_1_util_vector_logic_0_1_bbox    |     1|
+|16    |IBUF                                   |     2|
+|17    |OBUF                                   |    14|
 +------+---------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2451.816 ; gain = 57.020 ; free physical = 3433 ; free virtual = 10207
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2454.816 ; gain = 60.020 ; free physical = 2086 ; free virtual = 8378
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2451.816 ; gain = 26.977 ; free physical = 3495 ; free virtual = 10270
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2451.824 ; gain = 57.020 ; free physical = 3495 ; free virtual = 10270
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2454.816 ; gain = 29.977 ; free physical = 2116 ; free virtual = 8399
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2454.824 ; gain = 60.020 ; free physical = 2116 ; free virtual = 8399
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2451.824 ; gain = 0.000 ; free physical = 3559 ; free virtual = 10334
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2454.824 ; gain = 0.000 ; free physical = 2203 ; free virtual = 8490
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2457.754 ; gain = 0.000 ; free physical = 3510 ; free virtual = 10284
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2460.754 ; gain = 0.000 ; free physical = 2211 ; free virtual = 8496
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-67 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+79 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:31 . Memory (MB): peak = 2457.754 ; gain = 62.957 ; free physical = 3579 ; free virtual = 10354
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:34 . Memory (MB): peak = 2460.754 ; gain = 65.957 ; free physical = 2285 ; free virtual = 8572
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Sep 26 11:32:49 2026...
+INFO: [Common 17-206] Exiting Vivado at Sat Sep 26 15:28:43 2026...

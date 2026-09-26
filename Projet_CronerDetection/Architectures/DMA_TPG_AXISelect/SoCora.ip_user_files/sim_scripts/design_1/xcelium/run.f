@@ -86,6 +86,12 @@
   "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/4500/src/AXI_Select.vhd" \
   "../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI_Select_0_1/sim/design_1_AXI_Select_0_1.vhd" \
   "../../../../SoCora.gen/sources_1/bd/design_1/sim/design_1.vhd" \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/eec2/Commandes_1.0/hdl/Commandes_v1_0_S00_AXI.vhd" \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/eec2/Commandes_1.0/hdl/Commandes_v1_0.vhd" \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_Commandes_0_0/sim/design_1_Commandes_0_0.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_util_vector_logic_0_1/sim/design_1_util_vector_logic_0_1.v" \
 -endlib
 -makelib xcelium_lib/axi_clock_converter_v2_1_21 \
   "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/1304/hdl/axi_clock_converter_v2_1_vl_rfs.v" \
@@ -114,6 +120,8 @@
 -makelib xcelium_lib/xil_defaultlib \
   "../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/sim/design_1_auto_ds_0.v" \
   "../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_cc_1/sim/design_1_auto_cc_1.v" \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

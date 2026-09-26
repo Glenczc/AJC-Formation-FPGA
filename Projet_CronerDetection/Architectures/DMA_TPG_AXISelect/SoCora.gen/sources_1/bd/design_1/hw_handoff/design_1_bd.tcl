@@ -183,6 +183,9 @@ proc create_root_design { parentCell } {
   # Create instance: AXI_Select_0, and set properties
   set AXI_Select_0 [ create_bd_cell -type ip -vlnv user.org:user:AXI_Select:1.0 AXI_Select_0 ]
 
+  # Create instance: Commandes_0, and set properties
+  set Commandes_0 [ create_bd_cell -type ip -vlnv user.org:user:Commandes:1.0 Commandes_0 ]
+
   # Create instance: ControleurVGA_v3_0, and set properties
   set ControleurVGA_v3_0 [ create_bd_cell -type ip -vlnv user.org:user:ControleurVGA_v3:1.0 ControleurVGA_v3_0 ]
 
@@ -1052,6 +1055,12 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_WDT_PERIPHERAL_FREQMHZ {133.333333} \
  ] $processing_system7_0
 
+  # Create instance: ps7_0_axi_periph, and set properties
+  set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
+  set_property -dict [ list \
+   CONFIG.NUM_MI {1} \
+ ] $ps7_0_axi_periph
+
   # Create instance: reset_not, and set properties
   set reset_not [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 reset_not ]
   set_property -dict [ list \
@@ -1063,6 +1072,14 @@ proc create_root_design { parentCell } {
   # Create instance: start, and set properties
   set start [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 start ]
 
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {or} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_orgate.png} \
+ ] $util_vector_logic_0
+
   # Create interface connections
   connect_bd_intf_net -intf_net AXI4_stream_Master_2_0_interface_axis [get_bd_intf_pins AXI4_stream_Master_2_0/interface_axis] [get_bd_intf_pins AXI_Select_0/AXI_A]
   connect_bd_intf_net -intf_net AXI_Select_0_AXI_out [get_bd_intf_pins AXI_Select_0/AXI_out] [get_bd_intf_pins ControleurVGA_v3_0/interface_axis]
@@ -1071,9 +1088,12 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_mem_intercon_M00_AXI [get_bd_intf_pins axi_mem_intercon/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
+  connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins Commandes_0/s00_axi] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
 
   # Create port connections
   connect_bd_net -net AXI4_stream_Master_2_0_fulln [get_bd_pins AXI4_stream_Master_2_0/fulln] [get_bd_pins TPG_0/start]
+  connect_bd_net -net Commandes_0_cmd_out [get_bd_pins Commandes_0/cmd_out] [get_bd_pins util_vector_logic_0/Op2]
   connect_bd_net -net ControleurVGA_v3_0_VGA_B [get_bd_ports VGA_B] [get_bd_pins ControleurVGA_v3_0/VGA_B]
   connect_bd_net -net ControleurVGA_v3_0_VGA_G [get_bd_ports VGA_G] [get_bd_pins ControleurVGA_v3_0/VGA_G]
   connect_bd_net -net ControleurVGA_v3_0_VGA_HS_O [get_bd_ports VGA_HS_O] [get_bd_pins ControleurVGA_v3_0/VGA_HS_O]
@@ -1081,19 +1101,21 @@ proc create_root_design { parentCell } {
   connect_bd_net -net ControleurVGA_v3_0_VGA_VS_O [get_bd_ports VGA_VS_O] [get_bd_pins ControleurVGA_v3_0/VGA_VS_O]
   connect_bd_net -net TPG_0_pixel [get_bd_pins AXI4_stream_Master_2_0/data_in] [get_bd_pins TPG_0/pixel]
   connect_bd_net -net TPG_0_px_valid [get_bd_pins AXI4_stream_Master_2_0/wr_en] [get_bd_pins TPG_0/px_valid]
-  connect_bd_net -net chanel_select_1 [get_bd_ports chanel_select] [get_bd_pins AXI_Select_0/chanel_select]
+  connect_bd_net -net chanel_select_1 [get_bd_ports chanel_select] [get_bd_pins util_vector_logic_0/Op1]
   connect_bd_net -net clk_in1_0_1 [get_bd_ports CLK_I] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_in1]
-  connect_bd_net -net clk_wiz_0_clk_wiz_0_clk_out1 [get_bd_pins AXI4_stream_Master_2_0/clk] [get_bd_pins ControleurVGA_v3_0/clk] [get_bd_pins DMA24bUnit_mm2s_0/ap_clk] [get_bd_pins TPG_0/clk] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_out1]
+  connect_bd_net -net clk_wiz_0_clk_wiz_0_clk_out1 [get_bd_pins AXI4_stream_Master_2_0/clk] [get_bd_pins Commandes_0/s00_axi_aclk] [get_bd_pins ControleurVGA_v3_0/clk] [get_bd_pins DMA24bUnit_mm2s_0/ap_clk] [get_bd_pins TPG_0/clk] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_out1] [get_bd_pins ps7_0_axi_periph/M00_ACLK]
   connect_bd_net -net image_h_dout [get_bd_pins DMA24bUnit_mm2s_0/image_h] [get_bd_pins image_h/dout]
   connect_bd_net -net image_in_dout [get_bd_pins DMA24bUnit_mm2s_0/image_in] [get_bd_pins image_in/dout]
   connect_bd_net -net image_w_dout [get_bd_pins DMA24bUnit_mm2s_0/image_w] [get_bd_pins image_w/dout]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK]
   connect_bd_net -net reset_0_1 [get_bd_ports reset] [get_bd_pins AXI4_stream_Master_2_0/reset] [get_bd_pins ControleurVGA_v3_0/reset] [get_bd_pins TPG_0/reset] [get_bd_pins reset_not/Op1]
   connect_bd_net -net start_dout [get_bd_pins DMA24bUnit_mm2s_0/ap_start] [get_bd_pins start/dout]
-  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins DMA24bUnit_mm2s_0/ap_rst_n] [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins reset_not/Res]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins Commandes_0/s00_axi_aresetn] [get_bd_pins DMA24bUnit_mm2s_0/ap_rst_n] [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins reset_not/Res]
+  connect_bd_net -net util_vector_logic_0_Res1 [get_bd_pins AXI_Select_0/chanel_select] [get_bd_pins util_vector_logic_0/Res]
 
   # Create address segments
   assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces DMA24bUnit_mm2s_0/m_axi_gmem] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] -force
+  assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs Commandes_0/s00_axi/reg0] -force
 
 
   # Restore current instance

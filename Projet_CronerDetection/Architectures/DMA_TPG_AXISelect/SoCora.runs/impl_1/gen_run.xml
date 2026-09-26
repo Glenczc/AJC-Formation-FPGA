@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1790415192">
+<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1790429272">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BITSTR-SYSDEF" Name="design_1_wrapper.sysdef"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
@@ -133,12 +133,14 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_util_vector_logic_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_AXI_Select_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_TPG_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_DMA24bUnit_mm2s_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_Commandes_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_ControleurVGA_v3_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_util_vector_logic_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_AXI4_stream_Master_2_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_clk_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_DMA24bUnit_mm2s_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_ControleurVGA_v3_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_TPG_0_0"/>
 </GenRun>

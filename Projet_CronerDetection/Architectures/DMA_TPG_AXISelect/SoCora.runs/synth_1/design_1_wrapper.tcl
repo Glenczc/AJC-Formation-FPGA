@@ -70,8 +70,10 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 1
 set_param xicom.use_bs_reader 1
 set_param tcl.collectionResultDisplayLimit 0
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z007sclg400-1
 
@@ -101,6 +103,10 @@ set_property used_in_synthesis false [get_files -all /home/glen/Documents/AJC-Ex
 set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_cc_1/design_1_auto_cc_1_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_cc_1/design_1_auto_cc_1_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_cc_1/design_1_auto_cc_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
