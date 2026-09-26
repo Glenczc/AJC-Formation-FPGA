@@ -150,3 +150,50 @@ set_property -dict {PACKAGE_PIN W16 IOSTANDARD LVCMOS33} [get_ports VGA_VS_O]
 #set_property -dict { PACKAGE_PIN K19   IOSTANDARD LVCMOS33 } [get_ports { user_dio[12] }]; #IO_L10P_T1_AD11P_35 Sch=user_dio[12]
 
 
+
+create_debug_core u_ila_0 ila
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_0]
+set_property C_ADV_TRIGGER false [get_debug_cores u_ila_0]
+set_property C_DATA_DEPTH 1024 [get_debug_cores u_ila_0]
+set_property C_EN_STRG_QUAL false [get_debug_cores u_ila_0]
+set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
+set_property port_width 1 [get_debug_ports u_ila_0/clk]
+connect_debug_port u_ila_0/clk [get_nets [list design_1_i/clk_wiz_0_clk_wiz_0/inst/clk_out1]]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
+set_property port_width 12 [get_debug_ports u_ila_0/probe0]
+connect_debug_port u_ila_0/probe0 [get_nets [list {design_1_i/TPG_0/pixel[4]} {design_1_i/TPG_0/pixel[5]} {design_1_i/TPG_0/pixel[6]} {design_1_i/TPG_0/pixel[7]} {design_1_i/TPG_0/pixel[12]} {design_1_i/TPG_0/pixel[13]} {design_1_i/TPG_0/pixel[14]} {design_1_i/TPG_0/pixel[15]} {design_1_i/TPG_0/pixel[20]} {design_1_i/TPG_0/pixel[21]} {design_1_i/TPG_0/pixel[22]} {design_1_i/TPG_0/pixel[23]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
+set_property port_width 24 [get_debug_ports u_ila_0/probe1]
+connect_debug_port u_ila_0/probe1 [get_nets [list {design_1_i/AXI4_stream_Master_2_2/tdata[0]} {design_1_i/AXI4_stream_Master_2_2/tdata[1]} {design_1_i/AXI4_stream_Master_2_2/tdata[2]} {design_1_i/AXI4_stream_Master_2_2/tdata[3]} {design_1_i/AXI4_stream_Master_2_2/tdata[4]} {design_1_i/AXI4_stream_Master_2_2/tdata[5]} {design_1_i/AXI4_stream_Master_2_2/tdata[6]} {design_1_i/AXI4_stream_Master_2_2/tdata[7]} {design_1_i/AXI4_stream_Master_2_2/tdata[8]} {design_1_i/AXI4_stream_Master_2_2/tdata[9]} {design_1_i/AXI4_stream_Master_2_2/tdata[10]} {design_1_i/AXI4_stream_Master_2_2/tdata[11]} {design_1_i/AXI4_stream_Master_2_2/tdata[12]} {design_1_i/AXI4_stream_Master_2_2/tdata[13]} {design_1_i/AXI4_stream_Master_2_2/tdata[14]} {design_1_i/AXI4_stream_Master_2_2/tdata[15]} {design_1_i/AXI4_stream_Master_2_2/tdata[16]} {design_1_i/AXI4_stream_Master_2_2/tdata[17]} {design_1_i/AXI4_stream_Master_2_2/tdata[18]} {design_1_i/AXI4_stream_Master_2_2/tdata[19]} {design_1_i/AXI4_stream_Master_2_2/tdata[20]} {design_1_i/AXI4_stream_Master_2_2/tdata[21]} {design_1_i/AXI4_stream_Master_2_2/tdata[22]} {design_1_i/AXI4_stream_Master_2_2/tdata[23]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
+set_property port_width 4 [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list {design_1_i/ControleurVGA_v3_0/VGA_R[0]} {design_1_i/ControleurVGA_v3_0/VGA_R[1]} {design_1_i/ControleurVGA_v3_0/VGA_R[2]} {design_1_i/ControleurVGA_v3_0/VGA_R[3]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
+set_property port_width 4 [get_debug_ports u_ila_0/probe3]
+connect_debug_port u_ila_0/probe3 [get_nets [list {design_1_i/ControleurVGA_v3_0/VGA_G[0]} {design_1_i/ControleurVGA_v3_0/VGA_G[1]} {design_1_i/ControleurVGA_v3_0/VGA_G[2]} {design_1_i/ControleurVGA_v3_0/VGA_G[3]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
+set_property port_width 4 [get_debug_ports u_ila_0/probe4]
+connect_debug_port u_ila_0/probe4 [get_nets [list {design_1_i/ControleurVGA_v3_0/VGA_B[0]} {design_1_i/ControleurVGA_v3_0/VGA_B[1]} {design_1_i/ControleurVGA_v3_0/VGA_B[2]} {design_1_i/ControleurVGA_v3_0/VGA_B[3]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe5]
+set_property port_width 1 [get_debug_ports u_ila_0/probe5]
+connect_debug_port u_ila_0/probe5 [get_nets [list design_1_i/ControleurVGA_v3_0/tvalid]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe6]
+set_property port_width 1 [get_debug_ports u_ila_0/probe6]
+connect_debug_port u_ila_0/probe6 [get_nets [list design_1_i/ControleurVGA_v3_0/tready]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe7]
+set_property port_width 1 [get_debug_ports u_ila_0/probe7]
+connect_debug_port u_ila_0/probe7 [get_nets [list design_1_i/TPG_0/start]]
+set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
+set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
+set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
+connect_debug_port dbg_hub/clk [get_nets u_ila_0_clk_out1]

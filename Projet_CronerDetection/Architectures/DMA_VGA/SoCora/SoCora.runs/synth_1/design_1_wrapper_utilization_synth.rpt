@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Fri Sep 25 15:53:05 2026
+| Date         : Fri Sep 25 20:18:26 2026
 | Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -154,19 +154,21 @@ Table of Contents
 8. Black Boxes
 --------------
 
-+---------------------------------+------+
-|             Ref Name            | Used |
-+---------------------------------+------+
-| design_1_util_vector_logic_0_2  |    1 |
-| design_1_util_vector_logic_0_1  |    1 |
-| design_1_processing_system7_0_0 |    1 |
-| design_1_clk_wiz_0_clk_wiz_0_0  |    1 |
-| design_1_auto_pc_0              |    1 |
-| design_1_auto_ds_0              |    1 |
-| design_1_auto_cc_0              |    1 |
-| design_1_DMA24bUnit_mm2s_0_0    |    1 |
-| design_1_ControleurVGA_v3_0_0   |    1 |
-+---------------------------------+------+
++-----------------------------------+------+
+|              Ref Name             | Used |
++-----------------------------------+------+
+| design_1_util_vector_logic_0_2    |    1 |
+| design_1_util_vector_logic_0_1    |    1 |
+| design_1_processing_system7_0_0   |    1 |
+| design_1_clk_wiz_0_clk_wiz_0_0    |    1 |
+| design_1_auto_pc_0                |    1 |
+| design_1_auto_ds_0                |    1 |
+| design_1_auto_cc_0                |    1 |
+| design_1_DMA24bUnit_mm2s_0_0      |    1 |
+| design_1_ControleurVGA_v3_0_0     |    1 |
+| design_1_AXI4_stream_Slave_0_0    |    1 |
+| design_1_AXI4_stream_Master_2_0_0 |    1 |
++-----------------------------------+------+
 
 
 9. Instantiated Netlists

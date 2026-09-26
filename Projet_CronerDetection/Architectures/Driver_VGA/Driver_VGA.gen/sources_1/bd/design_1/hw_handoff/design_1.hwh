@@ -1,37 +1,38 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Sep 24 10:43:08 2026" VIVADOVERSION="2020.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Sep 25 17:31:22 2026" VIVADOVERSION="2020.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z007s" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="O" NAME="VGA_VS_O" SIGIS="undef" SIGNAME="ControleurVGA_v2_0_VGA_VS_O">
+    <PORT DIR="O" NAME="VGA_VS_O" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_VS_O">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="VGA_VS_O"/>
+        <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="VGA_VS_O"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="3" NAME="VGA_B" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v2_0_VGA_B">
+    <PORT DIR="O" LEFT="3" NAME="VGA_B" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_B">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="VGA_B"/>
+        <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="VGA_B"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="VGA_HS_O" SIGIS="undef" SIGNAME="ControleurVGA_v2_0_VGA_HS_O">
+    <PORT DIR="O" NAME="VGA_HS_O" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_HS_O">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="VGA_HS_O"/>
+        <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="VGA_HS_O"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="3" NAME="VGA_R" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v2_0_VGA_R">
+    <PORT DIR="O" LEFT="3" NAME="VGA_R" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_R">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="VGA_R"/>
+        <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="VGA_R"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="3" NAME="VGA_G" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v2_0_VGA_G">
+    <PORT DIR="O" LEFT="3" NAME="VGA_G" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_G">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="VGA_G"/>
+        <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="VGA_G"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="reset_wiz_0" PORT="reset_in"/>
+        <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="reset"/>
+        <CONNECTION INSTANCE="axi4s_driver_0" PORT="rst_i"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="CLK_I" SIGIS="undef" SIGNAME="External_Ports_CLK_I">
@@ -44,12 +45,10 @@
   <EXTERNALINTERFACES/>
 
   <MODULES>
-    <MODULE COREREVISION="1" FULLNAME="/AXI4_stream_Master_2_0" HWVERSION="1.0" INSTANCE="AXI4_stream_Master_2_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI4_stream_Master_24b" VLNV="user.org:user:AXI4_stream_Master_24b:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/ControleurVGA_v3_0" HWVERSION="1.0" INSTANCE="ControleurVGA_v3_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ControleurVGA_v3" VLNV="user.org:user:ControleurVGA_v3:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="nb_colone" VALUE="640"/>
-        <PARAMETER NAME="nb_ligne" VALUE="480"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_AXI4_stream_Master_2_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_ControleurVGA_v3_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -58,131 +57,55 @@
             <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="reset_wiz_0_reset_out">
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="reset_wiz_0" PORT="reset_out"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="23" NAME="data_in" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_data_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="data_out"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="wr_en" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_valid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="valid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="fulln" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_fulln">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="ready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="tdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="tvalid" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="tlast" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="tlast"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="tuser" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tuser">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="tuser"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="tready" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="tready"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="AXI4_stream_Master_2_0_interface_axis" NAME="interface_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="tdata"/>
-            <PORTMAP LOGICAL="TLAST" PHYSICAL="tlast"/>
-            <PORTMAP LOGICAL="TUSER" PHYSICAL="tuser"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="tvalid"/>
-            <PORTMAP LOGICAL="TREADY" PHYSICAL="tready"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-      </BUSINTERFACES>
-    </MODULE>
-    <MODULE COREREVISION="4" FULLNAME="/AXI4_stream_Slave_0" HWVERSION="1.0" INSTANCE="AXI4_stream_Slave_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI4_stream_Slave" VLNV="user.org:user:AXI4_stream_Slave:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="WORD_WIDTH" VALUE="24"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_AXI4_stream_Slave_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="reset_wiz_0_reset_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="reset_wiz_0" PORT="reset_out"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tdata">
+        <PORT DIR="I" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi4s_driver_0" PORT="m_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="tvalid" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tvalid">
+        <PORT DIR="I" NAME="tvalid" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi4s_driver_0" PORT="m_tvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="tlast" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tlast">
+        <PORT DIR="O" NAME="tready" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi4s_driver_0" PORT="m_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tlast" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tlast">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi4s_driver_0" PORT="m_tlast"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="tuser" SIGIS="undef"/>
-        <PORT DIR="O" NAME="tready" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tready">
+        <PORT DIR="O" NAME="VGA_HS_O" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_HS_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi4s_driver_0" PORT="m_tready"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_HS_O"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="23" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_data_out">
+        <PORT DIR="O" NAME="VGA_VS_O" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_VS_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="data_in"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_VS_O"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="valid" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_valid">
+        <PORT DIR="O" LEFT="3" NAME="VGA_R" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_R">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="wr_en"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_R"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="last" SIGIS="undef"/>
-        <PORT DIR="O" NAME="user" SIGIS="undef"/>
-        <PORT DIR="I" NAME="ready" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_fulln">
+        <PORT DIR="O" LEFT="3" NAME="VGA_B" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_B">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="fulln"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_B"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="VGA_G" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_G">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_G"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -211,170 +134,6 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="4" FULLNAME="/AXI4_stream_Slave_1" HWVERSION="1.0" INSTANCE="AXI4_stream_Slave_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI4_stream_Slave" VLNV="user.org:user:AXI4_stream_Slave:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="WORD_WIDTH" VALUE="24"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_AXI4_stream_Slave_1_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="reset_wiz_0_reset_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="reset_wiz_0" PORT="reset_out"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="tdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="tvalid" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="tlast" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="tlast"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="tuser" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tuser">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="tuser"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="tready" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="tready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="23" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_data_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="pixel"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="valid" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_valid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="valid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="last" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_last">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="H_end"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="user" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_user">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="V_end"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="ready" SIGIS="undef" SIGNAME="ControleurVGA_v2_0_ready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="ready"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="AXI4_stream_Master_2_0_interface_axis" NAME="interface_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="tdata"/>
-            <PORTMAP LOGICAL="TLAST" PHYSICAL="tlast"/>
-            <PORTMAP LOGICAL="TUSER" PHYSICAL="tuser"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="tvalid"/>
-            <PORTMAP LOGICAL="TREADY" PHYSICAL="tready"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-      </BUSINTERFACES>
-    </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/ControleurVGA_v2_0" HWVERSION="1.0" INSTANCE="ControleurVGA_v2_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ControleurVGA_v2" VLNV="user.org:user:ControleurVGA_v2:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_ControleurVGA_v2_0_1"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="reset_wiz_0_reset_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="reset_wiz_0" PORT="reset_out"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="23" NAME="pixel" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_data_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="data_out"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="H_end" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_last">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="last"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="V_end" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_user">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="user"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="valid" SIGIS="undef" SIGNAME="AXI4_stream_Slave_1_valid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="valid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="ready" SIGIS="undef" SIGNAME="ControleurVGA_v2_0_ready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="ready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="VGA_HS_O" SIGIS="undef" SIGNAME="ControleurVGA_v2_0_VGA_HS_O">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="VGA_HS_O"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="VGA_VS_O" SIGIS="undef" SIGNAME="ControleurVGA_v2_0_VGA_VS_O">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="VGA_VS_O"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="VGA_R" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v2_0_VGA_R">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="VGA_R"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="VGA_B" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v2_0_VGA_B">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="VGA_B"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="VGA_G" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v2_0_VGA_G">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="VGA_G"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
     <MODULE COREREVISION="3" FULLNAME="/axi4s_driver_0" HWVERSION="1.0" INSTANCE="axi4s_driver_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi4s_driver" VLNV="user.org:user:axi4s_driver:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -392,29 +151,29 @@
             <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="rst_i" POLARITY="ACTIVE_HIGH" SIGIS="undef" SIGNAME="reset_wiz_0_reset_out">
+        <PORT DIR="I" NAME="rst_i" POLARITY="ACTIVE_HIGH" SIGIS="undef" SIGNAME="External_Ports_reset">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="reset_wiz_0" PORT="reset_out"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="m_tvalid" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tvalid">
+        <PORT DIR="O" NAME="m_tvalid" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="tvalid"/>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="23" NAME="m_tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tdata">
+        <PORT DIR="O" LEFT="23" NAME="m_tdata" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="tdata"/>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="m_tlast" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tlast">
+        <PORT DIR="O" NAME="m_tlast" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tlast">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="tlast"/>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tlast"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="m_tready" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tready">
+        <PORT DIR="I" NAME="m_tready" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="tready"/>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="done_o" SIGIS="undef"/>
@@ -452,12 +211,8 @@
       <PORTS>
         <PORT DIR="O" NAME="clk_out1" SIGIS="undef" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="clk"/>
-            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="clk"/>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="clk"/>
             <CONNECTION INSTANCE="axi4s_driver_0" PORT="clk_i"/>
-            <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="clk"/>
-            <CONNECTION INSTANCE="reset_wiz_0" PORT="clk"/>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="clk_in1" SIGIS="undef" SIGNAME="External_Ports_CLK_I">
@@ -465,36 +220,6 @@
             <CONNECTION INSTANCE="External_Ports" PORT="CLK_I"/>
           </CONNECTIONS>
         </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/reset_wiz_0" HWVERSION="1.0" INSTANCE="reset_wiz_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="reset_wiz" VLNV="user.org:user:reset_wiz:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_reset_wiz_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="reset_in" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="reset_out" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="reset_wiz_0_reset_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="reset"/>
-            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="reset"/>
-            <CONNECTION INSTANCE="AXI4_stream_Slave_1" PORT="reset"/>
-            <CONNECTION INSTANCE="axi4s_driver_0" PORT="rst_i"/>
-            <CONNECTION INSTANCE="ControleurVGA_v2_0" PORT="reset"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="resetn_out" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>

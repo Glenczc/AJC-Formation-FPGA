@@ -2,3 +2,6 @@ Running: xsim.dir/ControleurVGA_tb_behav/xsimk -simmode gui -wdb ControleurVGA_t
 Design successfully loaded
 Design Loading Memory Usage: 33220 KB (Peak: 33820 KB)
 Design Loading CPU Usage: 60 ms
+Simulation completed
+Simulation Memory Usage: 123156 KB (Peak: 172488 KB)
+Simulation CPU Usage: 510 ms

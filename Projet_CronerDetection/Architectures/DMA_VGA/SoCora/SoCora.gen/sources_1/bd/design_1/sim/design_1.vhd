@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
---Date        : Fri Sep 25 15:42:55 2026
+--Date        : Fri Sep 25 20:16:55 2026
 --Host        : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1214,7 +1214,7 @@ entity design_1 is
     start : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=14,numReposBlks=12,numNonXlnxBlks=3,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_axi4_s2mm_cnt=3,da_board_cnt=1,da_clkrst_cnt=3,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=16,numReposBlks=14,numNonXlnxBlks=5,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_axi4_s2mm_cnt=3,da_board_cnt=1,da_clkrst_cnt=3,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -1448,6 +1448,44 @@ architecture STRUCTURE of design_1 is
     VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component design_1_ControleurVGA_v3_0_0;
+  component design_1_AXI4_stream_Slave_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    tdata : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    tvalid : in STD_LOGIC;
+    tlast : in STD_LOGIC;
+    tuser : in STD_LOGIC;
+    tready : out STD_LOGIC;
+    data_out : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    valid : out STD_LOGIC;
+    last : out STD_LOGIC;
+    user : out STD_LOGIC;
+    ready : in STD_LOGIC
+  );
+  end component design_1_AXI4_stream_Slave_0_0;
+  component design_1_AXI4_stream_Master_2_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    data_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    wr_en : in STD_LOGIC;
+    fulln : out STD_LOGIC;
+    tdata : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    tvalid : out STD_LOGIC;
+    tlast : out STD_LOGIC;
+    tuser : out STD_LOGIC;
+    tready : in STD_LOGIC
+  );
+  end component design_1_AXI4_stream_Master_2_0_0;
+  signal AXI4_stream_Master_2_0_fulln : STD_LOGIC;
+  signal AXI4_stream_Master_2_0_interface_axis_TDATA : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal AXI4_stream_Master_2_0_interface_axis_TLAST : STD_LOGIC;
+  signal AXI4_stream_Master_2_0_interface_axis_TREADY : STD_LOGIC;
+  signal AXI4_stream_Master_2_0_interface_axis_TUSER : STD_LOGIC;
+  signal AXI4_stream_Master_2_0_interface_axis_TVALID : STD_LOGIC;
+  signal AXI4_stream_Slave_0_data_out : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal AXI4_stream_Slave_0_valid : STD_LOGIC;
   signal CLK_I_1 : STD_LOGIC;
   signal ControleurVGA_v3_0_VGA_B : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ControleurVGA_v3_0_VGA_G : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -1566,6 +1604,8 @@ architecture STRUCTURE of design_1 is
   signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal xlconstant_1_dout : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal xlconstant_2_dout : STD_LOGIC_VECTOR ( 63 downto 0 );
+  signal NLW_AXI4_stream_Slave_0_last_UNCONNECTED : STD_LOGIC;
+  signal NLW_AXI4_stream_Slave_0_user_UNCONNECTED : STD_LOGIC;
   signal NLW_DMA24bUnit_mm2s_0_ap_done_UNCONNECTED : STD_LOGIC;
   signal NLW_DMA24bUnit_mm2s_0_ap_idle_UNCONNECTED : STD_LOGIC;
   signal NLW_DMA24bUnit_mm2s_0_ap_ready_UNCONNECTED : STD_LOGIC;
@@ -1644,6 +1684,34 @@ begin
   VGA_VS_O <= ControleurVGA_v3_0_VGA_VS_O;
   reset_1 <= reset;
   start_1 <= start;
+AXI4_stream_Master_2_0: component design_1_AXI4_stream_Master_2_0_0
+     port map (
+      clk => clk_wiz_0_clk_wiz_0_clk_out1,
+      data_in(23 downto 0) => AXI4_stream_Slave_0_data_out(23 downto 0),
+      fulln => AXI4_stream_Master_2_0_fulln,
+      reset => reset_1,
+      tdata(23 downto 0) => AXI4_stream_Master_2_0_interface_axis_TDATA(23 downto 0),
+      tlast => AXI4_stream_Master_2_0_interface_axis_TLAST,
+      tready => AXI4_stream_Master_2_0_interface_axis_TREADY,
+      tuser => AXI4_stream_Master_2_0_interface_axis_TUSER,
+      tvalid => AXI4_stream_Master_2_0_interface_axis_TVALID,
+      wr_en => AXI4_stream_Slave_0_valid
+    );
+AXI4_stream_Slave_0: component design_1_AXI4_stream_Slave_0_0
+     port map (
+      clk => clk_wiz_0_clk_wiz_0_clk_out1,
+      data_out(23 downto 0) => AXI4_stream_Slave_0_data_out(23 downto 0),
+      last => NLW_AXI4_stream_Slave_0_last_UNCONNECTED,
+      ready => AXI4_stream_Master_2_0_fulln,
+      reset => reset_1,
+      tdata(23 downto 0) => DMA24bUnit_mm2s_0_STR_video_out_TDATA(23 downto 0),
+      tlast => DMA24bUnit_mm2s_0_STR_video_out_TLAST(0),
+      tready => DMA24bUnit_mm2s_0_STR_video_out_TREADY,
+      tuser => DMA24bUnit_mm2s_0_STR_video_out_TUSER(0),
+      tvalid => DMA24bUnit_mm2s_0_STR_video_out_TVALID,
+      user => NLW_AXI4_stream_Slave_0_user_UNCONNECTED,
+      valid => AXI4_stream_Slave_0_valid
+    );
 ControleurVGA_v3_0: component design_1_ControleurVGA_v3_0_0
      port map (
       VGA_B(3 downto 0) => ControleurVGA_v3_0_VGA_B(3 downto 0),
@@ -1653,11 +1721,11 @@ ControleurVGA_v3_0: component design_1_ControleurVGA_v3_0_0
       VGA_VS_O => ControleurVGA_v3_0_VGA_VS_O,
       clk => clk_wiz_0_clk_wiz_0_clk_out1,
       reset => reset_1,
-      tdata(23 downto 0) => DMA24bUnit_mm2s_0_STR_video_out_TDATA(23 downto 0),
-      tlast => DMA24bUnit_mm2s_0_STR_video_out_TLAST(0),
-      tready => DMA24bUnit_mm2s_0_STR_video_out_TREADY,
-      tuser => DMA24bUnit_mm2s_0_STR_video_out_TUSER(0),
-      tvalid => DMA24bUnit_mm2s_0_STR_video_out_TVALID
+      tdata(23 downto 0) => AXI4_stream_Master_2_0_interface_axis_TDATA(23 downto 0),
+      tlast => AXI4_stream_Master_2_0_interface_axis_TLAST,
+      tready => AXI4_stream_Master_2_0_interface_axis_TREADY,
+      tuser => AXI4_stream_Master_2_0_interface_axis_TUSER,
+      tvalid => AXI4_stream_Master_2_0_interface_axis_TVALID
     );
 DMA24bUnit_mm2s_0: component design_1_DMA24bUnit_mm2s_0_0
      port map (

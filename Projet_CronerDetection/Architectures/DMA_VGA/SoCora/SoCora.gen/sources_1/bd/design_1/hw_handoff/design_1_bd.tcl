@@ -173,6 +173,15 @@ proc create_root_design { parentCell } {
  ] $reset
   set start [ create_bd_port -dir I start ]
 
+  # Create instance: AXI4_stream_Master_2_0, and set properties
+  set AXI4_stream_Master_2_0 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Master_24b:1.0 AXI4_stream_Master_2_0 ]
+
+  # Create instance: AXI4_stream_Slave_0, and set properties
+  set AXI4_stream_Slave_0 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Slave:1.0 AXI4_stream_Slave_0 ]
+  set_property -dict [ list \
+   CONFIG.WORD_WIDTH {24} \
+ ] $AXI4_stream_Slave_0
+
   # Create instance: ControleurVGA_v3_0, and set properties
   set ControleurVGA_v3_0 [ create_bd_cell -type ip -vlnv user.org:user:ControleurVGA_v3:1.0 ControleurVGA_v3_0 ]
 
@@ -1053,22 +1062,26 @@ proc create_root_design { parentCell } {
  ] $start_not
 
   # Create interface connections
-  connect_bd_intf_net -intf_net DMA24bUnit_mm2s_0_STR_video_out [get_bd_intf_pins ControleurVGA_v3_0/interface_axis] [get_bd_intf_pins DMA24bUnit_mm2s_0/STR_video_out]
+  connect_bd_intf_net -intf_net AXI4_stream_Master_2_0_interface_axis [get_bd_intf_pins AXI4_stream_Master_2_0/interface_axis] [get_bd_intf_pins ControleurVGA_v3_0/interface_axis]
+  connect_bd_intf_net -intf_net DMA24bUnit_mm2s_0_STR_video_out [get_bd_intf_pins AXI4_stream_Slave_0/interface_axis] [get_bd_intf_pins DMA24bUnit_mm2s_0/STR_video_out]
   connect_bd_intf_net -intf_net DMA24bUnit_mm2s_0_m_axi_gmem [get_bd_intf_pins DMA24bUnit_mm2s_0/m_axi_gmem] [get_bd_intf_pins axi_mem_intercon/S00_AXI]
   connect_bd_intf_net -intf_net axi_mem_intercon_M00_AXI [get_bd_intf_pins axi_mem_intercon/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
 
   # Create port connections
+  connect_bd_net -net AXI4_stream_Master_2_0_fulln [get_bd_pins AXI4_stream_Master_2_0/fulln] [get_bd_pins AXI4_stream_Slave_0/ready]
+  connect_bd_net -net AXI4_stream_Slave_0_data_out [get_bd_pins AXI4_stream_Master_2_0/data_in] [get_bd_pins AXI4_stream_Slave_0/data_out]
+  connect_bd_net -net AXI4_stream_Slave_0_valid [get_bd_pins AXI4_stream_Master_2_0/wr_en] [get_bd_pins AXI4_stream_Slave_0/valid]
   connect_bd_net -net CLK_I_1 [get_bd_ports CLK_I] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_in1]
   connect_bd_net -net ControleurVGA_v3_0_VGA_B [get_bd_ports VGA_B] [get_bd_pins ControleurVGA_v3_0/VGA_B]
   connect_bd_net -net ControleurVGA_v3_0_VGA_G [get_bd_ports VGA_G] [get_bd_pins ControleurVGA_v3_0/VGA_G]
   connect_bd_net -net ControleurVGA_v3_0_VGA_HS_O [get_bd_ports VGA_HS_O] [get_bd_pins ControleurVGA_v3_0/VGA_HS_O]
   connect_bd_net -net ControleurVGA_v3_0_VGA_R [get_bd_ports VGA_R] [get_bd_pins ControleurVGA_v3_0/VGA_R]
   connect_bd_net -net ControleurVGA_v3_0_VGA_VS_O [get_bd_ports VGA_VS_O] [get_bd_pins ControleurVGA_v3_0/VGA_VS_O]
-  connect_bd_net -net clk_wiz_0_clk_wiz_0_clk_out1 [get_bd_pins ControleurVGA_v3_0/clk] [get_bd_pins DMA24bUnit_mm2s_0/ap_clk] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_out1]
+  connect_bd_net -net clk_wiz_0_clk_wiz_0_clk_out1 [get_bd_pins AXI4_stream_Master_2_0/clk] [get_bd_pins AXI4_stream_Slave_0/clk] [get_bd_pins ControleurVGA_v3_0/clk] [get_bd_pins DMA24bUnit_mm2s_0/ap_clk] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins clk_wiz_0_clk_wiz_0/clk_out1]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK]
-  connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins ControleurVGA_v3_0/reset] [get_bd_pins reset_not/Op1]
+  connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins AXI4_stream_Master_2_0/reset] [get_bd_pins AXI4_stream_Slave_0/reset] [get_bd_pins ControleurVGA_v3_0/reset] [get_bd_pins reset_not/Op1]
   connect_bd_net -net reset_not_Res [get_bd_pins DMA24bUnit_mm2s_0/ap_rst_n] [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins reset_not/Res]
   connect_bd_net -net start_1 [get_bd_ports start] [get_bd_pins start_not/Op1]
   connect_bd_net -net start_not_Res [get_bd_pins DMA24bUnit_mm2s_0/ap_start] [get_bd_pins start_not/Res]

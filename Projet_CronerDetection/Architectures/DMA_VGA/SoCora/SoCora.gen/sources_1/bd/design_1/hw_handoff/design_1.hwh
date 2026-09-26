@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Sep 25 15:42:57 2026" VIVADOVERSION="2020.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Sep 25 20:16:57 2026" VIVADOVERSION="2020.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z007s" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -8,6 +8,8 @@
       <CONNECTIONS>
         <CONNECTION INSTANCE="reset_not" PORT="Op1"/>
         <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="reset"/>
+        <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="reset"/>
+        <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="reset"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="CLK_I" SIGIS="undef" SIGNAME="External_Ports_CLK_I">
@@ -200,6 +202,177 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/AXI4_stream_Master_2_0" HWVERSION="1.0" INSTANCE="AXI4_stream_Master_2_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI4_stream_Master_24b" VLNV="user.org:user:AXI4_stream_Master_24b:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="nb_colone" VALUE="640"/>
+        <PARAMETER NAME="nb_ligne" VALUE="480"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_AXI4_stream_Master_2_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="23" NAME="data_in" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="data_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="wr_en" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="fulln" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_fulln">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="ready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tvalid" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tlast" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tuser" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tready" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tready"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="AXI4_stream_Master_2_0_interface_axis" NAME="interface_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="4" FULLNAME="/AXI4_stream_Slave_0" HWVERSION="1.0" INSTANCE="AXI4_stream_Slave_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI4_stream_Slave" VLNV="user.org:user:AXI4_stream_Slave:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="WORD_WIDTH" VALUE="24"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_AXI4_stream_Slave_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz_0_clk_wiz_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="STR_video_out_TDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tvalid" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="STR_video_out_TVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tlast" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="STR_video_out_TLAST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tuser" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="STR_video_out_TUSER"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tready" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="STR_video_out_TREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="23" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="data_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="valid" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="wr_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="last" SIGIS="undef"/>
+        <PORT DIR="O" NAME="user" SIGIS="undef"/>
+        <PORT DIR="I" NAME="ready" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_fulln">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="fulln"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="DMA24bUnit_mm2s_0_STR_video_out" NAME="interface_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/ControleurVGA_v3_0" HWVERSION="1.0" INSTANCE="ControleurVGA_v3_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ControleurVGA_v3" VLNV="user.org:user:ControleurVGA_v3:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -217,29 +390,29 @@
             <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tdata">
+        <PORT DIR="I" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="STR_video_out_TDATA"/>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="tvalid" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tvalid">
+        <PORT DIR="I" NAME="tvalid" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="STR_video_out_TVALID"/>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="tvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="tready" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tready">
+        <PORT DIR="O" NAME="tready" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="STR_video_out_TREADY"/>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="tready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="tlast" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tlast">
+        <PORT DIR="I" NAME="tlast" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tlast">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="STR_video_out_TLAST"/>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="tlast"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="tuser" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tuser">
+        <PORT DIR="I" NAME="tuser" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_0_tuser">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="STR_video_out_TUSER"/>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="tuser"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="VGA_HS_O" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_HS_O">
@@ -269,7 +442,7 @@
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="DMA24bUnit_mm2s_0_STR_video_out" NAME="interface_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="AXI4_stream_Master_2_0_interface_axis" NAME="interface_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
@@ -550,31 +723,31 @@
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_AXI_buser"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="23" NAME="STR_video_out_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tdata">
+        <PORT DIR="O" LEFT="23" NAME="STR_video_out_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tdata"/>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="STR_video_out_TVALID" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tvalid">
+        <PORT DIR="O" NAME="STR_video_out_TVALID" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tvalid"/>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="tvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="STR_video_out_TREADY" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tready">
+        <PORT DIR="I" NAME="STR_video_out_TREADY" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tready"/>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="tready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="2" NAME="STR_video_out_TKEEP" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="2" NAME="STR_video_out_TSTRB" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="STR_video_out_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tuser">
+        <PORT DIR="O" LEFT="0" NAME="STR_video_out_TUSER" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tuser">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tuser"/>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="tuser"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="STR_video_out_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_tlast">
+        <PORT DIR="O" LEFT="0" NAME="STR_video_out_TLAST" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Slave_0_tlast">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tlast"/>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="tlast"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="11" NAME="image_w" RIGHT="0" SIGIS="undef" SIGNAME="image_w_dout">
@@ -704,7 +877,7 @@
       </MEMORYMAP>
       <PERIPHERALS>
         <PERIPHERAL INSTANCE="processing_system7_0"/>
-        <PERIPHERAL INSTANCE="ControleurVGA_v3_0"/>
+        <PERIPHERAL INSTANCE="AXI4_stream_Slave_0"/>
       </PERIPHERALS>
     </MODULE>
     <MODULE COREREVISION="7" FULLNAME="/addr_base" HWVERSION="1.1" INSTANCE="addr_base" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
@@ -1077,6 +1250,171 @@
             <CONNECTION INSTANCE="reset_not" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" LEFT="63" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWADDR"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_awlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awlen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWLEN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M00_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awsize">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWSIZE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="M00_AXI_awburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awburst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWBURST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="M00_AXI_awlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awlock">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWLOCK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_awcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awcache">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWCACHE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M00_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWPROT"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_awqos" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awqos">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWQOS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="63" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_WDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_WSTRB"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_wlast" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_wlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_WLAST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_WVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_WREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_BRESP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_BVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_BREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="63" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARADDR"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_arlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arlen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARLEN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M00_AXI_arsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arsize">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARSIZE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="M00_AXI_arburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arburst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARBURST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="M00_AXI_arlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arlock">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARLOCK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_arcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arcache">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARCACHE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M00_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARPROT"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_arqos" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arqos">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARQOS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="63" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_RDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_RRESP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_rlast" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_rlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_RLAST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_RVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_RREADY"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="0" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="DMA24bUnit_mm2s_0_m_axi_gmem_AWID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="m_axi_gmem_AWID"/>
@@ -1297,171 +1635,6 @@
             <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="m_axi_gmem_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="63" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWADDR"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_awlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWLEN"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M00_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWSIZE"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="1" NAME="M00_AXI_awburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWBURST"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="1" NAME="M00_AXI_awlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWLOCK"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_awcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWCACHE"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M00_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWPROT"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_awqos" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awqos">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWQOS"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_AWREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="63" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_WDATA"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="7" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_WSTRB"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_wlast" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_wlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_WLAST"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_WVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_WREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_BRESP"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_BVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_BREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="63" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARADDR"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_arlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARLEN"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M00_AXI_arsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARSIZE"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="1" NAME="M00_AXI_arburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARBURST"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="1" NAME="M00_AXI_arlock" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arlock">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARLOCK"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_arcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARCACHE"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M00_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARPROT"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_arqos" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arqos">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARQOS"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ARREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="63" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_RDATA"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_RRESP"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_rlast" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_rlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_RLAST"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_RVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="axi_mem_intercon_M00_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_RREADY"/>
-          </CONNECTIONS>
-        </PORT>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="DMA24bUnit_mm2s_0_m_axi_gmem" DATAWIDTH="128" NAME="S00_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
@@ -1563,6 +1736,8 @@
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="DMA24bUnit_mm2s_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="clk"/>
+            <CONNECTION INSTANCE="AXI4_stream_Slave_0" PORT="clk"/>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="clk_in1" SIGIS="undef" SIGNAME="External_Ports_CLK_I">

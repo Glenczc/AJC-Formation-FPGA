@@ -65,15 +65,24 @@
   "../../../bd/design_1/ipshared/9030/src/ControleurVGA_v3.vhd" \
   "../../../bd/design_1/ip/design_1_ControleurVGA_v3_0_0/sim/design_1_ControleurVGA_v3_0_0.vhd" \
   "../../../bd/design_1/sim/design_1.vhd" \
+  "../../../bd/design_1/ipshared/db4a/src/AXI4_stream_Slave.vhd" \
+  "../../../bd/design_1/ip/design_1_AXI4_stream_Slave_0_0/sim/design_1_AXI4_stream_Slave_0_0.vhd" \
 -endlib
 -makelib xcelium_lib/fifo_generator_v13_2_5 \
-  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/276e/simulation/fifo_generator_vlog_beh.v" \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/simulation/fifo_generator_vlog_beh.v" \
 -endlib
 -makelib xcelium_lib/fifo_generator_v13_2_5 \
-  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/276e/hdl/fifo_generator_v13_2_rfs.vhd" \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/hdl/fifo_generator_v13_2_rfs.vhd" \
 -endlib
 -makelib xcelium_lib/fifo_generator_v13_2_5 \
-  "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/276e/hdl/fifo_generator_v13_2_rfs.v" \
+  "../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/hdl/fifo_generator_v13_2_rfs.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/design_1/ipshared/fa01/src/AXI4_stream_Master_24b.vhd" \
+  "../../../bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/sim/design_1_AXI4_stream_Master_2_0_0.vhd" \
 -endlib
 -makelib xcelium_lib/axi_clock_converter_v2_1_21 \
   "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/1304/hdl/axi_clock_converter_v2_1_vl_rfs.v" \

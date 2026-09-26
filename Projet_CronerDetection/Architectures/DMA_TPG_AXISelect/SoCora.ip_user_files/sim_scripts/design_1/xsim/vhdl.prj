@@ -1,0 +1,25 @@
+vhdl xil_defaultlib  \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/fa01/src/AXI4_stream_Master_24b.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/sim/design_1_AXI4_stream_Master_2_0_0.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/9030/src/ControleurVGA_v3.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_ControleurVGA_v3_0_0/sim/design_1_ControleurVGA_v3_0_0.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s_fetch.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s_streamout.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_fifo_w128_d256_A.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_fifo_w12_d2_S.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_gmem_m_axi.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_mul_mul_11s_13ns_24_4_1.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_mul_mul_12ns_8ns_20_4_1.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_regslice_both.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_start_for_DMA24b_mm2s_streamout_U0.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_DMA24bUnit_mm2s_0_0/sim/design_1_DMA24bUnit_mm2s_0_0.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/779f/src/TPG.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/src/TPG.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_TPG_0_0/sim/design_1_TPG_0_0.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/4500/src/AXI_Select.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI_Select_0_1/sim/design_1_AXI_Select_0_1.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/sim/design_1.vhd" \
+
+nosort

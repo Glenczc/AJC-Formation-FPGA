@@ -11,13 +11,9 @@
       "validated": "true"
     },
     "design_tree": {
-      "AXI4_stream_Master_2_0": "",
-      "AXI4_stream_Slave_0": "",
-      "AXI4_stream_Slave_1": "",
       "clk_wiz_0_clk_wiz_0": "",
       "axi4s_driver_0": "",
-      "ControleurVGA_v2_0": "",
-      "reset_wiz_0": ""
+      "ControleurVGA_v3_0": ""
     },
     "ports": {
       "VGA_VS_O": {
@@ -59,34 +55,6 @@
       }
     },
     "components": {
-      "AXI4_stream_Master_2_0": {
-        "vlnv": "user.org:user:AXI4_stream_Master_24b:1.0",
-        "xci_name": "design_1_AXI4_stream_Master_2_0_0",
-        "xci_path": "ip/design_1_AXI4_stream_Master_2_0_0/design_1_AXI4_stream_Master_2_0_0.xci",
-        "inst_hier_path": "AXI4_stream_Master_2_0"
-      },
-      "AXI4_stream_Slave_0": {
-        "vlnv": "user.org:user:AXI4_stream_Slave:1.0",
-        "xci_name": "design_1_AXI4_stream_Slave_0_0",
-        "xci_path": "ip/design_1_AXI4_stream_Slave_0_0/design_1_AXI4_stream_Slave_0_0.xci",
-        "inst_hier_path": "AXI4_stream_Slave_0",
-        "parameters": {
-          "WORD_WIDTH": {
-            "value": "24"
-          }
-        }
-      },
-      "AXI4_stream_Slave_1": {
-        "vlnv": "user.org:user:AXI4_stream_Slave:1.0",
-        "xci_name": "design_1_AXI4_stream_Slave_1_0",
-        "xci_path": "ip/design_1_AXI4_stream_Slave_1_0/design_1_AXI4_stream_Slave_1_0.xci",
-        "inst_hier_path": "AXI4_stream_Slave_1",
-        "parameters": {
-          "WORD_WIDTH": {
-            "value": "24"
-          }
-        }
-      },
       "clk_wiz_0_clk_wiz_0": {
         "vlnv": "user.org:user:clk_wiz_0_clk_wiz:1.0",
         "xci_name": "design_1_clk_wiz_0_clk_wiz_0_0",
@@ -107,71 +75,27 @@
           }
         }
       },
-      "ControleurVGA_v2_0": {
-        "vlnv": "user.org:user:ControleurVGA_v2:1.0",
-        "xci_name": "design_1_ControleurVGA_v2_0_1",
-        "xci_path": "ip/design_1_ControleurVGA_v2_0_1/design_1_ControleurVGA_v2_0_1.xci",
-        "inst_hier_path": "ControleurVGA_v2_0"
-      },
-      "reset_wiz_0": {
-        "vlnv": "user.org:user:reset_wiz:1.0",
-        "xci_name": "design_1_reset_wiz_0_0",
-        "xci_path": "ip/design_1_reset_wiz_0_0/design_1_reset_wiz_0_0.xci",
-        "inst_hier_path": "reset_wiz_0"
+      "ControleurVGA_v3_0": {
+        "vlnv": "user.org:user:ControleurVGA_v3:1.0",
+        "xci_name": "design_1_ControleurVGA_v3_0_0",
+        "xci_path": "ip/design_1_ControleurVGA_v3_0_0/design_1_ControleurVGA_v3_0_0.xci",
+        "inst_hier_path": "ControleurVGA_v3_0"
       }
     },
     "interface_nets": {
-      "AXI4_stream_Master_2_0_interface_axis": {
-        "interface_ports": [
-          "AXI4_stream_Master_2_0/interface_axis",
-          "AXI4_stream_Slave_1/interface_axis"
-        ]
-      },
       "axi4s_driver_0_m": {
         "interface_ports": [
-          "axi4s_driver_0/m",
-          "AXI4_stream_Slave_0/interface_axis"
+          "ControleurVGA_v3_0/interface_axis",
+          "axi4s_driver_0/m"
         ]
       }
     },
     "nets": {
-      "AXI4_stream_Slave_0_data_out": {
-        "ports": [
-          "AXI4_stream_Slave_0/data_out",
-          "AXI4_stream_Master_2_0/data_in"
-        ]
-      },
-      "AXI4_stream_Slave_0_valid": {
-        "ports": [
-          "AXI4_stream_Slave_0/valid",
-          "AXI4_stream_Master_2_0/wr_en"
-        ]
-      },
-      "AXI4_stream_Master_2_0_fulln": {
-        "ports": [
-          "AXI4_stream_Master_2_0/fulln",
-          "AXI4_stream_Slave_0/ready"
-        ]
-      },
       "clk_wiz_0_clk_wiz_0_clk_out1": {
         "ports": [
           "clk_wiz_0_clk_wiz_0/clk_out1",
-          "AXI4_stream_Slave_0/clk",
-          "AXI4_stream_Master_2_0/clk",
-          "AXI4_stream_Slave_1/clk",
           "axi4s_driver_0/clk_i",
-          "ControleurVGA_v2_0/clk",
-          "reset_wiz_0/clk"
-        ]
-      },
-      "reset_0_1": {
-        "ports": [
-          "reset_wiz_0/reset_out",
-          "AXI4_stream_Slave_0/reset",
-          "AXI4_stream_Master_2_0/reset",
-          "AXI4_stream_Slave_1/reset",
-          "axi4s_driver_0/rst_i",
-          "ControleurVGA_v2_0/reset"
+          "ControleurVGA_v3_0/clk"
         ]
       },
       "clk_in1_0_1": {
@@ -180,70 +104,41 @@
           "clk_wiz_0_clk_wiz_0/clk_in1"
         ]
       },
-      "ControleurVGA_v2_0_ready": {
+      "ControleurVGA_v3_0_VGA_HS_O": {
         "ports": [
-          "ControleurVGA_v2_0/ready",
-          "AXI4_stream_Slave_1/ready"
-        ]
-      },
-      "AXI4_stream_Slave_1_data_out": {
-        "ports": [
-          "AXI4_stream_Slave_1/data_out",
-          "ControleurVGA_v2_0/pixel"
-        ]
-      },
-      "AXI4_stream_Slave_1_last": {
-        "ports": [
-          "AXI4_stream_Slave_1/last",
-          "ControleurVGA_v2_0/H_end"
-        ]
-      },
-      "AXI4_stream_Slave_1_user": {
-        "ports": [
-          "AXI4_stream_Slave_1/user",
-          "ControleurVGA_v2_0/V_end"
-        ]
-      },
-      "AXI4_stream_Slave_1_valid": {
-        "ports": [
-          "AXI4_stream_Slave_1/valid",
-          "ControleurVGA_v2_0/valid"
-        ]
-      },
-      "ControleurVGA_v2_0_VGA_HS_O": {
-        "ports": [
-          "ControleurVGA_v2_0/VGA_HS_O",
+          "ControleurVGA_v3_0/VGA_HS_O",
           "VGA_HS_O"
         ]
       },
-      "ControleurVGA_v2_0_VGA_VS_O": {
+      "ControleurVGA_v3_0_VGA_VS_O": {
         "ports": [
-          "ControleurVGA_v2_0/VGA_VS_O",
+          "ControleurVGA_v3_0/VGA_VS_O",
           "VGA_VS_O"
         ]
       },
-      "ControleurVGA_v2_0_VGA_R": {
+      "ControleurVGA_v3_0_VGA_R": {
         "ports": [
-          "ControleurVGA_v2_0/VGA_R",
+          "ControleurVGA_v3_0/VGA_R",
           "VGA_R"
         ]
       },
-      "ControleurVGA_v2_0_VGA_B": {
+      "ControleurVGA_v3_0_VGA_B": {
         "ports": [
-          "ControleurVGA_v2_0/VGA_B",
+          "ControleurVGA_v3_0/VGA_B",
           "VGA_B"
         ]
       },
-      "ControleurVGA_v2_0_VGA_G": {
+      "ControleurVGA_v3_0_VGA_G": {
         "ports": [
-          "ControleurVGA_v2_0/VGA_G",
+          "ControleurVGA_v3_0/VGA_G",
           "VGA_G"
         ]
       },
       "reset_1": {
         "ports": [
           "reset",
-          "reset_wiz_0/reset_in"
+          "ControleurVGA_v3_0/reset",
+          "axi4s_driver_0/rst_i"
         ]
       }
     }

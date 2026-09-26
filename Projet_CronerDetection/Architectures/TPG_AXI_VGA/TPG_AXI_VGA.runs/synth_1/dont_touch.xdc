@@ -9,13 +9,13 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1 ||
 # IP: bd/design_1/ip/design_1_clk_wiz_0_clk_wiz_0_1/design_1_clk_wiz_0_clk_wiz_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_clk_wiz_0_clk_wiz_0_1 || ORIG_REF_NAME==design_1_clk_wiz_0_clk_wiz_0_1} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_TPG_0_3/design_1_TPG_0_3.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_TPG_0_3 || ORIG_REF_NAME==design_1_TPG_0_3} -quiet] -quiet
-
 # IP: bd/design_1/ip/design_1_AXI4_stream_Master_2_2_0/design_1_AXI4_stream_Master_2_2_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_AXI4_stream_Master_2_2_0 || ORIG_REF_NAME==design_1_AXI4_stream_Master_2_2_0} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_ControleurVGA_v3_0_0/design_1_ControleurVGA_v3_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ControleurVGA_v3_0_0 || ORIG_REF_NAME==design_1_ControleurVGA_v3_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_TPG_0_3/design_1_TPG_0_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_TPG_0_3 || ORIG_REF_NAME==design_1_TPG_0_3} -quiet] -quiet
 
 # XDC: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_AXI_VGA/TPG_AXI_VGA.gen/sources_1/bd/design_1/design_1_ooc.xdc

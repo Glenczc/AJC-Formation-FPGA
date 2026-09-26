@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Mon Sep 21 15:28:56 2026
+-- Date        : Fri Sep 25 09:11:41 2026
 -- Host        : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_VGA/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/design_1_AXI4_stream_Master_2_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_AXI4_stream_Master_2_0_0 -prefix
+--               design_1_AXI4_stream_Master_2_0_0_ design_1_AXI4_stream_Master_2_0_0_stub.vhdl
 -- Design      : design_1_AXI4_stream_Master_2_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z007sclg400-1

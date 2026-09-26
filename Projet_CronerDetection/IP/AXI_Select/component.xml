@@ -4,6 +4,155 @@
   <spirit:library>user</spirit:library>
   <spirit:name>AXI_Select</spirit:name>
   <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>AXI_A</spirit:name>
+      <spirit:displayName>AXI_A</spirit:displayName>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TUSER</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tuser_a</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tdata_a</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TLAST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tlast_a</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tvalid_a</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tready_a</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>AXI_B</spirit:name>
+      <spirit:displayName>AXI_B</spirit:displayName>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TUSER</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tuser_b</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tdata_b</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TLAST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tlast_b</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tvalid_b</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tready_b</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>AXI_out</spirit:name>
+      <spirit:displayName>AXI_out</spirit:displayName>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TUSER</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tuser_out</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tdata_out</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TLAST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tlast_out</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tvalid_out</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>tready_out</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
   <spirit:model>
     <spirit:views>
       <spirit:view>
@@ -18,7 +167,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ecd9e309</spirit:value>
+            <spirit:value>0d13d748</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -34,7 +183,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ecd9e309</spirit:value>
+            <spirit:value>0d13d748</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -297,6 +446,11 @@
         <spirit:userFileType>CHECKSUM_ecd9e309</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
+      <spirit:file>
+        <spirit:name>../src/AXI_Select.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_ecd9e309</spirit:userFileType>
+      </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
@@ -304,6 +458,10 @@
         <spirit:name>src/AXI_Select.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../src/AXI_Select.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -356,8 +514,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>AXI_Select</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2026-09-25T10:08:33Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2026-09-26T09:20:06Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@52fbd88_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1d1f77a6_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
@@ -368,11 +526,25 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@c402c83_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6734167_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@7e9a951e_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31af537c_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c0ef04_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a7c39ea_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25765209_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c4ebc1f_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@582eddc5_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d3eb143_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ac12793_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47359dec_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37cdc10d_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e0d7923_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f026ad0_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20a060d2_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/AXI_Select</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="65ac05a3"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="340cce11"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="239cb4c5"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="6c1f8258"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="9d024e2e"/>
     </xilinx:packagingInfo>
