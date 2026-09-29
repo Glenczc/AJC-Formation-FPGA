@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat Sep 26 11:02:17 2026
-# Process ID: 16807
+# Start of session at: Tue Sep 29 17:03:42 2026
+# Process ID: 50911
 # Current directory: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/design_1_ControleurVGA_v3_0_0_synth_1
 # Command line: vivado -log design_1_ControleurVGA_v3_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_ControleurVGA_v3_0_0.tcl
 # Log file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/design_1_ControleurVGA_v3_0_0_synth_1/design_1_ControleurVGA_v3_0_0.vds
@@ -13,68 +13,78 @@ source design_1_ControleurVGA_v3_0_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'user.org:user:Commandes:1.0'. The one found in IP location '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/Commandes' will take precedence over the same IP in location /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/Commandes/Commandes_1.0
 Command: synth_design -top design_1_ControleurVGA_v3_0_0 -part xc7z007sclg400-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Device 21-403] Loading part xc7z007sclg400-1
+CRITICAL WARNING: [filemgmt 20-1741] File 'ControleurVGA_v3.vhd' is used by one or more modules, but with different contents, and may lead to unpredictable results:
+* design_1_ControleurVGA_v3_0_0 (/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/1a65/src/ControleurVGA_v3.vhd)
+* design_1_ControleurVGA_v3_0_0 (/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/src/ControleurVGA_v3.vhd)
+Please reset and regenerate these modules to resolve the differences, or synthesize them independently.
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 16947
+INFO: [Synth 8-7075] Helper process launched with PID 51283
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2378.949 ; gain = 0.000 ; free physical = 2707 ; free virtual = 9383
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2378.953 ; gain = 0.000 ; free physical = 918 ; free virtual = 9731
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-2489] overwriting existing secondary unit behavioral [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/src/ControleurVGA_v3.vhd:44]
 INFO: [Synth 8-638] synthesizing module 'design_1_ControleurVGA_v3_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_ControleurVGA_v3_0_0/synth/design_1_ControleurVGA_v3_0_0.vhd:73]
-INFO: [Synth 8-3491] module 'ControleurVGA' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/9030/src/ControleurVGA_v3.vhd:27' bound to instance 'U0' of component 'ControleurVGA' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_ControleurVGA_v3_0_0/synth/design_1_ControleurVGA_v3_0_0.vhd:111]
-INFO: [Synth 8-638] synthesizing module 'ControleurVGA' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/9030/src/ControleurVGA_v3.vhd:44]
-WARNING: [Synth 8-614] signal 'h_cntr_reg' is read in the process but is not in the sensitivity list [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/9030/src/ControleurVGA_v3.vhd:210]
-WARNING: [Synth 8-614] signal 'v_cntr_reg' is read in the process but is not in the sensitivity list [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/9030/src/ControleurVGA_v3.vhd:210]
-WARNING: [Synth 8-614] signal 'tvalid' is read in the process but is not in the sensitivity list [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/9030/src/ControleurVGA_v3.vhd:210]
-INFO: [Synth 8-256] done synthesizing module 'ControleurVGA' (1#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/9030/src/ControleurVGA_v3.vhd:44]
+INFO: [Synth 8-3491] module 'ControleurVGA' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/1a65/src/ControleurVGA_v3.vhd:27' bound to instance 'U0' of component 'ControleurVGA' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_ControleurVGA_v3_0_0/synth/design_1_ControleurVGA_v3_0_0.vhd:111]
+INFO: [Synth 8-638] synthesizing module 'ControleurVGA' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/src/ControleurVGA_v3.vhd:44]
+WARNING: [Synth 8-614] signal 'h_cntr_reg' is read in the process but is not in the sensitivity list [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/src/ControleurVGA_v3.vhd:210]
+WARNING: [Synth 8-614] signal 'v_cntr_reg' is read in the process but is not in the sensitivity list [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/src/ControleurVGA_v3.vhd:210]
+WARNING: [Synth 8-614] signal 'tvalid' is read in the process but is not in the sensitivity list [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/src/ControleurVGA_v3.vhd:210]
+INFO: [Synth 8-256] done synthesizing module 'ControleurVGA' (1#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/src/ControleurVGA_v3.vhd:44]
 INFO: [Synth 8-256] done synthesizing module 'design_1_ControleurVGA_v3_0_0' (2#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_ControleurVGA_v3_0_0/synth/design_1_ControleurVGA_v3_0_0.vhd:73]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2378.949 ; gain = 0.000 ; free physical = 3132 ; free virtual = 9798
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2378.953 ; gain = 0.000 ; free physical = 1575 ; free virtual = 10388
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2378.949 ; gain = 0.000 ; free physical = 3132 ; free virtual = 9805
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2378.953 ; gain = 0.000 ; free physical = 1587 ; free virtual = 10400
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2378.949 ; gain = 0.000 ; free physical = 3132 ; free virtual = 9805
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2378.953 ; gain = 0.000 ; free physical = 1587 ; free virtual = 10400
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2378.949 ; gain = 0.000 ; free physical = 3132 ; free virtual = 9805
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2378.953 ; gain = 0.000 ; free physical = 1587 ; free virtual = 10400
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2469.805 ; gain = 0.000 ; free physical = 3141 ; free virtual = 9815
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2465.809 ; gain = 0.000 ; free physical = 1597 ; free virtual = 10410
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2469.805 ; gain = 0.000 ; free physical = 3141 ; free virtual = 9815
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2465.809 ; gain = 0.000 ; free physical = 1597 ; free virtual = 10410
+CRITICAL WARNING: [filemgmt 20-1741] File 'ControleurVGA_v3.vhd' is used by one or more modules, but with different contents, and may lead to unpredictable results:
+* design_1_ControleurVGA_v3_0_0 (/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/1a65/src/ControleurVGA_v3.vhd)
+* design_1_ControleurVGA_v3_0_0 (/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/src/ControleurVGA_v3.vhd)
+Please reset and regenerate these modules to resolve the differences, or synthesize them independently.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3151 ; free virtual = 9839
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1677 ; free virtual = 10490
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3151 ; free virtual = 9839
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1677 ; free virtual = 10490
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3151 ; free virtual = 9839
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1677 ; free virtual = 10490
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'image_ready_reg' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/9030/src/ControleurVGA_v3.vhd:213]
+WARNING: [Synth 8-327] inferring latch for variable 'image_ready_reg' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ipshared/src/ControleurVGA_v3.vhd:213]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3155 ; free virtual = 9857
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1678 ; free virtual = 10492
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -84,6 +94,7 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 3     
 	                1 Bit    Registers := 4     
 +---Muxes : 
+	   2 Input    4 Bit        Muxes := 3     
 	   2 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -101,25 +112,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3274 ; free virtual = 9973
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1681 ; free virtual = 10498
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3225 ; free virtual = 9960
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1580 ; free virtual = 10396
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3225 ; free virtual = 9960
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1580 ; free virtual = 10396
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3194 ; free virtual = 9928
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1564 ; free virtual = 10380
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -137,37 +148,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3992 ; free virtual = 10702
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1582 ; free virtual = 10398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3992 ; free virtual = 10702
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1582 ; free virtual = 10398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3992 ; free virtual = 10702
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1582 ; free virtual = 10398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3992 ; free virtual = 10702
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1582 ; free virtual = 10398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3992 ; free virtual = 10702
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1582 ; free virtual = 10398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3992 ; free virtual = 10702
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1582 ; free virtual = 10398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -187,7 +198,7 @@ Report Cell Usage:
 |2     |LUT1   |    11|
 |3     |LUT2   |    63|
 |4     |LUT3   |     1|
-|5     |LUT4   |     1|
+|5     |LUT4   |    13|
 |6     |LUT5   |     1|
 |7     |LUT6   |    12|
 |8     |FDCE   |    38|
@@ -195,29 +206,28 @@ Report Cell Usage:
 |10    |LDC    |     1|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 2469.805 ; gain = 90.855 ; free physical = 3992 ; free virtual = 10702
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 2465.809 ; gain = 86.855 ; free physical = 1582 ; free virtual = 10398
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 2469.805 ; gain = 0.000 ; free physical = 4020 ; free virtual = 10730
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 2469.812 ; gain = 90.855 ; free physical = 4020 ; free virtual = 10730
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2465.809 ; gain = 0.000 ; free physical = 1633 ; free virtual = 10450
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 2465.816 ; gain = 86.855 ; free physical = 1633 ; free virtual = 10450
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2469.812 ; gain = 0.000 ; free physical = 4091 ; free virtual = 10802
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2465.816 ; gain = 0.000 ; free physical = 1703 ; free virtual = 10519
 INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2469.812 ; gain = 0.000 ; free physical = 4134 ; free virtual = 10840
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2465.816 ; gain = 0.000 ; free physical = 1647 ; free virtual = 10464
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   LDC => LDCE: 1 instance 
 
 INFO: [Common 17-83] Releasing license: Synthesis
-22 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+22 Infos, 5 Warnings, 3 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:39 . Memory (MB): peak = 2469.812 ; gain = 90.863 ; free physical = 4254 ; free virtual = 10964
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:33 . Memory (MB): peak = 2465.816 ; gain = 86.863 ; free physical = 1742 ; free virtual = 10558
 INFO: [Common 17-1381] The checkpoint '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/design_1_ControleurVGA_v3_0_0_synth_1/design_1_ControleurVGA_v3_0_0.dcp' has been generated.
-WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_ControleurVGA_v3_0_0, cache-ID = 65341651026bf9e0
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.runs/design_1_ControleurVGA_v3_0_0_synth_1/design_1_ControleurVGA_v3_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_ControleurVGA_v3_0_0_utilization_synth.rpt -pb design_1_ControleurVGA_v3_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Sep 26 11:03:11 2026...
+INFO: [Common 17-206] Exiting Vivado at Tue Sep 29 17:04:33 2026...

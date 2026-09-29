@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
---Date        : Sat Sep 26 15:25:15 2026
+--Date        : Tue Sep 29 17:02:50 2026
 --Host        : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -2140,22 +2140,6 @@ architecture STRUCTURE of design_1 is
     clk_in1 : in STD_LOGIC
   );
   end component design_1_clk_wiz_0_clk_wiz_0_0;
-  component design_1_ControleurVGA_v3_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    tdata : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    tvalid : in STD_LOGIC;
-    tready : out STD_LOGIC;
-    tlast : in STD_LOGIC;
-    tuser : in STD_LOGIC;
-    VGA_HS_O : out STD_LOGIC;
-    VGA_VS_O : out STD_LOGIC;
-    VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component design_1_ControleurVGA_v3_0_0;
   component design_1_DMA24bUnit_mm2s_0_0 is
   port (
     ap_clk : in STD_LOGIC;
@@ -2309,6 +2293,22 @@ architecture STRUCTURE of design_1 is
     Res : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_util_vector_logic_0_1;
+  component design_1_ControleurVGA_v3_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    tdata : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    tvalid : in STD_LOGIC;
+    tready : out STD_LOGIC;
+    tlast : in STD_LOGIC;
+    tuser : in STD_LOGIC;
+    VGA_HS_O : out STD_LOGIC;
+    VGA_VS_O : out STD_LOGIC;
+    VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 )
+  );
+  end component design_1_ControleurVGA_v3_0_0;
   signal AXI4_stream_Master_2_0_fulln : STD_LOGIC;
   signal AXI4_stream_Master_2_0_interface_axis_TDATA : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal AXI4_stream_Master_2_0_interface_axis_TLAST : STD_LOGIC;

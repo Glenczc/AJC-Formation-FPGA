@@ -1,0 +1,1 @@
+-wto "03adc44a21dd44d88aea10fbbf520b0b" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "AXI_Select_behav" "xil_defaultlib.AXI_Select" -log "elaborate.log" 

@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-// Date        : Sat Sep 26 11:03:11 2026
+// Date        : Tue Sep 29 17:04:33 2026
 // Host        : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_ControleurVGA_v3_0_0/design_1_ControleurVGA_v3_0_0_sim_netlist.v
@@ -69,8 +69,8 @@ endmodule
 module design_1_ControleurVGA_v3_0_0_ControleurVGA
    (VGA_HS_O,
     VGA_VS_O,
-    VGA_R,
     VGA_B,
+    VGA_R,
     VGA_G,
     tready,
     tvalid,
@@ -79,8 +79,8 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
     tdata);
   output VGA_HS_O;
   output VGA_VS_O;
-  output [3:0]VGA_R;
   output [3:0]VGA_B;
+  output [3:0]VGA_R;
   output [3:0]VGA_G;
   output tready;
   input tvalid;
@@ -268,6 +268,9 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
   wire \v_cntr_reg_reg[8]_i_1_n_7 ;
   wire v_sync_reg;
   wire v_sync_reg_i_1_n_0;
+  wire [3:0]vga_blue_reg;
+  wire [3:0]vga_green_reg;
+  wire [3:0]vga_red_reg;
   wire [3:0]NLW_geqOp__5_carry_O_UNCONNECTED;
   wire [3:2]NLW_geqOp__5_carry__0_CO_UNCONNECTED;
   wire [3:0]NLW_geqOp__5_carry__0_O_UNCONNECTED;
@@ -286,6 +289,114 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
   wire [3:0]NLW_tready_INST_0_i_2_O_UNCONNECTED;
   wire [3:3]\NLW_v_cntr_reg_reg[8]_i_1_CO_UNCONNECTED ;
 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \VGA_B[0]_INST_0 
+       (.I0(image_ready),
+        .I1(ltOp3_in),
+        .I2(ltOp4_in),
+        .I3(vga_blue_reg[0]),
+        .O(VGA_B[0]));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \VGA_B[1]_INST_0 
+       (.I0(image_ready),
+        .I1(ltOp3_in),
+        .I2(ltOp4_in),
+        .I3(vga_blue_reg[1]),
+        .O(VGA_B[1]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \VGA_B[2]_INST_0 
+       (.I0(image_ready),
+        .I1(ltOp3_in),
+        .I2(ltOp4_in),
+        .I3(vga_blue_reg[2]),
+        .O(VGA_B[2]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \VGA_B[3]_INST_0 
+       (.I0(image_ready),
+        .I1(ltOp3_in),
+        .I2(ltOp4_in),
+        .I3(vga_blue_reg[3]),
+        .O(VGA_B[3]));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \VGA_G[0]_INST_0 
+       (.I0(image_ready),
+        .I1(ltOp3_in),
+        .I2(ltOp4_in),
+        .I3(vga_green_reg[0]),
+        .O(VGA_G[0]));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \VGA_G[1]_INST_0 
+       (.I0(image_ready),
+        .I1(ltOp3_in),
+        .I2(ltOp4_in),
+        .I3(vga_green_reg[1]),
+        .O(VGA_G[1]));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \VGA_G[2]_INST_0 
+       (.I0(image_ready),
+        .I1(ltOp3_in),
+        .I2(ltOp4_in),
+        .I3(vga_green_reg[2]),
+        .O(VGA_G[2]));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \VGA_G[3]_INST_0 
+       (.I0(image_ready),
+        .I1(ltOp3_in),
+        .I2(ltOp4_in),
+        .I3(vga_green_reg[3]),
+        .O(VGA_G[3]));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \VGA_R[0]_INST_0 
+       (.I0(image_ready),
+        .I1(ltOp3_in),
+        .I2(ltOp4_in),
+        .I3(vga_red_reg[0]),
+        .O(VGA_R[0]));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \VGA_R[1]_INST_0 
+       (.I0(image_ready),
+        .I1(ltOp3_in),
+        .I2(ltOp4_in),
+        .I3(vga_red_reg[1]),
+        .O(VGA_R[1]));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \VGA_R[2]_INST_0 
+       (.I0(image_ready),
+        .I1(ltOp3_in),
+        .I2(ltOp4_in),
+        .I3(vga_red_reg[2]),
+        .O(VGA_R[2]));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \VGA_R[3]_INST_0 
+       (.I0(image_ready),
+        .I1(ltOp3_in),
+        .I2(ltOp4_in),
+        .I3(vga_red_reg[3]),
+        .O(VGA_R[3]));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 geqOp__5_carry
        (.CI(1'b0),
@@ -1231,7 +1342,7 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
         .CE(1'b1),
         .CLR(reset),
         .D(tdata[0]),
-        .Q(VGA_B[0]));
+        .Q(vga_blue_reg[0]));
   FDCE #(
     .INIT(1'b0)) 
     \vga_blue_reg_reg[1] 
@@ -1239,7 +1350,7 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
         .CE(1'b1),
         .CLR(reset),
         .D(tdata[1]),
-        .Q(VGA_B[1]));
+        .Q(vga_blue_reg[1]));
   FDCE #(
     .INIT(1'b0)) 
     \vga_blue_reg_reg[2] 
@@ -1247,7 +1358,7 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
         .CE(1'b1),
         .CLR(reset),
         .D(tdata[2]),
-        .Q(VGA_B[2]));
+        .Q(vga_blue_reg[2]));
   FDCE #(
     .INIT(1'b0)) 
     \vga_blue_reg_reg[3] 
@@ -1255,7 +1366,7 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
         .CE(1'b1),
         .CLR(reset),
         .D(tdata[3]),
-        .Q(VGA_B[3]));
+        .Q(vga_blue_reg[3]));
   FDCE #(
     .INIT(1'b0)) 
     \vga_green_reg_reg[0] 
@@ -1263,7 +1374,7 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
         .CE(1'b1),
         .CLR(reset),
         .D(tdata[4]),
-        .Q(VGA_G[0]));
+        .Q(vga_green_reg[0]));
   FDCE #(
     .INIT(1'b0)) 
     \vga_green_reg_reg[1] 
@@ -1271,7 +1382,7 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
         .CE(1'b1),
         .CLR(reset),
         .D(tdata[5]),
-        .Q(VGA_G[1]));
+        .Q(vga_green_reg[1]));
   FDCE #(
     .INIT(1'b0)) 
     \vga_green_reg_reg[2] 
@@ -1279,7 +1390,7 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
         .CE(1'b1),
         .CLR(reset),
         .D(tdata[6]),
-        .Q(VGA_G[2]));
+        .Q(vga_green_reg[2]));
   FDCE #(
     .INIT(1'b0)) 
     \vga_green_reg_reg[3] 
@@ -1287,7 +1398,7 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
         .CE(1'b1),
         .CLR(reset),
         .D(tdata[7]),
-        .Q(VGA_G[3]));
+        .Q(vga_green_reg[3]));
   FDCE #(
     .INIT(1'b0)) 
     \vga_red_reg_reg[0] 
@@ -1295,7 +1406,7 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
         .CE(1'b1),
         .CLR(reset),
         .D(tdata[8]),
-        .Q(VGA_R[0]));
+        .Q(vga_red_reg[0]));
   FDCE #(
     .INIT(1'b0)) 
     \vga_red_reg_reg[1] 
@@ -1303,7 +1414,7 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
         .CE(1'b1),
         .CLR(reset),
         .D(tdata[9]),
-        .Q(VGA_R[1]));
+        .Q(vga_red_reg[1]));
   FDCE #(
     .INIT(1'b0)) 
     \vga_red_reg_reg[2] 
@@ -1311,7 +1422,7 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
         .CE(1'b1),
         .CLR(reset),
         .D(tdata[10]),
-        .Q(VGA_R[2]));
+        .Q(vga_red_reg[2]));
   FDCE #(
     .INIT(1'b0)) 
     \vga_red_reg_reg[3] 
@@ -1319,7 +1430,7 @@ module design_1_ControleurVGA_v3_0_0_ControleurVGA
         .CE(1'b1),
         .CLR(reset),
         .D(tdata[11]),
-        .Q(VGA_R[3]));
+        .Q(vga_red_reg[3]));
 endmodule
 `ifndef GLBL
 `define GLBL

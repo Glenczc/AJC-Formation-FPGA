@@ -99,27 +99,18 @@ vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SoCora.gen/sources_1/bd/de
 "../../../bd/design_1/ip/design_1_util_vector_logic_0_2/sim/design_1_util_vector_logic_0_2.v" \
 
 vcom -work xil_defaultlib -93 \
-"../../../bd/design_1/ipshared/9030/src/ControleurVGA_v3.vhd" \
+"../../../bd/design_1/ipshared/1a65/src/ControleurVGA_v3.vhd" \
+"../../../bd/design_1/ipshared/src/ControleurVGA_v3.vhd" \
 "../../../bd/design_1/ip/design_1_ControleurVGA_v3_0_0/sim/design_1_ControleurVGA_v3_0_0.vhd" \
-"../../../bd/design_1/sim/design_1.vhd" \
-"../../../bd/design_1/ipshared/db4a/src/AXI4_stream_Slave.vhd" \
-"../../../bd/design_1/ip/design_1_AXI4_stream_Slave_0_0/sim/design_1_AXI4_stream_Slave_0_0.vhd" \
 
 vlog -work fifo_generator_v13_2_5  -v2k5 "+incdir+../../../../SoCora.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../SoCora.gen/sources_1/bd/design_1/ipshared/34f8/hdl" "+incdir+/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/simulation/fifo_generator_vlog_beh.v" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/276e/simulation/fifo_generator_vlog_beh.v" \
 
 vcom -work fifo_generator_v13_2_5 -93 \
-"../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/hdl/fifo_generator_v13_2_rfs.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/276e/hdl/fifo_generator_v13_2_rfs.vhd" \
 
 vlog -work fifo_generator_v13_2_5  -v2k5 "+incdir+../../../../SoCora.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../SoCora.gen/sources_1/bd/design_1/ipshared/34f8/hdl" "+incdir+/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../../SoCora.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/hdl/fifo_generator_v13_2_rfs.v" \
-
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SoCora.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../SoCora.gen/sources_1/bd/design_1/ipshared/34f8/hdl" "+incdir+/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
-
-vcom -work xil_defaultlib -93 \
-"../../../bd/design_1/ipshared/fa01/src/AXI4_stream_Master_24b.vhd" \
-"../../../bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/sim/design_1_AXI4_stream_Master_2_0_0.vhd" \
+"../../../../SoCora.gen/sources_1/bd/design_1/ipshared/276e/hdl/fifo_generator_v13_2_rfs.v" \
 
 vlog -work axi_clock_converter_v2_1_21  -v2k5 "+incdir+../../../../SoCora.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../SoCora.gen/sources_1/bd/design_1/ipshared/34f8/hdl" "+incdir+/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/xilinx_vip/include" \
 "../../../../SoCora.gen/sources_1/bd/design_1/ipshared/1304/hdl/axi_clock_converter_v2_1_vl_rfs.v" \
@@ -148,6 +139,9 @@ vlog -work axi_dwidth_converter_v2_1_22  -v2k5 "+incdir+../../../../SoCora.gen/s
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SoCora.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../SoCora.gen/sources_1/bd/design_1/ipshared/34f8/hdl" "+incdir+/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_auto_ds_0/sim/design_1_auto_ds_0.v" \
 "../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+
+vcom -work xil_defaultlib -93 \
+"../../../bd/design_1/sim/design_1.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

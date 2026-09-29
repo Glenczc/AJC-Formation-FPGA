@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Sat Sep 26 11:03:11 2026
+-- Date        : Tue Sep 29 17:04:33 2026
 -- Host        : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/DMA_TPG_AXISelect/SoCora.gen/sources_1/bd/design_1/ip/design_1_ControleurVGA_v3_0_0/design_1_ControleurVGA_v3_0_0_sim_netlist.vhdl
@@ -18,8 +18,8 @@ entity design_1_ControleurVGA_v3_0_0_ControleurVGA is
   port (
     VGA_HS_O : out STD_LOGIC;
     VGA_VS_O : out STD_LOGIC;
-    VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
     VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
     VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 );
     tready : out STD_LOGIC;
     tvalid : in STD_LOGIC;
@@ -202,6 +202,9 @@ architecture STRUCTURE of design_1_ControleurVGA_v3_0_0_ControleurVGA is
   signal \v_cntr_reg_reg[8]_i_1_n_7\ : STD_LOGIC;
   signal v_sync_reg : STD_LOGIC;
   signal v_sync_reg_i_1_n_0 : STD_LOGIC;
+  signal vga_blue_reg : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal vga_green_reg : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal vga_red_reg : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_geqOp__5_carry_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_geqOp__5_carry__0_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_geqOp__5_carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -219,6 +222,19 @@ architecture STRUCTURE of design_1_ControleurVGA_v3_0_0_ControleurVGA is
   signal NLW_tready_INST_0_i_1_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_tready_INST_0_i_2_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_v_cntr_reg_reg[8]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
+  attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of \VGA_B[0]_INST_0\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \VGA_B[1]_INST_0\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \VGA_B[2]_INST_0\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \VGA_B[3]_INST_0\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \VGA_G[0]_INST_0\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \VGA_G[1]_INST_0\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \VGA_G[2]_INST_0\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \VGA_G[3]_INST_0\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \VGA_R[0]_INST_0\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \VGA_R[1]_INST_0\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \VGA_R[2]_INST_0\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \VGA_R[3]_INST_0\ : label is "soft_lutpair2";
   attribute COMPARATOR_THRESHOLD : integer;
   attribute COMPARATOR_THRESHOLD of \geqOp__5_carry\ : label is 11;
   attribute COMPARATOR_THRESHOLD of \geqOp__5_carry__0\ : label is 11;
@@ -240,6 +256,138 @@ architecture STRUCTURE of design_1_ControleurVGA_v3_0_0_ControleurVGA is
   attribute ADDER_THRESHOLD of \v_cntr_reg_reg[4]_i_1\ : label is 11;
   attribute ADDER_THRESHOLD of \v_cntr_reg_reg[8]_i_1\ : label is 11;
 begin
+\VGA_B[0]_INST_0\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => image_ready,
+      I1 => ltOp3_in,
+      I2 => ltOp4_in,
+      I3 => vga_blue_reg(0),
+      O => VGA_B(0)
+    );
+\VGA_B[1]_INST_0\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => image_ready,
+      I1 => ltOp3_in,
+      I2 => ltOp4_in,
+      I3 => vga_blue_reg(1),
+      O => VGA_B(1)
+    );
+\VGA_B[2]_INST_0\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => image_ready,
+      I1 => ltOp3_in,
+      I2 => ltOp4_in,
+      I3 => vga_blue_reg(2),
+      O => VGA_B(2)
+    );
+\VGA_B[3]_INST_0\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => image_ready,
+      I1 => ltOp3_in,
+      I2 => ltOp4_in,
+      I3 => vga_blue_reg(3),
+      O => VGA_B(3)
+    );
+\VGA_G[0]_INST_0\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => image_ready,
+      I1 => ltOp3_in,
+      I2 => ltOp4_in,
+      I3 => vga_green_reg(0),
+      O => VGA_G(0)
+    );
+\VGA_G[1]_INST_0\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => image_ready,
+      I1 => ltOp3_in,
+      I2 => ltOp4_in,
+      I3 => vga_green_reg(1),
+      O => VGA_G(1)
+    );
+\VGA_G[2]_INST_0\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => image_ready,
+      I1 => ltOp3_in,
+      I2 => ltOp4_in,
+      I3 => vga_green_reg(2),
+      O => VGA_G(2)
+    );
+\VGA_G[3]_INST_0\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => image_ready,
+      I1 => ltOp3_in,
+      I2 => ltOp4_in,
+      I3 => vga_green_reg(3),
+      O => VGA_G(3)
+    );
+\VGA_R[0]_INST_0\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => image_ready,
+      I1 => ltOp3_in,
+      I2 => ltOp4_in,
+      I3 => vga_red_reg(0),
+      O => VGA_R(0)
+    );
+\VGA_R[1]_INST_0\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => image_ready,
+      I1 => ltOp3_in,
+      I2 => ltOp4_in,
+      I3 => vga_red_reg(1),
+      O => VGA_R(1)
+    );
+\VGA_R[2]_INST_0\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => image_ready,
+      I1 => ltOp3_in,
+      I2 => ltOp4_in,
+      I3 => vga_red_reg(2),
+      O => VGA_R(2)
+    );
+\VGA_R[3]_INST_0\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => image_ready,
+      I1 => ltOp3_in,
+      I2 => ltOp4_in,
+      I3 => vga_red_reg(3),
+      O => VGA_R(3)
+    );
 \geqOp__5_carry\: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
@@ -1686,7 +1834,7 @@ v_sync_reg_reg: unisim.vcomponents.FDPE
       CE => '1',
       CLR => reset,
       D => tdata(0),
-      Q => VGA_B(0)
+      Q => vga_blue_reg(0)
     );
 \vga_blue_reg_reg[1]\: unisim.vcomponents.FDCE
     generic map(
@@ -1697,7 +1845,7 @@ v_sync_reg_reg: unisim.vcomponents.FDPE
       CE => '1',
       CLR => reset,
       D => tdata(1),
-      Q => VGA_B(1)
+      Q => vga_blue_reg(1)
     );
 \vga_blue_reg_reg[2]\: unisim.vcomponents.FDCE
     generic map(
@@ -1708,7 +1856,7 @@ v_sync_reg_reg: unisim.vcomponents.FDPE
       CE => '1',
       CLR => reset,
       D => tdata(2),
-      Q => VGA_B(2)
+      Q => vga_blue_reg(2)
     );
 \vga_blue_reg_reg[3]\: unisim.vcomponents.FDCE
     generic map(
@@ -1719,7 +1867,7 @@ v_sync_reg_reg: unisim.vcomponents.FDPE
       CE => '1',
       CLR => reset,
       D => tdata(3),
-      Q => VGA_B(3)
+      Q => vga_blue_reg(3)
     );
 \vga_green_reg_reg[0]\: unisim.vcomponents.FDCE
     generic map(
@@ -1730,7 +1878,7 @@ v_sync_reg_reg: unisim.vcomponents.FDPE
       CE => '1',
       CLR => reset,
       D => tdata(4),
-      Q => VGA_G(0)
+      Q => vga_green_reg(0)
     );
 \vga_green_reg_reg[1]\: unisim.vcomponents.FDCE
     generic map(
@@ -1741,7 +1889,7 @@ v_sync_reg_reg: unisim.vcomponents.FDPE
       CE => '1',
       CLR => reset,
       D => tdata(5),
-      Q => VGA_G(1)
+      Q => vga_green_reg(1)
     );
 \vga_green_reg_reg[2]\: unisim.vcomponents.FDCE
     generic map(
@@ -1752,7 +1900,7 @@ v_sync_reg_reg: unisim.vcomponents.FDPE
       CE => '1',
       CLR => reset,
       D => tdata(6),
-      Q => VGA_G(2)
+      Q => vga_green_reg(2)
     );
 \vga_green_reg_reg[3]\: unisim.vcomponents.FDCE
     generic map(
@@ -1763,7 +1911,7 @@ v_sync_reg_reg: unisim.vcomponents.FDPE
       CE => '1',
       CLR => reset,
       D => tdata(7),
-      Q => VGA_G(3)
+      Q => vga_green_reg(3)
     );
 \vga_red_reg_reg[0]\: unisim.vcomponents.FDCE
     generic map(
@@ -1774,7 +1922,7 @@ v_sync_reg_reg: unisim.vcomponents.FDPE
       CE => '1',
       CLR => reset,
       D => tdata(8),
-      Q => VGA_R(0)
+      Q => vga_red_reg(0)
     );
 \vga_red_reg_reg[1]\: unisim.vcomponents.FDCE
     generic map(
@@ -1785,7 +1933,7 @@ v_sync_reg_reg: unisim.vcomponents.FDPE
       CE => '1',
       CLR => reset,
       D => tdata(9),
-      Q => VGA_R(1)
+      Q => vga_red_reg(1)
     );
 \vga_red_reg_reg[2]\: unisim.vcomponents.FDCE
     generic map(
@@ -1796,7 +1944,7 @@ v_sync_reg_reg: unisim.vcomponents.FDPE
       CE => '1',
       CLR => reset,
       D => tdata(10),
-      Q => VGA_R(2)
+      Q => vga_red_reg(2)
     );
 \vga_red_reg_reg[3]\: unisim.vcomponents.FDCE
     generic map(
@@ -1807,7 +1955,7 @@ v_sync_reg_reg: unisim.vcomponents.FDPE
       CE => '1',
       CLR => reset,
       D => tdata(11),
-      Q => VGA_R(3)
+      Q => vga_red_reg(3)
     );
 end STRUCTURE;
 library IEEE;

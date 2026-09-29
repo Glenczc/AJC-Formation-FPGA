@@ -14,7 +14,6 @@
       "processing_system7_0": "",
       "AXI4_stream_Master_2_0": "",
       "clk_wiz_0_clk_wiz_0": "",
-      "ControleurVGA_v3_0": "",
       "DMA24bUnit_mm2s_0": "",
       "TPG_0": "",
       "axi_mem_intercon": {
@@ -37,7 +36,8 @@
           "auto_pc": ""
         }
       },
-      "util_vector_logic_0": ""
+      "util_vector_logic_0": "",
+      "ControleurVGA_v3_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1928,12 +1928,6 @@
         "xci_path": "ip/design_1_clk_wiz_0_clk_wiz_0_0/design_1_clk_wiz_0_clk_wiz_0_0.xci",
         "inst_hier_path": "clk_wiz_0_clk_wiz_0"
       },
-      "ControleurVGA_v3_0": {
-        "vlnv": "user.org:user:ControleurVGA_v3:1.0",
-        "xci_name": "design_1_ControleurVGA_v3_0_0",
-        "xci_path": "ip/design_1_ControleurVGA_v3_0_0/design_1_ControleurVGA_v3_0_0.xci",
-        "inst_hier_path": "ControleurVGA_v3_0"
-      },
       "DMA24bUnit_mm2s_0": {
         "vlnv": "user.org:user:DMA24bUnit_mm2s:1.0",
         "xci_name": "design_1_DMA24bUnit_mm2s_0_0",
@@ -2145,18 +2139,6 @@
               }
             },
             "interface_nets": {
-              "auto_cc_to_auto_ds": {
-                "interface_ports": [
-                  "auto_cc/M_AXI",
-                  "auto_ds/S_AXI"
-                ]
-              },
-              "s00_couplers_to_auto_cc": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_cc/S_AXI"
-                ]
-              },
               "auto_ds_to_auto_pc": {
                 "interface_ports": [
                   "auto_ds/M_AXI",
@@ -2167,6 +2149,18 @@
                 "interface_ports": [
                   "M_AXI",
                   "auto_pc/M_AXI"
+                ]
+              },
+              "auto_cc_to_auto_ds": {
+                "interface_ports": [
+                  "auto_cc/M_AXI",
+                  "auto_ds/S_AXI"
+                ]
+              },
+              "s00_couplers_to_auto_cc": {
+                "interface_ports": [
+                  "S_AXI",
+                  "auto_cc/S_AXI"
                 ]
               }
             },
@@ -2203,16 +2197,16 @@
           }
         },
         "interface_nets": {
-          "s00_couplers_to_axi_mem_intercon": {
-            "interface_ports": [
-              "M00_AXI",
-              "s00_couplers/M_AXI"
-            ]
-          },
           "axi_mem_intercon_to_s00_couplers": {
             "interface_ports": [
               "S00_AXI",
               "s00_couplers/S_AXI"
+            ]
+          },
+          "s00_couplers_to_axi_mem_intercon": {
+            "interface_ports": [
+              "M00_AXI",
+              "s00_couplers/M_AXI"
             ]
           }
         },
@@ -2469,12 +2463,6 @@
               }
             },
             "interface_nets": {
-              "auto_cc_to_auto_pc": {
-                "interface_ports": [
-                  "auto_cc/M_AXI",
-                  "auto_pc/S_AXI"
-                ]
-              },
               "s00_couplers_to_auto_cc": {
                 "interface_ports": [
                   "S_AXI",
@@ -2485,6 +2473,12 @@
                 "interface_ports": [
                   "M_AXI",
                   "auto_pc/M_AXI"
+                ]
+              },
+              "auto_cc_to_auto_pc": {
+                "interface_ports": [
+                  "auto_cc/M_AXI",
+                  "auto_pc/S_AXI"
                 ]
               }
             },
@@ -2572,6 +2566,12 @@
             "value": "1"
           }
         }
+      },
+      "ControleurVGA_v3_0": {
+        "vlnv": "user.org:user:ControleurVGA_v3:1.0",
+        "xci_name": "design_1_ControleurVGA_v3_0_0",
+        "xci_path": "ip/design_1_ControleurVGA_v3_0_0/design_1_ControleurVGA_v3_0_0.xci",
+        "inst_hier_path": "ControleurVGA_v3_0"
       }
     },
     "interface_nets": {
@@ -2654,10 +2654,10 @@
           "TPG_0/clk",
           "DMA24bUnit_mm2s_0/ap_clk",
           "AXI4_stream_Master_2_0/clk",
-          "ControleurVGA_v3_0/clk",
           "axi_mem_intercon/S00_ACLK",
           "Commandes_0/s00_axi_aclk",
-          "ps7_0_axi_periph/M00_ACLK"
+          "ps7_0_axi_periph/M00_ACLK",
+          "ControleurVGA_v3_0/clk"
         ]
       },
       "TPG_0_pixel": {
@@ -2681,10 +2681,10 @@
       "reset_0_1": {
         "ports": [
           "reset",
-          "ControleurVGA_v3_0/reset",
           "AXI4_stream_Master_2_0/reset",
           "TPG_0/reset",
-          "reset_not/Op1"
+          "reset_not/Op1",
+          "ControleurVGA_v3_0/reset"
         ]
       },
       "util_vector_logic_0_Res": {

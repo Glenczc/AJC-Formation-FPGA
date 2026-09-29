@@ -189,10 +189,6 @@ proc create_root_design { parentCell } {
   # Create instance: ControleurVGA_v3_0, and set properties
   set ControleurVGA_v3_0 [ create_bd_cell -type ip -vlnv user.org:user:ControleurVGA_v3:1.0 ControleurVGA_v3_0 ]
 
-  set_property -dict [ list \
-   CONFIG.POLARITY {ACTIVE_HIGH} \
- ] [get_bd_pins /ControleurVGA_v3_0/reset]
-
   # Create instance: DMA24bUnit_mm2s_0, and set properties
   set DMA24bUnit_mm2s_0 [ create_bd_cell -type ip -vlnv user.org:user:DMA24bUnit_mm2s:1.0 DMA24bUnit_mm2s_0 ]
 
