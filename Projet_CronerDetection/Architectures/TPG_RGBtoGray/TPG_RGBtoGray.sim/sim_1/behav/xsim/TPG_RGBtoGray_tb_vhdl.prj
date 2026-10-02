@@ -1,0 +1,16 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../TPG_RGBtoGray.ip_user_files/bd/design_1/ipshared/779f/src/TPG.vhd" \
+"../../../../TPG_RGBtoGray.ip_user_files/bd/design_1/ipshared/src/TPG.vhd" \
+"../../../../TPG_RGBtoGray.ip_user_files/bd/design_1/ip/design_1_TPG_0_0/sim/design_1_TPG_0_0.vhd" \
+"../../../../TPG_RGBtoGray.ip_user_files/bd/design_1/ipshared/fa01/src/AXI4_stream_Master_24b.vhd" \
+"../../../../TPG_RGBtoGray.ip_user_files/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/sim/design_1_AXI4_stream_Master_2_0_0.vhd" \
+"../../../../TPG_RGBtoGray.ip_user_files/bd/design_1/ipshared/1a00/src/RGBtoGray.vhd" \
+"../../../../TPG_RGBtoGray.ip_user_files/bd/design_1/ipshared/src/RGBtoGray.vhd" \
+"../../../../TPG_RGBtoGray.ip_user_files/bd/design_1/ip/design_1_RGBtoGray_0_0/sim/design_1_RGBtoGray_0_0.vhd" \
+"../../../../TPG_RGBtoGray.ip_user_files/bd/design_1/sim/design_1.vhd" \
+"../../../../TPG_RGBtoGray.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd" \
+"../../../../../src/TPG_RGBtoGray_tb.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,13 @@
+#
+# An unexpected error has occurred (6)
+#
+Stack:
+/lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x74a29b045330]
+/lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x11c) [0x74a29b09ec0c]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0x1e) [0x74a29b04527e]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0xdf) [0x74a29b0288ff]
+/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/lib/lnx64.o/librdi_common.so(HUTFileUtils::checkRegistry_real(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x1785) [0x74a29a28bc75]
+/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/lib/lnx64.o/librdi_common.so(HUTFileUtils::doWork()+0xe0) [0x74a29a28bf60]
+/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/lib/lnx64.o/librdi_common.so(HUTFileUtils::WorkThreadProc(void*)+0x9) [0x74a29a28c0c9]
+/lib/x86_64-linux-gnu/libc.so.6(+0x9cb84) [0x74a29b09cb84]
+/lib/x86_64-linux-gnu/libc.so.6(+0x129ecc) [0x74a29b129ecc]

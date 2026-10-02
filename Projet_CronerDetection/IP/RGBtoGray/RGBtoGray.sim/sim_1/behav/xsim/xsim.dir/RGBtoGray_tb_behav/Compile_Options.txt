@@ -1,0 +1,1 @@
+-wto "6b2597bbdbe249a6bd7b8f0dd3bce309" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "RGBtoGray_tb_behav" "xil_defaultlib.RGBtoGray_tb" -log "elaborate.log" 
