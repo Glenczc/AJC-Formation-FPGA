@@ -1,8 +1,47 @@
 Vivado Simulator 2020.2
 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
-Running: /media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 7481ecd8a6bb490f9664c7fc081382f8 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L fifo_generator_v13_2_5 -L xlconstant_v1_1_7 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot TPG_RGBtoGray_tb_behav xil_defaultlib.TPG_RGBtoGray_tb xil_defaultlib.glbl -log elaborate.log 
+Running: /media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 7481ecd8a6bb490f9664c7fc081382f8 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L fifo_generator_v13_2_5 -L xlconcat_v2_1_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot TPG_RGBtoGray_tb_behav xil_defaultlib.TPG_RGBtoGray_tb xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.math_real
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module fifo_generator_v13_2_5.fifo_generator_v13_2_5_bhv_ver_s...
+Compiling module fifo_generator_v13_2_5.fifo_generator_v13_2_5_CONV_VER(...
+Compiling module fifo_generator_v13_2_5.fifo_generator_vlog_beh(C_COMMON...
+Compiling module xil_defaultlib.fifo_generator_0
+Compiling architecture behavioral of entity xil_defaultlib.AXI4_stream_Master [axi4_stream_master_default]
+Compiling architecture design_1_axi4_stream_master_2_0_0_arch of entity xil_defaultlib.design_1_AXI4_stream_Master_2_0_0 [design_1_axi4_stream_master_2_0_...]
+Compiling architecture design_1_axi4_stream_master_2_2_0_arch of entity xil_defaultlib.design_1_AXI4_stream_Master_2_2_0 [design_1_axi4_stream_master_2_2_...]
+Compiling architecture behavioral of entity xil_defaultlib.AXI_Select [axi_select_default]
+Compiling architecture design_1_axi_select_0_0_arch of entity xil_defaultlib.design_1_AXI_Select_0_0 [design_1_axi_select_0_0_default]
+Compiling architecture behavioral of entity xil_defaultlib.ControleurVGA [controleurvga_default]
+Compiling architecture design_1_controleurvga_v3_0_3_arch of entity xil_defaultlib.design_1_ControleurVGA_v3_0_3 [design_1_controleurvga_v3_0_3_de...]
+Compiling architecture behavioral of entity xil_defaultlib.RGBtoGray [rgbtogray_default]
+Compiling architecture design_1_rgbtogray_0_0_arch of entity xil_defaultlib.design_1_RGBtoGray_0_0 [design_1_rgbtogray_0_0_default]
+Compiling architecture behavioral of entity xil_defaultlib.TPG [tpg_default]
+Compiling architecture design_1_tpg_0_0_arch of entity xil_defaultlib.design_1_TPG_0_0 [design_1_tpg_0_0_default]
+Compiling architecture design_1_tpg_1_0_arch of entity xil_defaultlib.design_1_TPG_1_0 [design_1_tpg_1_0_default]
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=36.5,...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.design_1_clk_wiz_0_clk_wiz_0_0
+Compiling module xlconcat_v2_1_4.xlconcat_v2_1_4_xlconcat(IN0_WID...
+Compiling module xil_defaultlib.design_1_xlconcat_0_0
+Compiling architecture structure of entity xil_defaultlib.design_1 [design_1_default]
+Compiling architecture structure of entity xil_defaultlib.design_1_wrapper [design_1_wrapper_default]
+Compiling architecture behavioral of entity xil_defaultlib.tpg_rgbtogray_tb
+Built simulation snapshot TPG_RGBtoGray_tb_behav

@@ -28,6 +28,7 @@ entity ControleurVGA is
     Port ( clk          : in STD_LOGIC; --25 MHz clock
            reset        : in STD_LOGIC;
            
+           --AXI4 stream in
            tdata        : in  STD_LOGIC_VECTOR (23 downto 0);-- [0;7]:Red [8;15]:Green [16;23]:Blue 
            tvalid       : in std_logic;
            tready       : out STD_LOGIC;
@@ -44,7 +45,7 @@ end ControleurVGA;
 architecture Behavioral of ControleurVGA is
 
 
---Sync Generation constants
+--Constantes de synchronisation
 
 --***640x480@60Hz***--  Requires 25 MHz clock
 constant FRAME_WIDTH : natural := 640;
@@ -61,78 +62,20 @@ constant V_MAX : natural := 525; --V total period (lines)
 constant H_POL : std_logic := '0';
 constant V_POL : std_logic := '0';
 
-----***800x600@60Hz***--  Requires 40 MHz clock
---constant FRAME_WIDTH : natural := 800;
---constant FRAME_HEIGHT : natural := 600;
---
---constant H_FP : natural := 40; --H front porch width (pixels)
---constant H_PW : natural := 128; --H sync pulse width (pixels)
---constant H_MAX : natural := 1056; --H total period (pixels)
---
---constant V_FP : natural := 1; --V front porch width (lines)
---constant V_PW : natural := 4; --V sync pulse width (lines)
---constant V_MAX : natural := 628; --V total period (lines)
---
---constant H_POL : std_logic := '1';
---constant V_POL : std_logic := '1';
-
-
-----***1280x720@60Hz***-- Requires 74.25 MHz clock
---constant FRAME_WIDTH : natural := 1280;
---constant FRAME_HEIGHT : natural := 720;
---
---constant H_FP : natural := 110; --H front porch width (pixels)
---constant H_PW : natural := 40; --H sync pulse width (pixels)
---constant H_MAX : natural := 1650; --H total period (pixels)
---
---constant V_FP : natural := 5; --V front porch width (lines)
---constant V_PW : natural := 5; --V sync pulse width (lines)
---constant V_MAX : natural := 750; --V total period (lines)
---
---constant H_POL : std_logic := '1';
---constant V_POL : std_logic := '1';
-
-----***1280x1024@60Hz***-- Requires 108 MHz clock
---constant FRAME_WIDTH : natural := 1280;
---constant FRAME_HEIGHT : natural := 1024;
-
---constant H_FP : natural := 48; --H front porch width (pixels)
---constant H_PW : natural := 112; --H sync pulse width (pixels)
---constant H_MAX : natural := 1688; --H total period (pixels)
-
---constant V_FP : natural := 1; --V front porch width (lines)
---constant V_PW : natural := 3; --V sync pulse width (lines)
---constant V_MAX : natural := 1066; --V total period (lines)
-
---constant H_POL : std_logic := '1';
---constant V_POL : std_logic := '1';
-
-----***1920x1080@60Hz***-- Requires 148.5 MHz clk
---constant FRAME_WIDTH : natural := 1920;
---constant FRAME_HEIGHT : natural := 1080;
-
---constant H_FP : natural := 88; --H front porch width (pixels)
---constant H_PW : natural := 44; --H sync pulse width (pixels)
---constant H_MAX : natural := 2200; --H total period (pixels)
-
---constant V_FP : natural := 4; --V front porch width (lines)
---constant V_PW : natural := 5; --V sync pulse width (lines)
---constant V_MAX : natural := 1125; --V total period (lines)
-
---constant H_POL : std_logic := '1';
---constant V_POL : std_logic := '1';
-
-signal active : std_logic;
-signal image_ready : std_logic := '0';
+--Compteurs de synchronisation
 
 signal h_cntr_reg : std_logic_vector(11 downto 0) := (others =>'0');
 signal v_cntr_reg : std_logic_vector(11 downto 0) := (others =>'0');
+
+--Signaux de synchronisation
 
 signal h_sync_reg : std_logic := not(H_POL);
 signal v_sync_reg : std_logic := not(V_POL);
 
 signal h_sync_dly_reg : std_logic := not(H_POL);
 signal v_sync_dly_reg : std_logic :=  not(V_POL);
+
+--Signaux RGB
 
 signal vga_red_reg : std_logic_vector(3 downto 0) := (others =>'0');
 signal vga_green_reg : std_logic_vector(3 downto 0) := (others =>'0');
@@ -142,12 +85,20 @@ signal vga_red : std_logic_vector(3 downto 0);
 signal vga_green : std_logic_vector(3 downto 0);
 signal vga_blue : std_logic_vector(3 downto 0);
 
+--Signaux de gestion du tready
+
+signal active : std_logic;
+signal image_ready : std_logic := '0';
+signal init_ready : std_logic :='0';
+signal init_counter : std_logic_vector(2 downto 0) := (others => '0');
+signal resync : std_logic := '0';
+
 begin
                 
   
- ------------------------------------------------------
- -------         SYNC GENERATION                 ------
- ------------------------------------------------------
+------------------------------------------------------
+-------         SYNC GENERATION                 ------
+------------------------------------------------------
  
   process (clk,reset)
   begin
@@ -206,15 +157,27 @@ begin
     end if;
   end process;
   
-  
+  --gestion du signal image_ready
+  --Si les pixels ne sont pas prêt au moment d'afficher une nouvelle image à l'écran, 
+  --Alors on bloque avec tready<=0 et on attends l'image suivante
   process(clk, reset)
   begin
     if (reset = '1') then
         image_ready <= '0';
-    elsif ((h_cntr_reg = (H_MAX - 1)) and (v_cntr_reg = (V_MAX - 1))) then
-        image_ready <= tvalid;
+        resync <= '0';
+    elsif(rising_edge(clk))then
+        if ((h_cntr_reg = (H_MAX - 1)) and (v_cntr_reg = (V_MAX - 1))) then
+            image_ready <= tvalid;
+            resync <= not tvalid;
+        else resync <= '0';
+        end if;
     end if;
   end process;
+
+------------------------------------------------------
+-------        Gestion des Sorties              ------
+-------       et partie combinatoire            ------
+------------------------------------------------------
   
   
   active <= '1' when ((h_cntr_reg < FRAME_WIDTH) and (v_cntr_reg < FRAME_HEIGHT)) else '0';
@@ -223,6 +186,7 @@ begin
   vga_green <= tdata(15 downto 12);
   vga_red <= tdata(23 downto 20);
 
+  --signaux de delais
   process (clk,reset)
   begin
     if (reset = '1') then
@@ -239,13 +203,31 @@ begin
       vga_blue_reg <= vga_blue;
     end if;
   end process;
+  
+--  process(clk,reset)
+--  begin
+--    if (reset = '1') then
+--        init_ready <= '0';
+--        init_counter <= "100";
+--    elsif(rising_edge(clk)) then
+--        if(init_counter > 0) then
+--            init_ready <= '1';
+--            init_counter <= init_counter - 1;
+--        else init_ready <= '0';
+--        end if;
+--    end if;
+-- end process;
+    
 
-  tready <= '1' when (active = '1' and image_ready = '1') else '0';
+  tready <= '1' when (active = '1' and image_ready = '1') else resync; --else init_ready
 
   VGA_HS_O <= h_sync_dly_reg;
   VGA_VS_O <= v_sync_dly_reg;
-  VGA_R <= vga_red_reg;
-  VGA_G <= vga_green_reg;
-  VGA_B <= vga_blue_reg;
+
+  --placement des couleurs en sortie
+  --s'il n'y a pas de pixels à afficher, on envoie 0
+  VGA_R <= vga_red_reg when (active = '1' and image_ready = '1') else (others => '0');
+  VGA_G <= vga_green_reg when (active = '1' and image_ready = '1') else (others => '0');
+  VGA_B <= vga_blue_reg when (active = '1' and image_ready = '1') else (others => '0');
 
 end Behavioral;

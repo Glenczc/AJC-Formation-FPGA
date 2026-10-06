@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="ControleurVGA_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="ControleurVGA_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="60001000001fs"></ZoomEndTime>
+      <Cursor1Time time="49248100000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="145"></NameColumnWidth>
+      <ValueColumnWidth column_width="143"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wave_markers>
+      <marker label="" time="32448100000" />
+   </wave_markers>
+   <wvobject type="logic" fp_name="/ControleurVGA_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ControleurVGA_tb/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/ControleurVGA_tb/pixel">
+      <obj_property name="ElementShortName">pixel[23:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ControleurVGA_tb/valid">
+      <obj_property name="ElementShortName">valid</obj_property>
+      <obj_property name="ObjectShortName">valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ControleurVGA_tb/ready">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ControleurVGA_tb/last">
+      <obj_property name="ElementShortName">last</obj_property>
+      <obj_property name="ObjectShortName">last</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ControleurVGA_tb/user">
+      <obj_property name="ElementShortName">user</obj_property>
+      <obj_property name="ObjectShortName">user</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider296" type="divider">
+      <obj_property name="label">INPUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ControleurVGA_tb/dut/image_ready">
+      <obj_property name="ElementShortName">image_ready</obj_property>
+      <obj_property name="ObjectShortName">image_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ControleurVGA_tb/dut/resync">
+      <obj_property name="ElementShortName">resync</obj_property>
+      <obj_property name="ObjectShortName">resync</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider296" type="divider">
+      <obj_property name="label">OUTPUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ControleurVGA_tb/VGA_HS_O">
+      <obj_property name="ElementShortName">VGA_HS_O</obj_property>
+      <obj_property name="ObjectShortName">VGA_HS_O</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/ControleurVGA_tb/VGA_VS_O">
+      <obj_property name="ElementShortName">VGA_VS_O</obj_property>
+      <obj_property name="ObjectShortName">VGA_VS_O</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/ControleurVGA_tb/VGA_R">
+      <obj_property name="ElementShortName">VGA_R[3:0]</obj_property>
+      <obj_property name="ObjectShortName">VGA_R[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/ControleurVGA_tb/VGA_G">
+      <obj_property name="ElementShortName">VGA_G[3:0]</obj_property>
+      <obj_property name="ObjectShortName">VGA_G[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/ControleurVGA_tb/VGA_B">
+      <obj_property name="ElementShortName">VGA_B[3:0]</obj_property>
+      <obj_property name="ObjectShortName">VGA_B[3:0]</obj_property>
+   </wvobject>
+</wave_config>

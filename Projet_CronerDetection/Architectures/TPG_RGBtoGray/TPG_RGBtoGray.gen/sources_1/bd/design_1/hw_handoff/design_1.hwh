@@ -1,21 +1,52 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Oct  2 10:52:17 2026" VIVADOVERSION="2020.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Oct  5 16:49:37 2026" VIVADOVERSION="2020.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z007s" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk_i" SIGIS="clk" SIGNAME="External_Ports_clk_i">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="TPG_0" PORT="clk"/>
-        <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="clk"/>
-        <CONNECTION INSTANCE="RGBtoGray_0" PORT="clk"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="TPG_0" PORT="reset"/>
         <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="reset"/>
+        <CONNECTION INSTANCE="AXI4_stream_Master_2_2" PORT="reset"/>
         <CONNECTION INSTANCE="RGBtoGray_0" PORT="reset"/>
+        <CONNECTION INSTANCE="TPG_0" PORT="reset"/>
+        <CONNECTION INSTANCE="TPG_1" PORT="reset"/>
+        <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="reset"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="CLK_I" SIGIS="undef" SIGNAME="External_Ports_CLK_I">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="clk_wiz" PORT="clk_in1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="chanel_select" SIGIS="undef" SIGNAME="External_Ports_chanel_select">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="AXI_Select_0" PORT="chanel_select"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="VGA_B" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_B">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="VGA_B"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="VGA_R" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_R">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="VGA_R"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="VGA_VS_O" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_VS_O">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="VGA_VS_O"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="VGA_HS_O" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_HS_O">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="VGA_HS_O"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="VGA_G" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_G">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="VGA_G"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -32,9 +63,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_i">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="clk_i"/>
+            <CONNECTION INSTANCE="clk_wiz" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
@@ -93,7 +124,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="design_1_clk_0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -108,16 +139,353 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/RGBtoGray_0" HWVERSION="1.0" INSTANCE="RGBtoGray_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="RGBtoGray" VLNV="user.org:user:RGBtoGray:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/AXI4_stream_Master_2_2" HWVERSION="1.0" INSTANCE="AXI4_stream_Master_2_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI4_stream_Master_24b" VLNV="user.org:user:AXI4_stream_Master_24b:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="nb_colone" VALUE="640"/>
+        <PARAMETER NAME="nb_ligne" VALUE="480"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_AXI4_stream_Master_2_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="23" NAME="data_in" RIGHT="0" SIGIS="undef" SIGNAME="TPG_1_pixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TPG_1" PORT="pixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="wr_en" SIGIS="undef" SIGNAME="TPG_1_px_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TPG_1" PORT="px_valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="fulln" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_2_fulln">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TPG_1" PORT="start"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_2_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tdata_b"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tvalid" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_2_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tvalid_b"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tlast" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_2_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tlast_b"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tuser" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_2_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tuser_b"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tready" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_2_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tready_b"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="AXI4_stream_Master_2_2_interface_axis" NAME="interface_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/AXI_Select_0" HWVERSION="1.0" INSTANCE="AXI_Select_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI_Select" VLNV="user.org:user:AXI_Select:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_AXI_Select_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="chanel_select" SIGIS="undef" SIGNAME="External_Ports_chanel_select">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="chanel_select"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="23" NAME="tdata_a" RIGHT="0" SIGIS="undef" SIGNAME="convert_8to24b_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="convert_8to24b" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tvalid_a" SIGIS="undef" SIGNAME="RGBtoGray_0_AXIout_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RGBtoGray_0" PORT="AXIout_valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tlast_a" SIGIS="undef" SIGNAME="RGBtoGray_0_AXIout_last">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RGBtoGray_0" PORT="AXIout_last"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tuser_a" SIGIS="undef" SIGNAME="RGBtoGray_0_AXIout_user">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RGBtoGray_0" PORT="AXIout_user"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tready_a" SIGIS="undef" SIGNAME="AXI_Select_0_tready_a">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RGBtoGray_0" PORT="AXIout_ready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="23" NAME="tdata_b" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_2_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_2" PORT="tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tvalid_b" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_2_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_2" PORT="tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tlast_b" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_2_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_2" PORT="tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tuser_b" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_2_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_2" PORT="tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tready_b" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_2_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_2" PORT="tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="23" NAME="tdata_out" RIGHT="0" SIGIS="undef" SIGNAME="AXI_Select_0_tdata_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tvalid_out" SIGIS="undef" SIGNAME="AXI_Select_0_tvalid_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tlast_out" SIGIS="undef" SIGNAME="AXI_Select_0_tlast_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tuser_out" SIGIS="undef" SIGNAME="AXI_Select_0_tuser_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tready_out" SIGIS="undef" SIGNAME="AXI_Select_0_tready_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="tready"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="AXI_A" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="tuser_a"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="tdata_a"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="tlast_a"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="tvalid_a"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="tready_a"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="AXI4_stream_Master_2_2_interface_axis" NAME="AXI_B" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="NUM_READ_OUTSTANDING"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="tuser_b"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="tdata_b"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="tlast_b"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="tvalid_b"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="tready_b"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="AXI_Select_0_AXI_out" NAME="AXI_out" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="tuser_out"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="tdata_out"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="tlast_out"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="tvalid_out"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="tready_out"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ControleurVGA_v3_0" HWVERSION="1.0" INSTANCE="ControleurVGA_v3_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ControleurVGA_v3" VLNV="user.org:user:ControleurVGA_v3:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_ControleurVGA_v3_0_3"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="23" NAME="tdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI_Select_0_tdata_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tdata_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tvalid" SIGIS="undef" SIGNAME="AXI_Select_0_tvalid_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tvalid_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tready" SIGIS="undef" SIGNAME="AXI_Select_0_tready_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tready_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tlast" SIGIS="undef" SIGNAME="AXI_Select_0_tlast_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tlast_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tuser" SIGIS="undef" SIGNAME="AXI_Select_0_tuser_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tuser_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="VGA_HS_O" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_HS_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_HS_O"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="VGA_VS_O" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_VS_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_VS_O"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="VGA_R" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_R">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_R"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="VGA_B" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_B">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_B"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="VGA_G" RIGHT="0" SIGIS="undef" SIGNAME="ControleurVGA_v3_0_VGA_G">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_G"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="AXI_Select_0_AXI_out" NAME="interface_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="5" FULLNAME="/RGBtoGray_0" HWVERSION="1.0" INSTANCE="RGBtoGray_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="RGBtoGray" VLNV="user.org:user:RGBtoGray:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="design_1_RGBtoGray_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_i">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="clk_i"/>
+            <CONNECTION INSTANCE="clk_wiz" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
@@ -150,16 +518,36 @@
             <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="tready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="7" NAME="pxGray" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" NAME="AXIout_valid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="AXIout_ready" SIGIS="undef" SIGNAME="ready_dout">
+        <PORT DIR="O" LEFT="7" NAME="pxGray" RIGHT="0" SIGIS="undef" SIGNAME="RGBtoGray_0_pxGray">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ready" PORT="dout"/>
+            <CONNECTION INSTANCE="convert_8to24b" PORT="In0"/>
+            <CONNECTION INSTANCE="convert_8to24b" PORT="In1"/>
+            <CONNECTION INSTANCE="convert_8to24b" PORT="In2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="AXIout_valid" SIGIS="undef" SIGNAME="RGBtoGray_0_AXIout_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tvalid_a"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="AXIout_ready" SIGIS="undef" SIGNAME="AXI_Select_0_tready_a">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tready_a"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="AXIout_last" SIGIS="undef" SIGNAME="RGBtoGray_0_AXIout_last">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tlast_a"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="AXIout_user" SIGIS="undef" SIGNAME="RGBtoGray_0_AXIout_user">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tuser_a"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="AXI4_stream_Master_2_0_interface_axis" NAME="interface_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="AXI4_stream_Master_2_0_interface_axis" NAME="AXIin_RGB" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
@@ -168,9 +556,9 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="design_1_clk_0"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
           <PORTMAPS>
@@ -179,6 +567,28 @@
             <PORTMAP LOGICAL="TUSER" PHYSICAL="tuser"/>
             <PORTMAP LOGICAL="TVALID" PHYSICAL="tvalid"/>
             <PORTMAP LOGICAL="TREADY" PHYSICAL="tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="AXIout_Gray" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="AXIout_user"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="pxGray"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="AXIout_last"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="AXIout_valid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="AXIout_ready"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -192,9 +602,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_i">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="clk_i"/>
+            <CONNECTION INSTANCE="clk_wiz" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
@@ -220,18 +630,223 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="7" FULLNAME="/ready" HWVERSION="1.1" INSTANCE="ready" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+    <MODULE COREREVISION="3" FULLNAME="/TPG_1" HWVERSION="1.0" INSTANCE="TPG_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="TPG" VLNV="user.org:user:TPG:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconstant_0_0"/>
+        <PARAMETER NAME="FRAME_WIDTH" VALUE="640"/>
+        <PARAMETER NAME="FRAME_HEIGHT" VALUE="480"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_TPG_1_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="ready_dout">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RGBtoGray_0" PORT="AXIout_ready"/>
+            <CONNECTION INSTANCE="clk_wiz" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="23" NAME="pixel" RIGHT="0" SIGIS="undef" SIGNAME="TPG_1_pixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_2" PORT="data_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="px_valid" SIGIS="undef" SIGNAME="TPG_1_px_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_2" PORT="wr_en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="start" SIGIS="undef" SIGNAME="AXI4_stream_Master_2_2_fulln">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_2" PORT="fulln"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/clk_wiz" HWVERSION="1.0" INSTANCE="clk_wiz" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz_0_clk_wiz" VLNV="user.org:user:clk_wiz_0_clk_wiz:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_clk_wiz_0_clk_wiz_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" NAME="clk_out1" SIGIS="undef" SIGNAME="clk_wiz_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_0" PORT="clk"/>
+            <CONNECTION INSTANCE="AXI4_stream_Master_2_2" PORT="clk"/>
+            <CONNECTION INSTANCE="RGBtoGray_0" PORT="clk"/>
+            <CONNECTION INSTANCE="TPG_0" PORT="clk"/>
+            <CONNECTION INSTANCE="TPG_1" PORT="clk"/>
+            <CONNECTION INSTANCE="ControleurVGA_v3_0" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_in1" SIGIS="undef" SIGNAME="External_Ports_CLK_I">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK_I"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="4" FULLNAME="/convert_8to24b" HWVERSION="2.1" INSTANCE="convert_8to24b" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="IN0_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="IN1_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="IN2_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN4_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN8_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN10_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN11_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN12_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN13_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN14_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN15_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN16_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN17_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN18_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN19_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN20_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN21_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN22_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN23_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN24_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN25_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN26_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN27_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN28_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN32_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN33_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN34_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN35_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN36_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN37_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN38_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN39_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN40_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN41_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN42_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN43_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN44_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN45_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN46_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN47_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN48_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN49_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN50_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN51_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN52_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN53_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN54_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN55_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN56_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN57_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN58_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN59_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN60_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN61_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN62_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN63_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN64_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN65_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN66_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN67_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN68_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN69_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN70_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN71_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN72_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN73_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN74_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN75_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN76_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN77_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN78_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN79_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN80_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN81_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN82_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN83_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN84_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN85_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN86_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN87_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN88_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN89_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN90_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN91_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN92_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN93_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN94_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN95_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN96_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN97_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN98_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN99_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN100_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN101_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN102_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN103_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN104_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN105_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN106_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN107_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN108_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN109_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN110_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN111_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN112_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN113_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN114_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN115_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN116_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN117_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN118_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN119_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN120_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN121_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN122_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN123_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN124_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN125_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN126_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN127_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="dout_width" VALUE="24"/>
+        <PARAMETER NAME="NUM_PORTS" VALUE="3"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconcat_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="RGBtoGray_0_pxGray">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RGBtoGray_0" PORT="pxGray"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="RGBtoGray_0_pxGray">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RGBtoGray_0" PORT="pxGray"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="In2" RIGHT="0" SIGIS="undef" SIGNAME="RGBtoGray_0_pxGray">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RGBtoGray_0" PORT="pxGray"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="23" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="convert_8to24b_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Select_0" PORT="tdata_a"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

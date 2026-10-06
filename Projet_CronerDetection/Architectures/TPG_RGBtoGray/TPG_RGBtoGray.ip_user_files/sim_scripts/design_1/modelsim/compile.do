@@ -2,14 +2,14 @@ vlib modelsim_lib/work
 vlib modelsim_lib/msim
 
 vlib modelsim_lib/msim/xpm
-vlib modelsim_lib/msim/xil_defaultlib
 vlib modelsim_lib/msim/fifo_generator_v13_2_5
-vlib modelsim_lib/msim/xlconstant_v1_1_7
+vlib modelsim_lib/msim/xil_defaultlib
+vlib modelsim_lib/msim/xlconcat_v2_1_4
 
 vmap xpm modelsim_lib/msim/xpm
-vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib
 vmap fifo_generator_v13_2_5 modelsim_lib/msim/fifo_generator_v13_2_5
-vmap xlconstant_v1_1_7 modelsim_lib/msim/xlconstant_v1_1_7
+vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib
+vmap xlconcat_v2_1_4 modelsim_lib/msim/xlconcat_v2_1_4
 
 vlog -work xpm -64 -incr -sv \
 "/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
@@ -17,11 +17,6 @@ vlog -work xpm -64 -incr -sv \
 
 vcom -work xpm -64 -93 \
 "/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/ip/xpm/xpm_VCOMP.vhd" \
-
-vcom -work xil_defaultlib -64 -93 \
-"../../../bd/design_1/ipshared/779f/src/TPG.vhd" \
-"../../../bd/design_1/ipshared/src/TPG.vhd" \
-"../../../bd/design_1/ip/design_1_TPG_0_0/sim/design_1_TPG_0_0.vhd" \
 
 vlog -work fifo_generator_v13_2_5 -64 -incr \
 "../../../../TPG_RGBtoGray.gen/sources_1/bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/AXI4_stream_Master_24b.srcs/sources_1/ip/fifo_generator_0/simulation/fifo_generator_vlog_beh.v" \
@@ -38,17 +33,26 @@ vlog -work xil_defaultlib -64 -incr \
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/design_1/ipshared/fa01/src/AXI4_stream_Master_24b.vhd" \
 "../../../bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/sim/design_1_AXI4_stream_Master_2_0_0.vhd" \
-"../../../bd/design_1/ipshared/1a00/src/RGBtoGray.vhd" \
-"../../../bd/design_1/ipshared/src/RGBtoGray.vhd" \
-"../../../bd/design_1/ip/design_1_RGBtoGray_0_0/sim/design_1_RGBtoGray_0_0.vhd" \
 
-vlog -work xlconstant_v1_1_7 -64 -incr \
-"../../../../TPG_RGBtoGray.gen/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v" \
+vlog -work xlconcat_v2_1_4 -64 -incr \
+"../../../../TPG_RGBtoGray.gen/sources_1/bd/design_1/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib -64 -incr \
-"../../../bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.v" \
+"../../../bd/design_1/ip/design_1_xlconcat_0_0/sim/design_1_xlconcat_0_0.v" \
+"../../../bd/design_1/ipshared/1d41/src/clk_wiz_0_clk_wiz.v" \
+"../../../bd/design_1/ip/design_1_clk_wiz_0_clk_wiz_0_0/sim/design_1_clk_wiz_0_clk_wiz_0_0.v" \
 
 vcom -work xil_defaultlib -64 -93 \
+"../../../bd/design_1/ip/design_1_AXI4_stream_Master_2_2_0/sim/design_1_AXI4_stream_Master_2_2_0.vhd" \
+"../../../bd/design_1/ipshared/src/RGBtoGray.vhd" \
+"../../../bd/design_1/ip/design_1_RGBtoGray_0_0/sim/design_1_RGBtoGray_0_0.vhd" \
+"../../../bd/design_1/ipshared/src/TPG.vhd" \
+"../../../bd/design_1/ip/design_1_TPG_0_0/sim/design_1_TPG_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_TPG_1_0/sim/design_1_TPG_1_0.vhd" \
+"../../../bd/design_1/ipshared/fef4/src/AXI_Select.vhd" \
+"../../../bd/design_1/ip/design_1_AXI_Select_0_0/sim/design_1_AXI_Select_0_0.vhd" \
+"../../../bd/design_1/ipshared/795b/src/ControleurVGA_v3.vhd" \
+"../../../bd/design_1/ip/design_1_ControleurVGA_v3_0_3/sim/design_1_ControleurVGA_v3_0_3.vhd" \
 "../../../bd/design_1/sim/design_1.vhd" \
 
 vlog -work xil_defaultlib \

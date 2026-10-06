@@ -2,8 +2,8 @@
 # Webtalk v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Thu Oct  1 15:39:57 2026
-# Process ID: 65983
+# Start of session at: Fri Oct  2 15:50:33 2026
+# Process ID: 81876
 # Current directory: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/RGBtoGray/RGBtoGray.sim/sim_1/behav/xsim
 # Command line: wbtcv -mode batch -source /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/RGBtoGray/RGBtoGray.sim/sim_1/behav/xsim/xsim.dir/RGBtoGray_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/RGBtoGray/RGBtoGray.sim/sim_1/behav/xsim/webtalk.log

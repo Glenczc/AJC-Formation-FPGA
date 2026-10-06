@@ -40,10 +40,12 @@ architecture Behavioral of ControleurVGA_tb is
     Port ( clk          : in STD_LOGIC; --25 MHz clock
            reset        : in STD_LOGIC;
            
-           pixel        : in  STD_LOGIC_VECTOR (23 downto 0);-- [0;7]:Red [8;15]:Green [16;23]:Blue 
-           
-           valid        : in std_logic;
-           ready        : out STD_LOGIC;
+           --AXI4 stream in
+           tdata        : in  STD_LOGIC_VECTOR (23 downto 0);-- [0;7]:Red [8;15]:Green [16;23]:Blue 
+           tvalid       : in std_logic;
+           tready       : out STD_LOGIC;
+           tlast        : in std_logic;
+           tuser        : in std_logic;
            
            VGA_HS_O     : out  STD_LOGIC;
            VGA_VS_O     : out  STD_LOGIC;
@@ -64,6 +66,8 @@ architecture Behavioral of ControleurVGA_tb is
     
     signal valid : std_logic := '0';
     signal ready : std_logic := '0';
+    signal last : std_logic := '0';
+    signal user : std_logic := '0';
     
     signal VGA_HS_O : std_logic := '0';
     signal VGA_VS_O : std_logic := '0';
@@ -79,10 +83,12 @@ begin
             clk => clk,
             reset => reset,
             
-            pixel => pixel,
+            tdata => pixel,
+            tvalid => valid,
+            tready => ready,
+            tlast => last,
+            tuser => user,
             
-            valid => valid,
-            ready => ready,
             
             VGA_HS_O => VGA_HS_O,
             VGA_VS_O => VGA_VS_O,
@@ -114,7 +120,9 @@ begin
 		reset <= '1';
 		wait for period;    
 		reset <= '0';
-		wait for 5*period;
+		wait for period;
+		
+		wait for 20ms;
 		
 		valid <= '1';
 		

@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date             : Tue Sep 29 17:09:22 2026
+| Date             : Mon Oct  5 17:28:30 2026
 | Host             : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.513        |
+| Total On-Chip Power (W)  | 1.514        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 1.392        |
@@ -52,23 +52,23 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.009 |        7 |       --- |             --- |
-| Slice Logic              |     0.003 |    16486 |       --- |             --- |
-|   LUT as Logic           |     0.002 |     4261 |     14400 |           29.59 |
+| Clocks                   |     0.010 |        7 |       --- |             --- |
+| Slice Logic              |     0.003 |    16494 |       --- |             --- |
+|   LUT as Logic           |     0.002 |     4267 |     14400 |           29.63 |
 |   LUT as Distributed RAM |    <0.001 |      498 |      6000 |            8.30 |
-|   Register               |    <0.001 |     8594 |     28800 |           29.84 |
+|   Register               |    <0.001 |     8595 |     28800 |           29.84 |
 |   CARRY4                 |    <0.001 |      252 |      4400 |            5.73 |
 |   LUT as Shift Register  |    <0.001 |      267 |      6000 |            4.45 |
 |   F7/F8 Muxes            |    <0.001 |       27 |     17600 |            0.15 |
-|   Others                 |     0.000 |      789 |       --- |             --- |
-| Signals                  |     0.004 |    12361 |       --- |             --- |
+|   Others                 |     0.000 |      788 |       --- |             --- |
+| Signals                  |     0.004 |    12373 |       --- |             --- |
 | Block RAM                |     0.007 |        9 |        50 |           18.00 |
 | MMCM                     |     0.115 |        1 |         2 |           50.00 |
 | DSPs                     |     0.000 |        2 |        66 |            3.03 |
 | I/O                      |    <0.001 |       17 |       100 |           17.00 |
 | PS7                      |     1.253 |        1 |       --- |             --- |
 | Static Power             |     0.121 |          |           |                 |
-| Total                    |     1.513 |          |           |                 |
+| Total                    |     1.514 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -162,7 +162,7 @@ Table of Contents
 |   dbg_hub                |     0.001 |
 |     inst                 |     0.001 |
 |       BSCANID.u_xsdbm_id |     0.001 |
-|   design_1_i             |     1.388 |
+|   design_1_i             |     1.389 |
 |     DMA24bUnit_mm2s_0    |     0.011 |
 |       U0                 |     0.010 |
 |     axi_mem_intercon     |     0.005 |

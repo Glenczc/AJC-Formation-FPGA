@@ -110,7 +110,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c96d3576</spirit:value>
+            <spirit:value>f3c0403b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -126,7 +126,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c96d3576</spirit:value>
+            <spirit:value>f3c0403b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -141,7 +141,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>27da3a76</spirit:value>
+            <spirit:value>8fde26b3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -350,13 +350,8 @@
       <spirit:file>
         <spirit:name>src/ControleurVGA_v3.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_a451213a</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_f3c0403b</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../src/ControleurVGA_v3.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_8f7133d5</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -365,10 +360,6 @@
         <spirit:name>src/ControleurVGA_v3.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../src/ControleurVGA_v3.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -381,10 +372,9 @@
         <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../src/ControleurVGA_v3_tb.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:name>ControleurVGA_v3.sim/ControleurVGA_tb_behav.wcfg</spirit:name>
+        <spirit:fileType>unknown</spirit:fileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -437,50 +427,29 @@
       </xilinx:taxonomies>
       <xilinx:displayName>ControleurVGA_v3</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreRevision>1</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>user.org:user:ControleurVGA:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2026-09-29T14:36:33Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2026-10-05T14:48:31Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@8623df7_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@96d0265_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@c57c5b2_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@458edec2_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a64177c_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@26733bd7_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bda86bd_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@617d0462_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f532900_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c06fbde_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d6731_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cace732_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@41935184_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dde65b8_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@70759641_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e3960c3_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@16ba86fb_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a10665_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@55a7b058_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7153e36b_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c1ecd5d_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@58d51381_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@193c4f9_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@32a13ede_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@d4a6617_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@166c85ca_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@39d23303_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f3aeffa_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@450b6c30_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5901d7e1_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6859c784_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@eadae55_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29acc1b1_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25e525fa_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e77087e_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e9df844_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66149c9b_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5185e1e9_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40b90c4a_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6605e9b4_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ad564b8_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@604fce0b_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56f84286_ARCHIVE_LOCATION">/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/ControleurVGA_v3</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="cab4e733"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="b85eac2b"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d6ce7fb3"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="1d343a26"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="b8c6bc3b"/>
     </xilinx:packagingInfo>

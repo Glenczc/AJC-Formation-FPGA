@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="TPG_RGBtoGray_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="TPG_RGBtoGray_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1000000fs"></ZoomEndTime>
+      <Cursor1Time time="35168fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="194"></NameColumnWidth>
+      <ValueColumnWidth column_width="86"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="34" />
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider15" type="divider">
+      <obj_property name="label">TPG 0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/TPG_0/pixel">
+      <obj_property name="ElementShortName">pixel[23:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/TPG_0/px_valid">
+      <obj_property name="ElementShortName">px_valid</obj_property>
+      <obj_property name="ObjectShortName">px_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/RGBtoGray_0/pxGray">
+      <obj_property name="ElementShortName">pxGray[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pxGray[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/RGBtoGray_0/AXIout_valid">
+      <obj_property name="ElementShortName">AXIout_valid</obj_property>
+      <obj_property name="ObjectShortName">AXIout_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider15" type="divider">
+      <obj_property name="label">TPG 1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/TPG_1/pixel">
+      <obj_property name="ElementShortName">pixel[23:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/TPG_1/px_valid">
+      <obj_property name="ElementShortName">px_valid</obj_property>
+      <obj_property name="ObjectShortName">px_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider15" type="divider">
+      <obj_property name="label">AXISelect</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/chanel_select">
+      <obj_property name="ElementShortName">chanel_select</obj_property>
+      <obj_property name="ObjectShortName">chanel_select</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tdata_a">
+      <obj_property name="ElementShortName">tdata_a[23:0]</obj_property>
+      <obj_property name="ObjectShortName">tdata_a[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tvalid_a">
+      <obj_property name="ElementShortName">tvalid_a</obj_property>
+      <obj_property name="ObjectShortName">tvalid_a</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tlast_a">
+      <obj_property name="ElementShortName">tlast_a</obj_property>
+      <obj_property name="ObjectShortName">tlast_a</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tuser_a">
+      <obj_property name="ElementShortName">tuser_a</obj_property>
+      <obj_property name="ObjectShortName">tuser_a</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tready_a">
+      <obj_property name="ElementShortName">tready_a</obj_property>
+      <obj_property name="ObjectShortName">tready_a</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tdata_b">
+      <obj_property name="ElementShortName">tdata_b[23:0]</obj_property>
+      <obj_property name="ObjectShortName">tdata_b[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tvalid_b">
+      <obj_property name="ElementShortName">tvalid_b</obj_property>
+      <obj_property name="ObjectShortName">tvalid_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tlast_b">
+      <obj_property name="ElementShortName">tlast_b</obj_property>
+      <obj_property name="ObjectShortName">tlast_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tuser_b">
+      <obj_property name="ElementShortName">tuser_b</obj_property>
+      <obj_property name="ObjectShortName">tuser_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tready_b">
+      <obj_property name="ElementShortName">tready_b</obj_property>
+      <obj_property name="ObjectShortName">tready_b</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tdata_out">
+      <obj_property name="ElementShortName">tdata_out[23:0]</obj_property>
+      <obj_property name="ObjectShortName">tdata_out[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tvalid_out">
+      <obj_property name="ElementShortName">tvalid_out</obj_property>
+      <obj_property name="ObjectShortName">tvalid_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tlast_out">
+      <obj_property name="ElementShortName">tlast_out</obj_property>
+      <obj_property name="ObjectShortName">tlast_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tuser_out">
+      <obj_property name="ElementShortName">tuser_out</obj_property>
+      <obj_property name="ObjectShortName">tuser_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/AXI_Select_0/U0/tready_out">
+      <obj_property name="ElementShortName">tready_out</obj_property>
+      <obj_property name="ObjectShortName">tready_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/ControleurVGA_v3_0/U0/init_ready">
+      <obj_property name="ElementShortName">init_ready</obj_property>
+      <obj_property name="ObjectShortName">init_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider15" type="divider">
+      <obj_property name="label">VGA</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/ControleurVGA_v3_0/VGA_HS_O">
+      <obj_property name="ElementShortName">VGA_HS_O</obj_property>
+      <obj_property name="ObjectShortName">VGA_HS_O</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/ControleurVGA_v3_0/VGA_VS_O">
+      <obj_property name="ElementShortName">VGA_VS_O</obj_property>
+      <obj_property name="ObjectShortName">VGA_VS_O</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/ControleurVGA_v3_0/VGA_R">
+      <obj_property name="ElementShortName">VGA_R[3:0]</obj_property>
+      <obj_property name="ObjectShortName">VGA_R[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/ControleurVGA_v3_0/VGA_B">
+      <obj_property name="ElementShortName">VGA_B[3:0]</obj_property>
+      <obj_property name="ObjectShortName">VGA_B[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/TPG_RGBtoGray_tb/dut/design_1_i/ControleurVGA_v3_0/VGA_G">
+      <obj_property name="ElementShortName">VGA_G[3:0]</obj_property>
+      <obj_property name="ObjectShortName">VGA_G[3:0]</obj_property>
+   </wvobject>
+</wave_config>

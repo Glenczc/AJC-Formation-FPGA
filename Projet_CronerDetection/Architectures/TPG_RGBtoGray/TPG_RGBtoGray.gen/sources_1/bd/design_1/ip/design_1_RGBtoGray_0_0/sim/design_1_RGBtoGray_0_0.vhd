@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: user.org:user:RGBtoGray:1.0
--- IP Revision: 3
+-- IP Revision: 5
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -64,7 +64,9 @@ ENTITY design_1_RGBtoGray_0_0 IS
     tready : OUT STD_LOGIC;
     pxGray : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     AXIout_valid : OUT STD_LOGIC;
-    AXIout_ready : IN STD_LOGIC
+    AXIout_ready : IN STD_LOGIC;
+    AXIout_last : OUT STD_LOGIC;
+    AXIout_user : OUT STD_LOGIC
   );
 END design_1_RGBtoGray_0_0;
 
@@ -82,22 +84,30 @@ ARCHITECTURE design_1_RGBtoGray_0_0_arch OF design_1_RGBtoGray_0_0 IS
       tready : OUT STD_LOGIC;
       pxGray : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
       AXIout_valid : OUT STD_LOGIC;
-      AXIout_ready : IN STD_LOGIC
+      AXIout_ready : IN STD_LOGIC;
+      AXIout_last : OUT STD_LOGIC;
+      AXIout_user : OUT STD_LOGIC
     );
   END COMPONENT RGBtoGray;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF design_1_RGBtoGray_0_0_arch: ARCHITECTURE IS "package_project";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_INFO OF tready: SIGNAL IS "xilinx.com:interface:axis:1.0 interface_axis TREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF tuser: SIGNAL IS "xilinx.com:interface:axis:1.0 interface_axis TUSER";
-  ATTRIBUTE X_INTERFACE_INFO OF tlast: SIGNAL IS "xilinx.com:interface:axis:1.0 interface_axis TLAST";
-  ATTRIBUTE X_INTERFACE_INFO OF tvalid: SIGNAL IS "xilinx.com:interface:axis:1.0 interface_axis TVALID";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF tdata: SIGNAL IS "XIL_INTERFACENAME interface_axis, TDATA_NUM_BYTES 3, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 125000000, PHASE 0.000, CLK_DOMAIN design_1_clk_0, LAYERED_METADATA undef, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF tdata: SIGNAL IS "xilinx.com:interface:axis:1.0 interface_axis TDATA";
+  ATTRIBUTE X_INTERFACE_INFO OF AXIout_user: SIGNAL IS "xilinx.com:interface:axis:1.0 AXIout_Gray TUSER";
+  ATTRIBUTE X_INTERFACE_INFO OF AXIout_last: SIGNAL IS "xilinx.com:interface:axis:1.0 AXIout_Gray TLAST";
+  ATTRIBUTE X_INTERFACE_INFO OF AXIout_ready: SIGNAL IS "xilinx.com:interface:axis:1.0 AXIout_Gray TREADY";
+  ATTRIBUTE X_INTERFACE_INFO OF AXIout_valid: SIGNAL IS "xilinx.com:interface:axis:1.0 AXIout_Gray TVALID";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF pxGray: SIGNAL IS "XIL_INTERFACENAME AXIout_Gray, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF pxGray: SIGNAL IS "xilinx.com:interface:axis:1.0 AXIout_Gray TDATA";
+  ATTRIBUTE X_INTERFACE_INFO OF tready: SIGNAL IS "xilinx.com:interface:axis:1.0 AXIin_RGB TREADY";
+  ATTRIBUTE X_INTERFACE_INFO OF tuser: SIGNAL IS "xilinx.com:interface:axis:1.0 AXIin_RGB TUSER";
+  ATTRIBUTE X_INTERFACE_INFO OF tlast: SIGNAL IS "xilinx.com:interface:axis:1.0 AXIin_RGB TLAST";
+  ATTRIBUTE X_INTERFACE_INFO OF tvalid: SIGNAL IS "xilinx.com:interface:axis:1.0 AXIin_RGB TVALID";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF tdata: SIGNAL IS "XIL_INTERFACENAME AXIin_RGB, TDATA_NUM_BYTES 3, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF tdata: SIGNAL IS "xilinx.com:interface:axis:1.0 AXIin_RGB TDATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF reset: SIGNAL IS "XIL_INTERFACENAME reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF reset: SIGNAL IS "xilinx.com:signal:reset:1.0 reset RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF clk: SIGNAL IS "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF interface_axis, ASSOCIATED_RESET reset, FREQ_HZ 125000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_clk_0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF clk: SIGNAL IS "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF interface_axis, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF clk: SIGNAL IS "xilinx.com:signal:clock:1.0 clk CLK";
 BEGIN
   U0 : RGBtoGray
@@ -111,6 +121,8 @@ BEGIN
       tready => tready,
       pxGray => pxGray,
       AXIout_valid => AXIout_valid,
-      AXIout_ready => AXIout_ready
+      AXIout_ready => AXIout_ready,
+      AXIout_last => AXIout_last,
+      AXIout_user => AXIout_user
     );
 END design_1_RGBtoGray_0_0_arch;

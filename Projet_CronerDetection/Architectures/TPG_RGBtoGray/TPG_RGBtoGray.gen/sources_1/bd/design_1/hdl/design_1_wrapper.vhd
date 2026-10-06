@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
---Date        : Fri Oct  2 10:52:15 2026
+--Date        : Mon Oct  5 16:49:36 2026
 --Host        : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -13,7 +13,13 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1_wrapper is
   port (
-    clk_i : in STD_LOGIC;
+    CLK_I : in STD_LOGIC;
+    VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_HS_O : out STD_LOGIC;
+    VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_VS_O : out STD_LOGIC;
+    chanel_select : in STD_LOGIC;
     reset : in STD_LOGIC
   );
 end design_1_wrapper;
@@ -21,14 +27,26 @@ end design_1_wrapper;
 architecture STRUCTURE of design_1_wrapper is
   component design_1 is
   port (
-    clk_i : in STD_LOGIC;
-    reset : in STD_LOGIC
+    reset : in STD_LOGIC;
+    CLK_I : in STD_LOGIC;
+    chanel_select : in STD_LOGIC;
+    VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_VS_O : out STD_LOGIC;
+    VGA_HS_O : out STD_LOGIC;
+    VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component design_1;
 begin
 design_1_i: component design_1
      port map (
-      clk_i => clk_i,
+      CLK_I => CLK_I,
+      VGA_B(3 downto 0) => VGA_B(3 downto 0),
+      VGA_G(3 downto 0) => VGA_G(3 downto 0),
+      VGA_HS_O => VGA_HS_O,
+      VGA_R(3 downto 0) => VGA_R(3 downto 0),
+      VGA_VS_O => VGA_VS_O,
+      chanel_select => chanel_select,
       reset => reset
     );
 end STRUCTURE;

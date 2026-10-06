@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-// Date        : Fri Oct  2 10:54:35 2026
+// Date        : Mon Oct  5 10:05:31 2026
 // Host        : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/TPG_RGBtoGray/TPG_RGBtoGray.gen/sources_1/bd/design_1/ip/design_1_RGBtoGray_0_0/design_1_RGBtoGray_0_0_sim_netlist.v
@@ -25,82 +25,93 @@ module design_1_RGBtoGray_0_0
     tready,
     pxGray,
     AXIout_valid,
-    AXIout_ready);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF interface_axis, ASSOCIATED_RESET reset, FREQ_HZ 125000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_clk_0, INSERT_VIP 0" *) input clk;
+    AXIout_ready,
+    AXIout_last,
+    AXIout_user);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF interface_axis, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, INSERT_VIP 0" *) input clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input reset;
-  (* x_interface_info = "xilinx.com:interface:axis:1.0 interface_axis TDATA" *) (* x_interface_parameter = "XIL_INTERFACENAME interface_axis, TDATA_NUM_BYTES 3, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 125000000, PHASE 0.000, CLK_DOMAIN design_1_clk_0, LAYERED_METADATA undef, INSERT_VIP 0" *) input [23:0]tdata;
-  (* x_interface_info = "xilinx.com:interface:axis:1.0 interface_axis TVALID" *) input tvalid;
-  (* x_interface_info = "xilinx.com:interface:axis:1.0 interface_axis TLAST" *) input tlast;
-  (* x_interface_info = "xilinx.com:interface:axis:1.0 interface_axis TUSER" *) input tuser;
-  (* x_interface_info = "xilinx.com:interface:axis:1.0 interface_axis TREADY" *) output tready;
-  output [7:0]pxGray;
-  output AXIout_valid;
-  input AXIout_ready;
+  (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIin_RGB TDATA" *) (* x_interface_parameter = "XIL_INTERFACENAME AXIin_RGB, TDATA_NUM_BYTES 3, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef, INSERT_VIP 0" *) input [23:0]tdata;
+  (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIin_RGB TVALID" *) input tvalid;
+  (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIin_RGB TLAST" *) input tlast;
+  (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIin_RGB TUSER" *) input tuser;
+  (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIin_RGB TREADY" *) output tready;
+  (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIout_Gray TDATA" *) (* x_interface_parameter = "XIL_INTERFACENAME AXIout_Gray, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef, INSERT_VIP 0" *) output [7:0]pxGray;
+  (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIout_Gray TVALID" *) output AXIout_valid;
+  (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIout_Gray TREADY" *) input AXIout_ready;
+  (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIout_Gray TLAST" *) output AXIout_last;
+  (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIout_Gray TUSER" *) output AXIout_user;
 
+  wire AXIout_last;
   wire AXIout_ready;
+  wire AXIout_user;
   wire AXIout_valid;
   wire clk;
   wire [7:0]pxGray;
+  wire \pxGray_reg[7]_i_3_n_0 ;
+  wire px_mult;
   wire reset;
   wire [23:0]tdata;
+  wire tlast;
+  wire tuser;
   wire tvalid;
 
   assign tready = AXIout_ready;
   design_1_RGBtoGray_0_0_RGBtoGray U0
-       (.AXIout_ready(AXIout_ready),
+       (.AXIout_last(AXIout_last),
+        .AXIout_ready(AXIout_ready),
+        .AXIout_user(AXIout_user),
         .AXIout_valid(AXIout_valid),
         .clk(clk),
         .pxGray(pxGray),
+        .\pxGray_reg[0]_0 (\pxGray_reg[7]_i_3_n_0 ),
+        .px_mult(px_mult),
         .reset(reset),
         .tdata(tdata),
+        .tlast(tlast),
+        .tuser(tuser),
         .tvalid(tvalid));
+  FDCE \pxGray_reg[7]_i_3 
+       (.C(clk),
+        .CE(px_mult),
+        .CLR(reset),
+        .D(1'b1),
+        .Q(\pxGray_reg[7]_i_3_n_0 ));
 endmodule
 
 (* ORIG_REF_NAME = "RGBtoGray" *) 
 module design_1_RGBtoGray_0_0_RGBtoGray
-   (pxGray,
+   (px_mult,
+    pxGray,
     AXIout_valid,
-    tdata,
+    AXIout_last,
+    AXIout_user,
+    \pxGray_reg[0]_0 ,
+    AXIout_ready,
+    tvalid,
     clk,
     reset,
-    AXIout_ready,
-    tvalid);
+    tdata,
+    tlast,
+    tuser);
+  output px_mult;
   output [7:0]pxGray;
   output AXIout_valid;
-  input [23:0]tdata;
-  input clk;
-  input reset;
+  output AXIout_last;
+  output AXIout_user;
+  input \pxGray_reg[0]_0 ;
   input AXIout_ready;
   input tvalid;
+  input clk;
+  input reset;
+  input [23:0]tdata;
+  input tlast;
+  input tuser;
 
+  wire AXIout_last;
   wire AXIout_ready;
+  wire AXIout_user;
   wire AXIout_valid;
-  wire [9:0]B;
   wire clk;
-  wire multOp_i_10_n_0;
-  wire multOp_i_11_n_0;
-  wire multOp_i_12_n_0;
-  wire multOp_i_13_n_0;
-  wire multOp_i_14_n_0;
-  wire multOp_i_15_n_0;
-  wire multOp_i_16_n_0;
-  wire multOp_i_17_n_0;
-  wire multOp_i_18_n_0;
-  wire multOp_i_19_n_0;
-  wire multOp_i_20_n_0;
-  wire multOp_i_3_n_0;
-  wire multOp_i_3_n_1;
-  wire multOp_i_3_n_2;
-  wire multOp_i_3_n_3;
-  wire multOp_i_4_n_0;
-  wire multOp_i_4_n_1;
-  wire multOp_i_4_n_2;
-  wire multOp_i_4_n_3;
-  wire multOp_i_5_n_0;
-  wire multOp_i_6_n_0;
-  wire multOp_i_7_n_0;
-  wire multOp_i_8_n_0;
-  wire multOp_i_9_n_0;
   wire multOp_n_100;
   wire multOp_n_101;
   wire multOp_n_102;
@@ -108,6 +119,14 @@ module design_1_RGBtoGray_0_0_RGBtoGray
   wire multOp_n_104;
   wire multOp_n_105;
   wire multOp_n_82;
+  wire multOp_n_83;
+  wire multOp_n_84;
+  wire multOp_n_85;
+  wire multOp_n_86;
+  wire multOp_n_87;
+  wire multOp_n_88;
+  wire multOp_n_89;
+  wire multOp_n_90;
   wire multOp_n_91;
   wire multOp_n_92;
   wire multOp_n_93;
@@ -117,14 +136,48 @@ module design_1_RGBtoGray_0_0_RGBtoGray
   wire multOp_n_97;
   wire multOp_n_98;
   wire multOp_n_99;
+  wire mult_last;
+  wire mult_user;
   wire mult_valid;
-  wire [7:0]p_1_in;
+  wire [7:0]p_0_in;
+  wire [9:0]plusOp;
   wire [7:0]pxGray;
   wire \pxGray[7]_i_1_n_0 ;
-  wire px_somme0;
+  wire \pxGray_reg[0]_0 ;
+  wire px_mult;
+  wire [9:0]px_somme;
+  wire \px_somme[3]_i_2_n_0 ;
+  wire \px_somme[3]_i_3_n_0 ;
+  wire \px_somme[3]_i_4_n_0 ;
+  wire \px_somme[3]_i_5_n_0 ;
+  wire \px_somme[3]_i_6_n_0 ;
+  wire \px_somme[3]_i_7_n_0 ;
+  wire \px_somme[3]_i_8_n_0 ;
+  wire \px_somme[7]_i_2_n_0 ;
+  wire \px_somme[7]_i_3_n_0 ;
+  wire \px_somme[7]_i_4_n_0 ;
+  wire \px_somme[7]_i_5_n_0 ;
+  wire \px_somme[7]_i_6_n_0 ;
+  wire \px_somme[7]_i_7_n_0 ;
+  wire \px_somme[7]_i_8_n_0 ;
+  wire \px_somme[7]_i_9_n_0 ;
+  wire \px_somme[9]_i_3_n_0 ;
+  wire px_somme_0;
+  wire \px_somme_reg[3]_i_1_n_0 ;
+  wire \px_somme_reg[3]_i_1_n_1 ;
+  wire \px_somme_reg[3]_i_1_n_2 ;
+  wire \px_somme_reg[3]_i_1_n_3 ;
+  wire \px_somme_reg[7]_i_1_n_0 ;
+  wire \px_somme_reg[7]_i_1_n_1 ;
+  wire \px_somme_reg[7]_i_1_n_2 ;
+  wire \px_somme_reg[7]_i_1_n_3 ;
   wire reset;
+  wire somme_last;
+  wire somme_user;
   wire somme_valid;
   wire [23:0]tdata;
+  wire tlast;
+  wire tuser;
   wire tvalid;
   wire NLW_multOp_CARRYCASCOUT_UNCONNECTED;
   wire NLW_multOp_MULTSIGNOUT_UNCONNECTED;
@@ -137,20 +190,39 @@ module design_1_RGBtoGray_0_0_RGBtoGray
   wire [3:0]NLW_multOp_CARRYOUT_UNCONNECTED;
   wire [47:24]NLW_multOp_P_UNCONNECTED;
   wire [47:0]NLW_multOp_PCOUT_UNCONNECTED;
-  wire [3:0]NLW_multOp_i_2_CO_UNCONNECTED;
-  wire [3:1]NLW_multOp_i_2_O_UNCONNECTED;
+  wire [3:0]\NLW_px_somme_reg[9]_i_2_CO_UNCONNECTED ;
+  wire [3:1]\NLW_px_somme_reg[9]_i_2_O_UNCONNECTED ;
 
-  FDCE AXIout_valid_reg
+  FDCE #(
+    .INIT(1'b0)) 
+    AXIout_last_reg
        (.C(clk),
-        .CE(1'b1),
+        .CE(AXIout_ready),
+        .CLR(reset),
+        .D(mult_last),
+        .Q(AXIout_last));
+  FDCE #(
+    .INIT(1'b0)) 
+    AXIout_user_reg
+       (.C(clk),
+        .CE(AXIout_ready),
+        .CLR(reset),
+        .D(mult_user),
+        .Q(AXIout_user));
+  FDCE #(
+    .INIT(1'b0)) 
+    AXIout_valid_reg
+       (.C(clk),
+        .CE(AXIout_ready),
         .CLR(reset),
         .D(mult_valid),
         .Q(AXIout_valid));
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-12 {cell *THIS*}}" *) 
   DSP48E1 #(
-    .ACASCREG(1),
+    .ACASCREG(0),
     .ADREG(1),
     .ALUMODEREG(0),
-    .AREG(1),
+    .AREG(0),
     .AUTORESET_PATDET("NO_RESET"),
     .A_INPUT("DIRECT"),
     .BCASCREG(0),
@@ -173,7 +245,7 @@ module design_1_RGBtoGray_0_0_RGBtoGray
     .USE_PATTERN_DETECT("NO_PATDET"),
     .USE_SIMD("ONE48")) 
     multOp
-       (.A({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,B}),
+       (.A({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,px_somme}),
         .ACIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .ACOUT(NLW_multOp_ACOUT_UNCONNECTED[29:0]),
         .ALUMODE({1'b0,1'b0,1'b0,1'b0}),
@@ -187,7 +259,7 @@ module design_1_RGBtoGray_0_0_RGBtoGray
         .CARRYINSEL({1'b0,1'b0,1'b0}),
         .CARRYOUT(NLW_multOp_CARRYOUT_UNCONNECTED[3:0]),
         .CEA1(1'b0),
-        .CEA2(px_somme0),
+        .CEA2(1'b0),
         .CEAD(1'b0),
         .CEALUMODE(1'b0),
         .CEB1(1'b0),
@@ -198,7 +270,7 @@ module design_1_RGBtoGray_0_0_RGBtoGray
         .CED(1'b0),
         .CEINMODE(1'b0),
         .CEM(1'b0),
-        .CEP(px_somme0),
+        .CEP(px_mult),
         .CLK(clk),
         .D({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .INMODE({1'b0,1'b0,1'b0,1'b0,1'b0}),
@@ -206,7 +278,7 @@ module design_1_RGBtoGray_0_0_RGBtoGray
         .MULTSIGNOUT(NLW_multOp_MULTSIGNOUT_UNCONNECTED),
         .OPMODE({1'b0,1'b0,1'b0,1'b0,1'b1,1'b0,1'b1}),
         .OVERFLOW(NLW_multOp_OVERFLOW_UNCONNECTED),
-        .P({NLW_multOp_P_UNCONNECTED[47:24],multOp_n_82,p_1_in,multOp_n_91,multOp_n_92,multOp_n_93,multOp_n_94,multOp_n_95,multOp_n_96,multOp_n_97,multOp_n_98,multOp_n_99,multOp_n_100,multOp_n_101,multOp_n_102,multOp_n_103,multOp_n_104,multOp_n_105}),
+        .P({NLW_multOp_P_UNCONNECTED[47:24],multOp_n_82,multOp_n_83,multOp_n_84,multOp_n_85,multOp_n_86,multOp_n_87,multOp_n_88,multOp_n_89,multOp_n_90,multOp_n_91,multOp_n_92,multOp_n_93,multOp_n_94,multOp_n_95,multOp_n_96,multOp_n_97,multOp_n_98,multOp_n_99,multOp_n_100,multOp_n_101,multOp_n_102,multOp_n_103,multOp_n_104,multOp_n_105}),
         .PATTERNBDETECT(NLW_multOp_PATTERNBDETECT_UNCONNECTED),
         .PATTERNDETECT(NLW_multOp_PATTERNDETECT_UNCONNECTED),
         .PCIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
@@ -222,188 +294,105 @@ module design_1_RGBtoGray_0_0_RGBtoGray
         .RSTM(1'b0),
         .RSTP(1'b0),
         .UNDERFLOW(NLW_multOp_UNDERFLOW_UNCONNECTED));
-  LUT3 #(
-    .INIT(8'h08)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     multOp_i_1
        (.I0(AXIout_ready),
-        .I1(tvalid),
-        .I2(reset),
-        .O(px_somme0));
-  LUT4 #(
-    .INIT(16'h6996)) 
-    multOp_i_10
-       (.I0(multOp_i_6_n_0),
-        .I1(tdata[23]),
-        .I2(tdata[15]),
-        .I3(tdata[7]),
-        .O(multOp_i_10_n_0));
-  (* HLUTNM = "lutpair6" *) 
-  LUT4 #(
-    .INIT(16'h6996)) 
-    multOp_i_11
-       (.I0(tdata[14]),
-        .I1(tdata[22]),
-        .I2(tdata[6]),
-        .I3(multOp_i_7_n_0),
-        .O(multOp_i_11_n_0));
-  (* HLUTNM = "lutpair5" *) 
-  LUT4 #(
-    .INIT(16'h6996)) 
-    multOp_i_12
-       (.I0(tdata[13]),
-        .I1(tdata[21]),
-        .I2(tdata[5]),
-        .I3(multOp_i_8_n_0),
-        .O(multOp_i_12_n_0));
-  (* HLUTNM = "lutpair4" *) 
-  LUT4 #(
-    .INIT(16'h6996)) 
-    multOp_i_13
-       (.I0(tdata[12]),
-        .I1(tdata[20]),
-        .I2(tdata[4]),
-        .I3(multOp_i_9_n_0),
-        .O(multOp_i_13_n_0));
-  (* HLUTNM = "lutpair2" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    multOp_i_14
-       (.I0(tdata[10]),
-        .I1(tdata[18]),
-        .I2(tdata[2]),
-        .O(multOp_i_14_n_0));
-  (* HLUTNM = "lutpair1" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    multOp_i_15
-       (.I0(tdata[9]),
-        .I1(tdata[17]),
-        .I2(tdata[1]),
-        .O(multOp_i_15_n_0));
-  (* HLUTNM = "lutpair0" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    multOp_i_16
-       (.I0(tdata[8]),
-        .I1(tdata[16]),
-        .I2(tdata[0]),
-        .O(multOp_i_16_n_0));
-  (* HLUTNM = "lutpair3" *) 
-  LUT4 #(
-    .INIT(16'h6996)) 
-    multOp_i_17
-       (.I0(tdata[11]),
-        .I1(tdata[19]),
-        .I2(tdata[3]),
-        .I3(multOp_i_14_n_0),
-        .O(multOp_i_17_n_0));
-  (* HLUTNM = "lutpair2" *) 
-  LUT4 #(
-    .INIT(16'h6996)) 
-    multOp_i_18
-       (.I0(tdata[10]),
-        .I1(tdata[18]),
-        .I2(tdata[2]),
-        .I3(multOp_i_15_n_0),
-        .O(multOp_i_18_n_0));
-  (* HLUTNM = "lutpair1" *) 
-  LUT4 #(
-    .INIT(16'h6996)) 
-    multOp_i_19
-       (.I0(tdata[9]),
-        .I1(tdata[17]),
-        .I2(tdata[1]),
-        .I3(multOp_i_16_n_0),
-        .O(multOp_i_19_n_0));
-  CARRY4 multOp_i_2
-       (.CI(multOp_i_3_n_0),
-        .CO({NLW_multOp_i_2_CO_UNCONNECTED[3:2],B[9],NLW_multOp_i_2_CO_UNCONNECTED[0]}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({NLW_multOp_i_2_O_UNCONNECTED[3:1],B[8]}),
-        .S({1'b0,1'b0,1'b1,multOp_i_5_n_0}));
-  (* HLUTNM = "lutpair0" *) 
-  LUT3 #(
-    .INIT(8'h96)) 
-    multOp_i_20
-       (.I0(tdata[8]),
-        .I1(tdata[16]),
-        .I2(tdata[0]),
-        .O(multOp_i_20_n_0));
-  CARRY4 multOp_i_3
-       (.CI(multOp_i_4_n_0),
-        .CO({multOp_i_3_n_0,multOp_i_3_n_1,multOp_i_3_n_2,multOp_i_3_n_3}),
-        .CYINIT(1'b0),
-        .DI({multOp_i_6_n_0,multOp_i_7_n_0,multOp_i_8_n_0,multOp_i_9_n_0}),
-        .O(B[7:4]),
-        .S({multOp_i_10_n_0,multOp_i_11_n_0,multOp_i_12_n_0,multOp_i_13_n_0}));
-  CARRY4 multOp_i_4
-       (.CI(1'b0),
-        .CO({multOp_i_4_n_0,multOp_i_4_n_1,multOp_i_4_n_2,multOp_i_4_n_3}),
-        .CYINIT(1'b0),
-        .DI({multOp_i_14_n_0,multOp_i_15_n_0,multOp_i_16_n_0,1'b0}),
-        .O(B[3:0]),
-        .S({multOp_i_17_n_0,multOp_i_18_n_0,multOp_i_19_n_0,multOp_i_20_n_0}));
-  LUT3 #(
-    .INIT(8'hE8)) 
-    multOp_i_5
-       (.I0(tdata[15]),
-        .I1(tdata[23]),
-        .I2(tdata[7]),
-        .O(multOp_i_5_n_0));
-  (* HLUTNM = "lutpair6" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    multOp_i_6
-       (.I0(tdata[14]),
-        .I1(tdata[22]),
-        .I2(tdata[6]),
-        .O(multOp_i_6_n_0));
-  (* HLUTNM = "lutpair5" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    multOp_i_7
-       (.I0(tdata[13]),
-        .I1(tdata[21]),
-        .I2(tdata[5]),
-        .O(multOp_i_7_n_0));
-  (* HLUTNM = "lutpair4" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    multOp_i_8
-       (.I0(tdata[12]),
-        .I1(tdata[20]),
-        .I2(tdata[4]),
-        .O(multOp_i_8_n_0));
-  (* HLUTNM = "lutpair3" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    multOp_i_9
-       (.I0(tdata[11]),
-        .I1(tdata[19]),
-        .I2(tdata[3]),
-        .O(multOp_i_9_n_0));
+        .I1(somme_valid),
+        .O(px_mult));
+  FDCE #(
+    .INIT(1'b0)) 
+    mult_last_reg
+       (.C(clk),
+        .CE(AXIout_ready),
+        .CLR(reset),
+        .D(somme_last),
+        .Q(mult_last));
+  FDCE #(
+    .INIT(1'b0)) 
+    mult_user_reg
+       (.C(clk),
+        .CE(AXIout_ready),
+        .CLR(reset),
+        .D(somme_user),
+        .Q(mult_user));
   FDCE #(
     .INIT(1'b0)) 
     mult_valid_reg
        (.C(clk),
-        .CE(1'b1),
+        .CE(AXIout_ready),
         .CLR(reset),
         .D(somme_valid),
         .Q(mult_valid));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pxGray[0]_i_1 
+       (.I0(multOp_n_90),
+        .I1(\pxGray_reg[0]_0 ),
+        .O(p_0_in[0]));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pxGray[1]_i_1 
+       (.I0(multOp_n_89),
+        .I1(\pxGray_reg[0]_0 ),
+        .O(p_0_in[1]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pxGray[2]_i_1 
+       (.I0(multOp_n_88),
+        .I1(\pxGray_reg[0]_0 ),
+        .O(p_0_in[2]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pxGray[3]_i_1 
+       (.I0(multOp_n_87),
+        .I1(\pxGray_reg[0]_0 ),
+        .O(p_0_in[3]));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pxGray[4]_i_1 
+       (.I0(multOp_n_86),
+        .I1(\pxGray_reg[0]_0 ),
+        .O(p_0_in[4]));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pxGray[5]_i_1 
+       (.I0(multOp_n_85),
+        .I1(\pxGray_reg[0]_0 ),
+        .O(p_0_in[5]));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pxGray[6]_i_1 
+       (.I0(multOp_n_84),
+        .I1(\pxGray_reg[0]_0 ),
+        .O(p_0_in[6]));
   LUT2 #(
     .INIT(4'h8)) 
     \pxGray[7]_i_1 
-       (.I0(tvalid),
-        .I1(AXIout_ready),
+       (.I0(AXIout_ready),
+        .I1(mult_valid),
         .O(\pxGray[7]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pxGray[7]_i_2 
+       (.I0(multOp_n_83),
+        .I1(\pxGray_reg[0]_0 ),
+        .O(p_0_in[7]));
   FDCE #(
     .INIT(1'b0)) 
     \pxGray_reg[0] 
        (.C(clk),
         .CE(\pxGray[7]_i_1_n_0 ),
         .CLR(reset),
-        .D(p_1_in[0]),
+        .D(p_0_in[0]),
         .Q(pxGray[0]));
   FDCE #(
     .INIT(1'b0)) 
@@ -411,7 +400,7 @@ module design_1_RGBtoGray_0_0_RGBtoGray
        (.C(clk),
         .CE(\pxGray[7]_i_1_n_0 ),
         .CLR(reset),
-        .D(p_1_in[1]),
+        .D(p_0_in[1]),
         .Q(pxGray[1]));
   FDCE #(
     .INIT(1'b0)) 
@@ -419,7 +408,7 @@ module design_1_RGBtoGray_0_0_RGBtoGray
        (.C(clk),
         .CE(\pxGray[7]_i_1_n_0 ),
         .CLR(reset),
-        .D(p_1_in[2]),
+        .D(p_0_in[2]),
         .Q(pxGray[2]));
   FDCE #(
     .INIT(1'b0)) 
@@ -427,7 +416,7 @@ module design_1_RGBtoGray_0_0_RGBtoGray
        (.C(clk),
         .CE(\pxGray[7]_i_1_n_0 ),
         .CLR(reset),
-        .D(p_1_in[3]),
+        .D(p_0_in[3]),
         .Q(pxGray[3]));
   FDCE #(
     .INIT(1'b0)) 
@@ -435,7 +424,7 @@ module design_1_RGBtoGray_0_0_RGBtoGray
        (.C(clk),
         .CE(\pxGray[7]_i_1_n_0 ),
         .CLR(reset),
-        .D(p_1_in[4]),
+        .D(p_0_in[4]),
         .Q(pxGray[4]));
   FDCE #(
     .INIT(1'b0)) 
@@ -443,7 +432,7 @@ module design_1_RGBtoGray_0_0_RGBtoGray
        (.C(clk),
         .CE(\pxGray[7]_i_1_n_0 ),
         .CLR(reset),
-        .D(p_1_in[5]),
+        .D(p_0_in[5]),
         .Q(pxGray[5]));
   FDCE #(
     .INIT(1'b0)) 
@@ -451,7 +440,7 @@ module design_1_RGBtoGray_0_0_RGBtoGray
        (.C(clk),
         .CE(\pxGray[7]_i_1_n_0 ),
         .CLR(reset),
-        .D(p_1_in[6]),
+        .D(p_0_in[6]),
         .Q(pxGray[6]));
   FDCE #(
     .INIT(1'b0)) 
@@ -459,15 +448,271 @@ module design_1_RGBtoGray_0_0_RGBtoGray
        (.C(clk),
         .CE(\pxGray[7]_i_1_n_0 ),
         .CLR(reset),
-        .D(p_1_in[7]),
+        .D(p_0_in[7]),
         .Q(pxGray[7]));
+  (* HLUTNM = "lutpair2" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \px_somme[3]_i_2 
+       (.I0(tdata[10]),
+        .I1(tdata[18]),
+        .I2(tdata[2]),
+        .O(\px_somme[3]_i_2_n_0 ));
+  (* HLUTNM = "lutpair1" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \px_somme[3]_i_3 
+       (.I0(tdata[9]),
+        .I1(tdata[17]),
+        .I2(tdata[1]),
+        .O(\px_somme[3]_i_3_n_0 ));
+  (* HLUTNM = "lutpair0" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \px_somme[3]_i_4 
+       (.I0(tdata[8]),
+        .I1(tdata[16]),
+        .I2(tdata[0]),
+        .O(\px_somme[3]_i_4_n_0 ));
+  (* HLUTNM = "lutpair3" *) 
+  LUT4 #(
+    .INIT(16'h6996)) 
+    \px_somme[3]_i_5 
+       (.I0(tdata[11]),
+        .I1(tdata[19]),
+        .I2(tdata[3]),
+        .I3(\px_somme[3]_i_2_n_0 ),
+        .O(\px_somme[3]_i_5_n_0 ));
+  (* HLUTNM = "lutpair2" *) 
+  LUT4 #(
+    .INIT(16'h6996)) 
+    \px_somme[3]_i_6 
+       (.I0(tdata[10]),
+        .I1(tdata[18]),
+        .I2(tdata[2]),
+        .I3(\px_somme[3]_i_3_n_0 ),
+        .O(\px_somme[3]_i_6_n_0 ));
+  (* HLUTNM = "lutpair1" *) 
+  LUT4 #(
+    .INIT(16'h6996)) 
+    \px_somme[3]_i_7 
+       (.I0(tdata[9]),
+        .I1(tdata[17]),
+        .I2(tdata[1]),
+        .I3(\px_somme[3]_i_4_n_0 ),
+        .O(\px_somme[3]_i_7_n_0 ));
+  (* HLUTNM = "lutpair0" *) 
+  LUT3 #(
+    .INIT(8'h96)) 
+    \px_somme[3]_i_8 
+       (.I0(tdata[8]),
+        .I1(tdata[16]),
+        .I2(tdata[0]),
+        .O(\px_somme[3]_i_8_n_0 ));
+  (* HLUTNM = "lutpair6" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \px_somme[7]_i_2 
+       (.I0(tdata[14]),
+        .I1(tdata[22]),
+        .I2(tdata[6]),
+        .O(\px_somme[7]_i_2_n_0 ));
+  (* HLUTNM = "lutpair5" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \px_somme[7]_i_3 
+       (.I0(tdata[13]),
+        .I1(tdata[21]),
+        .I2(tdata[5]),
+        .O(\px_somme[7]_i_3_n_0 ));
+  (* HLUTNM = "lutpair4" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \px_somme[7]_i_4 
+       (.I0(tdata[12]),
+        .I1(tdata[20]),
+        .I2(tdata[4]),
+        .O(\px_somme[7]_i_4_n_0 ));
+  (* HLUTNM = "lutpair3" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \px_somme[7]_i_5 
+       (.I0(tdata[11]),
+        .I1(tdata[19]),
+        .I2(tdata[3]),
+        .O(\px_somme[7]_i_5_n_0 ));
+  LUT4 #(
+    .INIT(16'h6996)) 
+    \px_somme[7]_i_6 
+       (.I0(\px_somme[7]_i_2_n_0 ),
+        .I1(tdata[23]),
+        .I2(tdata[15]),
+        .I3(tdata[7]),
+        .O(\px_somme[7]_i_6_n_0 ));
+  (* HLUTNM = "lutpair6" *) 
+  LUT4 #(
+    .INIT(16'h6996)) 
+    \px_somme[7]_i_7 
+       (.I0(tdata[14]),
+        .I1(tdata[22]),
+        .I2(tdata[6]),
+        .I3(\px_somme[7]_i_3_n_0 ),
+        .O(\px_somme[7]_i_7_n_0 ));
+  (* HLUTNM = "lutpair5" *) 
+  LUT4 #(
+    .INIT(16'h6996)) 
+    \px_somme[7]_i_8 
+       (.I0(tdata[13]),
+        .I1(tdata[21]),
+        .I2(tdata[5]),
+        .I3(\px_somme[7]_i_4_n_0 ),
+        .O(\px_somme[7]_i_8_n_0 ));
+  (* HLUTNM = "lutpair4" *) 
+  LUT4 #(
+    .INIT(16'h6996)) 
+    \px_somme[7]_i_9 
+       (.I0(tdata[12]),
+        .I1(tdata[20]),
+        .I2(tdata[4]),
+        .I3(\px_somme[7]_i_5_n_0 ),
+        .O(\px_somme[7]_i_9_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \px_somme[9]_i_1 
+       (.I0(AXIout_ready),
+        .I1(tvalid),
+        .O(px_somme_0));
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \px_somme[9]_i_3 
+       (.I0(tdata[15]),
+        .I1(tdata[23]),
+        .I2(tdata[7]),
+        .O(\px_somme[9]_i_3_n_0 ));
+  FDCE #(
+    .INIT(1'b0)) 
+    \px_somme_reg[0] 
+       (.C(clk),
+        .CE(px_somme_0),
+        .CLR(reset),
+        .D(plusOp[0]),
+        .Q(px_somme[0]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \px_somme_reg[1] 
+       (.C(clk),
+        .CE(px_somme_0),
+        .CLR(reset),
+        .D(plusOp[1]),
+        .Q(px_somme[1]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \px_somme_reg[2] 
+       (.C(clk),
+        .CE(px_somme_0),
+        .CLR(reset),
+        .D(plusOp[2]),
+        .Q(px_somme[2]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \px_somme_reg[3] 
+       (.C(clk),
+        .CE(px_somme_0),
+        .CLR(reset),
+        .D(plusOp[3]),
+        .Q(px_somme[3]));
+  CARRY4 \px_somme_reg[3]_i_1 
+       (.CI(1'b0),
+        .CO({\px_somme_reg[3]_i_1_n_0 ,\px_somme_reg[3]_i_1_n_1 ,\px_somme_reg[3]_i_1_n_2 ,\px_somme_reg[3]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({\px_somme[3]_i_2_n_0 ,\px_somme[3]_i_3_n_0 ,\px_somme[3]_i_4_n_0 ,1'b0}),
+        .O(plusOp[3:0]),
+        .S({\px_somme[3]_i_5_n_0 ,\px_somme[3]_i_6_n_0 ,\px_somme[3]_i_7_n_0 ,\px_somme[3]_i_8_n_0 }));
+  FDCE #(
+    .INIT(1'b0)) 
+    \px_somme_reg[4] 
+       (.C(clk),
+        .CE(px_somme_0),
+        .CLR(reset),
+        .D(plusOp[4]),
+        .Q(px_somme[4]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \px_somme_reg[5] 
+       (.C(clk),
+        .CE(px_somme_0),
+        .CLR(reset),
+        .D(plusOp[5]),
+        .Q(px_somme[5]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \px_somme_reg[6] 
+       (.C(clk),
+        .CE(px_somme_0),
+        .CLR(reset),
+        .D(plusOp[6]),
+        .Q(px_somme[6]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \px_somme_reg[7] 
+       (.C(clk),
+        .CE(px_somme_0),
+        .CLR(reset),
+        .D(plusOp[7]),
+        .Q(px_somme[7]));
+  CARRY4 \px_somme_reg[7]_i_1 
+       (.CI(\px_somme_reg[3]_i_1_n_0 ),
+        .CO({\px_somme_reg[7]_i_1_n_0 ,\px_somme_reg[7]_i_1_n_1 ,\px_somme_reg[7]_i_1_n_2 ,\px_somme_reg[7]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({\px_somme[7]_i_2_n_0 ,\px_somme[7]_i_3_n_0 ,\px_somme[7]_i_4_n_0 ,\px_somme[7]_i_5_n_0 }),
+        .O(plusOp[7:4]),
+        .S({\px_somme[7]_i_6_n_0 ,\px_somme[7]_i_7_n_0 ,\px_somme[7]_i_8_n_0 ,\px_somme[7]_i_9_n_0 }));
+  FDCE #(
+    .INIT(1'b0)) 
+    \px_somme_reg[8] 
+       (.C(clk),
+        .CE(px_somme_0),
+        .CLR(reset),
+        .D(plusOp[8]),
+        .Q(px_somme[8]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \px_somme_reg[9] 
+       (.C(clk),
+        .CE(px_somme_0),
+        .CLR(reset),
+        .D(plusOp[9]),
+        .Q(px_somme[9]));
+  CARRY4 \px_somme_reg[9]_i_2 
+       (.CI(\px_somme_reg[7]_i_1_n_0 ),
+        .CO({\NLW_px_somme_reg[9]_i_2_CO_UNCONNECTED [3:2],plusOp[9],\NLW_px_somme_reg[9]_i_2_CO_UNCONNECTED [0]}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\NLW_px_somme_reg[9]_i_2_O_UNCONNECTED [3:1],plusOp[8]}),
+        .S({1'b0,1'b0,1'b1,\px_somme[9]_i_3_n_0 }));
+  FDCE #(
+    .INIT(1'b0)) 
+    somme_last_reg
+       (.C(clk),
+        .CE(AXIout_ready),
+        .CLR(reset),
+        .D(tlast),
+        .Q(somme_last));
+  FDCE #(
+    .INIT(1'b0)) 
+    somme_user_reg
+       (.C(clk),
+        .CE(AXIout_ready),
+        .CLR(reset),
+        .D(tuser),
+        .Q(somme_user));
   FDCE #(
     .INIT(1'b0)) 
     somme_valid_reg
        (.C(clk),
-        .CE(1'b1),
+        .CE(AXIout_ready),
         .CLR(reset),
-        .D(\pxGray[7]_i_1_n_0 ),
+        .D(tvalid),
         .Q(somme_valid));
 endmodule
 `ifndef GLBL

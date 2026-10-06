@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Fri Oct  2 10:54:35 2026
+| Date         : Mon Oct  5 10:05:31 2026
 | Host         : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 | Command      : report_utilization -file design_1_RGBtoGray_0_0_utilization_synth.rpt -pb design_1_RGBtoGray_0_0_utilization_synth.pb
 | Design       : design_1_RGBtoGray_0_0
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   11 |     0 |     14400 |  0.08 |
-|   LUT as Logic          |   11 |     0 |     14400 |  0.08 |
+| Slice LUTs*             |   16 |     0 |     14400 |  0.11 |
+|   LUT as Logic          |   16 |     0 |     14400 |  0.11 |
 |   LUT as Memory         |    0 |     0 |      6000 |  0.00 |
-| Slice Registers         |   11 |     0 |     28800 |  0.04 |
-|   Register as Flip Flop |   11 |     0 |     28800 |  0.04 |
+| Slice Registers         |   28 |     0 |     28800 |  0.10 |
+|   Register as Flip Flop |   28 |     0 |     28800 |  0.10 |
 |   Register as Latch     |    0 |     0 |     28800 |  0.00 |
 | F7 Muxes                |    0 |     0 |      8800 |  0.00 |
 | F8 Muxes                |    0 |     0 |      4400 |  0.00 |
@@ -55,7 +55,7 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 11    |          Yes |           - |        Reset |
+| 28    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 0     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -147,11 +147,11 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     |   11 |        Flop & Latch |
-| LUT3     |   10 |                 LUT |
+| FDCE     |   28 |        Flop & Latch |
+| LUT2     |   11 |                 LUT |
+| LUT3     |    9 |                 LUT |
 | LUT4     |    7 |                 LUT |
 | CARRY4   |    3 |          CarryLogic |
-| LUT2     |    1 |                 LUT |
 | DSP48E1  |    1 |    Block Arithmetic |
 +----------+------+---------------------+
 

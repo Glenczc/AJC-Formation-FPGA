@@ -1,4 +1,7 @@
-Running: xsim.dir/TPG_RGBtoGray_tb_behav/xsimk -simmode gui -wdb TPG_RGBtoGray_tb_behav.wdb -simrunnum 0 -socket 59547
+Running: xsim.dir/TPG_RGBtoGray_tb_behav/xsimk -simmode gui -wdb TPG_RGBtoGray_tb_behav.wdb -simrunnum 0 -socket 44031
 Design successfully loaded
-Design Loading Memory Usage: 33752 KB (Peak: 33892 KB)
-Design Loading CPU Usage: 20 ms
+Design Loading Memory Usage: 35572 KB (Peak: 35572 KB)
+Design Loading CPU Usage: 100 ms
+Simulation completed
+Simulation Memory Usage: 126028 KB (Peak: 174840 KB)
+Simulation CPU Usage: 110 ms

@@ -1,0 +1,31 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s.vhd" \
+"../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s_fetch.vhd" \
+"../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_DMA24b_mm2s_streamout.vhd" \
+"../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_fifo_w128_d256_A.vhd" \
+"../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_fifo_w12_d2_S.vhd" \
+"../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_gmem_m_axi.vhd" \
+"../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_mul_mul_11s_13ns_24_4_1.vhd" \
+"../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_mul_mul_12ns_8ns_20_4_1.vhd" \
+"../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_regslice_both.vhd" \
+"../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s_start_for_DMA24b_mm2s_streamout_U0.vhd" \
+"../../../bd/design_1/ipshared/b9ec/src/DMA24bUnit_mm2s.vhd" \
+"../../../bd/design_1/ip/design_1_DMA24bUnit_mm2s_0_0/sim/design_1_DMA24bUnit_mm2s_0_0.vhd" \
+"../../../bd/design_1/ipshared/779f/src/TPG.vhd" \
+"../../../bd/design_1/ipshared/src/TPG.vhd" \
+"../../../bd/design_1/ip/design_1_TPG_0_0/sim/design_1_TPG_0_0.vhd" \
+"../../../bd/design_1/ipshared/fa01/src/AXI4_stream_Master_24b.vhd" \
+"../../../bd/design_1/ip/design_1_AXI4_stream_Master_2_0_0/sim/design_1_AXI4_stream_Master_2_0_0.vhd" \
+"../../../bd/design_1/ipshared/fef4/src/AXI_Select.vhd" \
+"../../../bd/design_1/ip/design_1_AXI_Select_0_0/sim/design_1_AXI_Select_0_0.vhd" \
+"../../../bd/design_1/ipshared/59f9/src/RGBtoGray.vhd" \
+"../../../bd/design_1/ipshared/src/RGBtoGray.vhd" \
+"../../../bd/design_1/ip/design_1_RGBtoGray_0_0/sim/design_1_RGBtoGray_0_0.vhd" \
+"../../../bd/design_1/ipshared/795b/src/ControleurVGA_v3.vhd" \
+"../../../bd/design_1/ip/design_1_ControleurVGA_v3_0_0/sim/design_1_ControleurVGA_v3_0_0.vhd" \
+"../../../bd/design_1/ipshared/eec2/Commandes_1.0/hdl/Commandes_v1_0_S00_AXI.vhd" \
+"../../../bd/design_1/ipshared/eec2/Commandes_1.0/hdl/Commandes_v1_0.vhd" \
+"../../../bd/design_1/ip/design_1_Commandes_0_0/sim/design_1_Commandes_0_0.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+nosort

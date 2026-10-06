@@ -15,11 +15,53 @@
 						"TVALID": { "actual": "tvalid"}
 					}
 				},
-				"/RGBtoGray_0/interface_axis": {
+				"/AXI4_stream_Master_2_2/interface_axis": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "clk"},
 						"ARESET": { "actual": "reset"},
+						"TDATA": { "actual": "tdata"},
+						"TLAST": { "actual": "tlast"},
+						"TREADY": { "actual": "tready"},
+						"TUSER": { "actual": "tuser"},
+						"TVALID": { "actual": "tvalid"}
+					}
+				},
+				"/AXI_Select_0/AXI_B": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"TDATA": { "actual": "tdata_b"},
+						"TLAST": { "actual": "tlast_b"},
+						"TREADY": { "actual": "tready_b"},
+						"TUSER": { "actual": "tuser_b"},
+						"TVALID": { "actual": "tvalid_b"}
+					}
+				},
+				"/AXI_Select_0/AXI_out": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"TDATA": { "actual": "tdata_out"},
+						"TLAST": { "actual": "tlast_out"},
+						"TREADY": { "actual": "tready_out"},
+						"TUSER": { "actual": "tuser_out"},
+						"TVALID": { "actual": "tvalid_out"}
+					}
+				},
+				"/ControleurVGA_v3_0/interface_axis": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"ARESET": { "actual": "reset"},
+						"TDATA": { "actual": "tdata"},
+						"TLAST": { "actual": "tlast"},
+						"TREADY": { "actual": "tready"},
+						"TUSER": { "actual": "tuser"},
+						"TVALID": { "actual": "tvalid"}
+					}
+				},
+				"/RGBtoGray_0/AXIin_RGB": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
 						"TDATA": { "actual": "tdata"},
 						"TLAST": { "actual": "tlast"},
 						"TREADY": { "actual": "tready"},

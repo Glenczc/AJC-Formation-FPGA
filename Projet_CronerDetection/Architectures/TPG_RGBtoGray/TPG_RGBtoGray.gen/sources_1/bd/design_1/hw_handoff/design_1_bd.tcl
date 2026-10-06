@@ -157,7 +157,13 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set clk_i [ create_bd_port -dir I -type clk -freq_hz 125000000 clk_i ]
+  set CLK_I [ create_bd_port -dir I CLK_I ]
+  set VGA_B [ create_bd_port -dir O -from 3 -to 0 VGA_B ]
+  set VGA_G [ create_bd_port -dir O -from 3 -to 0 VGA_G ]
+  set VGA_HS_O [ create_bd_port -dir O VGA_HS_O ]
+  set VGA_R [ create_bd_port -dir O -from 3 -to 0 VGA_R ]
+  set VGA_VS_O [ create_bd_port -dir O VGA_VS_O ]
+  set chanel_select [ create_bd_port -dir I chanel_select ]
   set reset [ create_bd_port -dir I -type rst reset ]
   set_property -dict [ list \
    CONFIG.POLARITY {ACTIVE_HIGH} \
@@ -166,25 +172,74 @@ proc create_root_design { parentCell } {
   # Create instance: AXI4_stream_Master_2_0, and set properties
   set AXI4_stream_Master_2_0 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Master_24b:1.0 AXI4_stream_Master_2_0 ]
 
+  set_property -dict [ list \
+   CONFIG.FREQ_HZ {100000000} \
+ ] [get_bd_pins /AXI4_stream_Master_2_0/clk]
+
+  # Create instance: AXI4_stream_Master_2_2, and set properties
+  set AXI4_stream_Master_2_2 [ create_bd_cell -type ip -vlnv user.org:user:AXI4_stream_Master_24b:1.0 AXI4_stream_Master_2_2 ]
+  set_property -dict [ list \
+   CONFIG.nb_ligne {480} \
+ ] $AXI4_stream_Master_2_2
+
+  set_property -dict [ list \
+   CONFIG.FREQ_HZ {100000000} \
+ ] [get_bd_pins /AXI4_stream_Master_2_2/clk]
+
+  # Create instance: AXI_Select_0, and set properties
+  set AXI_Select_0 [ create_bd_cell -type ip -vlnv user.org:user:AXI_Select:1.0 AXI_Select_0 ]
+
+  # Create instance: ControleurVGA_v3_0, and set properties
+  set ControleurVGA_v3_0 [ create_bd_cell -type ip -vlnv user.org:user:ControleurVGA_v3:1.0 ControleurVGA_v3_0 ]
+
   # Create instance: RGBtoGray_0, and set properties
   set RGBtoGray_0 [ create_bd_cell -type ip -vlnv user.org:user:RGBtoGray:1.0 RGBtoGray_0 ]
 
   # Create instance: TPG_0, and set properties
   set TPG_0 [ create_bd_cell -type ip -vlnv user.org:user:TPG:1.0 TPG_0 ]
 
-  # Create instance: ready, and set properties
-  set ready [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 ready ]
+  # Create instance: TPG_1, and set properties
+  set TPG_1 [ create_bd_cell -type ip -vlnv user.org:user:TPG:1.0 TPG_1 ]
+
+  # Create instance: clk_wiz, and set properties
+  set clk_wiz [ create_bd_cell -type ip -vlnv user.org:user:clk_wiz_0_clk_wiz:1.0 clk_wiz ]
+
+  # Create instance: convert_8to24b, and set properties
+  set convert_8to24b [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 convert_8to24b ]
+  set_property -dict [ list \
+   CONFIG.IN0_WIDTH {8} \
+   CONFIG.IN1_WIDTH {8} \
+   CONFIG.IN2_WIDTH {8} \
+   CONFIG.NUM_PORTS {3} \
+ ] $convert_8to24b
 
   # Create interface connections
-  connect_bd_intf_net -intf_net AXI4_stream_Master_2_0_interface_axis [get_bd_intf_pins AXI4_stream_Master_2_0/interface_axis] [get_bd_intf_pins RGBtoGray_0/interface_axis]
+  connect_bd_intf_net -intf_net AXI4_stream_Master_2_0_interface_axis [get_bd_intf_pins AXI4_stream_Master_2_0/interface_axis] [get_bd_intf_pins RGBtoGray_0/AXIin_RGB]
+  connect_bd_intf_net -intf_net AXI4_stream_Master_2_2_interface_axis [get_bd_intf_pins AXI4_stream_Master_2_2/interface_axis] [get_bd_intf_pins AXI_Select_0/AXI_B]
+  connect_bd_intf_net -intf_net AXI_Select_0_AXI_out [get_bd_intf_pins AXI_Select_0/AXI_out] [get_bd_intf_pins ControleurVGA_v3_0/interface_axis]
 
   # Create port connections
   connect_bd_net -net AXI4_stream_Master_2_0_fulln [get_bd_pins AXI4_stream_Master_2_0/fulln] [get_bd_pins TPG_0/start]
+  connect_bd_net -net AXI4_stream_Master_2_2_fulln [get_bd_pins AXI4_stream_Master_2_2/fulln] [get_bd_pins TPG_1/start]
+  connect_bd_net -net AXI_Select_0_tready_a [get_bd_pins AXI_Select_0/tready_a] [get_bd_pins RGBtoGray_0/AXIout_ready]
+  connect_bd_net -net ControleurVGA_v3_0_VGA_B [get_bd_ports VGA_B] [get_bd_pins ControleurVGA_v3_0/VGA_B]
+  connect_bd_net -net ControleurVGA_v3_0_VGA_G [get_bd_ports VGA_G] [get_bd_pins ControleurVGA_v3_0/VGA_G]
+  connect_bd_net -net ControleurVGA_v3_0_VGA_HS_O [get_bd_ports VGA_HS_O] [get_bd_pins ControleurVGA_v3_0/VGA_HS_O]
+  connect_bd_net -net ControleurVGA_v3_0_VGA_R [get_bd_ports VGA_R] [get_bd_pins ControleurVGA_v3_0/VGA_R]
+  connect_bd_net -net ControleurVGA_v3_0_VGA_VS_O [get_bd_ports VGA_VS_O] [get_bd_pins ControleurVGA_v3_0/VGA_VS_O]
+  connect_bd_net -net RGBtoGray_0_AXIout_last [get_bd_pins AXI_Select_0/tlast_a] [get_bd_pins RGBtoGray_0/AXIout_last]
+  connect_bd_net -net RGBtoGray_0_AXIout_user [get_bd_pins AXI_Select_0/tuser_a] [get_bd_pins RGBtoGray_0/AXIout_user]
+  connect_bd_net -net RGBtoGray_0_AXIout_valid [get_bd_pins AXI_Select_0/tvalid_a] [get_bd_pins RGBtoGray_0/AXIout_valid]
+  connect_bd_net -net RGBtoGray_0_pxGray [get_bd_pins RGBtoGray_0/pxGray] [get_bd_pins convert_8to24b/In0] [get_bd_pins convert_8to24b/In1] [get_bd_pins convert_8to24b/In2]
   connect_bd_net -net TPG_0_pixel [get_bd_pins AXI4_stream_Master_2_0/data_in] [get_bd_pins TPG_0/pixel]
   connect_bd_net -net TPG_0_px_valid [get_bd_pins AXI4_stream_Master_2_0/wr_en] [get_bd_pins TPG_0/px_valid]
-  connect_bd_net -net clk_0_1 [get_bd_ports clk_i] [get_bd_pins AXI4_stream_Master_2_0/clk] [get_bd_pins RGBtoGray_0/clk] [get_bd_pins TPG_0/clk]
-  connect_bd_net -net reset_0_1 [get_bd_ports reset] [get_bd_pins AXI4_stream_Master_2_0/reset] [get_bd_pins RGBtoGray_0/reset] [get_bd_pins TPG_0/reset]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins RGBtoGray_0/AXIout_ready] [get_bd_pins ready/dout]
+  connect_bd_net -net TPG_1_pixel [get_bd_pins AXI4_stream_Master_2_2/data_in] [get_bd_pins TPG_1/pixel]
+  connect_bd_net -net TPG_1_px_valid [get_bd_pins AXI4_stream_Master_2_2/wr_en] [get_bd_pins TPG_1/px_valid]
+  connect_bd_net -net chanel_select_0_1 [get_bd_ports chanel_select] [get_bd_pins AXI_Select_0/chanel_select]
+  connect_bd_net -net clk_0_1 [get_bd_pins AXI4_stream_Master_2_0/clk] [get_bd_pins AXI4_stream_Master_2_2/clk] [get_bd_pins ControleurVGA_v3_0/clk] [get_bd_pins RGBtoGray_0/clk] [get_bd_pins TPG_0/clk] [get_bd_pins TPG_1/clk] [get_bd_pins clk_wiz/clk_out1]
+  connect_bd_net -net clk_in1_0_1 [get_bd_ports CLK_I] [get_bd_pins clk_wiz/clk_in1]
+  connect_bd_net -net convert_8to24b_dout [get_bd_pins AXI_Select_0/tdata_a] [get_bd_pins convert_8to24b/dout]
+  connect_bd_net -net reset_0_1 [get_bd_ports reset] [get_bd_pins AXI4_stream_Master_2_0/reset] [get_bd_pins AXI4_stream_Master_2_2/reset] [get_bd_pins ControleurVGA_v3_0/reset] [get_bd_pins RGBtoGray_0/reset] [get_bd_pins TPG_0/reset] [get_bd_pins TPG_1/reset]
 
   # Create address segments
 

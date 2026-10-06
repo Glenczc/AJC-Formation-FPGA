@@ -15,9 +15,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_AX
 # IP: bd/design_1/ip/design_1_clk_wiz_0_clk_wiz_0_0/design_1_clk_wiz_0_clk_wiz_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_clk_wiz_0_clk_wiz_0_0 || ORIG_REF_NAME==design_1_clk_wiz_0_clk_wiz_0_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_ControleurVGA_v3_0_0/design_1_ControleurVGA_v3_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ControleurVGA_v3_0_0 || ORIG_REF_NAME==design_1_ControleurVGA_v3_0_0} -quiet] -quiet
-
 # IP: bd/design_1/ip/design_1_DMA24bUnit_mm2s_0_0/design_1_DMA24bUnit_mm2s_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_DMA24bUnit_mm2s_0_0 || ORIG_REF_NAME==design_1_DMA24bUnit_mm2s_0_0} -quiet] -quiet
 
@@ -53,6 +50,9 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ps
 
 # IP: bd/design_1/ip/design_1_util_vector_logic_0_1/design_1_util_vector_logic_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_util_vector_logic_0_1 || ORIG_REF_NAME==design_1_util_vector_logic_0_1} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_ControleurVGA_v3_0_0/design_1_ControleurVGA_v3_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ControleurVGA_v3_0_0 || ORIG_REF_NAME==design_1_ControleurVGA_v3_0_0} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_auto_cc_0/design_1_auto_cc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_auto_cc_0 || ORIG_REF_NAME==design_1_auto_cc_0} -quiet] -quiet

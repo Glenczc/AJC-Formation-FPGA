@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
---Date        : Tue Sep 29 17:02:51 2026
+--Date        : Mon Oct  5 17:19:58 2026
 --Host        : glen-HP-ZBook-15u-G3 running 64-bit Ubuntu 24.04.5 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -2240,26 +2240,6 @@ architecture STRUCTURE of design_1 is
     dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_xlconstant_0_1;
-  component design_1_AXI_Select_0_1 is
-  port (
-    chanel_select : in STD_LOGIC;
-    tdata_a : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    tvalid_a : in STD_LOGIC;
-    tlast_a : in STD_LOGIC;
-    tuser_a : in STD_LOGIC;
-    tready_a : out STD_LOGIC;
-    tdata_b : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    tvalid_b : in STD_LOGIC;
-    tlast_b : in STD_LOGIC;
-    tuser_b : in STD_LOGIC;
-    tready_b : out STD_LOGIC;
-    tdata_out : out STD_LOGIC_VECTOR ( 23 downto 0 );
-    tvalid_out : out STD_LOGIC;
-    tlast_out : out STD_LOGIC;
-    tuser_out : out STD_LOGIC;
-    tready_out : in STD_LOGIC
-  );
-  end component design_1_AXI_Select_0_1;
   component design_1_Commandes_0_0 is
   port (
     cmd_out : out STD_LOGIC;
@@ -2293,6 +2273,26 @@ architecture STRUCTURE of design_1 is
     Res : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_util_vector_logic_0_1;
+  component design_1_AXI_Select_0_1 is
+  port (
+    chanel_select : in STD_LOGIC;
+    tdata_a : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    tvalid_a : in STD_LOGIC;
+    tlast_a : in STD_LOGIC;
+    tuser_a : in STD_LOGIC;
+    tready_a : out STD_LOGIC;
+    tdata_b : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    tvalid_b : in STD_LOGIC;
+    tlast_b : in STD_LOGIC;
+    tuser_b : in STD_LOGIC;
+    tready_b : out STD_LOGIC;
+    tdata_out : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    tvalid_out : out STD_LOGIC;
+    tlast_out : out STD_LOGIC;
+    tuser_out : out STD_LOGIC;
+    tready_out : in STD_LOGIC
+  );
+  end component design_1_AXI_Select_0_1;
   component design_1_ControleurVGA_v3_0_0 is
   port (
     clk : in STD_LOGIC;

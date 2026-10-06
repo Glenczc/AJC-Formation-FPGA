@@ -1,0 +1,242 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Oct  5 17:59:33 2026
+# Process ID: 147639
+# Current directory: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.runs/design_1_RGBtoGray_0_0_synth_1
+# Command line: vivado -log design_1_RGBtoGray_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_RGBtoGray_0_0.tcl
+# Log file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.runs/design_1_RGBtoGray_0_0_synth_1/design_1_RGBtoGray_0_0.vds
+# Journal file: /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.runs/design_1_RGBtoGray_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_RGBtoGray_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/media/glen/Crucial/Logiciels/Vivado/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'user.org:user:Commandes:1.0'. The one found in IP location '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/Commandes' will take precedence over the same IP in location /home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/IP/Commandes/Commandes_1.0
+Command: synth_design -top design_1_RGBtoGray_0_0 -part xc7z007sclg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Device 21-403] Loading part xc7z007sclg400-1
+CRITICAL WARNING: [filemgmt 20-1741] File 'RGBtoGray.vhd' is used by one or more modules, but with different contents, and may lead to unpredictable results:
+* design_1_RGBtoGray_0_0 (/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/59f9/src/RGBtoGray.vhd)
+* design_1_RGBtoGray_0_0 (/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/src/RGBtoGray.vhd)
+Please reset and regenerate these modules to resolve the differences, or synthesize them independently.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 147776
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2393.836 ; gain = 0.000 ; free physical = 873 ; free virtual = 8159
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-2488] overwriting existing primary unit rgbtogray [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/src/RGBtoGray.vhd:7]
+INFO: [Synth 8-638] synthesizing module 'design_1_RGBtoGray_0_0' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_RGBtoGray_0_0/synth/design_1_RGBtoGray_0_0.vhd:73]
+INFO: [Synth 8-3491] module 'RGBtoGray' declared at '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/src/RGBtoGray.vhd:7' bound to instance 'U0' of component 'RGBtoGray' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_RGBtoGray_0_0/synth/design_1_RGBtoGray_0_0.vhd:117]
+INFO: [Synth 8-638] synthesizing module 'RGBtoGray' [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/src/RGBtoGray.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'RGBtoGray' (1#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/src/RGBtoGray.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'design_1_RGBtoGray_0_0' (2#1) [/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.gen/sources_1/bd/design_1/ip/design_1_RGBtoGray_0_0/synth/design_1_RGBtoGray_0_0.vhd:73]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2393.836 ; gain = 0.000 ; free physical = 1519 ; free virtual = 8806
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2393.836 ; gain = 0.000 ; free physical = 1495 ; free virtual = 8782
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2393.836 ; gain = 0.000 ; free physical = 1495 ; free virtual = 8782
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2393.836 ; gain = 0.000 ; free physical = 1495 ; free virtual = 8782
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2467.691 ; gain = 0.000 ; free physical = 1487 ; free virtual = 8774
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2467.691 ; gain = 0.000 ; free physical = 1487 ; free virtual = 8774
+CRITICAL WARNING: [filemgmt 20-1741] File 'RGBtoGray.vhd' is used by one or more modules, but with different contents, and may lead to unpredictable results:
+* design_1_RGBtoGray_0_0 (/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/59f9/src/RGBtoGray.vhd)
+* design_1_RGBtoGray_0_0 (/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.gen/sources_1/bd/design_1/ipshared/src/RGBtoGray.vhd)
+Please reset and regenerate these modules to resolve the differences, or synthesize them independently.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2467.691 ; gain = 73.855 ; free physical = 1573 ; free virtual = 8865
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z007sclg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2467.691 ; gain = 73.855 ; free physical = 1573 ; free virtual = 8865
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2467.691 ; gain = 73.855 ; free physical = 1573 ; free virtual = 8865
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2467.691 ; gain = 73.855 ; free physical = 1568 ; free virtual = 8860
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   10 Bit       Adders := 1     
++---Registers : 
+	               25 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 66 (col length:40)
+BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP U0/multOp, operation Mode is: (A:0x2aab)*B.
+DSP Report: operator U0/multOp is absorbed into DSP U0/multOp.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2467.691 ; gain = 73.855 ; free physical = 1573 ; free virtual = 8868
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping	Report (see note below)
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|RGBtoGray   | (A:0x2aab)*B | 10     | 14     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2467.691 ; gain = 73.855 ; free physical = 2510 ; free virtual = 9805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2467.691 ; gain = 73.855 ; free physical = 2509 ; free virtual = 9804
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2467.691 ; gain = 73.855 ; free physical = 2509 ; free virtual = 9804
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2476.598 ; gain = 82.762 ; free physical = 2488 ; free virtual = 9783
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2476.598 ; gain = 82.762 ; free physical = 2488 ; free virtual = 9783
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2476.598 ; gain = 82.762 ; free physical = 2488 ; free virtual = 9783
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2476.598 ; gain = 82.762 ; free physical = 2488 ; free virtual = 9783
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2476.598 ; gain = 82.762 ; free physical = 2488 ; free virtual = 9783
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2476.598 ; gain = 82.762 ; free physical = 2488 ; free virtual = 9783
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |     3|
+|2     |DSP48E1 |     1|
+|3     |LUT2    |    11|
+|4     |LUT3    |     9|
+|5     |LUT4    |     7|
+|6     |FDCE    |    28|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2476.598 ; gain = 82.762 ; free physical = 2488 ; free virtual = 9783
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2476.598 ; gain = 8.906 ; free physical = 2558 ; free virtual = 9853
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2476.605 ; gain = 82.762 ; free physical = 2558 ; free virtual = 9853
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2476.605 ; gain = 0.000 ; free physical = 2657 ; free virtual = 9953
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2476.605 ; gain = 0.000 ; free physical = 2607 ; free virtual = 9902
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 1 Warnings, 3 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:34 . Memory (MB): peak = 2476.605 ; gain = 82.770 ; free physical = 2724 ; free virtual = 10019
+INFO: [Common 17-1381] The checkpoint '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.runs/design_1_RGBtoGray_0_0_synth_1/design_1_RGBtoGray_0_0.dcp' has been generated.
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/glen/Documents/AJC-Expleo/Travaux/Projet_CronerDetection/Architectures/Demo/SoCora/SoCora.runs/design_1_RGBtoGray_0_0_synth_1/design_1_RGBtoGray_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_RGBtoGray_0_0_utilization_synth.rpt -pb design_1_RGBtoGray_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  5 18:00:24 2026...
